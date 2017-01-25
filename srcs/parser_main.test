@@ -1,0 +1,60 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   parser_main.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2016/11/23 14:37:47 by svassal           #+#    #+#             */
+/*   Updated: 2017/01/14 15:24:16 by svassal          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <parser.h>
+#include <unistd.h>
+#include <fcntl.h>
+
+static void		print_content(t_scene *s)
+{
+	printf("SCENE :\n");
+	printf("\tCAMERA :\n");
+	printf("\t\tORIGIN\n\t\t\t[X = %f ; Y = %f ; Z = %f]\n", s->camera.origin.x, s->camera.origin.y, s->camera.origin.z);
+	printf("\t\tDIRECTION\n\t\t\t[X = %f ; Y = %f ; Z = %f]\n", s->camera.direction.x, s->camera.direction.y, s->camera.direction.z);
+	printf("\t\tFOV = %d\n", s->camera.fov);
+	printf("\tOBJECTS :\n");
+	while (s->objects != 0)
+	{
+		printf("\t\tTYPE = %d\n", ((t_object *)s->objects->content)->type);
+		printf("\t\t\tORIGIN\n\t\t\t\t[X = %f ; Y = %f ; Z = %f]\n", ((t_object *)s->objects->content)->origin.x, ((t_object *)s->objects->content)->origin.y, ((t_object *)s->objects->content)->origin.z);
+		printf("\t\t\tDIRECTION\n\t\t\t\t[X = %f ; Y = %f ; Z = %f]\n", ((t_object *)s->objects->content)->direction.x, ((t_object *)s->objects->content)->direction.y, ((t_object *)s->objects->content)->direction.z);
+		printf("\t\t\tCOLOR = %x\n", ((t_object *)s->objects->content)->color);
+		printf("\t\t\tRADIUS = %f\n", ((t_object *)s->objects->content)->intensity);
+		printf("\t\t\tREFLECTION = %f\n", ((t_object *)s->objects->content)->reflection);
+		printf("\t\t\tDIFFUSE = %f\n", ((t_object *)s->objects->content)->diffuse);
+		printf("\t\t\tCOMMENT = %s\n", ((t_object *)s->objects->content)->comment);
+		s->objects = s->objects->next;
+	}
+	printf("\tLIGHTS :\n");
+	while (s->lights != 0)
+	{
+		printf("\t\tTYPE = %d\n", ((t_object *)s->lights->content)->type);
+		printf("\t\t\tORIGIN\n\t\t\t\t[X = %f ; Y = %f ; Z = %f]\n", ((t_object *)s->lights->content)->origin.x, ((t_object *)s->lights->content)->origin.y, ((t_object *)s->lights->content)->origin.z);
+		printf("\t\t\tDIRECTION\n\t\t\t\t[X = %f ; Y = %f ; Z = %f]\n", ((t_object *)s->lights->content)->direction.x, ((t_object *)s->lights->content)->direction.y, ((t_object *)s->lights->content)->direction.z);
+		printf("\t\t\tCOLOR = %x\n", ((t_object *)s->lights->content)->color);
+		printf("\t\t\tINTENSITY = %f\n", ((t_object *)s->lights->content)->intensity);
+		printf("\t\t\tREFLECTION = %f\n", ((t_object *)s->lights->content)->reflection);
+		printf("\t\t\tDIFFUSE = %f\n", ((t_object *)s->lights->content)->diffuse);
+		printf("\t\t\tCOMMENT = %s\n", ((t_object *)s->lights->content)->comment);
+		s->lights = s->lights->next;
+	}
+}
+
+int		main(void)
+{
+	t_scene	*s;
+
+	s = scene_parse_file("test.json");
+	print_content(s);
+	scene_destroy(s);
+	return (1);
+}

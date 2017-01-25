@@ -1,0 +1,96 @@
+{
+	"camera":{
+			"origin": {
+				"x":0,
+				"y":0,
+				"z":0
+			},
+			"direction": {
+				"x":0,
+				"y":0,
+				"z":1
+			},
+			"fov": 45
+	},
+	"objects":
+	[
+		{
+			"type":"SPHERE",
+			"color": 0xFF8C10,
+			"origin":{
+				"x":0,
+				"y":0,
+				"z":30
+			},
+			"reflection": 0.0,
+			"diffuse": 0.0,
+			"radius": 1.40,
+			"comment": "first sphere"
+		},
+		{
+			"type": "PLANE",
+			"color": 0xC8FF00,
+			"origin": {
+				"x":0,
+				"y":-10,
+				"z":0
+			},
+			"reflection": 0.0,
+			"diffuse": 0.0,
+			"direction": {
+				"x":0,
+				"y":-50,
+				"z":5
+			},
+			"comment":"ground"
+		},
+		{
+			"type":"PLANE",
+			"color": 0xFFC800,
+			"origin":{
+				"x":0,
+				"y":10,
+				"z":0
+			},
+			"reflection": 0.0,
+			"diffuse": 0.0,
+			"direction":{
+				"x":0,
+				"y":50,
+				"z":5
+			},
+			"comment":"ceiling"
+		}
+	],
+	"lights": [
+		{
+			"type": "SPOT",
+			"color": 0xFFFFFF,
+			"origin": {
+				"x": -3,
+				"y": -1.7541,
+				"z": 25
+			},
+			"reflection": 0.0,
+			"diffuse": 0.0,
+			"radius": 0.4
+		},
+		{
+			"type": "SPOT",
+			"color": 0xFFFFFF,
+			"origin": {
+				"x": 3,
+				"y": 2.585652,
+				"z": 0
+			},
+			"reflection": 0.0,
+			"diffuse": 0.0,
+			"direction": {
+				"x": 1,
+				"y": 2,
+				"z": 0
+			},
+			"radius": 0.9
+		}
+	]
+}
