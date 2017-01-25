@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 17:28:23 by aljourda          #+#    #+#             */
-/*   Updated: 2017/01/13 18:00:35 by svassal          ###   ########.fr       */
+/*   Updated: 2017/01/25 23:17:32 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define CORE_H
 # include <vector.h>
 # include <libft.h>
+#include <stdio.h>
 # define WIDTH	800
 # define HEIGHT	600
 # define WHSIZE	(WIDTH * HEIGHT)
@@ -35,6 +36,8 @@ typedef struct		s_camera
 {
 	t_vector4f		origin;
 	t_vector4f		direction;
+	t_vector4f		right;
+	t_vector4f		up;
 	char			fov;
 }					t_camera;
 
@@ -60,17 +63,20 @@ typedef struct		s_object
 
 /*
 ** Contains the scene structure
+** xindent and yindent are the distance between each pixel in space
 */
 
 typedef struct		s_scene
 {
+	float			xindent;
+	float			yindent;
 	t_camera		camera;
 	t_list			*objects;
 	t_list			*lights;
 }					t_scene;
 
 /*
-** Return the argb color at pixel x,y
+** Return the argb color at pixel (x,y)
 */
 
 unsigned int		ray_pixel(t_scene *scene, int x, int y);

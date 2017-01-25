@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/15 14:36:15 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/13 14:29:02 by svassal          ###   ########.fr       */
+/*   Updated: 2017/01/25 23:17:29 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,12 @@ t_vector4f		vector_cross(t_vector4f v1, t_vector4f v2)
 	float		f[4];
 	t_vector4f	r_v;
 
-	X =	vector_get_y(&v1) * vector_get_z(&v2) - vector_get_z(&v1) * vector_get_y(&v2);
-	Y =	vector_get_z(&v1) * vector_get_x(&v2) - vector_get_x(&v1) * vector_get_z(&v2);
-	Z =	vector_get_x(&v1) * vector_get_y(&v2) - vector_get_y(&v1) * vector_get_x(&v2);
+	X =	vector_get_y(&v1) * vector_get_z(&v2) -
+		vector_get_z(&v1) * vector_get_y(&v2);
+	Y =	vector_get_z(&v1) * vector_get_x(&v2) -
+		vector_get_x(&v1) * vector_get_z(&v2);
+	Z =	vector_get_x(&v1) * vector_get_y(&v2) -
+		vector_get_y(&v1) * vector_get_x(&v2);
 	W = 0;
 	define_vector(&r_v, f);
 	return (r_v);

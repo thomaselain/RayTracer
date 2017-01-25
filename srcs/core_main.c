@@ -6,7 +6,7 @@
 /*   By: fvivaudo <fvivaudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/31 15:59:09 by fvivaudo          #+#    #+#             */
-/*   Updated: 2016/11/25 18:04:42 by fvivaudo         ###   ########.fr       */
+/*   Updated: 2017/01/25 22:15:04 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 #include <win.h>
 #include <img.h>
 #include <thread.h>
-
-
 
 static void		print_content(t_scene *s)
 {
@@ -53,13 +51,6 @@ static void		print_content(t_scene *s)
 	}
 }
 
-__attribute__((weak)) unsigned int ray_pixel(t_scene *scene, int x, int y){
-	scene = 0;
-	unsigned int ret = (cos(x * 255) + sin(y * 255)) + 0xff00000000;
-	usleep(1);
-	return (ret);
-}
-
 __attribute__((weak)) int				main(int ac, char **av)
 {
 	t_win		win;
@@ -83,7 +74,7 @@ __attribute__((weak)) int				main(int ac, char **av)
 	win_init(&win, "RT", WIDTH, HEIGHT);
 	img_init(&img, WIDTH, HEIGHT, 0x0);
 	win_draw_center(&win, &img);
-
+	get_camera_plane(e);         // Calcule les vecteurs up et right de la camera avant les lancers de rayon
 
 
 	//TODO interface
