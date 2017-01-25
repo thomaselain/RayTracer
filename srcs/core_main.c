@@ -11,22 +11,60 @@
 /* ************************************************************************** */
 
 #include <core.h>
+#include <parser.h>
 #include <win.h>
 #include <img.h>
 #include <thread.h>
 
 
-__attribute__((weak)) unsigned int ray_pixel(t_scene *scene, int x, int y){
 
-	return (0xffffffff);
+static void		print_content(t_scene *s)
+{
+	printf("SCENE :\n");
+	printf("\tCAMERA :\n");
+	printf("\t\tORIGIN\n\t\t\t[X = %f ; Y = %f ; Z = %f]\n", s->camera.origin.x, s->camera.origin.y, s->camera.origin.z);
+	printf("\t\tDIRECTION\n\t\t\t[X = %f ; Y = %f ; Z = %f]\n", s->camera.direction.x, s->camera.direction.y, s->camera.direction.z);
+	printf("\t\tFOV = %d\n", s->camera.fov);
+	printf("\tOBJECTS :\n");
+	while (s->objects != 0)
+	{
+		printf("\t\tTYPE = %d\n", ((t_object *)s->objects->content)->type);
+		printf("\t\t\tORIGIN\n\t\t\t\t[X = %f ; Y = %f ; Z = %f]\n", ((t_object *)s->objects->content)->origin.x, ((t_object *)s->objects->content)->origin.y, ((t_object *)s->objects->content)->origin.z);
+		printf("\t\t\tDIRECTION\n\t\t\t\t[X = %f ; Y = %f ; Z = %f]\n", ((t_object *)s->objects->content)->direction.x, ((t_object *)s->objects->content)->direction.y, ((t_object *)s->objects->content)->direction.z);
+		printf("\t\t\tCOLOR = %x\n", ((t_object *)s->objects->content)->color);
+		printf("\t\t\tRADIUS = %f\n", ((t_object *)s->objects->content)->intensity);
+		printf("\t\t\tREFLECTION = %f\n", ((t_object *)s->objects->content)->reflection);
+		printf("\t\t\tDIFFUSE = %f\n", ((t_object *)s->objects->content)->diffuse);
+		printf("\t\t\tCOMMENT = %s\n", ((t_object *)s->objects->content)->comment);
+		s->objects = s->objects->next;
+	}
+	printf("\tLIGHTS :\n");
+	while (s->lights != 0)
+	{
+		printf("\t\tTYPE = %d\n", ((t_object *)s->lights->content)->type);
+		printf("\t\t\tORIGIN\n\t\t\t\t[X = %f ; Y = %f ; Z = %f]\n", ((t_object *)s->lights->content)->origin.x, ((t_object *)s->lights->content)->origin.y, ((t_object *)s->lights->content)->origin.z);
+		printf("\t\t\tDIRECTION\n\t\t\t\t[X = %f ; Y = %f ; Z = %f]\n", ((t_object *)s->lights->content)->direction.x, ((t_object *)s->lights->content)->direction.y, ((t_object *)s->lights->content)->direction.z);
+		printf("\t\t\tCOLOR = %x\n", ((t_object *)s->lights->content)->color);
+		printf("\t\t\tINTENSITY = %f\n", ((t_object *)s->lights->content)->intensity);
+		printf("\t\t\tREFLECTION = %f\n", ((t_object *)s->lights->content)->reflection);
+		printf("\t\t\tDIFFUSE = %f\n", ((t_object *)s->lights->content)->diffuse);
+		printf("\t\t\tCOMMENT = %s\n", ((t_object *)s->lights->content)->comment);
+		s->lights = s->lights->next;
+	}
 }
 
-int				main(int ac, char **av)
+__attribute__((weak)) unsigned int ray_pixel(t_scene *scene, int x, int y){
+	scene = 0;
+	unsigned int ret = (cos(x * 255) + sin(y * 255)) + 0xff00000000;
+	usleep(1);
+	return (ret);
+}
+
+__attribute__((weak)) int				main(int ac, char **av)
 {
 	t_win		win;
 	t_img		img;
 	t_scene		*e;
-	int			fd;
 	int			status;
 	t_tcore		**core;
 	float		loading;
@@ -34,12 +72,14 @@ int				main(int ac, char **av)
 
 	status = 0;
 	//Load and parse config
-/*	if (ac != 2 || (fd = open(av[1], O_RDONLY)) <= -1 || !(e = readConfig(fd)))
+	if (ac == 2)
 	{
-		//error message?
+		e = scene_parse_file(av[1]);
+		print_content(e);
+	}else{
 		return (0);
 	}
-*/	//Load window
+	//Load window
 	win_init(&win, "RT", WIDTH, HEIGHT);
 	img_init(&img, WIDTH, HEIGHT, 0x0);
 	win_draw_center(&win, &img);
@@ -53,7 +93,7 @@ int				main(int ac, char **av)
 	img_destroy(&image);
 
 	//Core calculation and display
-	const int nbthread = 40;
+	const int nbthread = 4;
 	core = thread_init(e, &img, nbthread);
 	loading = 0;
 	//Event management
@@ -62,6 +102,10 @@ int				main(int ac, char **av)
 	SDL_KeyboardEvent *key = 0;
 	while (status == 0 && loading >= 0 &&loading < 1.0) {
 		printf("%2.0f %%\r", loading * 100.0);
+		win_draw_center(&win, &img);
+		img_init(&image, 410, 60, 0x5555555);
+		win_draw_center(&win, &image);
+		img_destroy(&image);
 		img_init(&image, loading * 400, 50, 0xffffff);
 		win_draw_center(&win, &image);
 		img_destroy(&image);
@@ -76,6 +120,8 @@ int				main(int ac, char **av)
 			break;
 		case SDL_KEYUP:
 			key = &event.key;
+			if (key->keysym.scancode == 41)
+				status = 2;
 			printf("Key release detected %d \n", key->keysym.scancode);
 			break;
 		case SDL_MOUSEMOTION:
@@ -106,6 +152,8 @@ int				main(int ac, char **av)
 			case SDL_KEYUP:
 				key = &event.key;
 				printf("Key release detected %d \n", key->keysym.scancode);
+				if (key->keysym.scancode == 41)
+					status = 2;
 				break;
 			case SDL_MOUSEMOTION:
 				break;
@@ -119,6 +167,7 @@ int				main(int ac, char **av)
 			}
 		}
 	}
+	scene_destroy(e);
 	img_destroy(&img);
 	win_destroy(&win);
 	return (0);
