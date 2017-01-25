@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/13 16:35:16 by svassal           #+#    #+#             */
-/*   Updated: 2016/10/16 12:47:45 by svassal          ###   ########.fr       */
+/*   Updated: 2017/01/25 18:57:16 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ void			matrix_set_elem(t_matrix4f *m, int x, int y, float value)
 ** Return the element of the matrix at given element
 */
 
-float			matrix_get_elem(t_matrix4f *m, int x, int y)
+float			matrix_get_elem(t_matrix4f m, int x, int y)
 {
 	if (x < 0 || x > 4 || y < 0 || y > 4)
 		return (-1);
-	return (m->data[x][y]);
+	return (m.data[x][y]);
 }
 
 /*

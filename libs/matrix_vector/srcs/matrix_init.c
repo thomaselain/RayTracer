@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/14 14:25:25 by svassal           #+#    #+#             */
-/*   Updated: 2016/10/16 14:52:32 by svassal          ###   ########.fr       */
+/*   Updated: 2017/01/25 18:22:21 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*
 ** Init each element of the matrix according to a defined patern,
-** thes ones with the same X and Y coordinate at 1, and the others to 0
+** the ones with the same X and Y coordinate at 1, and the others to 0
 */
 
 void			init_matrix_id(t_matrix4f *m)
