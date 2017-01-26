@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 17:28:23 by aljourda          #+#    #+#             */
-/*   Updated: 2017/01/25 23:17:32 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/26 21:14:59 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 # include <vector.h>
 # include <libft.h>
 #include <stdio.h>
-# define WIDTH	800
-# define HEIGHT	600
+# define WIDTH	1600
+# define HEIGHT	900
 # define WHSIZE	(WIDTH * HEIGHT)
 
 /*
@@ -27,6 +27,16 @@ typedef enum		e_type
 {
 	UNKNOWN, SPOT, PLANE, SPHERE, CONE, CYLINDER
 }					t_type;
+
+/*
+**	Contains every informations usefull about the current ray
+*/
+
+typedef struct		s_ray
+{
+	t_vector4f		pos;
+	t_vector4f		dir;
+}					t_ray;
 
 /*
 ** Contains every informations usefull about the camera

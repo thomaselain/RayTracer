@@ -6,7 +6,7 @@
 /*   By: fvivaudo <fvivaudo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/31 15:59:09 by fvivaudo          #+#    #+#             */
-/*   Updated: 2017/01/25 22:15:04 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/26 18:38:55 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,21 @@
 #include <img.h>
 #include <thread.h>
 
+void	get_camera_plane(t_scene *scene);
+
+/*
 static void		print_content(t_scene *s)
 {
+	t_object	obj;
+
+	obj = s->objects;
 	printf("SCENE :\n");
 	printf("\tCAMERA :\n");
 	printf("\t\tORIGIN\n\t\t\t[X = %f ; Y = %f ; Z = %f]\n", s->camera.origin.x, s->camera.origin.y, s->camera.origin.z);
 	printf("\t\tDIRECTION\n\t\t\t[X = %f ; Y = %f ; Z = %f]\n", s->camera.direction.x, s->camera.direction.y, s->camera.direction.z);
 	printf("\t\tFOV = %d\n", s->camera.fov);
 	printf("\tOBJECTS :\n");
-	while (s->objects != 0)
+	while (obj != 0)
 	{
 		printf("\t\tTYPE = %d\n", ((t_object *)s->objects->content)->type);
 		printf("\t\t\tORIGIN\n\t\t\t\t[X = %f ; Y = %f ; Z = %f]\n", ((t_object *)s->objects->content)->origin.x, ((t_object *)s->objects->content)->origin.y, ((t_object *)s->objects->content)->origin.z);
@@ -34,7 +40,7 @@ static void		print_content(t_scene *s)
 		printf("\t\t\tREFLECTION = %f\n", ((t_object *)s->objects->content)->reflection);
 		printf("\t\t\tDIFFUSE = %f\n", ((t_object *)s->objects->content)->diffuse);
 		printf("\t\t\tCOMMENT = %s\n", ((t_object *)s->objects->content)->comment);
-		s->objects = s->objects->next;
+		obj = obj->next;
 	}
 	printf("\tLIGHTS :\n");
 	while (s->lights != 0)
@@ -50,7 +56,7 @@ static void		print_content(t_scene *s)
 		s->lights = s->lights->next;
 	}
 }
-
+*/
 __attribute__((weak)) int				main(int ac, char **av)
 {
 	t_win		win;
@@ -66,7 +72,7 @@ __attribute__((weak)) int				main(int ac, char **av)
 	if (ac == 2)
 	{
 		e = scene_parse_file(av[1]);
-		print_content(e);
+	//	print_content(e);
 	}else{
 		return (0);
 	}
