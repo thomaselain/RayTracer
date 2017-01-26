@@ -80,7 +80,8 @@ static int	brackets(char *s)
 	O_BRACKETS = 1;
 	C_BRACKETS = 0;
 	INDEX = 0;
-	while ((*(s + INDEX) != ']' || C_BRACKETS != O_BRACKETS) && *(s + INDEX) != 0)
+	while ((*(s + INDEX) != ']' || C_BRACKETS != O_BRACKETS)
+		&& *(s + INDEX) != 0)
 	{
 		INDEX++;
 		O_BRACES = (*(s + INDEX) == '{') ? (O_BRACES + 1) : (O_BRACES);

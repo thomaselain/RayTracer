@@ -17,6 +17,7 @@
 #include <fcntl.h>
 #include <errno.h>
 #include <parse_major.h>
+#include <stdio.h>
 #define GET		0
 #define INIT	1
 #define CLEAN	2

@@ -145,19 +145,16 @@ int		error_check(int type, char *s)
 	if (valide_braces_brackets(s) == ERROR)
 	{
 		error_close(type, BBC);
-		// ft_putendl("Error : braces or brackets doesn't match");
 		error = ERROR;
 	}
 	if (existing_parameters(type, s) == ERROR)
 	{
 		error_close(type, EPC);
-		// ft_putendl("Error : found non existing parameters for an object");
 		error = ERROR;
 	}
 	if (count_parameters(type, s) == ERROR)
 	{
 		error_close(type, CPC);
-		// ft_putendl("Error : multiple occurences of an existing parameter");
 		error = ERROR;
 	}
 	return (error);
