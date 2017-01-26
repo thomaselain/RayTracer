@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:24:34 by telain            #+#    #+#             */
-/*   Updated: 2017/01/25 23:17:24 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/26 16:30:42 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ unsigned int		ray_pixel(t_scene *scene, int x, int y)
 {
 	t_vector4f	ray;
 
-	ray = get_ray(scene, x, y);
-
-	return (0xc0ffee);
+	ray = vector_normalize(SUB(get_ray(scene, x, y), scene->camera->origin));
+	return ();
 }
