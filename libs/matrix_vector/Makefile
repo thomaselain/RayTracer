@@ -6,7 +6,7 @@
 #    By: svassal <svassal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/30 17:22:12 by svassal           #+#    #+#              #
-#    Updated: 2017/01/11 17:35:06 by svassal          ###   ########.fr        #
+#    Updated: 2017/01/25 18:40:05 by svassal          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,12 +21,12 @@ SRC_FILES =		vector1.c \
 				vector_div.c \
 				vector_init.c \
 				vector_mul.c \
-				vector_sub.c 
-#				matrix1.c \
-#				matrix2.c \
-#				matrix_access.c \
-#				matrix_init.c \
-#				matrix_rotation.c
+				vector_sub.c \
+				matrix1.c \
+				matrix2.c \
+				matrix_access.c \
+				matrix_init.c \
+				matrix_rotation.c
 OBJ_FILES =		$(SRC_FILES:.c=.o)
 SRC =			$(addprefix $(SRC_DIR)/, $(SRC_FILES))
 OBJ =			$(addprefix $(OBJ_DIR)/, $(OBJ_FILES))
