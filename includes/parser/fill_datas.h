@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FILL_DATAS
-# define FILL_DATAS
+#ifndef FILL_DATAS_H
+# define FILL_DATAS_H
 # include <core.h>
 
 /*

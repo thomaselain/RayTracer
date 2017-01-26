@@ -114,7 +114,7 @@ static void		fill_objects_sub(char **s, t_object *o)
 	else if (index == 7)
 		o->direction = parse_vector(s);
 	else
-		o->comment  = parse_string(s);
+		o->comment = parse_string(s);
 }
 
 /*

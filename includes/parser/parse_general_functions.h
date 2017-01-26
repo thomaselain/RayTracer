@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSE_GENERAL_FUNCTIONS
-# define PARSE_GENERAL_FUNCTIONS
+#ifndef PARSE_GENERAL_FUNCTIONS_H
+# define PARSE_GENERAL_FUNCTIONS_H
 
 /*
 ** Should be called after every detail or object,
@@ -21,7 +21,8 @@
 int				valide_coma(char *s);
 
 /*
-** Call subfunction braces if first character is {, brackets if it is [, or return NEUTRAL is it isn't any
+** Call subfunction braces if first character is {, brackets if it is [, or
+** return NEUTRAL is it isn't any
 */
 
 int				valide_braces_brackets(char *s);
@@ -39,19 +40,22 @@ void			character_skipper(char **s);
 char			*get_param_list(int type, int param_num);
 
 /*
-** Return ERROR if a parameter that doesn't exist is present, NO_ERROR elseway
+** Return ERROR if a parameter that doesn't exist is present,
+** NO_ERROR elseway
 */
 
 int				existing_parameters(int type, char *s);
 
 /*
-** Return ERROR if multiple occurence of the same parameter is present, NO_ERROR elseway
+** Return ERROR if multiple occurence of the same parameter is present,
+** NO_ERROR elseway
 */
 
 int				count_parameters(int type, char *s);
 
 /*
-** Uses every error check functions, and return ERROR or NO_ERROR according to there results
+** Uses every error check functions, and return ERROR or NO_ERROR according
+** to there results
 */
 
 int				error_check(int type, char *s);
