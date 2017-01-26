@@ -86,7 +86,7 @@ char			*scene_string(int action, char *s)
 	else if (action == CLEAN)
 	{
 		if (string != 0)
-			ft_strclr(string);
+			ft_strdel(&string);
 		return (string);
 	}
 	return (0);
