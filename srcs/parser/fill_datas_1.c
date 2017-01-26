@@ -159,4 +159,5 @@ void			fill_list(char **s, t_list **l)
 		ft_lstpushback(l, ft_lstnew((void *)obj, sizeof(t_object)));
 		*l = tmp;
 	}
+	ft_memdel((void**)&obj);
 }

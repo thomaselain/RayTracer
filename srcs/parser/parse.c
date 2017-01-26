@@ -29,9 +29,9 @@
 
 static void		str_write_over(char **s1, char *s2)
 {
-	ft_strclr(*s1);
+	ft_strdel(s1);
 	*s1 = ft_strdup(s2);
-	ft_strclr(s2);
+	ft_strdel(&s2);
 }
 
 /*
@@ -53,10 +53,10 @@ static void		parse(int fd)
 			json = ft_strdup(tmp);
 		else
 			str_write_over(&json, ft_strjoin(json, tmp));
+		if (tmp != 0)
+			ft_strdel(&tmp);
 	}
 	close(fd);
-	if (tmp != 0)
-		ft_strclr(tmp);
 	scene_string(SET, json);
 	scene_content(INIT);
 	s = scene_content(GET);
