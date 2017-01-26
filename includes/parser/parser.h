@@ -18,7 +18,7 @@
 ** Parse the file into a t_scene variable
 */
 
-t_scene			*scene_parse_file(const char * filename);
+t_scene			*scene_parse_file(const char *filename);
 
 /*
 ** Destroy the scene variable

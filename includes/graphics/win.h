@@ -26,5 +26,6 @@ int					win_init(t_win *win, char *title, int width, int height);
 void				win_destroy(t_win *win);
 void				win_draw(t_win *win, t_img *img, int x, int y);
 void				win_draw_center(t_win *win, t_img *img);
+void				win_render(t_win *win);
 
 #endif
