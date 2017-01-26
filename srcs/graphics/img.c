@@ -79,6 +79,15 @@ int					img_init_bmp(t_img *img, const char *file)
 	return (0);
 }
 
+int					img_save(t_img *img, const char *filename)
+{
+	if (SDL_SaveBMP(img->srf, filename) == 0)
+	{
+		return (1);
+	}
+	return (0);
+}
+
 void				img_destroy(t_img *img)
 {
 	SDL_FreeSurface(img->srf);

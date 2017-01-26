@@ -148,6 +148,7 @@ __attribute__((weak)) int				main(int ac, char **av)
 
 	thread_end(core, nbthread);
 
+	img_save(&img, "capture.bmp");
 
 	status = 0;
 	//Event management
