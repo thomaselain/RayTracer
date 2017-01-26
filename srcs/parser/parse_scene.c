@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/03 13:10:54 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/14 15:15:46 by svassal          ###   ########.fr       */
+/*   Updated: 2017/01/26 20:32:02 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,9 @@ t_scene			parse_scene(char **string)
 			fill_scene(&tmp, &ret, 0);
 			ERR = (valide_coma(tmp) == ERROR) ? (ERROR) : (ERR);
 			if (ERR == ERROR)
-				break ;
+				error_close(SCENE, CEC);
 			*string = tmp;
 			INDEX = -1;
 		}
-	if (ERR == ERROR)
-		error_close(SCENE, CEC);
 	return (ret);
 }
