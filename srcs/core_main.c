@@ -6,7 +6,7 @@
 /*   By: aljourda <aljourda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/31 15:59:09 by aljourda          #+#    #+#             */
-/*   Updated: 2017/01/27 17:19:12 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/27 22:03:51 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <win.h>
 #include <img.h>
 #include <thread.h>
+#include <ray.h>
 
 static void		print_content(t_scene *s)
 {
@@ -145,7 +146,6 @@ __attribute__((weak)) int				main(int ac, char **av)
 	//Load window
 	win_init(&win, "RT", WIDTH, HEIGHT);
 	// Calcule les vecteurs up et right de la camera avant les lancers de rayon
-	get_camera_plane(e);
 
 	//TODO interface
 	status = 3;
@@ -153,8 +153,10 @@ __attribute__((weak)) int				main(int ac, char **av)
 	{
 		//Core calculation and display
 		if (status == 3)
+		{
+			get_camera_plane(e);
 			calculation(e, &win, 10);
-
+		}
 		status = 0;
 		//Event management
 		while (status == 0) {
@@ -169,15 +171,17 @@ __attribute__((weak)) int				main(int ac, char **av)
 					if (key->keysym.scancode == 41)
 						status = 2;
 					else if (key->keysym.scancode >= 79 && key->keysym.scancode <= 82)
-					{
+					{	
 						if (key->keysym.scancode == 82)
-							e->camera.origin.y += 0.3;
+							e->camera.origin = ADD(e->camera.origin, e->camera.direction);;
 						if (key->keysym.scancode == 81)
-							e->camera.origin.y -= 0.3;
+							e->camera.origin = SUB(e->camera.origin, e->camera.direction);;
 						if (key->keysym.scancode == 80)
-							e->camera.origin.x += 0.3;
+							e->camera.origin = ADD(e->camera.origin,
+									vector_cross(e->camera.direction, (t_vector4f){0.0, 0.0, 1.0, 0.0}));
 						if (key->keysym.scancode == 79)
-							e->camera.origin.x -= 0.3;
+							e->camera.origin = SUB(e->camera.origin,
+									vector_cross(e->camera.direction, (t_vector4f){0.0, 0.0, 1.0, 0.0}));
 						status = 3;
 					}
 					else if (key->keysym.scancode >= 86 && key->keysym.scancode <= 87)
@@ -186,6 +190,26 @@ __attribute__((weak)) int				main(int ac, char **av)
 							e->camera.origin.z += 0.3;
 						if (key->keysym.scancode == 86)
 							e->camera.origin.z -= 0.3;
+						status = 3;
+					}
+					else
+					{
+						if (key->keysym.scancode == 4)
+						{
+							e->camera.direction.x += e->camera.direction.x *
+								cos(-M_PI / 10) - e->camera.direction.y * sin(-M_PI / 10);
+							e->camera.direction.y += e->camera.direction.x *
+								sin(-M_PI / 10) + e->camera.direction.y * cos(-M_PI / 10);
+							e->camera.direction = vector_normalize(e->camera.direction);
+						}
+						if (key->keysym.scancode == 22)
+						{
+							e->camera.direction.x += e->camera.direction.x *
+								cos(M_PI / 10) - e->camera.direction.y * sin(M_PI / 10);
+							e->camera.direction.y += e->camera.direction.x *
+								sin(M_PI / 10) + e->camera.direction.y * cos(M_PI / 10);
+							e->camera.direction = vector_normalize(e->camera.direction);
+						}
 						status = 3;
 					}
 					break;
