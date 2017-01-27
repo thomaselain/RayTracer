@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/03 13:14:56 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/27 16:03:34 by svassal          ###   ########.fr       */
+/*   Updated: 2017/01/27 18:14:18 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <parse_major.h>
 #include <fill_datas.h>
 #include <parse_general_functions.h>
+#include <parse_details.h>
 #define SCENE			3
 
 /*

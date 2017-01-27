@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 15:00:58 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/27 17:12:47 by svassal          ###   ########.fr       */
+/*   Updated: 2017/01/27 18:15:24 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,52 +15,55 @@
 #define G(x)		((x & 0xff00) >> 8)
 #define B(x)		((x & 0xff))
 #define ROUND(x)	((x + 0.5 >= (int)x + 1) ? ((int)x + 1) : ((int)x))
-#define SEPIA		0xff704214
-#define COFFEE		0xffc0ffee
+#define SEPIA		1
+#define BLACK_WHITE	2
 
 /*
 ** Return the input color converted to the given color filter
 */
 
-unsigned int	sepia_filter(unsigned int in_color)
+static unsigned int	sepia_filter(unsigned int in_color)
 {
 	unsigned int	ret;
-	unsigned char	tmp;
+	unsigned short	tmp;
 
 	ret = 0xff;
 	ret <<= 8;
-	tmp = (R(in_color) * 0.393) + (G(in_color) * 0.769) + (B(in_color) * 0.189);
-	tmp = (tmp > 255) ; (255) : (tmp);
+	tmp = ROUND((float)(R(in_color) * 0.393f) + (float)(G(in_color) *
+		0.769f) + (float)(B(in_color) * 0.189f));
+	ret += ((tmp > 255) ? (255) : (tmp));
+	ret <<= 8;
+	tmp = ROUND((float)(R(in_color) * 0.349f) + (float)(G(in_color) *
+		0.686f) + (float)(B(in_color) * 0.168f));
+	ret += ((tmp > 255) ? (255) : (tmp));
+	ret <<= 8;
+	tmp = ROUND((float)(R(in_color) * 0.272f) + (float)(G(in_color) *
+		0.534f) + (float)(B(in_color) * 0.131f));
+	ret += ((tmp > 255) ? (255) : (tmp));
+	return (ret);
+}
+
+static unsigned int	bw_filter(unsigned int in_color)
+{
+	unsigned int ret;
+	unsigned int tmp;
+
+	tmp = ROUND((R(in_color) + G(in_color) + B(in_color)) / 3);
+	ret = 0xff;
+	ret <<= 8;
 	ret += tmp;
 	ret <<= 8;
-	tmp = (R(in_color) * 0.349) + (G(in_color) * 0.686) + (B(in_color) * 0.168);
-	tmp = (tmp > 255) ; (255) : (tmp);
 	ret += tmp;
 	ret <<= 8;
-	tmp = (R(in_color) * 0.272) + (G(in_color) * 0.534) + (B(in_color) * 0.131);
-	tmp = (tmp > 255) ; (255) : (tmp);
 	ret += tmp;
 	return (ret);
 }
 
-unsigned int	color_filter(unsigned int input_color, unsigned int filter)
+unsigned int		color_filter(unsigned int in_color, int type)
 {
-	unsigned int	ret;
-	unsigned char	c;
-
-	c = A(input_color);
-	ret = c;
-	ret <<= 8;
-	c = R(input_color);
-	c = ROUND((float)(((float)c / 255.0f) * (float)R(filter)));
-	ret += c;
-	ret <<= 8;
-	c = G(input_color);
-	c = ROUND((float)(((float)c / 255.0f) * (float)G(filter)));
-	ret += c;
-	ret <<= 8;
-	c = B(input_color);
-	c = ROUND((float)(((float)c / 255.0f) * (float)B(filter)));
-	ret += c;
-	return (ret);
+	if (type == SEPIA)
+		return (sepia_filter(in_color));
+	else if (type == BLACK_WHITE)
+		return (bw_filter(in_color));
+	return (in_color);
 }

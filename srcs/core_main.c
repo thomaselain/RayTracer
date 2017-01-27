@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   core_main.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aljourda <aljourda@student.42.fr>          +#+  +:+       +#+        */
+/*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/11/31 15:59:09 by aljourda          #+#    #+#             */
-/*   Updated: 2017/01/27 17:20:53 by svassal          ###   ########.fr       */
+/*   Created: Invalid date        by aljourda          #+#    #+#             */
+/*   Updated: 2017/01/27 18:26:14 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void		print_content(t_scene *s)
 
 	obj = s->objects;
 	light = s->lights;
-	printf("BACKGROUND : x\n", s->background);
+	printf("BACKGROUND : %x\n", s->background);
 	printf("SCENE :\n");
 	printf("\tCAMERA :\n");
 	printf("\t\tORIGIN\n\t\t\t[X = %f ; Y = %f ; Z = %f]\n", s->camera.origin.x, s->camera.origin.y, s->camera.origin.z);
@@ -58,7 +58,7 @@ static void		print_content(t_scene *s)
 }
 
 __attribute__((weak))void	get_camera_plane(t_scene *scene){
-	
+
 }
 
 __attribute__((weak)) unsigned int ray_pixel(t_scene *scene, int x, int y){
