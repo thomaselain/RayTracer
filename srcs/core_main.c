@@ -21,9 +21,17 @@ void	get_camera_plane(t_scene *scene);
 /*
 static void		print_content(t_scene *s)
 {
+<<<<<<< HEAD
 	t_object	obj;
 
 	obj = s->objects;
+=======
+	t_list	*obj;
+	t_list	*light;
+
+	obj = s->objects;
+	light = s->lights;
+>>>>>>> master
 	printf("SCENE :\n");
 	printf("\tCAMERA :\n");
 	printf("\t\tORIGIN\n\t\t\t[X = %f ; Y = %f ; Z = %f]\n", s->camera.origin.x, s->camera.origin.y, s->camera.origin.z);
@@ -43,7 +51,7 @@ static void		print_content(t_scene *s)
 		obj = obj->next;
 	}
 	printf("\tLIGHTS :\n");
-	while (s->lights != 0)
+	while (light != 0)
 	{
 		printf("\t\tTYPE = %d\n", ((t_object *)s->lights->content)->type);
 		printf("\t\t\tORIGIN\n\t\t\t\t[X = %f ; Y = %f ; Z = %f]\n", ((t_object *)s->lights->content)->origin.x, ((t_object *)s->lights->content)->origin.y, ((t_object *)s->lights->content)->origin.z);
@@ -53,7 +61,7 @@ static void		print_content(t_scene *s)
 		printf("\t\t\tREFLECTION = %f\n", ((t_object *)s->lights->content)->reflection);
 		printf("\t\t\tDIFFUSE = %f\n", ((t_object *)s->lights->content)->diffuse);
 		printf("\t\t\tCOMMENT = %s\n", ((t_object *)s->lights->content)->comment);
-		s->lights = s->lights->next;
+		light = light->next;
 	}
 }
 */
@@ -88,6 +96,7 @@ __attribute__((weak)) int				main(int ac, char **av)
 	img_init(&image, 410, 60, 0x5555555);
 	win_draw_center(&win, &image);
 	img_destroy(&image);
+	win_render(&win);
 
 	//Core calculation and display
 	const int nbthread = 4;
@@ -97,7 +106,7 @@ __attribute__((weak)) int				main(int ac, char **av)
 	status = 0;
 	SDL_Event event;
 	SDL_KeyboardEvent *key = 0;
-	while (status == 0 && loading >= 0 &&loading < 1.0) {
+	while (status == 0 && loading >= 0 && loading < 1.0) {
 		printf("%2.0f %%\r", loading * 100.0);
 		win_draw_center(&win, &img);
 		img_init(&image, 410, 60, 0x5555555);
@@ -106,6 +115,7 @@ __attribute__((weak)) int				main(int ac, char **av)
 		img_init(&image, loading * 400, 50, 0xffffff);
 		win_draw_center(&win, &image);
 		img_destroy(&image);
+		win_render(&win);
 		loading = thread_status(core, nbthread);
 
 
@@ -134,8 +144,11 @@ __attribute__((weak)) int				main(int ac, char **av)
 	}
 	printf("100 %%\n");
 	win_draw_center(&win, &img);
+	win_render(&win);
+
 	thread_end(core, nbthread);
 
+	img_save(&img, "capture.bmp");
 
 	status = 0;
 	//Event management
