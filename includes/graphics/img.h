@@ -26,13 +26,23 @@ typedef struct		s_img
 	int				h;
 }					t_img;
 
+typedef struct		s_color
+{
+	unsigned char	a;
+	unsigned char	r;
+	unsigned char	g;
+	unsigned char	b;
+}					t_color;
+
 int					img_init(t_img *img, int width, int height,
 								unsigned int argb_color);
 int					img_init_bmp(t_img *img, const char *file);
 int					img_init_text(t_img *img, const char *text,
 						unsigned int argb_color, int fontsize);
+unsigned int		img_get_pixel(t_img *img, int x, int y);
 void				img_set_pixel(t_img *img, int x, int y,
 								unsigned int argb_color);
+void				img_set_filter(t_img *img, unsigned int argb_color);
 int					img_save(t_img *img, const char *filename);
 void				img_destroy(t_img *img);
 
