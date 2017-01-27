@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:56:12 by telain            #+#    #+#             */
-/*   Updated: 2017/01/27 16:53:50 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/27 18:55:45 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ t_vector4f				get_ray(t_scene *scene, int x, int y);
 **	Returns a new Color (Changed with the object param)
 */
 
-int						adjust_color(t_object *hit, t_ray ray);
+int						adjust_color(t_scene *s, t_object *hit, t_ray ray);
 
 /*
 **	Calculates the intersection with all objects
@@ -65,5 +65,7 @@ t_vector4f				get_normal(t_object *o, t_ray ray);
 */
 
 t_vector4f				sphere_normal(t_object *o, t_ray ray);
+
+unsigned int			find_shadow(t_scene *s, t_object *hit, t_ray ray);
 
 #endif

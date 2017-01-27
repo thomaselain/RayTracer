@@ -6,7 +6,7 @@
 /*   By: aljourda <aljourda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/31 15:59:09 by aljourda          #+#    #+#             */
-/*   Updated: 2017/01/27 18:04:42 by aljourda         ###   ########.fr       */
+/*   Updated: 2017/01/27 17:19:12 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ __attribute__((weak)) int				main(int ac, char **av)
 	if (ac == 2)
 	{
 		e = scene_parse_file(av[1]);
-		print_content(e);
+//		print_content(e);
 	}else{
 		return (0);
 	}
