@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 17:28:23 by aljourda          #+#    #+#             */
-/*   Updated: 2017/01/27 19:33:45 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/27 22:36:01 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ typedef struct		s_object
 	{
 		float		intensity;
 		float		radius;
+		float		angle;
 	};
 	char			*comment;
 }					t_object;
@@ -83,6 +84,7 @@ typedef struct		s_scene
 	float			xindent;
 	float			yindent;
 	t_camera		camera;
+	unsigned int	background;
 	t_list			*objects;
 	t_list			*lights;
 }					t_scene;

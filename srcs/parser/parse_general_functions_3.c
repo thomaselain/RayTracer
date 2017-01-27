@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/27 11:22:29 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/14 15:09:24 by svassal          ###   ########.fr       */
+/*   Updated: 2017/01/27 15:55:38 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,8 @@ static char		*get_scene_param(int param_num)
 		return ("\"objects\"");
 	if (param_num == 3)
 		return ("\"lights\"");
+	if (param_num == 4)
+		return ("\"background\"");
 	return (0);
 }
 

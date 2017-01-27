@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/03 13:14:56 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/14 15:18:07 by svassal          ###   ########.fr       */
+/*   Updated: 2017/01/27 18:14:18 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <parse_major.h>
 #include <fill_datas.h>
 #include <parse_general_functions.h>
+#include <parse_details.h>
 #define SCENE			3
 
 /*
@@ -44,7 +45,9 @@ void			fill_scene(char **s, t_scene *sc, int init)
 			sc->camera = parse_camera(s);
 		else if (index == 2)
 			sc->objects = parse_list(s);
-		else
+		else if (index == 3)
 			sc->lights = parse_list(s);
+		else
+			sc->background = parse_hexa(s);
 	}
 }
