@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 17:28:23 by aljourda          #+#    #+#             */
-/*   Updated: 2017/01/27 16:11:03 by svassal          ###   ########.fr       */
+/*   Updated: 2017/01/27 19:27:24 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 # define CORE_H
 # include <vector.h>
 # include <libft.h>
-# define WIDTH	800
-# define HEIGHT	600
+#include <stdio.h>
+# define WIDTH	1000
+# define HEIGHT	800
 # define WHSIZE	(WIDTH * HEIGHT)
 
 /*
@@ -28,13 +29,27 @@ typedef enum		e_type
 }					t_type;
 
 /*
+**	Contains every informations usefull about the current ray
+*/
+
+typedef struct		s_ray
+{
+	t_vector4f		pos;
+	t_vector4f		dir;
+}					t_ray;
+
+/*
 ** Contains every informations usefull about the camera
 */
 
 typedef struct		s_camera
 {
+	float			screen_w;
+	float			screen_h;
 	t_vector4f		origin;
 	t_vector4f		direction;
+	t_vector4f		right;
+	t_vector4f		up;
 	char			fov;
 }					t_camera;
 
@@ -61,10 +76,13 @@ typedef struct		s_object
 
 /*
 ** Contains the scene structure
+** xindent and yindent are the distance between each pixel in space
 */
 
 typedef struct		s_scene
 {
+	float			xindent;
+	float			yindent;
 	t_camera		camera;
 	unsigned int	background;
 	t_list			*objects;
@@ -72,7 +90,7 @@ typedef struct		s_scene
 }					t_scene;
 
 /*
-** Return the argb color at pixel x,y
+** Return the argb color at pixel (x,y)
 */
 
 unsigned int		ray_pixel(t_scene *scene, int x, int y);

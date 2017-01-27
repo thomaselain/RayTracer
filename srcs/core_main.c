@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: Invalid date        by aljourda          #+#    #+#             */
-/*   Updated: 2017/01/27 18:58:44 by svassal          ###   ########.fr       */
+/*   Updated: 2017/01/27 19:26:49 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ __attribute__((weak)) int				main(int ac, char **av)
 	if (ac == 2)
 	{
 		e = scene_parse_file(av[1]);
-		print_content(e);
+//		print_content(e);
 	}else{
 		return (0);
 	}

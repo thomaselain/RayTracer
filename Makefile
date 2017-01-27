@@ -6,7 +6,7 @@
 #    By: aljourda <aljourda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/10 11:28:20 by aljourda          #+#    #+#              #
-#    Updated: 2017/01/11 12:00:55 by aljourda         ###   ########.fr        #
+#    Updated: 2017/01/27 17:05:26 by telain           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #	Install Debian
@@ -17,7 +17,7 @@ NAME = RT
 
 OS := $(shell uname -o)
 SRC := $(shell find ./srcs -name *.c)
-INC := -I includes/libft -I includes/graphics -I includes/core -I includes/matrix_vector -I includes/parser -I includes/threads
+INC := -I includes/libft -I includes/graphics -I includes/core -I includes/matrix_vector -I includes/parser -I includes/threads -I includes/color
 OBJ := $(SRC:.c=.o)
 
 CFLAGS := $(INC) -g -F libs/ -Wall -Wextra #-Werror
