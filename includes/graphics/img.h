@@ -26,14 +26,6 @@ typedef struct		s_img
 	int				h;
 }					t_img;
 
-typedef struct		s_color
-{
-	unsigned char	a;
-	unsigned char	r;
-	unsigned char	g;
-	unsigned char	b;
-}					t_color;
-
 int					img_init(t_img *img, int width, int height,
 								unsigned int argb_color);
 int					img_init_bmp(t_img *img, const char *file);
