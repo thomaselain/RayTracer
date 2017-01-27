@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   core_main.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: aljourda <aljourda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/10/31 15:59:09 by fvivaudo          #+#    #+#             */
-/*   Updated: 2017/01/27 16:10:40 by svassal          ###   ########.fr       */
+/*   Created: 2016/11/31 15:59:09 by aljourda          #+#    #+#             */
+/*   Updated: 2017/01/27 17:20:53 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,10 @@ static void		print_content(t_scene *s)
 	}
 }
 
+__attribute__((weak))void	get_camera_plane(t_scene *scene){
+	
+}
+
 __attribute__((weak)) unsigned int ray_pixel(t_scene *scene, int x, int y){
 	scene = 0;
 	unsigned int ret = (cos(x * 255) + sin(y * 255)) + 0xff00000000;
@@ -87,6 +91,7 @@ __attribute__((weak)) int				main(int ac, char **av)
 	win_init(&win, "RT", WIDTH, HEIGHT);
 	img_init(&img, WIDTH, HEIGHT, 0x0);
 	win_draw_center(&win, &img);
+	get_camera_plane(e);         // Calcule les vecteurs up et right de la camera avant les lancers de rayon
 
 
 
@@ -147,6 +152,7 @@ __attribute__((weak)) int				main(int ac, char **av)
 
 	thread_end(core, nbthread);
 
+	img_save(&img, "capture.bmp");
 
 	status = 0;
 	//Event management

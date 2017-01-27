@@ -31,8 +31,11 @@ int					img_init(t_img *img, int width, int height,
 int					img_init_bmp(t_img *img, const char *file);
 int					img_init_text(t_img *img, const char *text,
 						unsigned int argb_color, int fontsize);
+unsigned int		img_get_pixel(t_img *img, int x, int y);
 void				img_set_pixel(t_img *img, int x, int y,
 								unsigned int argb_color);
+void				img_set_filter(t_img *img, unsigned int argb_color);
+int					img_save(t_img *img, const char *filename);
 void				img_destroy(t_img *img);
 
 #endif
