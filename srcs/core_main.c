@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   core_main.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: fvivaudo <fvivaudo@student.42.fr>          +#+  +:+       +#+        */
+/*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/31 15:59:09 by fvivaudo          #+#    #+#             */
-/*   Updated: 2016/11/25 18:04:42 by fvivaudo         ###   ########.fr       */
+/*   Updated: 2017/01/27 16:10:40 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 #include <img.h>
 #include <thread.h>
 
-
-
 static void		print_content(t_scene *s)
 {
 	t_list	*obj;
@@ -25,6 +23,7 @@ static void		print_content(t_scene *s)
 
 	obj = s->objects;
 	light = s->lights;
+	printf("BACKGROUND : x\n", s->background);
 	printf("SCENE :\n");
 	printf("\tCAMERA :\n");
 	printf("\t\tORIGIN\n\t\t\t[X = %f ; Y = %f ; Z = %f]\n", s->camera.origin.x, s->camera.origin.y, s->camera.origin.z);
