@@ -1,78 +1,98 @@
 {
 	"background":0xff00ff,
-	"camera":
-	{
-		"origin":
+		"camera":
 		{
-			"x":0,
-			"y":0,
-			"z":0
-		},
-		"direction":
-		{
-			"x":0,
-			"y":1,
-			"z":0
-		},
-		"fov":100
-	},
-	"objects":
-	[
-		{
-			"type":"SPHERE",
-			"color":0xc0ffee,
 			"origin":
 			{
 				"x":0,
-				"y":4,
+				"y":0,
 				"z":0
 			},
-			"reflection":0.0,
-			"diffuse":0.0,
-			"radius":1,
-			"comment":"First sphere"
-		},
-		{
-			"type":"SPHERE",
-			"color":0x00FF00,
-			"origin":
+			"direction":
 			{
-				"x":1,
-				"y":6,
+				"x":0,
+				"y":1,
 				"z":0
 			},
-			"reflection":0.0,
-			"diffuse":0.0,
-			"radius":2.7,
-			"comment":"Second sphere"
+			"fov":100
 		},
-		{
-			"type":"SPHERE",
-			"color":0x0000FF,
-			"origin":
+		"objects":
+			[
 			{
-				"x":-2,
-				"y":4,
-				"z":0
+				"type":"PLANE",
+				"color":0xd0d000,
+				"origin":
+				{
+					"x":0,
+					"y":5,
+					"z":3
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":-1
+				},
+				"reflection":0.0,
+				"diffuse":0.0,
+				"radius":1,
+				"comment":"First plane"
 			},
-			"reflection":0.0,
-			"diffuse":0.0,
-			"radius":0.6,
-			"comment":"Third sphere"
-		}
+			{
+				"type":"SPHERE",
+				"color":0xc0ffee,
+				"origin":
+				{
+					"x":0,
+					"y":4,
+					"z":0
+				},
+				"reflection":0.0,
+				"diffuse":0.0,
+				"radius":1,
+				"comment":"First sphere"
+			},
+			{
+				"type":"SPHERE",
+				"color":0x00FF00,
+				"origin":
+				{
+					"x":1,
+					"y":6,
+					"z":0
+				},
+				"reflection":0.0,
+				"diffuse":0.0,
+				"radius":2.7,
+				"comment":"Second sphere"
+			},
+			{
+				"type":"SPHERE",
+				"color":0x0000FF,
+				"origin":
+				{
+					"x":-2,
+					"y":4,
+					"z":0
+				},
+				"reflection":0.0,
+				"diffuse":0.0,
+				"radius":0.6,
+				"comment":"Third sphere"
+			}
 	],
-	"lights":
-	[
-		{
-			"type":"SPOT",
-			"color":0xFFFFFF,
-			"origin":
+		"lights":
+			[
 			{
-				"x":7,
-				"y":-3,
-				"z":-2
-			},
-			"radius":1
-		}
+				"type":"SPOT",
+				"color":0xFFFFFF,
+				"origin":
+				{
+					"x":7,
+					"y":-3,
+					"z":-2
+				},
+				"radius":1
+			}
 	]
 }

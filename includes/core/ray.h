@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:56:12 by telain            #+#    #+#             */
-/*   Updated: 2017/01/27 19:32:16 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/28 00:44:04 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,10 @@ t_object				*get_intersection(t_scene *s, t_ray *ray);
 **	Calculates the intersections for each different object
 */
 
-float					find_sphere_inter(t_scene *s, t_ray *ray, t_object *obj);
+float					find_sphere_inter(t_ray *ray, t_object *obj);
+float					find_cone_inter(t_ray *ray, t_object *obj);
+float					find_plane_inter(t_ray *ray, t_object *obj);
+float					find_cylinder_inter(t_ray *ray, t_object *obj);
 
 /*
 **	Calls the good function, depending of the type of the hit object

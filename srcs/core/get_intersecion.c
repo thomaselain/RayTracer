@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:56:24 by telain            #+#    #+#             */
-/*   Updated: 2017/01/27 21:58:13 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/27 23:44:44 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,14 @@ t_object	*get_intersection(t_scene *s, t_ray *ray)
 	while (obj != 0)
 	{
 		if (((t_object*)obj->content)->type == SPHERE && (d =
-					find_sphere_inter(s, ray, (t_object*)obj->content)) <
+					find_sphere_inter(ray, (t_object*)obj->content)) <
+				closest && d >= 0.1)
+		{
+			hit = (t_object*)obj->content;
+			closest = d;
+		}
+		else if (((t_object*)obj->content)->type == PLANE && (d =
+					find_plane_inter(ray, (t_object*)obj->content)) <
 				closest && d >= 0.1)
 		{
 			hit = (t_object*)obj->content;

@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:49:13 by telain            #+#    #+#             */
-/*   Updated: 2017/01/27 19:42:15 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/28 00:44:01 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int			adjust_color(t_scene *s, t_object *hit, t_ray ray)
 	{
 		c = hit->color;
 		c = color_mul(c, vector_dot(light, get_normal(hit, ray)));
+		c = hit->type == PLANE ? color_mul(c, 1.5) : c;
 		c = color_sub(c, find_shadow(s, hit, ray, light));
 	}
 	return (c);

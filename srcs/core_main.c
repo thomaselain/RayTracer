@@ -6,7 +6,7 @@
 /*   By: aljourda <aljourda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/31 15:59:09 by aljourda          #+#    #+#             */
-/*   Updated: 2017/01/27 22:35:15 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/27 23:51:01 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -197,17 +197,17 @@ __attribute__((weak)) int				main(int ac, char **av)
 						if (key->keysym.scancode == 4)
 						{
 							e->camera.direction.x += e->camera.direction.x *
-								cos(-M_PI / 10) - e->camera.direction.y * sin(-M_PI / 10);
+								cos(-M_PI / 5) - e->camera.direction.y * sin(-M_PI / 5);
 							e->camera.direction.y += e->camera.direction.x *
-								sin(-M_PI / 10) + e->camera.direction.y * cos(-M_PI / 10);
+								sin(-M_PI / 5) + e->camera.direction.y * cos(-M_PI / 5);
 							e->camera.direction = vector_normalize(e->camera.direction);
 						}
 						if (key->keysym.scancode == 22)
 						{
 							e->camera.direction.x += e->camera.direction.x *
-								cos(M_PI / 10) - e->camera.direction.y * sin(M_PI / 10);
+								cos(M_PI / 5) - e->camera.direction.y * sin(M_PI / 5);
 							e->camera.direction.y += e->camera.direction.x *
-								sin(M_PI / 10) + e->camera.direction.y * cos(M_PI / 10);
+								sin(M_PI / 5) + e->camera.direction.y * cos(M_PI / 5);
 							e->camera.direction = vector_normalize(e->camera.direction);
 						}
 						status = 3;

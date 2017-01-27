@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 18:16:37 by telain            #+#    #+#             */
-/*   Updated: 2017/01/27 21:57:49 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/27 23:46:46 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #include <core.h>
 #include <ray.h>
 
-float		find_sphere_inter(t_scene *s, t_ray *ray, t_object *obj)
+float		find_sphere_inter(t_ray *ray, t_object *obj)
 {
 	float	val[7];
 
