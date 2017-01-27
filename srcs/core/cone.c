@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 19:32:35 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/26 22:26:59 by svassal          ###   ########.fr       */
+/*   Updated: 2017/01/27 15:38:20 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 #define D			f[3]
 #define RES_0		f[4]
 #define RES_1		f[5]
+
+/*
+** Check if the ray intersects with the cone given as parameter
+*/
 
 float		find_cone_inter(t_ray *r, t_object *o)
 {
@@ -32,8 +36,6 @@ float		find_cone_inter(t_ray *r, t_object *o)
 		o->origin)) - (1 + powf(tanf(o->angle / 2), 2)) * powf(vector_dot(
 			vector_sub_vec(r->origin, o->origin), o->direction), 2);
 	D = powf(B, 2) - 4 * A * C;
-	if (o)
-		;
 	if (D < 0.0)
 		return (MAX_SIZE);
 	RES_0 = (-B - sqrtf(D)) / (A + A);

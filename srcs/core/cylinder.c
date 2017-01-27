@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 20:04:35 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/26 20:19:09 by svassal          ###   ########.fr       */
+/*   Updated: 2017/01/27 15:38:13 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@
 #define D		f[3]
 #define RES_0	f[4]
 #define RES_1	f[5]
+
+/*
+** Check if the ray intersects with the cylinder given as parameter
+*/
 
 float		find_cylinder_inter(t_ray *r, t_obj *o)
 {

@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 15:00:58 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/27 15:01:07 by svassal          ###   ########.fr       */
+/*   Updated: 2017/01/27 15:42:04 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 #define B(x)		((x & 0xff))
 #define ROUND(x)	((x + 0.5 >= (int)x + 1) ? ((int)x + 1) : ((int)x))
 #define SEPIA		0xff704214
+#define COFFEE		0xffc0ffee
+
+/*
+** Return the input color converted to the given color filter
+*/
 
 unsigned int	color_filter(unsigned int input_color, unsigned int filter)
 {
