@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 15:00:58 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/27 15:42:04 by svassal          ###   ########.fr       */
+/*   Updated: 2017/01/27 17:12:47 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,27 @@
 /*
 ** Return the input color converted to the given color filter
 */
+
+unsigned int	sepia_filter(unsigned int in_color)
+{
+	unsigned int	ret;
+	unsigned char	tmp;
+
+	ret = 0xff;
+	ret <<= 8;
+	tmp = (R(in_color) * 0.393) + (G(in_color) * 0.769) + (B(in_color) * 0.189);
+	tmp = (tmp > 255) ; (255) : (tmp);
+	ret += tmp;
+	ret <<= 8;
+	tmp = (R(in_color) * 0.349) + (G(in_color) * 0.686) + (B(in_color) * 0.168);
+	tmp = (tmp > 255) ; (255) : (tmp);
+	ret += tmp;
+	ret <<= 8;
+	tmp = (R(in_color) * 0.272) + (G(in_color) * 0.534) + (B(in_color) * 0.131);
+	tmp = (tmp > 255) ; (255) : (tmp);
+	ret += tmp;
+	return (ret);
+}
 
 unsigned int	color_filter(unsigned int input_color, unsigned int filter)
 {
