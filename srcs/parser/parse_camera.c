@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 13:41:03 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/14 15:18:47 by svassal          ###   ########.fr       */
+/*   Updated: 2017/01/26 20:35:45 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ t_camera		parse_camera(char **string)
 			tmp = *string + INDEX;
 			fill_camera(&tmp, &ret, 0);
 			ERR = (valide_coma(tmp) == ERROR) ? (ERROR) : (ERR);
+			if (ERR == ERROR)
+				error_close(CAMERA, CEC);
 			*string = tmp + 1;
 			INDEX = -1;
 		}
-	if (ERR == ERROR)
-		ft_putendl("Error : missing or misplaced coma (camera)");
 	return (ret);
 }

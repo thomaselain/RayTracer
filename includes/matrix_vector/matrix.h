@@ -18,10 +18,10 @@
 # include <stdlib.h>
 # include <math.h>
 
-typedef struct		s_matrix4f
+typedef struct	s_matrix4f
 {
-		float		data[4][4];
-}					t_matrix4f;
+	float		data[4][4];
+}				t_matrix4f;
 
 /*
 ** Init each element of the matrix according to a defined patern,
@@ -52,19 +52,19 @@ void			write_over_matrix(t_matrix4f *dest, t_matrix4f *src);
 ** Set the element of the matrix to the value given as parameter
 */
 
-void		matrix_set_elem(t_matrix4f *m, int x, int y, float value);
+void			matrix_set_elem(t_matrix4f *m, int x, int y, float value);
 
 /*
 ** Return the element of the matrix at given element
 */
 
-float		matrix_get_elem(t_matrix4f *m, int x, int y);
+float			matrix_get_elem(t_matrix4f *m, int x, int y);
 
 /*
 ** Change the full array of the matrix to the one given as parameter
 */
 
-void		matrix_set_array(t_matrix4f *m, float d[4][4]);
+void			matrix_set_array(t_matrix4f *m, float d[4][4]);
 
 /*
 ** Make a matrix rotation using three float numbers

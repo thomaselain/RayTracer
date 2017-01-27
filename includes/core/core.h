@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 17:28:23 by aljourda          #+#    #+#             */
-/*   Updated: 2017/01/26 21:14:59 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/27 16:20:23 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 # include <vector.h>
 # include <libft.h>
 #include <stdio.h>
-# define WIDTH	1600
-# define HEIGHT	900
+# define WIDTH	1000
+# define HEIGHT	800
 # define WHSIZE	(WIDTH * HEIGHT)
 
 /*
@@ -44,6 +44,8 @@ typedef struct		s_ray
 
 typedef struct		s_camera
 {
+	float			screen_w;
+	float			screen_h;
 	t_vector4f		origin;
 	t_vector4f		direction;
 	t_vector4f		right;

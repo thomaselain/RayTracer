@@ -17,12 +17,13 @@ void				*thread_run_core(void *param)
 	t_tcore		*tcore;
 
 	tcore = (t_tcore*)param;
-	tcore->alive = 2;
-	while (tcore->cur < WHSIZE && tcore->alive == 2)
+	tcore->alive = 3;
+	tcore->max = WHSIZE;
+	while (tcore->cur >= 0 && tcore->cur < tcore->max && tcore->alive >= 2)
 	{
 		img_set_pixel(tcore->img, tcore->cur % WIDTH, tcore->cur / WIDTH,
 			ray_pixel(tcore->env, tcore->cur % WIDTH, tcore->cur / WIDTH));
-		tcore->cur += tcore->max;
+		tcore->cur += tcore->step;
 	}
 	pthread_exit(NULL);
 	return (0);
@@ -58,11 +59,12 @@ t_tcore				**thread_init(t_scene *env, t_img *img, const int size)
 		{
 			(tcore[i])->alive = 1;
 			(tcore[i])->cur = i;
-			(tcore[i])->max = size;
+			(tcore[i])->step = size;
 			(tcore[i])->img = img;
 			(tcore[i])->env = env;
-			pthread_create(&((tcore[i])->thread), NULL,
-				thread_run_core, (void*)(tcore[i]));
+			if ((pthread_create(&((tcore[i])->thread), NULL,
+				thread_run_core, (void*)(tcore[i]))) == 0)
+				(tcore[i])->alive = 2;
 		}
 		else
 			tcore[i] = 0;
@@ -80,8 +82,10 @@ float				thread_status(t_tcore **tcore, int size)
 	stat = 0.0f;
 	while (i < size)
 	{
-		if((tcore[i])->alive < 2)
-			return -1.0;
+		if ((tcore[i])->alive < 2)
+		{
+			return (-1.0);
+		}
 		stat += (double)tcore[i]->cur / (double)size;
 		i++;
 	}

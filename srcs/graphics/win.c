@@ -32,26 +32,9 @@ static int	sdl_init(int init)
 	return (init);
 }
 
-void		win_draw(t_win *win, t_img *img, int x, int y)
+void		win_render(t_win *win)
 {
-	SDL_Texture	*tex;
-	SDL_Rect	dst;
-
-	tex = SDL_CreateTextureFromSurface(win->rdr, img->srf);
-	if (tex != 0)
-	{
-		SDL_QueryTexture(tex, 0, 0, &dst.w, &dst.h);
-		dst.x = x;
-		dst.y = y;
-		SDL_RenderCopy(win->rdr, tex, NULL, &dst);
-		SDL_RenderPresent(win->rdr);
-		SDL_DestroyTexture(tex);
-	}
-}
-
-void		win_draw_center(t_win *win, t_img *img)
-{
-	win_draw(win, img, (win->w - img->w) / 2, (win->h - img->h) / 2);
+	SDL_RenderPresent(win->rdr);
 }
 
 int			win_init(t_win *win, char *title, int width, int height)

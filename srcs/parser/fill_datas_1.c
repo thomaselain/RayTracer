@@ -114,7 +114,7 @@ static void		fill_objects_sub(char **s, t_object *o)
 	else if (index == 7)
 		o->direction = parse_vector(s);
 	else
-		o->comment  = parse_string(s);
+		o->comment = parse_string(s);
 }
 
 /*
@@ -159,4 +159,5 @@ void			fill_list(char **s, t_list **l)
 		ft_lstpushback(l, ft_lstnew((void *)obj, sizeof(t_object)));
 		*l = tmp;
 	}
+	ft_memdel((void**)&obj);
 }

@@ -35,7 +35,6 @@ t_camera		parse_camera(char **string);
 
 t_object		parse_object(char **string);
 
-
 /*
 ** Return a parsed list,
 ** manage list errors *not-yet*

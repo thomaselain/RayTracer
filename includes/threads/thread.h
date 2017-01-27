@@ -21,6 +21,7 @@ typedef struct		s_tcore
 	pthread_t		thread;
 	int				alive;
 	int				cur;
+	int				step;
 	int				max;
 	t_img			*img;
 	t_scene			*env;

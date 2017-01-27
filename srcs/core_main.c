@@ -22,15 +22,21 @@ void	get_camera_plane(t_scene *scene);
 static void		print_content(t_scene *s)
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
 	t_object	obj;
 
 	obj = s->objects;
 =======
+=======
+>>>>>>> master
 	t_list	*obj;
 	t_list	*light;
 
 	obj = s->objects;
 	light = s->lights;
+<<<<<<< HEAD
+>>>>>>> master
+=======
 >>>>>>> master
 	printf("SCENE :\n");
 	printf("\tCAMERA :\n");

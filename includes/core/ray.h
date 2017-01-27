@@ -6,20 +6,14 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:56:12 by telain            #+#    #+#             */
-/*   Updated: 2017/01/26 19:30:19 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/27 16:53:50 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RAY_H
 # define RAY_H
 
-# define A						(val[0])
-# define B						(val[1])
-# define C						(val[2])
-# define D						(val[3])
-# define X1						(val[5])
-# define X2						(val[6])
-# define RET					(val[4])
+
 # define CAMDIR					(s->camera->direction)
 # define CAMPOS					(s->camera->origin)
 # define COLOR_R(color)			(color & 0xff)
@@ -46,10 +40,10 @@ t_vector4f				get_ray(t_scene *scene, int x, int y);
 **	Returns a new Color (Changed with the object param)
 */
 
-int						adjust_color(t_object *hit);
+int						adjust_color(t_object *hit, t_ray ray);
 
 /*
-**	Calculates the intersection with objects
+**	Calculates the intersection with all objects
 */
 
 t_object				*get_intersection(t_scene *s, t_ray *ray);
@@ -59,5 +53,17 @@ t_object				*get_intersection(t_scene *s, t_ray *ray);
 */
 
 float					find_sphere_inter(t_scene *s, t_ray *ray, t_object *obj);
+
+/*
+**	Calls the good function, depending of the type of the hit object
+*/
+
+t_vector4f				get_normal(t_object *o, t_ray ray);
+
+/*
+**	Returns the normal vector for the given object
+*/
+
+t_vector4f				sphere_normal(t_object *o, t_ray ray);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 12:59:44 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/14 15:14:17 by svassal          ###   ########.fr       */
+/*   Updated: 2017/01/26 20:31:46 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,9 @@ t_object		parse_object(char **string)
 			fill_objects(&tmp, &ret, 0);
 			ERR = (valide_coma(tmp) == ERROR) ? (ERROR) : (ERR);
 			if (ERR == ERROR)
-				break ;
+				error_close(OBJECT, CEC);
 			*string = tmp;
 			INDEX = -1;
 		}
-	if (ERR == ERROR)
-		error_close(OBJECT, CEC);
 	return (ret);
 }

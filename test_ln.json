@@ -13,7 +13,7 @@
 			"y":1,
 			"z":0
 		},
-		"fov":45
+		"fov":60
 	},
 	"objects":
 	[
@@ -22,13 +22,13 @@
 			"color":0xFF0000,
 			"origin":
 			{
-				"x":0,
-				"y":7,
+				"x":-1,
+				"y":5,
 				"z":0
 			},
 			"reflection":0.0,
 			"diffuse":0.0,
-			"radius":1,
+			"radius":1.5,
 			"comment":"First sphere"
 		},
 		{
@@ -36,13 +36,13 @@
 			"color":0x00FF00,
 			"origin":
 			{
-				"x":0,
-				"y":0,
-				"z":10
+				"x":1,
+				"y":5.3,
+				"z":0
 			},
 			"reflection":0.0,
 			"diffuse":0.0,
-			"radius":1,
+			"radius":1.5,
 			"comment":"Second sphere"
 		},
 		{
@@ -52,11 +52,11 @@
 			{
 				"x":0,
 				"y":0,
-				"z":1.3
+				"z":100
 			},
 			"reflection":0.0,
 			"diffuse":0.0,
-			"radius":1.0,
+			"radius":50,
 			"comment":"Third sphere"
 		}
 	],

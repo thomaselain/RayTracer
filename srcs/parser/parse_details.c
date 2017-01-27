@@ -87,7 +87,7 @@ int			parse_hexa(char **string)
 	if (**string != '0' && ft_tolower(*(*string + 1)) != 'x')
 		return (0);
 	while (ft_ishexa(*(*string + index)))
-			index++;
+		index++;
 	ret = ft_atoibase(*string + 2, 16);
 	*string = *string + index;
 	return (ret);

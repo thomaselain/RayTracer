@@ -33,6 +33,7 @@ int					img_init_text(t_img *img, const char *text,
 						unsigned int argb_color, int fontsize);
 void				img_set_pixel(t_img *img, int x, int y,
 								unsigned int argb_color);
+int					img_save(t_img *img, const char *filename);
 void				img_destroy(t_img *img);
 
 #endif

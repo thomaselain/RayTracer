@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 10:47:39 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/14 15:12:48 by svassal          ###   ########.fr       */
+/*   Updated: 2017/01/26 20:33:17 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,10 @@ t_list			*parse_list(char **string)
 			tmp = *string + INDEX;
 			fill_list(&tmp, &ret);
 			ERR = (valide_coma(tmp) == ERROR) ? (ERROR) : (NO_ERROR);
+			if (ERR == ERROR)
+				error_close(LIST, CEC);
 			*string = tmp + 1;
 			INDEX = -1;
 		}
-	if (ERR == ERROR)
-		error_close(LIST, CEC);
 	return (ret);
 }

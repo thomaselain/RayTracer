@@ -55,7 +55,7 @@ static t_scene	*clean(t_scene *scene)
 ** Control datas parsed from the scene anywhere
 */
 
-t_scene		*scene_content(int action)
+t_scene			*scene_content(int action)
 {
 	static t_scene		scene;
 
@@ -75,7 +75,7 @@ t_scene		*scene_content(int action)
 ** Keep datas parsed from the scene in a string accessible anywhere
 */
 
-char		*scene_string(int action, char *s)
+char			*scene_string(int action, char *s)
 {
 	static char			*string;
 
@@ -86,7 +86,7 @@ char		*scene_string(int action, char *s)
 	else if (action == CLEAN)
 	{
 		if (string != 0)
-			ft_strclr(string);
+			ft_strdel(&string);
 		return (string);
 	}
 	return (0);
