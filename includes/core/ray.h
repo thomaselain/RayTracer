@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:56:12 by telain            #+#    #+#             */
-/*   Updated: 2017/01/28 19:10:00 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/28 19:34:55 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,10 @@ float					find_cylinder_inter(t_ray *ray, t_object *obj);
 t_vector4f				get_normal(t_object *o, t_ray ray);
 
 /*
-**	Returns the normal vector for the given object
+**	Returns the normal vector for the given object depending on its type
 */
 
+t_vector4f				cone_normal(t_object *o, t_ray ray);
 t_vector4f				sphere_normal(t_object *o, t_ray ray);
 t_vector4f				cylinder_normal(t_object *o, t_ray ray);
 

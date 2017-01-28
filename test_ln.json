@@ -18,6 +18,27 @@
 		},
 		"objects":
 			[	
+				{			
+				"type":"CONE",
+				"color":0x0000d0,
+				"origin":
+				{
+					"x":-10,
+					"y":10,
+					"z":0
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":1
+				},
+				"reflection":0.0,
+				"diffuse":0.0,
+				"radius":0.5,
+				"comment":"Cone"
+			},	
+
 			{			
 				"type":"PLANE",
 				"color":0xffffff,
@@ -128,7 +149,7 @@
 				"color":0xFFFFFF,
 				"origin":
 				{
-					"x":0,
+					"x":1,
 					"y":0,
 					"z":0
 				},

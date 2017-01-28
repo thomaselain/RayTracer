@@ -6,12 +6,13 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 19:32:35 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/27 22:28:03 by svassal          ###   ########.fr       */
+/*   Updated: 2017/01/28 19:34:50 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <core.h>
 #include <vector.h>
+#include <ray.h>
 #define A			f[0]
 #define B			f[1]
 #define C			f[2]
@@ -43,4 +44,19 @@ float		find_cone_inter(t_ray *r, t_object *o)
 	RES_0 = (-B - sqrtf(D)) / (A + A);
 	RES_1 = (-B + sqrtf(D)) / (A + A);
 	return ((RES_0 < RES_1) ? (RES_0) : (RES_1));
+}
+
+t_vector4f	cone_normal(t_object *o, t_ray ray)
+{
+	t_vector4f	v1;
+	t_vector4f	v2;
+
+	v1 = DIV(SUB(ray.pos, o->origin), vector_dot(SUB(ray.pos, o->origin),
+				o->direction));
+	v2 = MUL(o->direction, 2);
+	if (vector_dot(o->direction, SUB(ray.pos, o->origin)) < 0)
+		return (SUB(v2, v1));
+	else
+		return (SUB(v1, v2));
+	return (v1);
 }
