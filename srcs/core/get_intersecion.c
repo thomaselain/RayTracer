@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:56:24 by telain            #+#    #+#             */
-/*   Updated: 2017/01/28 15:42:11 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/28 18:26:01 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ t_object	*get_intersection(t_scene *s, t_ray *ray)
 	float		d;
 
 	obj = s->objects;
-	closest = 100000.0;
+	closest = MAX_SIZE;
 	hit = NULL;
 	while (obj != 0)
 	{

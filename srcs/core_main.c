@@ -6,7 +6,7 @@
 /*   By: aljourda <aljourda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/31 15:59:09 by aljourda          #+#    #+#             */
-/*   Updated: 2017/01/28 15:31:20 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/28 19:09:57 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,7 +155,7 @@ __attribute__((weak)) int				main(int ac, char **av)
 		if (status == 3)
 		{
 			get_camera_plane(e);
-			calculation(e, &win, 50);
+			calculation(e, &win, 500);
 		}
 		status = 0;
 		//Event management

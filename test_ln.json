@@ -1,5 +1,5 @@
 {
-	"background":0xffffff,
+	"background":0x000000,
 		"camera":
 		{
 			"origin":
@@ -14,61 +14,82 @@
 				"y":1,
 				"z":0
 			},
-			"fov":60
+			"fov":90
 		},
 		"objects":
-			[			{
-				"type":"CYLINDER",
-				"color":0xc0ffee,
+			[	
+			{			
+				"type":"PLANE",
+				"color":0xffffff,
 				"origin":
 				{
-					"x":-6,
-					"y":7,
+					"x":0,
+					"y":100,
 					"z":0
 				},
 				"direction":
 				{
 					"x":0,
-					"y":0,
-					"z":1
+					"y":1,
+					"z":0
 				},
 				"reflection":0.0,
 				"diffuse":0.0,
 				"radius":1,
-				"comment":"First cylinder"
-			},
+				"comment":"Ground"
+			},	
 			{
-				"type":"PLANE",
-				"color":0xd0d000,
+				"type":"CYLINDER",
+				"color":0xd06060,
 				"origin":
 				{
-					"x":0,
-					"y":5,
-					"z":3
+					"x":6,
+					"y":15,
+					"z":0
 				},
 				"direction":
 				{
-					"x":0,
+					"x":1,
 					"y":0,
-					"z":-1
+					"z":1.5
+				},
+				"reflection":0.0,
+				"diffuse":0.0,
+				"radius":1.3,
+				"comment":"First cylinder"
+			},	
+			{
+				"type":"CYLINDER",
+				"color":0xc0ffee,
+				"origin":
+				{
+					"x":6,
+					"y":15,
+					"z":0
+				},
+				"direction":
+				{
+					"x":1,
+					"y":0,
+					"z":-1.8
 				},
 				"reflection":0.0,
 				"diffuse":0.0,
 				"radius":1,
-				"comment":"First plane"
-			},
+				"comment":"Second cylinder"
+			},		
 			{
 				"type":"SPHERE",
 				"color":0xc0ffee,
 				"origin":
 				{
-					"x":0,
-					"y":4,
+					"x":-1.7,
+					"y":2,
 					"z":0
 				},
 				"reflection":0.0,
 				"diffuse":0.0,
-				"radius":1,
+				"radius":0.3,
 				"comment":"First sphere"
 			},
 			{
@@ -76,7 +97,7 @@
 				"color":0x00FF00,
 				"origin":
 				{
-					"x":1,
+					"x":-2,
 					"y":6,
 					"z":0
 				},
@@ -107,9 +128,9 @@
 				"color":0xFFFFFF,
 				"origin":
 				{
-					"x":7,
-					"y":-3,
-					"z":-2
+					"x":0,
+					"y":0,
+					"z":0
 				},
 				"radius":1
 			}

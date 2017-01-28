@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:56:12 by telain            #+#    #+#             */
-/*   Updated: 2017/01/28 15:54:52 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/28 19:10:00 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 # define CAMDIR					(s->camera->direction)
 # define CAMPOS					(s->camera->origin)
+# define MAX_SIZE				(1000.0)
 # define COLOR_R(color)			(color & 0xff)
 # define COLOR_G(color)			((color & 0xff00) >> 8)
 # define COLOR_B(color)			((color & 0xff0000) >> 16)
@@ -70,6 +71,6 @@ t_vector4f				get_normal(t_object *o, t_ray ray);
 t_vector4f				sphere_normal(t_object *o, t_ray ray);
 t_vector4f				cylinder_normal(t_object *o, t_ray ray);
 
-unsigned int			find_shadow(t_scene *s, t_object *hit, t_ray ray, t_vector4f light);
+float					find_shadow(t_scene *s, t_object *hit, t_ray ray, t_vector4f light);
 
 #endif

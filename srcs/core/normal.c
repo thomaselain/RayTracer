@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 16:18:19 by telain            #+#    #+#             */
-/*   Updated: 2017/01/28 15:57:58 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/28 16:47:53 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,5 +21,5 @@ t_vector4f	get_normal(t_object *o, t_ray ray)
 		return (vector_normalize(o->direction));
 	else if (o->type == CYLINDER)
 		return (cylinder_normal(o, ray));
-	return ((t_vector4f){0.0, 0.0, 0.0, 0.0});
+	return ((t_vector4f){0.0, 1.0, 0.0, 1.0});
 }

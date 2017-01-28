@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 20:04:35 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/28 15:57:34 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/28 17:55:17 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ float		find_cylinder_inter(t_ray *r, t_object *o)
 					o->direction), 2) - powf(o->radius, 2);
 	D = powf(B, 2) - 4 * A * C;
 	if (D < 0)
-		return (10000);
+		return (MAX_SIZE);
 	RES_0 = (-B - sqrtf(D)) / (A + A);
 	RES_1 = (-B + sqrtf(D)) / (A + A);
 	return ((RES_0 < RES_1) ? (RES_0) : (RES_1));
