@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:56:12 by telain            #+#    #+#             */
-/*   Updated: 2017/01/28 00:44:04 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/28 15:54:52 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,7 @@ t_vector4f				get_normal(t_object *o, t_ray ray);
 */
 
 t_vector4f				sphere_normal(t_object *o, t_ray ray);
+t_vector4f				cylinder_normal(t_object *o, t_ray ray);
 
 unsigned int			find_shadow(t_scene *s, t_object *hit, t_ray ray, t_vector4f light);
 

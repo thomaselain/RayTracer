@@ -6,7 +6,7 @@
 /*   By: aljourda <aljourda@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/31 15:59:09 by aljourda          #+#    #+#             */
-/*   Updated: 2017/01/27 23:51:01 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/28 15:31:20 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -155,7 +155,7 @@ __attribute__((weak)) int				main(int ac, char **av)
 		if (status == 3)
 		{
 			get_camera_plane(e);
-			calculation(e, &win, 10);
+			calculation(e, &win, 50);
 		}
 		status = 0;
 		//Event management
@@ -194,7 +194,7 @@ __attribute__((weak)) int				main(int ac, char **av)
 					}
 					else
 					{
-						if (key->keysym.scancode == 4)
+						if (key->keysym.scancode == 92)
 						{
 							e->camera.direction.x += e->camera.direction.x *
 								cos(-M_PI / 5) - e->camera.direction.y * sin(-M_PI / 5);
@@ -202,12 +202,28 @@ __attribute__((weak)) int				main(int ac, char **av)
 								sin(-M_PI / 5) + e->camera.direction.y * cos(-M_PI / 5);
 							e->camera.direction = vector_normalize(e->camera.direction);
 						}
-						if (key->keysym.scancode == 22)
+						if (key->keysym.scancode == 96)
+						{
+							e->camera.direction.z += e->camera.direction.z *
+								cos(M_PI / 5) - e->camera.direction.y * sin(M_PI / 5);
+							e->camera.direction.y += e->camera.direction.z *
+								sin(M_PI / 5) + e->camera.direction.y * cos(M_PI / 5);
+							e->camera.direction = vector_normalize(e->camera.direction);
+						}
+						if (key->keysym.scancode == 94)
 						{
 							e->camera.direction.x += e->camera.direction.x *
 								cos(M_PI / 5) - e->camera.direction.y * sin(M_PI / 5);
 							e->camera.direction.y += e->camera.direction.x *
 								sin(M_PI / 5) + e->camera.direction.y * cos(M_PI / 5);
+							e->camera.direction = vector_normalize(e->camera.direction);
+						}
+						if (key->keysym.scancode == 90)
+						{
+							e->camera.direction.z += e->camera.direction.z *
+								cos(-M_PI / 5) - e->camera.direction.y * sin(-M_PI / 5);
+							e->camera.direction.y += e->camera.direction.z *
+								sin(-M_PI / 5) + e->camera.direction.y * cos(-M_PI / 5);
 							e->camera.direction = vector_normalize(e->camera.direction);
 						}
 						status = 3;

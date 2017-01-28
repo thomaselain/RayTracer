@@ -1,5 +1,5 @@
 {
-	"background":0xff00ff,
+	"background":0xffffff,
 		"camera":
 		{
 			"origin":
@@ -14,10 +14,29 @@
 				"y":1,
 				"z":0
 			},
-			"fov":100
+			"fov":60
 		},
 		"objects":
-			[
+			[			{
+				"type":"CYLINDER",
+				"color":0xc0ffee,
+				"origin":
+				{
+					"x":-6,
+					"y":7,
+					"z":0
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":1
+				},
+				"reflection":0.0,
+				"diffuse":0.0,
+				"radius":1,
+				"comment":"First cylinder"
+			},
 			{
 				"type":"PLANE",
 				"color":0xd0d000,
