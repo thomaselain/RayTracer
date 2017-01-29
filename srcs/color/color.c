@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 17:05:31 by telain            #+#    #+#             */
-/*   Updated: 2017/01/27 19:15:48 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/28 15:22:09 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,13 @@ unsigned int	color_sub(unsigned int c1, unsigned int c2)
 	int	b;
 
 	r = (c1 & 0xff0000) - (c2 & 0xff0000);
-	r = r < 0xffff ? 0 : r;
+	r = r <= 0xffff ? 0 : r;
 	g = (c1 & 0xff00) - (c2 & 0xff00);
-	g = g < 0xffff ? 0 : g;
+	g = g <= 0xff ? 0 : g;
 	b = (c1 & 0xff) - (c2 & 0xff);
-	b = b < 0xffff ? 0 : b;
+	b = b <= 0 ? 0 : b;
 	return (r + g + b);
 }
-
-#include <stdio.h>
 
 unsigned int	color_mul(unsigned int c, float m)
 {
@@ -58,4 +56,3 @@ unsigned int	color_div(unsigned int c, float d)
 			((c & 0xff00) >> 8) / d +
 			(c & 0xff) / d);
 }
-

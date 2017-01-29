@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 13:35:30 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/14 15:05:32 by svassal          ###   ########.fr       */
+/*   Updated: 2017/01/28 18:33:13 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -149,6 +149,8 @@ void			fill_list(char **s, t_list **l)
 
 	obj = ft_memalloc(sizeof(t_object));
 	*obj = parse_object(s);
+	if (obj)
+		obj->direction = vector_normalize(obj->direction);
 	if (*l == 0)
 		*l = ft_lstnew((void *)obj, sizeof(t_object));
 	else
@@ -156,6 +158,7 @@ void			fill_list(char **s, t_list **l)
 		tmp = *l;
 		while ((*l)->next != 0)
 			*l = (*l)->next;
+		obj->direction = vector_normalize(obj->direction);
 		ft_lstpushback(l, ft_lstnew((void *)obj, sizeof(t_object)));
 		*l = tmp;
 	}
