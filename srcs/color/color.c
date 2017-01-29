@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 17:05:31 by telain            #+#    #+#             */
-/*   Updated: 2017/01/28 15:22:09 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/29 19:21:38 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,11 @@ unsigned int	color_add(unsigned int c1, unsigned int c2)
 	int	b;
 
 	r = (c1 & 0xff0000) + (c2 & 0xff0000);
-	r = r < 0xffff ? 0 : r;
+	r = r > 0xff0000 ? 0xff0000 : r;
 	g = (c1 & 0xff00) + (c2 & 0xff00);
-	g = g < 0xffff ? 0 : g;
+	g = g > 0xff00 ? 0xff00 : g;
 	b = (c1 & 0xff) + (c2 & 0xff);
-	b = b < 0xffff ? 0 : b;
+	b = b > 0xff ? 0xff : b;
 	return (r + g + b);
 }
 

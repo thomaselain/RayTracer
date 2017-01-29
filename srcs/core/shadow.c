@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 18:29:56 by telain            #+#    #+#             */
-/*   Updated: 2017/01/29 18:28:27 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/29 19:52:05 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ float	specular_light(t_scene *s, t_object *hit, t_ray ray, t_vector4f light)
 	if ((specular = vector_dot(get_normal(hit, ray), light)) < 0)
 		return (0);
 	else if (specular > 0)
-		return (specular);
+		return (specular * hit->diffuse); //Remplacer ce nombre par une variable dans L'objet
 	else
 		return (0);
 }

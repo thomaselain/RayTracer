@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:49:13 by telain            #+#    #+#             */
-/*   Updated: 2017/01/29 18:20:47 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/29 19:52:06 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ int			adjust_color(t_scene *s, t_object *hit, t_ray ray)
 	if (hit != 0 && hit->type != PLANE)
 	{
 		coef = vector_dot(light, get_normal(hit, ray));
-		coef *= specular_light(s, hit, ray, light);
 		coef *= find_shadow(s, hit, ray, light);
 		c = color_mul(hit->color, coef);
+		c = color_add(c, color_mul(0x0b0b0b, specular_light(s, hit, ray, light)));
 	}
 	return (c);
 }
