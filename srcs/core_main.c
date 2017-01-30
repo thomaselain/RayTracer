@@ -154,7 +154,7 @@ __attribute__((weak)) int				main(int ac, char **av)
 		if (status == 3)
 		{
 			get_camera_plane(e);
-			calculation(e, &win, 49);
+			calculation(e, &win, 39);
 		}
 		status = 0;
 		//Event management

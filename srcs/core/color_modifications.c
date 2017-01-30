@@ -29,8 +29,8 @@ int			adjust_color(t_scene *s, t_object *hit, t_ray ray)
 	{
 		coef = vector_dot(light, get_normal(hit, ray));
 		coef *= find_shadow(s, hit, ray, light);
-		c = color_mul(hit->color, coef);
-		c = color_add(c, color_mul(0x0b0b0b, specular_light(s, hit, ray, light)));
+		c = color_add(hit->color, color_mul(((t_object*)s->lights->content)->color, specular_light(s, hit, ray, light)));
+		c = color_mul(c, coef);
 	}
 	return (c);
 }

@@ -26,11 +26,10 @@ float	find_shadow(t_scene *s, t_object *hit, t_ray ray, t_vector4f light)
 float	specular_light(t_scene *s, t_object *hit, t_ray ray, t_vector4f light)
 {
 	float	specular;
-
-	if ((specular = vector_dot(get_normal(hit, ray), light)) < 0)
+	if (vector_dot(get_normal(hit, ray), light) < 0)
 		return (0);
-	else if (specular > 0)
-		return (specular * hit->diffuse); //Remplacer ce nombre par une variable dans L'objet
 	else
-		return (0);
+		specular = pow(vector_dot(MUL(light, -1), ADD(vector_cross(ray.dir, get_normal(hit, ray)),
+		SUB(MUL(ray.dir, -1), MUL(get_normal(hit, ray), 2 * vector_dot(MUL(ray.dir, -1), get_normal(hit, ray)))))), hit->diffuse);
+	return (specular);
 }

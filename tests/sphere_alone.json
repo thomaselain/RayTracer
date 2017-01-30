@@ -54,7 +54,7 @@
 					"z":1
 				},
 				"reflection":0.0,
-				"diffuse":0.0,
+				"diffuse":20.0,
 				"radius":1,
 				"comment":"Cone"
 			}

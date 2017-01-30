@@ -14,7 +14,7 @@
 				"y":1,
 				"z":0
 			},
-			"fov":100
+			"fov": 60
 		},
 		"objects":
 			[	
@@ -75,7 +75,7 @@
 					"z":1.5
 				},
 				"reflection":0.0,
-				"diffuse":10.0,
+				"diffuse":1.0,
 				"radius":1.3,
 				"comment":"First cylinder"
 			},	
@@ -95,7 +95,7 @@
 					"z":-1.8
 				},
 				"reflection":0.0,
-				"diffuse":0.0,
+				"diffuse":0.9,
 				"radius":1,
 				"comment":"Second cylinder"
 			},		
@@ -109,7 +109,7 @@
 					"z":0
 				},
 				"reflection":0.0,
-				"diffuse":0.0,
+				"diffuse":1.0,
 				"radius":0.3,
 				"comment":"First sphere"
 			},
@@ -123,7 +123,7 @@
 					"z":0
 				},
 				"reflection":0.0,
-				"diffuse":0.0,
+				"diffuse":0.7,
 				"radius":2.7,
 				"comment":"Second sphere"
 			},
@@ -137,7 +137,7 @@
 					"z":0
 				},
 				"reflection":0.0,
-				"diffuse":0.0,
+				"diffuse":0.5,
 				"radius":0.6,
 				"comment":"Third sphere"
 			}
@@ -146,7 +146,7 @@
 			[
 			{
 				"type":"SPOT",
-				"color":0xFFFFFF,
+				"color":0xd0d0d0,
 				"origin":
 				{
 					"x":0,
