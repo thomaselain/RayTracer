@@ -4,13 +4,13 @@
 		{
 			"origin":
 			{
-				"x":-7,
-				"y":4,
+				"x":0,
+				"y":0,
 				"z":0
 			},
 			"direction":
 			{
-				"x":1,
+				"x":0,
 				"y":1,
 				"z":0
 			},
@@ -18,6 +18,26 @@
 		},
 		"objects":
 			[
+			{
+				"type":"PLANE",
+				"color":0xd0d0d0,
+				"origin":
+				{
+					"x":0,
+					"y":-10,
+					"z":0
+				},
+				"direction":
+				{
+					"x":0,
+					"y":1,
+					"z":0
+				},
+				"reflection":0.0,
+				"diffuse":0.5,
+				"radius":0.5,
+				"comment":"Plane (background)"
+			},
 			{
 				"type":"PLANE",
 				"color":0xd0d0d0,
@@ -38,26 +58,26 @@
 				"radius":0.5,
 				"comment":"Plane (background)"
 			},
-	{
-		"type":"SPHERE",
-			"color":0xc0ffee,
-			"origin":
 			{
-				"x":0,
-				"y":8,
-				"z":0
-			},
-			"direction":
-			{
-				"x":0,
-				"y":0,
-				"z":1
-			},
-			"reflection":0.0,
-			"diffuse":0.5,
-			"radius":1,
-			"comment":"Cone"
-	}
+				"type":"SPHERE",
+				"color":0xc0ffee,
+				"origin":
+				{
+					"x":0,
+					"y":8,
+					"z":0
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":1
+				},
+				"reflection":0.0,
+				"diffuse":0.5,
+				"radius":1,
+				"comment":"Cone"
+			}
 	],
 		"lights":
 			[
@@ -68,9 +88,10 @@
 				{
 					"x":0,
 					"y":0,
-					"z":0
+					"z":-6
 				},
-				"radius":1
+				"radius":1,
+				"comment":"Deuxieme lumiere"
 			}
 	]
 }

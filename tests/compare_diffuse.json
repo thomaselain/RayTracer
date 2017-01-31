@@ -355,6 +355,17 @@
 	],
 	"lights":
 	[
+			{
+			"type":"SPOT",
+			"color":0xffffff,
+			"origin":
+			{
+				"x":5,
+				"y":-5,
+				"z":-5
+			},
+			"radius":1
+		},
 		{
 			"type":"SPOT",
 			"color":0xffffff,

@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:49:13 by telain            #+#    #+#             */
-/*   Updated: 2017/01/31 16:31:51 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/31 20:31:09 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,25 +17,42 @@
 
 int			adjust_color(t_scene *s, t_object *hit, t_ray ray)
 {
-	t_vector4f	light;
+	t_list		*light;
+	t_vector4f	v_light;
 	float		coef;
 	int			c;
 
 	c = s->background;
-	light = vector_normalize(SUB(((t_object*)s->lights->content)->origin, ray.pos));
 	coef = 1.0;
+	light = s->lights;
+	if (hit != 0 && hit->reflection > 0.0)
+		hit = get_reflect(s, hit, &ray);
 	if (hit != 0)
 	{
 		c = hit->color;
-		if (vector_dot(light, get_normal(hit, ray)) >= 0)
-			c = color_mul(c, vector_dot(light, get_normal(hit, ray)));
-		else
-			c = 0;
-		coef *= find_shadow(s, hit, ray, light);
-		if (hit->type == PLANE)
-			return (color_mul(hit->color, coef));
-		//		c = color_add(hit->color, color_mul(((t_object*)s->lights->content)->color, specular_light(s, hit, ray, light)));           //Work in progress :/
-		c = color_mul(c, coef);
+		while (light != 0)
+		{
+			v_light = vector_normalize(SUB(((t_object*)light->content)->origin, ray.pos));
+			if (vector_dot(v_light, get_normal(hit, ray)) >= 0)
+				c = color_mul(c, vector_dot(v_light, get_normal(hit, ray)));
+			else
+				c = 0;
+			if (hit->type == PLANE)
+				c = color_mul(hit->color, coef);
+			//		c = color_add(hit->color, color_mul(((t_object*)light->content)->color, specular_light(s, hit, ray, v_light)));           //Work in progress :/
+			coef *= find_shadow(s, hit, ray, v_light);
+			c = color_mul(c, coef);
+			light = light->next;
+		}
 	}
 	return (c);
+}
+
+t_object	*get_reflect(t_scene *s, t_object *hit, t_ray *ray)
+{
+	t_vector4f	normal;
+
+	normal = get_normal(hit, *ray);
+	ray->dir = SUB(ray->dir, MUL(normal, 2 * vector_dot(normal, ray->dir)));
+	return (get_intersection(s, ray));
 }

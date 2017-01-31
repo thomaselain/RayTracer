@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:56:12 by telain            #+#    #+#             */
-/*   Updated: 2017/01/31 15:06:15 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/31 20:31:12 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,11 @@ float					find_shadow(t_scene *s, t_object *hit, t_ray ray, t_vector4f light);
 */
 
 float					specular_light(t_scene *s, t_object *hit, t_ray ray, t_vector4f light);
+
+/*
+**	Changes the ray coordinates to get the reflected object
+*/
+
+t_object*				get_reflect(t_scene *s, t_object *hit, t_ray *ray);
 
 #endif
