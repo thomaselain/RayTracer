@@ -39,7 +39,7 @@
 				"comment":"Plane (background)"
 			}
 			{
-				"type":"CONE",
+				"type":"CYLINDER",
 				"color":0xffffff,
 				"origin":
 				{
@@ -54,7 +54,7 @@
 					"z":1
 				},
 				"reflection":0.0,
-				"diffuse":0.0,
+				"diffuse":0.1,
 				"radius":0.5,
 				"comment":"Cone"
 			}
@@ -63,11 +63,11 @@
 			[
 			{
 				"type":"SPOT",
-				"color":0xffffff,
+				"color":0xc0ffee,
 				"origin":
 				{
-					"x":10.0,
-					"y":15.0,
+					"x":0.0,
+					"y":0.0,
 					"z":0.0
 				},
 				"radius":1
