@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/15 13:15:09 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/12 15:47:15 by svassal          ###   ########.fr       */
+/*   Updated: 2017/01/31 16:31:49 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,12 @@ typedef struct	s_vector4f
 */
 
 t_vector4f		*make_vector();
+
+/*
+**	returns the vector filled with the x, y and z values (w is 1 default)
+*/
+
+t_vector4f		new_vector(float x, float y, float z);
 
 /*
 ** Fill vector's datas, using values contained int f table

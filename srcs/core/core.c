@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:24:34 by telain            #+#    #+#             */
-/*   Updated: 2017/01/28 16:57:25 by telain           ###   ########.fr       */
+/*   Updated: 2017/01/31 16:31:53 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void				get_camera_plane(t_scene *scene)
 	scene->camera.screen_w = (float)WIDTH / (float)HEIGHT * scene->camera.screen_h;
 	scene->xindent = scene->camera.screen_w / (float)WIDTH;
 	scene->yindent = scene->camera.screen_h / (float)HEIGHT;
-	scene->camera.up = (t_vector4f){0.0f, 0.0f, 1.0f, 0.0f};
+	scene->camera.up = new_vector(0, 0, 1);
 	scene->camera.right = vector_cross(scene->camera.up,
 			scene->camera.direction);
 	scene->camera.right = vector_normalize(scene->camera.right);
