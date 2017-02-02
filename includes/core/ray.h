@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:56:12 by telain            #+#    #+#             */
-/*   Updated: 2017/01/31 15:06:15 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/02 18:53:41 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,8 @@
 
 # define CAMDIR					(s->camera->direction)
 # define CAMPOS					(s->camera->origin)
-# define MAX_SIZE				(100.0)
+# define MAX_REFLECTION			(0)
+# define MAX_SIZE				(1000.0)
 # define COLOR_R(color)			(color & 0xff)
 # define COLOR_G(color)			((color & 0xff00) >> 8)
 # define COLOR_B(color)			((color & 0xff0000) >> 16)
@@ -83,5 +84,11 @@ float					find_shadow(t_scene *s, t_object *hit, t_ray ray, t_vector4f light);
 */
 
 float					specular_light(t_scene *s, t_object *hit, t_ray ray, t_vector4f light);
+
+/*
+**	Changes the ray coordinates to get the reflected object
+*/
+
+t_object*				get_reflect(t_scene *s, t_object *hit, t_ray *ray);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: aljourda <aljourda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/10 11:28:20 by aljourda          #+#    #+#              #
-#    Updated: 2017/01/27 17:05:26 by telain           ###   ########.fr        #
+#    Updated: 2017/02/02 16:29:59 by telain           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #	Install Debian
@@ -30,7 +30,7 @@ ifeq ($(OS),GNU/Linux)
 	LDFLAGS += $(SDL)
 else
 	CC=clang
-	MLX := -framework OpenGL -framework AppKit -lmlx
+	SDL := -lSDL2 -lSDL2_ttf
 	SDL := -F libs/ -framework SDL2 -framework SDL2_ttf
 	LDFLAGS += $(SDL) $(MLX)
 endif
