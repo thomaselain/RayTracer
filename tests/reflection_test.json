@@ -1,5 +1,5 @@
 {
-	"background":0x000000,
+	"background":0x0000ff,
 		"camera":
 		{
 			"origin":
@@ -31,7 +31,7 @@
 				{
 					"x":0,
 					"y":0,
-					"z":1
+					"z":-1
 				},
 				"reflection":0.0,
 				"diffuse":0.5,
@@ -90,7 +90,7 @@
 				},
 				"direction":
 				{
-					"x":1,
+					"x":-1,
 					"y":0,
 					"z":0
 				},
@@ -131,7 +131,7 @@
 				"direction":
 				{
 					"x":0,
-					"y":1,
+					"y":-1,
 					"z":0
 				},
 				"reflection":1.0,
@@ -154,7 +154,7 @@
 					"y":0,
 					"z":1
 				},
-				"reflection":0.5,
+				"reflection":0.1,
 				"diffuse":0.5,
 				"radius":1,
 				"comment":"Cone"

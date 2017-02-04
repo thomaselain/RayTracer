@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 17:05:53 by telain            #+#    #+#             */
-/*   Updated: 2017/01/27 17:59:34 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/04 16:15:55 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,11 @@ unsigned int		color_mul(unsigned int c, float m);
 */
 
 unsigned int		color_div(unsigned int c, float d);
+
+/*
+**	Returns the average of c1 and c2
+*/
+
+unsigned int		color_avg(unsigned int c1, unsigned int c2);
 
 #endif

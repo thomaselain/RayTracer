@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/31 15:59:09 by aljourda          #+#    #+#             */
-/*   Updated: 2017/01/31 17:41:41 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/04 19:28:32 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,9 +172,9 @@ __attribute__((weak)) int				main(int ac, char **av)
 					else if (key->keysym.scancode >= 79 && key->keysym.scancode <= 82)
 					{	
 						if (key->keysym.scancode == 82)
-							e->camera.origin = ADD(e->camera.origin, e->camera.direction);;
+							e->camera.origin = ADD(e->camera.origin, MUL(e->camera.direction, 2));;
 						if (key->keysym.scancode == 81)
-							e->camera.origin = SUB(e->camera.origin, e->camera.direction);;
+							e->camera.origin = SUB(e->camera.origin, MUL(e->camera.direction, 2));;
 						if (key->keysym.scancode == 80)
 							e->camera.origin = ADD(e->camera.origin,
 									vector_cross(e->camera.direction, (t_vector4f){0.0, 0.0, 1.0, 0.0}));
@@ -186,9 +186,9 @@ __attribute__((weak)) int				main(int ac, char **av)
 					else if (key->keysym.scancode >= 86 && key->keysym.scancode <= 87)
 					{
 						if (key->keysym.scancode == 87)
-							e->camera.origin.z += 0.3;
+							e->camera.origin.z += 0.6;
 						if (key->keysym.scancode == 86)
-							e->camera.origin.z -= 0.3;
+							e->camera.origin.z -= 0.6;
 						status = 3;
 					}
 					else
@@ -196,33 +196,33 @@ __attribute__((weak)) int				main(int ac, char **av)
 						if (key->keysym.scancode == 92)
 						{
 							e->camera.direction.x += e->camera.direction.x *
-								cos(-M_PI / 5) - e->camera.direction.y * sin(-M_PI / 5);
+								cos(-M_PI / 4) - e->camera.direction.y * sin(-M_PI / 4);
 							e->camera.direction.y += e->camera.direction.x *
-								sin(-M_PI / 5) + e->camera.direction.y * cos(-M_PI / 5);
+								sin(-M_PI / 4) + e->camera.direction.y * cos(-M_PI / 4);
 							e->camera.direction = vector_normalize(e->camera.direction);
 						}
 						if (key->keysym.scancode == 96)
 						{
 							e->camera.direction.z += e->camera.direction.z *
-								cos(M_PI / 5) - e->camera.direction.y * sin(M_PI / 5);
+								cos(M_PI / 4) - e->camera.direction.y * sin(M_PI / 4);
 							e->camera.direction.y += e->camera.direction.z *
-								sin(M_PI / 5) + e->camera.direction.y * cos(M_PI / 5);
+								sin(M_PI / 4) + e->camera.direction.y * cos(M_PI / 4);
 							e->camera.direction = vector_normalize(e->camera.direction);
 						}
 						if (key->keysym.scancode == 94)
 						{
 							e->camera.direction.x += e->camera.direction.x *
-								cos(M_PI / 5) - e->camera.direction.y * sin(M_PI / 5);
+								cos(M_PI / 4) - e->camera.direction.y * sin(M_PI / 4);
 							e->camera.direction.y += e->camera.direction.x *
-								sin(M_PI / 5) + e->camera.direction.y * cos(M_PI / 5);
+								sin(M_PI / 4) + e->camera.direction.y * cos(M_PI / 4);
 							e->camera.direction = vector_normalize(e->camera.direction);
 						}
 						if (key->keysym.scancode == 90)
 						{
 							e->camera.direction.z += e->camera.direction.z *
-								cos(-M_PI / 5) - e->camera.direction.y * sin(-M_PI / 5);
+								cos(-M_PI / 4) - e->camera.direction.y * sin(-M_PI / 4);
 							e->camera.direction.y += e->camera.direction.z *
-								sin(-M_PI / 5) + e->camera.direction.y * cos(-M_PI / 5);
+								sin(-M_PI / 4) + e->camera.direction.y * cos(-M_PI / 4);
 							e->camera.direction = vector_normalize(e->camera.direction);
 						}
 						status = 3;

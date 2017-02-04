@@ -18,6 +18,26 @@
 		},
 		"objects":
 			[
+				{
+				"type":"PLANE",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":4
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":-1
+				},
+				"reflection":0.0,
+				"diffuse":0.0,
+				"radius":0.5,
+				"comment":"Plane (background)"
+			},
 						{
 				"type":"PLANE",
 				"color":0xffffff,
@@ -37,9 +57,9 @@
 				"diffuse":0.0,
 				"radius":0.5,
 				"comment":"Plane (background)"
-			}
+			},
 			{
-				"type":"CYLINDER",
+				"type":"CONE",
 				"color":0xffffff,
 				"origin":
 				{
@@ -53,9 +73,9 @@
 					"y":0,
 					"z":1
 				},
-				"reflection":0.0,
+				"reflection":1.0,
 				"diffuse":0.1,
-				"radius":0.5,
+				"radius":0.7,
 				"comment":"Cone"
 			}
 		],
@@ -67,7 +87,7 @@
 				"origin":
 				{
 					"x":0.0,
-					"y":0.0,
+					"y":-5,
 					"z":0.0
 				},
 				"radius":1

@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:56:12 by telain            #+#    #+#             */
-/*   Updated: 2017/02/02 18:53:41 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/04 22:27:10 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 # define CAMDIR					(s->camera->direction)
 # define CAMPOS					(s->camera->origin)
-# define MAX_REFLECTION			(0)
-# define MAX_SIZE				(1000.0)
+# define MAX_REFLECTION			(10)
+# define MAX_SIZE				(100000.0)
 # define COLOR_R(color)			(color & 0xff)
 # define COLOR_G(color)			((color & 0xff00) >> 8)
 # define COLOR_B(color)			((color & 0xff0000) >> 16)
@@ -90,5 +90,11 @@ float					specular_light(t_scene *s, t_object *hit, t_ray ray, t_vector4f light)
 */
 
 t_object*				get_reflect(t_scene *s, t_object *hit, t_ray *ray);
+
+/*
+**	TO_DELETE	returns a color, depending on the ray position to draw a grid on the plane
+*/
+
+unsigned int			find_grid_color(t_object *hit, t_ray ray);
 
 #endif

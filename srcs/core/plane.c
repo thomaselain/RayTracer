@@ -6,15 +6,11 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 18:16:21 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/28 16:51:54 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/04 21:26:00 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <core.h>
-
-/*
-** Check if the ray intersects with the plane given as parameter
-*/
 
 float		find_plane_inter(t_ray *r, t_object *o)
 {
@@ -22,4 +18,11 @@ float		find_plane_inter(t_ray *r, t_object *o)
 		(r->pos.y - o->origin.y) + o->direction.z * (r->pos.z -
 			o->origin.z)) / (o->direction.x * r->dir.x + o->direction.y *
 				r->dir.y + o->direction.z * r->dir.z)));
+}
+
+unsigned int	find_grid_color(t_object *hit, t_ray ray)
+{
+	if (sin(M_PI * ray.pos.x) * cos(M_PI * ray.pos.y) >= 0)
+		return (0);
+	return (hit->color);
 }
