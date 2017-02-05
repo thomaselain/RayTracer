@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:49:13 by telain            #+#    #+#             */
-/*   Updated: 2017/02/05 14:30:51 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/05 17:56:36 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #include <ray.h>
 #include <img.h>
 #include <color.h>
+
+float		vector_dist(t_vector4f v1, t_vector4f v2);
 
 int			adjust_color(t_scene *s, t_object *hit, t_ray ray)
 {
@@ -45,14 +47,15 @@ int			adjust_color(t_scene *s, t_object *hit, t_ray ray)
 			else
 				c = 0;
 			coef *= find_shadow(s, hit, ray, v_light);
-			if (hit->type == PLANE)
-				c = find_grid_color(hit, ray);
-			//c = color_add(hit->color, color_mul(((t_object*)light->content)->color, specular_light(s, hit, ray, v_light)));           //Work in progress :/
-//			c = color_mul(c, coef);
+//			if (hit->type == PLANE)
+				c = find_grid_color(hit, ray); 
+//			c = color_add(hit->color, color_mul(((t_object*)light->content)->color, specular_light(s, hit, ray, v_light)));           //Work in progress :/
+			c = color_div(c, vector_dist(ray.pos, hit->origin) / 10 + 1.0); // effet brouillard lointain
+			c = color_mul(c, coef);
 			light = light->next;
 		}
 	}
-			c = first_hit != 0 ? color_add(c, color_mul(color_avg(c, first_hit->color), 1)) : c;
+	c = first_hit != 0 ? color_add(c, color_mul(color_avg(c, first_hit->color), 1)) : c;
 	return (c);
 }
 

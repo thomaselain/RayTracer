@@ -4,13 +4,13 @@
 		{
 			"origin":
 			{
-				"x":0,
+				"x":-3,
 				"y":0,
 				"z":2
 			},
 			"direction":
 			{
-				"x":0,
+				"x":0.5,
 				"y":1,
 				"z":0
 			},
@@ -35,7 +35,7 @@
 				},
 				"reflection":0.0,
 				"diffuse":0.5,
-				"radius":0.5,
+				"radius":1.0,
 				"comment":"Plane (background)"
 			},
 			{
@@ -73,8 +73,8 @@
 					"y":0,
 					"z":1
 				},
-				"reflection":0.0,
-				"diffuse":0.5,
+				"reflection":0.1,
+				"diffuse":1.5,
 				"radius":1,
 				"comment":"Sphere"
 			}
