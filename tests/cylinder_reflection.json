@@ -14,7 +14,7 @@
 				"y":1,
 				"z":0
 			},
-			"fov":90
+			"fov":120
 		},
 		"objects":
 			[	
@@ -35,7 +35,7 @@
 				},
 				"reflection":0.0,
 				"diffuse":0.5,
-				"radius":0.5,
+				"radius":1.0,
 				"comment":"Plane (background)"
 			},	
 				{
@@ -55,7 +55,7 @@
 				},
 				"reflection":0.0,
 				"diffuse":0.5,
-				"radius":0.5,
+				"radius":1.0,
 				"comment":"Plane (background)"
 			},
 

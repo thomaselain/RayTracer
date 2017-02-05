@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 18:29:56 by telain            #+#    #+#             */
-/*   Updated: 2017/02/04 20:45:02 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/05 14:00:52 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,12 @@ float	specular_light(t_scene *s, t_object *hit, t_ray ray, t_vector4f light)
 		reflect = SUB(ray.dir, MUL(get_normal(hit, ray), 2 * vector_dot(get_normal(hit, ray), ray.dir)));
 		specular = vector_dot(light, reflect) / hit->diffuse;
 	}
-/*
-		specular = pow(vector_dot(MUL(light, -1),
-					ADD(vector_cross(ray.dir, get_normal(hit, ray)),
-		SUB(MUL(ray.dir, -1), MUL(get_normal(hit, ray),
-				2 * vector_dot(MUL(ray.dir, -1), get_normal(hit, ray)))))),
-				hit->diffuse);
-*/
-		if (specular >= 1)
-		return (1);
-	return (specular);
+	/*
+	   specular = pow(vector_dot(MUL(light, -1),
+	   ADD(vector_cross(ray.dir, get_normal(hit, ray)),
+	   SUB(MUL(ray.dir, -1), MUL(get_normal(hit, ray),
+	   2 * vector_dot(MUL(ray.dir, -1), get_normal(hit, ray)))))),
+	   hit->diffuse);
+	   */
+	return (specular >= 1 ? 1 : specular);
 }

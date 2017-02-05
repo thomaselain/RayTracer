@@ -35,12 +35,12 @@
 				},
 				"reflection":0.0,
 				"diffuse":0.5,
-				"radius":10,
+				"radius":1.0,
 				"comment":"Sphere (background)"
 			},
 			{
 				"type":"SPHERE",
-				"color":0xff0000,
+				"color":0xffffff,
 				"origin":
 				{
 					"x":0,
@@ -63,9 +63,9 @@
 				"color":0xc0ffee,
 				"origin":
 				{
-					"x":0,
+					"x":-8,
 					"y":9,
-					"z":0
+					"z":-4
 				},
 				"direction":
 				{

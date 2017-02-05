@@ -1,5 +1,5 @@
 {
-	"background":0x0000ff,
+	"background":0xbbbbbb,
 		"camera":
 		{
 			"origin":
@@ -20,7 +20,7 @@
 			[	
 				{
 				"type":"PLANE",
-				"color":0x0000bb,
+				"color":0xbb0000,
 				"origin":
 				{
 					"x":0,
@@ -40,7 +40,7 @@
 			},	
 				{
 				"type":"PLANE",
-				"color":0x0000ff,
+				"color":0xbb0000,
 				"origin":
 				{
 					"x":0,
@@ -81,7 +81,7 @@
 			},	
 				{
 				"type":"PLANE",
-				"color":0x00ff00,
+				"color":0x00bb00,
 				"origin":
 				{
 					"x":10,
@@ -101,7 +101,7 @@
 			},
 			{
 				"type":"PLANE",
-				"color":0xbb0000,
+				"color":0x0000bb,
 				"origin":
 				{
 					"x":0,
@@ -121,7 +121,7 @@
 			},
 			{
 				"type":"PLANE",
-				"color":0xff0000,
+				"color":0x0000bb,
 				"origin":
 				{
 					"x":0,
@@ -141,7 +141,7 @@
 			},
 			{
 				"type":"SPHERE",
-				"color":0xffffff,
+				"color":0xbbbbbb,
 				"origin":
 				{
 					"x":0,
@@ -164,7 +164,7 @@
 			[
 			{
 				"type":"SPOT",
-				"color":0xffffff,
+				"color":0xbbbbbb,
 				"origin":
 				{
 					"x":0,

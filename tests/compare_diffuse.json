@@ -33,7 +33,7 @@
 				"y":1,
 				"z":0
 			},
-			"reflection":1.0,
+			"reflection":0.0,
 			"diffuse":1.0,
 			"radius":1,
 			"comment":"Background plane"

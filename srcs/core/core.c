@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:24:34 by telain            #+#    #+#             */
-/*   Updated: 2017/02/04 19:25:13 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/05 16:08:56 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,9 +47,9 @@ t_vector4f			get_ray(t_scene *scene, int x, int y)
 
 unsigned int		ray_pixel(t_scene *scene, int x, int y)
 {
-	t_ray		ray;
-	t_object	*hit;
-	int		c;
+	t_ray			ray;
+	t_object		*hit;
+	unsigned int	c;
 
 	c = 0;
 	ray.dir = vector_normalize(SUB(get_ray(scene, x, y), scene->camera.origin));
