@@ -138,6 +138,10 @@ t_type		parse_type(char **string)
 		ret = CYLINDER;
 	else if (ft_strnstr(*string, "\"DIRECTIONAL\"", (index = 13)) != 0)
 		ret = DIRECTIONAL;
+	else if (ft_strnstr(*string, "\"CIRCLE\"", (index = 8)) != 0)
+		ret = CIRCLE;
+	// else if (ft_strnstr(*string, "\"SQUARE\"", (index = 8)) != 0)
+	// 	ret = SQUARE;
 	else
 		index = 0;
 	*string = *string + index;
