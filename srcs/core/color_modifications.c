@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:49:13 by telain            #+#    #+#             */
-/*   Updated: 2017/02/05 17:56:36 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/06 15:36:32 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,13 +42,13 @@ int			adjust_color(t_scene *s, t_object *hit, t_ray ray)
 		c = hit->color;
 		while (light != 0)
 		{
-			v_light = vector_normalize(SUB(((t_object*)light->content)->origin, ray.pos));
+			v_light = get_light_vector((t_object*)light->content, ray);
 			if (vector_dot(v_light, get_normal(hit, ray)) >= 0)
 				c = color_mul(c, vector_dot(v_light, get_normal(hit, ray)));
 			else
 				c = 0;
 			coef *= find_shadow(s, hit, ray, v_light);
-//			if (hit->type == PLANE)
+			if (hit->type == PLANE)
 				c = find_grid_color(hit, ray); 
 //			c = color_add(hit->color, color_mul(((t_object*)light->content)->color, specular_light(s, hit, ray, v_light)));           //Work in progress :/
 			c = color_div(c, vector_dist(ray.pos, hit->origin) / 10 + 1.0); // effet brouillard lointain

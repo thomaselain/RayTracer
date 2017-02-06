@@ -63,7 +63,27 @@
 				"color":0xc0ffee,
 				"origin":
 				{
+					"x":-4,
+					"y":5,
+					"z":2
+				},
+				"direction":
+				{
 					"x":0,
+					"y":0,
+					"z":1
+				},
+				"reflection":0.0,
+				"diffuse":1.5,
+				"radius":1,
+				"comment":"Sphere"
+			},
+			{
+				"type":"SPHERE",
+				"color":0xc0ffee,
+				"origin":
+				{
+					"x":4,
 					"y":5,
 					"z":2
 				},
@@ -82,12 +102,12 @@
 		"lights":
 			[
 			{
-				"type":"SPOT",
+				"type":"DIRECTIONAL",
 				"color":0xffffff,
 				"origin":
 				{
 					"x":0,
-					"y":7,
+					"y":0,
 					"z":0
 				},
 				"radius":1,
