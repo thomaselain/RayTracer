@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 16:18:19 by telain            #+#    #+#             */
-/*   Updated: 2017/02/05 14:01:10 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/06 16:24:20 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,16 @@
 
 t_vector4f	get_normal(t_object *o, t_ray ray)
 {
+	t_vector4f	n;
+
+	n = ((t_vector4f){0.0, 1.0, 0.0, 1.0});
 	if (o->type == SPHERE)
-		return (sphere_normal(o, ray));
+		n = sphere_normal(o, ray);
 	else if (o->type == PLANE)
-		return (vector_normalize(o->direction));
+		n = vector_normalize(o->direction);
 	else if (o->type == CYLINDER)
-		return (cylinder_normal(o, ray));
+		n = cylinder_normal(o, ray);
 	else if (o->type == CONE)
-		return (cone_normal(o, ray));
-	return ((t_vector4f){0.0, 1.0, 0.0, 1.0});
+		n = cone_normal(o, ray);
+	return (n); //Bump mapping ? :/
 }

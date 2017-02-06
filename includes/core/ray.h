@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:56:12 by telain            #+#    #+#             */
-/*   Updated: 2017/02/05 17:56:42 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/06 15:50:36 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,5 +95,18 @@ t_object*				get_reflect(t_scene *s, t_object *hit, t_ray *ray);
 */
 
 unsigned int			find_grid_color(t_object *hit, t_ray ray);
+
+/*
+**	Returns the good light vector, depending on the type of the light
+*/
+
+t_vector4f				get_light_vector(t_object *light, t_ray ray);
+
+/*
+**	Modifies the normal at the intersection,
+**	depending on the object's parameters
+*/
+
+t_vector4f				normal_modifications(t_object *o, t_vector4f n, t_ray ray);
 
 #endif
