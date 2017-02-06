@@ -31,6 +31,7 @@ int			adjust_color(t_scene *s, t_object *hit, t_ray ray)
 	c = s->background;
 	coef = 1.0;
 	light = s->lights;
+	first_hit = NULL;
 	while (hit != 0 && hit->reflection > 0.0 && ++i <= MAX_REFLECTION)
 	{
 		first_hit = hit;
