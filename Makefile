@@ -47,6 +47,7 @@ clean:
 	make clean -C libs/libft/
 	@make clean -C libs/matrix_vector
 	@rm -Rf $(OBJ)
+	@rm -Rf capture.bmp
 
 fclean: clean
 	make fclean -C libs/libft/
