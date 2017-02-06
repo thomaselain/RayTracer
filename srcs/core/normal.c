@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 16:18:19 by telain            #+#    #+#             */
-/*   Updated: 2017/02/06 17:44:39 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/06 22:18:24 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ t_vector4f	get_normal(t_object *o, t_ray ray)
 	n = ((t_vector4f){0.0, 1.0, 0.0, 1.0});
 	if (o->type == SPHERE)
 		n = sphere_normal(o, ray);
-	else if (o->type == PLANE || o->type == CIRCLE)
+	else if (o->type == PLANE || o->type == CIRCLE || o->type == SQUARE)
 		n = vector_normalize(o->direction);
 	else if (o->type == CYLINDER)
 		n = cylinder_normal(o, ray);

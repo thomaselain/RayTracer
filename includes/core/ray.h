@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:56:12 by telain            #+#    #+#             */
-/*   Updated: 2017/02/06 21:19:11 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/06 22:29:20 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define CAMDIR					(s->camera->direction)
 # define CAMPOS					(s->camera->origin)
-# define MAX_REFLECTION			(3)
+# define MAX_REFLECTION			(1)
 # define MAX_SIZE				(100000.0)
 # define COLOR_R(color)			(color & 0xff)
 # define COLOR_G(color)			((color & 0xff00) >> 8)
@@ -58,6 +58,7 @@ float					find_cone_inter(t_ray *ray, t_object *obj);
 float					find_plane_inter(t_ray *ray, t_object *obj);
 float					find_cylinder_inter(t_ray *ray, t_object *obj);
 float					find_circle_inter(t_ray *ray, t_object *obj);
+float					find_square_inter(t_ray *ray, t_object *obj);
 
 /*
 **	Calls the good function, depending of the type of the hit object
