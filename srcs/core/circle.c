@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   vector_dist.c                                      :+:      :+:    :+:   */
+/*   circle.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/05 16:25:08 by telain            #+#    #+#             */
-/*   Updated: 2017/02/06 17:53:54 by telain           ###   ########.fr       */
+/*   Created: 2017/02/06 17:37:37 by telain            #+#    #+#             */
+/*   Updated: 2017/02/06 18:01:35 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "vector.h"
+#include <core.h>
+#include <ray.h>
 
-float	vector_dist(t_vector4f v1, t_vector4f v2)
+float		find_circle_inter(t_ray *r, t_object *o)
 {
-	return (sqrt(pow(v1.x - v2.x, 2)
-				+ pow(v1.y - v2.y, 2)
-				+ pow(v1.z - v2.z, 2)));
+	float	d;
+
+	d = find_plane_inter(r, o);
+	return (vector_dist(o->origin, ADD(r->pos, MUL(r->dir, d))) < 3 ?
+				d : MAX_SIZE);
 }
