@@ -6,17 +6,17 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:56:12 by telain            #+#    #+#             */
-/*   Updated: 2017/01/29 19:52:10 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/06 17:47:56 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef RAY_H
 # define RAY_H
 
-
 # define CAMDIR					(s->camera->direction)
 # define CAMPOS					(s->camera->origin)
-# define MAX_SIZE				(100.0)
+# define MAX_REFLECTION			(3)
+# define MAX_SIZE				(100000.0)
 # define COLOR_R(color)			(color & 0xff)
 # define COLOR_G(color)			((color & 0xff00) >> 8)
 # define COLOR_B(color)			((color & 0xff0000) >> 16)
@@ -57,6 +57,7 @@ float					find_sphere_inter(t_ray *ray, t_object *obj);
 float					find_cone_inter(t_ray *ray, t_object *obj);
 float					find_plane_inter(t_ray *ray, t_object *obj);
 float					find_cylinder_inter(t_ray *ray, t_object *obj);
+float					find_circle_inter(t_ray *ray, t_object *obj);
 
 /*
 **	Calls the good function, depending of the type of the hit object
@@ -83,5 +84,30 @@ float					find_shadow(t_scene *s, t_object *hit, t_ray ray, t_vector4f light);
 */
 
 float					specular_light(t_scene *s, t_object *hit, t_ray ray, t_vector4f light);
+
+/*
+**	Changes the ray coordinates to get the reflected object
+*/
+
+t_object*				get_reflect(t_scene *s, t_object *hit, t_ray *ray);
+
+/*
+*	TO_DELETE	returns a color, depending on the ray position to draw a grid on the plane
+*/
+
+unsigned int			find_grid_color(t_object *hit, t_ray ray);
+
+/*
+**	Returns the good light vector, depending on the type of the light
+*/
+
+t_vector4f				get_light_vector(t_object *light, t_ray ray);
+
+/*
+**	Modifies the normal at the intersection,
+**	depending on the object's parameters
+*/
+
+t_vector4f				normal_modifications(t_object *o, t_vector4f n, t_ray ray);
 
 #endif

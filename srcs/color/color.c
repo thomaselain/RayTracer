@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 17:05:31 by telain            #+#    #+#             */
-/*   Updated: 2017/01/29 19:21:38 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/05 17:38:54 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,12 @@ unsigned int	color_mul(unsigned int c, float m)
 
 unsigned int	color_div(unsigned int c, float d)
 {
-	return (((c & 0xff0000) >> 16) / d +
-			((c & 0xff00) >> 8) / d +
-			(c & 0xff) / d);
+	return (((int)((c & 0xff0000) / fabs(d)) & 0xff0000) +
+			(((int)((c & 0xff00) / fabs(d)) & 0xff00) +
+			 (((int)((c & 0xff) / fabs(d)) & 0xff))));
+}
+
+unsigned int	color_avg(unsigned int c1, unsigned int c2)
+{
+	return (color_div(color_add(c1, c2), 2));
 }

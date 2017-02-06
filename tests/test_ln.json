@@ -5,19 +5,39 @@
 			"origin":
 			{
 				"x":0,
-				"y":0,
-				"z":0
+				"y":-20,
+				"z":-6
 			},
 			"direction":
 			{
 				"x":0,
 				"y":1,
-				"z":0
+				"z":0.25
 			},
 			"fov": 60
 		},
 		"objects":
 			[	
+						{			
+				"type":"PLANE",
+				"color":0xc0c0c0,
+				"origin":
+				{
+					"x":0,
+					"y":15,
+					"z":10
+				},
+				"direction":
+				{
+					"x":-0.25,
+					"y":1,
+					"z":0.7
+				},
+				"reflection":0.0,
+				"diffuse":0.0,
+				"radius":0.5,
+				"comment":"Cone"
+			},	
 			{			
 				"type":"CONE",
 				"color":0x0000d0,
@@ -104,13 +124,13 @@
 				"color":0xc0ffee,
 				"origin":
 				{
-					"x":-1.7,
-					"y":2,
+					"x":-2.5,
+					"y":4,
 					"z":0
 				},
 				"reflection":0.0,
 				"diffuse":1.0,
-				"radius":0.3,
+				"radius":0.9,
 				"comment":"First sphere"
 			},
 			{
@@ -128,6 +148,20 @@
 				"comment":"Second sphere"
 			},
 			{
+				"type":"CIRCLE",
+				"color":0x00FF00,
+				"origin":
+				{
+					"x":-2,
+					"y":6,
+					"z":0
+				},
+				"reflection":0.0,
+				"diffuse":0.7,
+				"radius":2.7,
+				"comment":"Test circle"
+			},
+			{
 				"type":"SPHERE",
 				"color":0x0000FF,
 				"origin":
@@ -138,7 +172,7 @@
 				},
 				"reflection":0.0,
 				"diffuse":0.5,
-				"radius":0.6,
+				"radius":0.6,	
 				"comment":"Third sphere"
 			}
 	],
@@ -146,10 +180,21 @@
 			[
 			{
 				"type":"SPOT",
-				"color":0xd0d0d0,
+				"color":0xffffff,
 				"origin":
 				{
-					"x":0,
+					"x":7,
+					"y":0,
+					"z":0
+				},
+				"radius":1
+			},
+			{
+				"type":"DIRECTIONAL",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":7,
 					"y":0,
 					"z":0
 				},

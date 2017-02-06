@@ -1,16 +1,16 @@
 {
-	"background":0x000000,
+	"background":0xcccccc,
 		"camera":
 		{
 			"origin":
 			{
-				"x":0,
+				"x":-3,
 				"y":0,
-				"z":0
+				"z":2
 			},
 			"direction":
 			{
-				"x":0,
+				"x":0.5,
 				"y":1,
 				"z":0
 			},
@@ -18,34 +18,14 @@
 		},
 		"objects":
 			[
-						{
-				"type":"PLANE",
-				"color":0xffffff,
-				"origin":
-				{
-					"x":0,
-					"y":10.6,
-					"z":0
-				},
-				"direction":
-				{
-					"x":0,
-					"y":1,
-					"z":0
-				},
-				"reflection":0.0,
-				"diffuse":0.0,
-				"radius":0.5,
-				"comment":"Plane (background)"
-			}
 			{
-				"type":"SPHERE",
+				"type":"PLANE",
 				"color":0xc0ffee,
 				"origin":
 				{
 					"x":0,
-					"y":10,
-					"z":0
+					"y":0,
+					"z":3
 				},
 				"direction":
 				{
@@ -54,11 +34,91 @@
 					"z":1
 				},
 				"reflection":0.0,
-				"diffuse":20.0,
+				"diffuse":0.5,
+				"radius":1.0,
+				"comment":"Plane (background)"
+			},
+			{
+				"type":"PLANE",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":-4,
+					"y":10,
+					"z":0
+				},
+				"direction":
+				{
+					"x":0,
+					"y":1,
+					"z":-0.5
+				},
+				"reflection":0.0,
+				"diffuse":0.5,
+				"radius":0.5,
+				"comment":"Plane (background)"
+			},
+			{
+				"type":"CIRCLE",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":-4,
+					"y":9.9999,
+					"z":0
+				},
+				"direction":
+				{
+					"x":0,
+					"y":1,
+					"z":-0.5
+				},
+				"reflection":0.1,
+				"diffuse":0.5,
+				"radius":0.5,
+				"comment":"Plane (background)"
+			},
+			{
+				"type":"SPHERE",
+				"color":0xc0ffee,
+				"origin":
+				{
+					"x":-4,
+					"y":5,
+					"z":2
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":1
+				},
+				"reflection":0.0,
+				"diffuse":1.5,
 				"radius":1,
-				"comment":"Cone"
+				"comment":"Sphere"
+			},
+			{
+				"type":"SPHERE",
+				"color":0xc0ffee,
+				"origin":
+				{
+					"x":4,
+					"y":5,
+					"z":2
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":1
+				},
+				"reflection":0.1,
+				"diffuse":1.5,
+				"radius":1,
+				"comment":"Sphere"
 			}
-		],
+	],
 		"lights":
 			[
 			{
@@ -66,11 +126,18 @@
 				"color":0xffffff,
 				"origin":
 				{
-					"x":0.0,
-					"y":9.0,
-					"z":-1.5
+					"x":0,
+					"y":0,
+					"z":0
 				},
-				"radius":1
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":0
+				},
+				"radius":1,
+				"comment":"Deuxieme lumiere"
 			}
 	]
 }

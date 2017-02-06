@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:56:24 by telain            #+#    #+#             */
-/*   Updated: 2017/01/28 19:25:12 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/06 18:14:38 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,8 +53,15 @@ t_object	*get_intersection(t_scene *s, t_ray *ray)
 			hit = (t_object*)obj->content;
 			closest = d;
 		}
+		else if (((t_object*)obj->content)->type == CIRCLE && (d =
+					find_circle_inter(ray, (t_object*)obj->content)) <
+				closest && d >= 0.1)
+		{
+			hit = (t_object*)obj->content;
+			closest = d;
+		}
 		obj = obj->next;
 	}
-	ray->pos = ADD(s->camera.origin, MUL(ray->dir, closest - 0.1));
+	ray->pos = ADD(ray->pos, MUL(ray->dir, closest - 0.1));
 	return (hit);
 }

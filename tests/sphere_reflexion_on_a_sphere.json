@@ -6,7 +6,7 @@
 			{
 				"x":0,
 				"y":0,
-				"z":0
+				"z":-1
 			},
 			"direction":
 			{
@@ -14,13 +14,13 @@
 				"y":1,
 				"z":0
 			},
-			"fov":60
+			"fov":90
 		},
 		"objects":
 			[
 				{
 				"type":"PLANE",
-				"color":0xffffff,
+				"color":0x0000cc,
 				"origin":
 				{
 					"x":0,
@@ -34,12 +34,12 @@
 					"z":-1
 				},
 				"reflection":0.0,
-				"diffuse":0.0,
-				"radius":0.5,
-				"comment":"Plane (background)"
+				"diffuse":0.5,
+				"radius":1.0,
+				"comment":"Sphere (background)"
 			},
-						{
-				"type":"PLANE",
+			{
+				"type":"SPHERE",
 				"color":0xffffff,
 				"origin":
 				{
@@ -53,44 +53,45 @@
 					"y":1,
 					"z":0
 				},
-				"reflection":0.0,
-				"diffuse":0.0,
-				"radius":0.5,
-				"comment":"Plane (background)"
+				"reflection":0.1,
+				"diffuse":0.5,
+				"radius":10,
+				"comment":"Sphere (background)"
 			},
 			{
-				"type":"CONE",
-				"color":0xffffff,
+				"type":"SPHERE",
+				"color":0xc0ffee,
 				"origin":
 				{
-					"x":0,
-					"y":10,
-					"z":0
+					"x":-8,
+					"y":9,
+					"z":-4
 				},
 				"direction":
 				{
 					"x":0,
-					"y":0,
-					"z":1
+					"y":1,
+					"z":0
 				},
-				"reflection":1.0,
-				"diffuse":0.1,
-				"radius":0.7,
-				"comment":"Cone"
+				"reflection":0.0,
+				"diffuse":0.5,
+				"radius":2,
+				"comment":"Sphere"
 			}
-		],
+	],
 		"lights":
 			[
 			{
 				"type":"SPOT",
-				"color":0xc0ffee,
+				"color":0xffffff,
 				"origin":
 				{
-					"x":0.0,
-					"y":-5,
-					"z":0.0
+					"x":0,
+					"y":0,
+					"z":0
 				},
-				"radius":1
+				"radius":1,
+				"comment":"Deuxieme lumiere"
 			}
 	]
 }

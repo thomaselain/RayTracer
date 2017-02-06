@@ -1,30 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   normal.c                                           :+:      :+:    :+:   */
+/*   circle.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/27 16:18:19 by telain            #+#    #+#             */
-/*   Updated: 2017/02/06 17:44:39 by telain           ###   ########.fr       */
+/*   Created: 2017/02/06 17:37:37 by telain            #+#    #+#             */
+/*   Updated: 2017/02/06 18:01:35 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <core.h>
 #include <ray.h>
 
-t_vector4f	get_normal(t_object *o, t_ray ray)
+float		find_circle_inter(t_ray *r, t_object *o)
 {
-	t_vector4f	n;
+	float	d;
 
-	n = ((t_vector4f){0.0, 1.0, 0.0, 1.0});
-	if (o->type == SPHERE)
-		n = sphere_normal(o, ray);
-	else if (o->type == PLANE || o->type == CIRCLE)
-		n = vector_normalize(o->direction);
-	else if (o->type == CYLINDER)
-		n = cylinder_normal(o, ray);
-	else if (o->type == CONE)
-		n = cone_normal(o, ray);
-	return (n); //Bump mapping ? :/
+	d = find_plane_inter(r, o);
+	return (vector_dist(o->origin, ADD(r->pos, MUL(r->dir, d))) < 3 ?
+				d : MAX_SIZE);
 }
