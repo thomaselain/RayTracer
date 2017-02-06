@@ -71,7 +71,6 @@ typedef struct		s_object
 		float		radius;
 		float		angle;
 	};
-	char			*bump;
 	char			*comment;
 }					t_object;
 
