@@ -59,7 +59,7 @@
 				"comment":"Plane (background)"
 			},
 			{
-				"type":"CIRCLE",
+				"type":"SQUARE",
 				"color":0xffffff,
 				"origin":
 				{
