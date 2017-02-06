@@ -25,7 +25,7 @@
 
 typedef enum		e_type
 {
-	UNKNOWN, SPOT, PLANE, SPHERE, CONE, CYLINDER
+	UNKNOWN, DIRECTIONAL, SPOT, PLANE, SPHERE, CONE, CYLINDER
 }					t_type;
 
 /*
@@ -71,6 +71,7 @@ typedef struct		s_object
 		float		radius;
 		float		angle;
 	};
+	char			*bump;
 	char			*comment;
 }					t_object;
 

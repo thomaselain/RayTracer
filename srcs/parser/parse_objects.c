@@ -49,7 +49,10 @@ t_object		parse_object(char **string)
 			fill_objects(&tmp, &ret, 0);
 			ERR = (valide_coma(tmp) == ERROR) ? (ERROR) : (ERR);
 			if (ERR == ERROR)
+			{
+				ft_putendl(tmp);
 				error_close(OBJECT, CEC);
+			}
 			*string = tmp;
 			INDEX = -1;
 		}
