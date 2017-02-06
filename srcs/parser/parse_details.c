@@ -128,13 +128,9 @@ t_type		parse_type(char **string)
 		return (ret);
 	if (ft_strnstr(*string, "\"SPOT\"", (index = 6)) != 0)
 		ret = SPOT;
-<<<<<<< HEAD
 	else if (ft_strnstr(*string, "\"DIRECTIONAL\"", (index = 6)) != 0)
 		ret = DIRECTIONAL;
 	else if (ft_strnstr(*string, "\"PLANE\"", (index = 7)) != 0)
-=======
-	else if (ft_strnstr(*string, "\"PLANE\"", (index = 7)) != 0)	
->>>>>>> 59eac4a9104098fd754a3372b89a43c75b503002
 		ret = PLANE;
 	else if (ft_strnstr(*string, "\"SPHERE\"", (index = 8)) != 0)
 		ret = SPHERE;
