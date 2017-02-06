@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:56:12 by telain            #+#    #+#             */
-/*   Updated: 2017/02/06 15:50:36 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/06 17:47:56 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ float					find_sphere_inter(t_ray *ray, t_object *obj);
 float					find_cone_inter(t_ray *ray, t_object *obj);
 float					find_plane_inter(t_ray *ray, t_object *obj);
 float					find_cylinder_inter(t_ray *ray, t_object *obj);
+float					find_circle_inter(t_ray *ray, t_object *obj);
 
 /*
 **	Calls the good function, depending of the type of the hit object

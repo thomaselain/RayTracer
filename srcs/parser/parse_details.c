@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 10:20:15 by svassal           #+#    #+#             */
-/*   Updated: 2017/02/06 16:26:27 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/06 17:21:37 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,7 @@ t_type		parse_type(char **string)
 		ret = SPOT;
 	else if (ft_strnstr(*string, "\"DIRECTIONAL\"", (index = 6)) != 0)
 		ret = DIRECTIONAL;
-	else if (ft_strnstr(*string, "\"PLANE\"", (index = 7)) != 0)
+	else if (ft_strnstr(*string, "\"PLANE\"", (index = 7)) != 0)	
 		ret = PLANE;
 	else if (ft_strnstr(*string, "\"SPHERE\"", (index = 8)) != 0)
 		ret = SPHERE;

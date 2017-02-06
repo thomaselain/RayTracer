@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:49:13 by telain            #+#    #+#             */
-/*   Updated: 2017/02/06 15:36:32 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/06 17:37:52 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ int			adjust_color(t_scene *s, t_object *hit, t_ray ray)
 	c = s->background;
 	coef = 1.0;
 	light = s->lights;
-	first_hit = NULL;
 	while (hit != 0 && hit->reflection > 0.0 && ++i <= MAX_REFLECTION)
 	{
 		first_hit = hit;
