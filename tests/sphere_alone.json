@@ -39,12 +39,32 @@
 				"comment":"Plane (background)"
 			},
 			{
-				"type":"CIRCLE",
+				"type":"PLANE",
 				"color":0xffffff,
 				"origin":
 				{
 					"x":-4,
 					"y":10,
+					"z":0
+				},
+				"direction":
+				{
+					"x":0,
+					"y":1,
+					"z":-0.5
+				},
+				"reflection":0.0,
+				"diffuse":0.5,
+				"radius":0.5,
+				"comment":"Plane (background)"
+			},
+			{
+				"type":"CIRCLE",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":-4,
+					"y":9.9999,
 					"z":0
 				},
 				"direction":
@@ -102,7 +122,7 @@
 		"lights":
 			[
 			{
-				"type":"DIRECTIONAL",
+				"type":"SPOT",
 				"color":0xffffff,
 				"origin":
 				{
@@ -112,9 +132,9 @@
 				},
 				"direction":
 				{
-					"x":1,
+					"x":0,
 					"y":0,
-					"z":-0.5
+					"z":0
 				},
 				"radius":1,
 				"comment":"Deuxieme lumiere"
