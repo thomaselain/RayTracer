@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   vector.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
+/*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2016/10/15 13:15:09 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/31 16:31:49 by telain           ###   ########.fr       */
+/*   Created: 2017/02/06 18:08:32 by telain            #+#    #+#             */
+/*   Updated: 2017/02/06 18:09:18 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -184,5 +184,11 @@ t_vector4f		vector_rotate(t_vector4f v, t_vector4f axis, float angle);
 */
 
 t_vector4f		vector_lerp(t_vector4f v, t_vector4f dest, float lerp_fact);
+
+/*
+**	Returns the distance between v1 and v2
+*/
+
+float			vector_dist(t_vector4f v1, t_vector4f v2);
 
 #endif

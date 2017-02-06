@@ -43,7 +43,7 @@
 				"color":0xffffff,
 				"origin":
 				{
-					"x":0,
+					"x":-4,
 					"y":10,
 					"z":0
 				},
@@ -51,7 +51,27 @@
 				{
 					"x":0,
 					"y":1,
+					"z":-0.5
+				},
+				"reflection":0.0,
+				"diffuse":0.5,
+				"radius":0.5,
+				"comment":"Plane (background)"
+			},
+			{
+				"type":"CIRCLE",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":-4,
+					"y":9.9999,
 					"z":0
+				},
+				"direction":
+				{
+					"x":0,
+					"y":1,
+					"z":-0.5
 				},
 				"reflection":0.1,
 				"diffuse":0.5,
@@ -63,7 +83,27 @@
 				"color":0xc0ffee,
 				"origin":
 				{
+					"x":-4,
+					"y":5,
+					"z":2
+				},
+				"direction":
+				{
 					"x":0,
+					"y":0,
+					"z":1
+				},
+				"reflection":0.0,
+				"diffuse":1.5,
+				"radius":1,
+				"comment":"Sphere"
+			},
+			{
+				"type":"SPHERE",
+				"color":0xc0ffee,
+				"origin":
+				{
+					"x":4,
 					"y":5,
 					"z":2
 				},
@@ -87,7 +127,13 @@
 				"origin":
 				{
 					"x":0,
-					"y":7,
+					"y":0,
+					"z":0
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
 					"z":0
 				},
 				"radius":1,

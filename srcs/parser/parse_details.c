@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 10:20:15 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/14 15:19:56 by svassal          ###   ########.fr       */
+/*   Updated: 2017/02/06 17:21:37 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,9 @@ t_type		parse_type(char **string)
 		return (ret);
 	if (ft_strnstr(*string, "\"SPOT\"", (index = 6)) != 0)
 		ret = SPOT;
-	else if (ft_strnstr(*string, "\"PLANE\"", (index = 7)) != 0)
+	else if (ft_strnstr(*string, "\"DIRECTIONAL\"", (index = 6)) != 0)
+		ret = DIRECTIONAL;
+	else if (ft_strnstr(*string, "\"PLANE\"", (index = 7)) != 0)	
 		ret = PLANE;
 	else if (ft_strnstr(*string, "\"SPHERE\"", (index = 8)) != 0)
 		ret = SPHERE;
@@ -136,6 +138,12 @@ t_type		parse_type(char **string)
 		ret = CONE;
 	else if (ft_strnstr(*string, "\"CYLINDER\"", (index = 10)) != 0)
 		ret = CYLINDER;
+	else if (ft_strnstr(*string, "\"DIRECTIONAL\"", (index = 13)) != 0)
+		ret = DIRECTIONAL;
+	else if (ft_strnstr(*string, "\"CIRCLE\"", (index = 8)) != 0)
+		ret = CIRCLE;
+	// else if (ft_strnstr(*string, "\"SQUARE\"", (index = 8)) != 0)
+	// 	ret = SQUARE;
 	else
 		index = 0;
 	*string = *string + index;
