@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 17:28:23 by aljourda          #+#    #+#             */
-/*   Updated: 2017/02/06 18:14:42 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/06 18:31:40 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ typedef struct		s_object
 		float		radius;
 		float		angle;
 	};
+	char			*bump;
 	char			*comment;
 }					t_object;
 
