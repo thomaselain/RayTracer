@@ -14,6 +14,13 @@
 # define PARSER_H
 # include <core.h>
 
+
+/*
+** Returns 0 if the extension of the file is .json, otherwise the function will return -1
+*/
+
+int				check_extension(char *filename)
+
 /*
 ** Parse the file into a t_scene variable
 */

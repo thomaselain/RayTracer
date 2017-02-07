@@ -42,11 +42,12 @@ static void		parse(int fd)
 {
 	char	*json;
 	char	*tmp;
+	int		ret;
 	t_scene	*s;
 
 	json = 0;
 	tmp = 0;
-	while (get_next_line(fd, &tmp) != 0)
+	while (ret = get_next_line(fd, &tmp) > 0)
 	{
 		str_write_over(&tmp, ft_strtrim(tmp));
 		if (json == 0)
@@ -65,6 +66,21 @@ static void		parse(int fd)
 }
 
 /*
+** Returns 0 if the extension of the file is .json, otherwise the function will return -1
+*/
+
+int				check_extension(char *filename)
+{
+	ft_strrev(filename);
+	if (ft_strnstr(filename, "nosj.", 5))
+	{
+		ft_strrev(filename);
+		return (0);
+	}
+	return (-1);
+}
+
+/*
 ** Parse the file into a t_scene variable
 */
 
@@ -75,8 +91,16 @@ t_scene			*scene_parse_file(const char *filename)
 
 	errno = 0;
 	scene = 0;
+	if (check_extension(filename) == -1)
+	{
+		ft_putendl("Wrong format. Use the '.json' format.");
+		exit(0);
+	}
 	if ((scene_fd = open(filename, O_RDONLY)) < 0)
+	{
 		perror("Error : ");
+		exit(0);
+	}
 	else
 	{
 		parse(scene_fd);
