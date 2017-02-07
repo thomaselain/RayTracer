@@ -72,6 +72,8 @@ typedef struct		s_object
 		float		angle;
 	};
 	char			*comment;
+	float			start;
+	float			end;
 }					t_object;
 
 /*

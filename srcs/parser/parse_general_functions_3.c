@@ -67,6 +67,10 @@ static char		*get_object_param(int param_num)
 		return ("\"direction\"");
 	if (param_num == 8)
 		return ("\"comment\"");
+	if (param_num == 9)
+		return ("\"start\"");
+	if (param_num == 10)
+		return ("\"end\"");
 	return (0);
 }
 
