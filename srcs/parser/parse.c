@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 13:22:31 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/14 15:25:03 by svassal          ###   ########.fr       */
+/*   Updated: 2017/02/07 21:00:43 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void		parse(int fd)
 
 	json = 0;
 	tmp = 0;
-	while (ret = get_next_line(fd, &tmp) > 0)
+	while ((ret = get_next_line(fd, &tmp)) > 0)
 	{
 		str_write_over(&tmp, ft_strtrim(tmp));
 		if (json == 0)
@@ -91,7 +91,7 @@ t_scene			*scene_parse_file(const char *filename)
 
 	errno = 0;
 	scene = 0;
-	if (check_extension(filename) == -1)
+	if (check_extension((char*)filename) == -1)
 	{
 		ft_putendl("Wrong format. Use the '.json' format.");
 		exit(0);
