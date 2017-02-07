@@ -23,7 +23,7 @@
 			"color":0xffffff,
 			"origin":
 			{
-				"x":4,
+				"x":2,
 				"y":5,
 				"z":2
 			},
@@ -33,9 +33,9 @@
 				"y":1,
 				"z":0
 			},
-			"reflection":0.1,
+			"reflection":0.0,
 			"diffuse":0.5,
-			"radius":2.0,
+			"radius":1.0,
 			"comment":"Plane (background)"
 		},
 		{
