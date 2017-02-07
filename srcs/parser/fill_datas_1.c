@@ -113,8 +113,12 @@ static void		fill_objects_sub(char **s, t_object *o)
 		o->intensity = parse_float(s);
 	else if (index == 7)
 		o->direction = parse_vector(s);
-	else
+	else if (index == 8)
 		o->comment = parse_string(s);
+	else if (index == 9)
+		o->start = parse_float(s);
+	else if (index == 10)
+		o->end = parse_float(s);
 }
 
 /*
@@ -133,6 +137,8 @@ void			fill_objects(char **s, t_object *o, int init)
 		o->reflection = 0.0;
 		o->intensity = 0.0;
 		o->comment = "NONE";
+		o->start = 0.0;
+		o->end = 0.0;
 	}
 	else
 		fill_objects_sub(s, o);
