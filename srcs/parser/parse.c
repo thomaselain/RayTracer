@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 13:22:31 by svassal           #+#    #+#             */
-/*   Updated: 2017/02/07 21:00:43 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/09 16:30:28 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,12 +69,12 @@ static void		parse(int fd)
 ** Returns 0 if the extension of the file is .json, otherwise the function will return -1
 */
 
-int				check_extension(char *filename)
+int				check_extension(const char *filename)
 {
-	ft_strrev(filename);
+	ft_strrev((char*)filename);
 	if (ft_strnstr(filename, "nosj.", 5))
 	{
-		ft_strrev(filename);
+		ft_strrev((char*)filename);
 		return (0);
 	}
 	return (-1);
