@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:56:12 by telain            #+#    #+#             */
-/*   Updated: 2017/02/07 21:20:26 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/09 17:04:23 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,7 @@ float					find_cap(t_ray *r, t_object *o, float r1, float r2);
 **	Tells if the given object is in a shadow cone or not
 */
 
-float					find_shadow(t_scene *s, t_object *hit, t_ray ray, t_vector4f light);
+float					find_shadow(t_scene *s, t_object *hit, t_ray ray, t_ray light);
 
 /*
 **	Calculates the specular light for the given object
