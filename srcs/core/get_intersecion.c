@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:56:24 by telain            #+#    #+#             */
-/*   Updated: 2017/02/06 18:14:38 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/06 22:18:34 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,13 @@ t_object	*get_intersection(t_scene *s, t_ray *ray)
 		}
 		else if (((t_object*)obj->content)->type == CONE && (d =
 					find_cone_inter(ray, (t_object*)obj->content)) <
+				closest && d >= 0.1)
+		{
+			hit = (t_object*)obj->content;
+			closest = d;
+		}
+		else if (((t_object*)obj->content)->type == SQUARE && (d =
+					find_square_inter(ray, (t_object*)obj->content)) <
 				closest && d >= 0.1)
 		{
 			hit = (t_object*)obj->content;

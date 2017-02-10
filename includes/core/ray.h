@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:56:12 by telain            #+#    #+#             */
-/*   Updated: 2017/02/06 17:47:56 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/07 21:20:26 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define CAMDIR					(s->camera->direction)
 # define CAMPOS					(s->camera->origin)
-# define MAX_REFLECTION			(3)
+# define MAX_REFLECTION			(20)
 # define MAX_SIZE				(100000.0)
 # define COLOR_R(color)			(color & 0xff)
 # define COLOR_G(color)			((color & 0xff00) >> 8)
@@ -58,6 +58,7 @@ float					find_cone_inter(t_ray *ray, t_object *obj);
 float					find_plane_inter(t_ray *ray, t_object *obj);
 float					find_cylinder_inter(t_ray *ray, t_object *obj);
 float					find_circle_inter(t_ray *ray, t_object *obj);
+float					find_square_inter(t_ray *ray, t_object *obj);
 
 /*
 **	Calls the good function, depending of the type of the hit object
@@ -72,6 +73,12 @@ t_vector4f				get_normal(t_object *o, t_ray ray);
 t_vector4f				cone_normal(t_object *o, t_ray ray);
 t_vector4f				sphere_normal(t_object *o, t_ray ray);
 t_vector4f				cylinder_normal(t_object *o, t_ray ray);
+
+/*
+**	Ends an object
+*/
+
+float					find_cap(t_ray *r, t_object *o, float r1, float r2);
 
 /*
 **	Tells if the given object is in a shadow cone or not

@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 19:32:35 by svassal           #+#    #+#             */
-/*   Updated: 2017/02/04 20:32:18 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/07 21:20:29 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,11 @@ float		find_cone_inter(t_ray *r, t_object *o)
 				o->direction), 2);
 	D = powf(B, 2) - 4 * A * C;
 	if (D < 0.0)
-		return (10000);
+		return (MAX_SIZE);
 	RES_0 = (-B - sqrtf(D)) / (A + A);
 	RES_1 = (-B + sqrtf(D)) / (A + A);
-	return ((RES_0 < RES_1) ? (RES_0) : (RES_1));
+	return (find_cap(r, o, RES_0 < RES_1 ? RES_0 : RES_1,
+				RES_0 < RES_1 ? RES_1 : RES_0));
 }
 
 t_vector4f	cone_normal(t_object *o, t_ray ray)
