@@ -58,8 +58,7 @@ static void		parse(int fd)
 		if (tmp != 0)
 			ft_strdel(&tmp);
 	}
-	if (red == 0)
-		exit (0);
+	red == 0 ? display_error(2) : 0;
 	close(fd);
 	scene_string(SET, json);
 	scene_content(INIT);
@@ -95,10 +94,7 @@ t_scene			*scene_parse_file(const char *filename)
 	errno = 0;
 	scene = 0;
 	if (check_extension((char*)filename) == -1)
-	{
-		ft_putendl("Wrong format. Use the '.json' format.");
-		exit(0);
-	}
+		display_error(1);
 	if ((scene_fd = open(filename, O_RDONLY)) < 0)
 	{
 		perror("Error : ");

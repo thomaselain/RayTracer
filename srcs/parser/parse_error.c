@@ -32,6 +32,16 @@
 ** Return some text according to the error given as parameter
 */
 
+void			display_error(int errnum)
+{
+	if (errnum == 1)
+		ft_putendl("Wrong format. Use the '.json' format.");
+	else if (errnum == 2)
+		ft_putendl("The file is empty.");
+	if (errnum != 0)
+		exit (0);
+}
+
 static char	*error_text(int error)
 {
 	if (error == BBC)
