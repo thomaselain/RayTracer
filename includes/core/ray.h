@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:56:12 by telain            #+#    #+#             */
-/*   Updated: 2017/02/09 17:04:23 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/10 16:14:59 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,5 +116,13 @@ t_vector4f				get_light_vector(t_object *light, t_ray ray);
 */
 
 t_vector4f				normal_modifications(t_object *o, t_vector4f n, t_ray ray);
+
+/*
+**	Calculates the noise for the given coordinates
+*/
+
+double					noise(double x, double y, double z);
+
+
 
 #endif

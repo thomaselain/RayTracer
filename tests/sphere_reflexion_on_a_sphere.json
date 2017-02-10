@@ -33,7 +33,7 @@
 					"y":0,
 					"z":-1
 				},
-				"reflection":0.0,
+				"reflection":0.000000001,
 				"diffuse":0.5,
 				"radius":1.0,
 				"comment":"Sphere (background)"
