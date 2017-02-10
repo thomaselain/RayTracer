@@ -42,12 +42,13 @@ static void		parse(int fd)
 {
 	char	*json;
 	char	*tmp;
-	int		ret;
+	int		red;
 	t_scene	*s;
 
 	json = 0;
 	tmp = 0;
-	while ((ret = get_next_line(fd, &tmp)) > 0)
+	red = 0;
+	while (get_next_line(fd, &tmp) > 0 && ++red > 0)
 	{
 		str_write_over(&tmp, ft_strtrim(tmp));
 		if (json == 0)
@@ -57,6 +58,8 @@ static void		parse(int fd)
 		if (tmp != 0)
 			ft_strdel(&tmp);
 	}
+	if (red == 0)
+		exit (0);
 	close(fd);
 	scene_string(SET, json);
 	scene_content(INIT);
