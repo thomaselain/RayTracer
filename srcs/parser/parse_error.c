@@ -21,6 +21,7 @@
 #define CAMERA		1
 #define OBJECT		2
 #define LIGHT		OBJECT
+#define STRUCT		5
 #define SCENE		3
 #define LIST		4
 #define BBC			0
@@ -71,6 +72,8 @@ static char	*type_text(int type)
 		return (" for the global scene.");
 	if (type == LIST)
 		return (" for one of the lists.");
+	if (type == STRUCT)
+		return (" for the structure.");
 	return (0);
 }
 

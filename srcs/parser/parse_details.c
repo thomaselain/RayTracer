@@ -149,3 +149,24 @@ t_type		parse_type(char **string)
 	*string = *string + index;
 	return (ret);
 }
+
+t_noise_type	parse_noise_type(char **string)
+{
+	t_type	ret;
+	int		index;
+
+	ret = UNKNOWN;
+	character_skipper(string);
+	if (**string != '\"')
+		return (ret);
+	if (ft_strnstr(*string, "\"PERLIN\"", (index = 8)) != 0)
+		ret = PERLIN;
+	else if (ft_strnstr(*string, "\"MARBLE\"", (index = 8)) != 0)
+		ret = MARBLE;
+	else if (ft_strnstr(*string, "\"WOOD\"", (index = 6)) != 0)	
+		ret = WOOD;
+	else
+		index = 0;
+	*string = *string + index;
+	return (ret);
+}

@@ -34,6 +34,13 @@ int				valide_braces_brackets(char *s);
 void			character_skipper(char **s);
 
 /*
+** Return ERROR if a parameter that doesn't exist is present
+** NO_ERROR elseway;
+*/
+
+static char		*get_structure_param(int param_num);
+
+/*
 ** Return a parameter, or 0, if arguments are wrong
 */
 

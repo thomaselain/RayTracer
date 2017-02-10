@@ -22,6 +22,12 @@
 t_vector4f		parse_vector(char **string);
 
 /*
+** Fill structure with 0 if init is equal to 1, or with the JSON datas elseway
+*/
+
+t_noise				parse_structure(char **string);
+
+/*
 ** Return a parsed camera (fill missing datas with 0),
 ** manage camera errors *not-yet*
 */

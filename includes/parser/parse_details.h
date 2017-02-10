@@ -18,30 +18,37 @@
 ** Parses an integer from the parameter string
 */
 
-int			parse_int(char **string);
+int				parse_int(char **string);
 
 /*
 ** Parses a floating point number from the parameter string
 */
 
-float		parse_float(char **string);
+float			parse_float(char **string);
 
 /*
 ** Parses a hexadecimal number from the parameter string
 */
 
-int			parse_hexa(char **string);
+int				parse_hexa(char **string);
 
 /*
 ** Parses a substring from the parameter string
 */
 
-char		*parse_string(char **string);
+char			*parse_string(char **string);
 
 /*
 ** Parses an object's type from parameter string
 */
 
-t_type		parse_type(char **string);
+t_type			parse_type(char **string);
+
+/*
+** Parse the material's type of an object from parameter string
+*/
+
+t_noise_type	parse_noise_type(char **string);
+
 
 #endif

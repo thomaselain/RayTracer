@@ -14,6 +14,7 @@
 #define CAMERA		1
 #define OBJECT		2
 #define SCENE		3
+#define STRUCTURE 	5
 
 /*
 ** Return a vector parmeter
@@ -27,6 +28,23 @@ static char		*get_vector_param(int param_num)
 		return ("\"y\"");
 	if (param_num == 3)
 		return ("\"z\"");
+	return (0);
+}
+
+/*
+** Returns a structure parameter
+*/
+
+static char		*get_structure_param(int param_num)
+{
+	if (param_num == 1)
+		return ("\"material_type\"");
+	if (param_num == 2)
+		return ("\"a\"");
+	if (param_num == 3)
+		return ("\"b\"");
+	if (param_num == 4)
+		return ("\"c\"");
 	return (0);
 }
 
@@ -71,6 +89,8 @@ static char		*get_object_param(int param_num)
 		return ("\"start\"");
 	if (param_num == 10)
 		return ("\"end\"");
+	if (param_num == 11)
+		return ("\"material\"");
 	return (0);
 }
 
@@ -103,6 +123,8 @@ char			*get_param_list(int type, int param_num)
 		return (get_camera_param(param_num));
 	if (type == OBJECT)
 		return (get_object_param(param_num));
+	if (type == STRUCTURE)
+		return (get_structure_param(param_num));
 	if (type == SCENE)
 		return (get_scene_param(param_num));
 	return (0);
