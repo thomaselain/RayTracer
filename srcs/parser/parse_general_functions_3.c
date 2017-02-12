@@ -40,7 +40,7 @@ static char		*get_structure_param(int param_num)
 	if (param_num == 1)
 		return ("\"material_type\"");
 	if (param_num == 2)
-		return ("\"a\"");
+		return ("\"zoom\"");
 	if (param_num == 3)
 		return ("\"b\"");
 	if (param_num == 4)

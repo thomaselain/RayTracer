@@ -76,7 +76,7 @@
 				"material":
 				{
 					"material_type":"PERLIN",
-					"a":2,
+					"zoom":2,
 					"b":1.04, 
 					"c":-10.9
 				},
