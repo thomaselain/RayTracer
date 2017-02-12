@@ -4,13 +4,13 @@
 	{
 		"origin":
 		{
-			"x":-10,
+			"x":0,
 			"y":-10,
 			"z":-5
 		},
 		"direction":
 		{
-			"x":1,
+			"x":0,
 			"y":1,
 			"z":0
 		},
@@ -27,6 +27,11 @@
 				"y":10,
 				"z":0
 			},
+			"material":
+			{
+				"material_type": "PERLIN",
+				"a":1
+			},
 			"direction":
 			{
 				"x":0,
@@ -34,8 +39,8 @@
 				"z":0
 			},
 			"reflection":0.0,
-			"diffuse":1.0,
-			"radius":1,
+			"diffuse":0.0,
+			"radius":0,
 			"comment":"Background plane"
 		},	
 		{
@@ -52,7 +57,14 @@
 				"x":0,
 				"y":0,
 				"z":1
+			},		
+			"material":
+			{
+				"material_type": "PERLIN",
+				"a":1
 			},
+			"start":3,
+			"end":3,
 			"reflection":0.0,
 			"diffuse":0.25,
 			"radius":1.0,
@@ -73,6 +85,8 @@
 				"y":0,
 				"z":1
 			},
+			"start":3,
+			"end":3,
 			"reflection":0.0,
 			"diffuse":0.5,
 			"radius":1.0,
@@ -95,6 +109,8 @@
 				"y":0,
 				"z":1
 			},
+			"start":3,
+			"end":3,
 			"reflection":0.0,
 			"diffuse":0.75,
 			"radius":1.0,
@@ -116,6 +132,8 @@
 				"y":0,
 				"z":1
 			},
+			"start":3,
+			"end":3,
 			"reflection":0.0,
 			"diffuse":0.5,
 			"radius":1.0,
@@ -136,13 +154,15 @@
 				"y":0,
 				"z":1
 			},
+			"start":3,
+			"end":3,
 			"reflection":0.0,
 			"diffuse":10.0,
 			"radius":1.0,
 			"comment":"White cylinder"
 		},	
 
-			{
+		{
 			"type":"SPHERE",
 			"color":0xff0000,
 			"origin":
@@ -156,7 +176,7 @@
 			"radius":1,
 			"comment":"Red sphere"
 		},
-			{
+		{
 			"type":"SPHERE",
 			"color":0x00ff00,
 			"origin":
@@ -170,7 +190,7 @@
 			"radius":1,
 			"comment":"Green sphere"
 		},
-			{
+		{
 			"type":"SPHERE",
 			"color":0x0000ff,
 			"origin":
@@ -184,7 +204,7 @@
 			"radius":1,
 			"comment":"Blue sphere"
 		},
-			{
+		{
 			"type":"SPHERE",
 			"color":0xff0000,
 			"origin":
@@ -198,7 +218,7 @@
 			"radius":1,
 			"comment":"Red sphere"
 		},
-			{
+		{
 			"type":"SPHERE",
 			"color":0x00ff00,
 			"origin":
@@ -212,7 +232,7 @@
 			"radius":1,
 			"comment":"Green sphere"
 		},
-			{
+		{
 			"type":"SPHERE",
 			"color":0x0000ff,
 			"origin":
@@ -226,7 +246,7 @@
 			"radius":1,
 			"comment":"Blue sphere"
 		},
-			{
+		{
 			"type":"SPHERE",
 			"color":0xff0000,
 			"origin":
@@ -240,7 +260,7 @@
 			"radius":1,
 			"comment":"Red sphere"
 		},
-			{
+		{
 			"type":"SPHERE",
 			"color":0x00ff00,
 			"origin":
@@ -254,7 +274,7 @@
 			"radius":1,
 			"comment":"Green sphere"
 		},
-			{
+		{
 			"type":"SPHERE",
 			"color":0x0000ff,
 			"origin":
@@ -268,7 +288,7 @@
 			"radius":1,
 			"comment":"Blue sphere"
 		},
-			{
+		{
 			"type":"SPHERE",
 			"color":0xff0000,
 			"origin":
@@ -282,7 +302,7 @@
 			"radius":1,
 			"comment":"Red sphere"
 		},
-			{
+		{
 			"type":"SPHERE",
 			"color":0x00ff00,
 			"origin":
@@ -296,7 +316,7 @@
 			"radius":1,
 			"comment":"Green sphere"
 		},
-			{
+		{
 			"type":"SPHERE",
 			"color":0x0000ff,
 			"origin":
@@ -309,8 +329,8 @@
 			"diffuse":0.1,
 			"radius":1,
 			"comment":"Blue sphere"
-			},
-			{
+		},
+		{
 			"type":"SPHERE",
 			"color":0xff0000,
 			"origin":
@@ -324,7 +344,7 @@
 			"radius":1,
 			"comment":"Red sphere"
 		},
-			{
+		{
 			"type":"SPHERE",
 			"color":0x00ff00,
 			"origin":
@@ -338,7 +358,7 @@
 			"radius":1,
 			"comment":"Green sphere"
 		},
-			{
+		{
 			"type":"SPHERE",
 			"color":0x0000ff,
 			"origin":
@@ -355,17 +375,6 @@
 	],
 	"lights":
 	[
-			{
-			"type":"SPOT",
-			"color":0xffffff,
-			"origin":
-			{
-				"x":5,
-				"y":-5,
-				"z":-5
-			},
-			"radius":1
-		},
 		{
 			"type":"SPOT",
 			"color":0xffffff,
@@ -373,7 +382,7 @@
 			{
 				"x":5,
 				"y":-5,
-				"z":5
+				"z":-5
 			},
 			"radius":1
 		}

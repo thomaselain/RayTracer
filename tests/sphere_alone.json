@@ -1,5 +1,5 @@
 {
-	"background":0x000000,
+	"background":0xffffff,
 	"camera":
 	{
 		"origin":
@@ -20,16 +20,7 @@
 	[
 		{
 			"type":"PLANE",
-			"color":0xff0000,
-
-			"material":
-			{
-				"material_type":"PERLIN",
-				"a":2,
-				"b":1.04,
-				"c":-10.9
-			},
-
+			"color":0x0000ff,
 			"origin":
 			{
 				"x":0,
@@ -44,7 +35,7 @@
 			},
 			"reflection":0.0,
 			"diffuse":0.0,
-			"radius":1.0,
+			"radius":0.0,
 			"comment":"Plane (background)"
 		},
 		{
@@ -62,14 +53,15 @@
 				"y":1,
 				"z":0
 			},
-			"reflection":0.0,
+
+			"reflection":1.0,
 			"diffuse":0.0,
 			"radius":0.0,
 			"comment":"Plane (background)"
 		},
 		{
 			"type":"SPHERE",
-			"color":0x4030dd,
+			"color":0xffffff,
 			"origin":
 			{
 				"x":0,
@@ -82,9 +74,14 @@
 				"y":0,
 				"z":-4
 			},
+			"material":
+			{
+				"material_type":"PERLIN",
+				"a":1
+			},
 			"start":3.0,
 			"end":3.0,
-			"reflection":1.0,
+			"reflection":0.0,
 			"diffuse":0.1,
 			"radius":1.0,
 			"comment":"Cone"
@@ -94,11 +91,11 @@
 	[
 		{
 			"type":"SPOT",
-			"color":0xc0ffee,
+			"color":0xffffff,
 			"origin":
 			{
 				"x":0.0,
-				"y":10,
+				"y":0,
 				"z":0
 			},
 			"radius":1
