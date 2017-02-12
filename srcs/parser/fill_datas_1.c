@@ -21,6 +21,7 @@
 #define LIGHT			OBJECT
 #define SCENE			3
 #define LIST			4
+#define STRUCT			5
 
 /*
 ** Fill vector with 0 if init is equal to 1, or with the JSON datas elseway
@@ -119,6 +120,8 @@ static void		fill_objects_sub(char **s, t_object *o)
 		o->start = parse_float(s);
 	else if (index == 10)
 		o->end = parse_float(s);
+	else if (index == 11)
+		o->noise = parse_structure(s);
 }
 
 /*
@@ -139,6 +142,7 @@ void			fill_objects(char **s, t_object *o, int init)
 		o->comment = "NONE";
 		o->start = 0.0;
 		o->end = 0.0;
+		fill_structure(0, &(o->noise), 1);
 	}
 	else
 		fill_objects_sub(s, o);

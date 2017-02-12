@@ -15,6 +15,12 @@
 # include <core.h>
 
 /*
+** Return a parsed structure (fill missing datas with 0)
+*/
+
+void			fill_structure(char **s, t_noise *n, int init);
+
+/*
 ** Fill vector with 0 if init is equal to zero, or with the JSON datas elseway
 */
 

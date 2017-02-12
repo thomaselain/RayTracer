@@ -73,6 +73,13 @@
 					"y":0,
 					"z":-4
 				},
+				"material":
+				{
+					"material_type":"PERLIN",
+					"a":2,
+					"b":1.04, 
+					"c":-10.9
+				},
 				"start":3.0,
 				"end":3.0,
 				"reflection":0.0,

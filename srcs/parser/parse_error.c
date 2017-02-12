@@ -21,6 +21,7 @@
 #define CAMERA		1
 #define OBJECT		2
 #define LIGHT		OBJECT
+#define STRUCT		5
 #define SCENE		3
 #define LIST		4
 #define BBC			0
@@ -31,6 +32,16 @@
 /*
 ** Return some text according to the error given as parameter
 */
+
+void			display_error(int errnum)
+{
+	if (errnum == 1)
+		ft_putendl("Wrong format. Use the '.json' format.");
+	else if (errnum == 2)
+		ft_putendl("The file is empty.");
+	if (errnum != 0)
+		exit (0);
+}
 
 static char	*error_text(int error)
 {
@@ -61,6 +72,8 @@ static char	*type_text(int type)
 		return (" for the global scene.");
 	if (type == LIST)
 		return (" for one of the lists.");
+	if (type == STRUCT)
+		return (" for the structure.");
 	return (0);
 }
 

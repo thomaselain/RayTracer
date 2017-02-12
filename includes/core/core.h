@@ -43,6 +43,27 @@ typedef enum		e_type
 }					t_type;
 
 /*
+** Contains every material types
+*/
+
+typedef enum		e_noise_type
+{
+	PERLIN, MARBLE, WOOD, NONE
+}					t_noise_type;
+
+/*
+** Contains every informations about the material (noise)
+*/
+
+typedef	struct		s_noise
+{
+	float			a;
+	float			b;
+	float			c;
+	t_noise_type	material_type;
+}					t_noise;
+
+/*
 **	Contains every informations usefull about the current ray
 */
 
@@ -89,6 +110,7 @@ typedef struct		s_object
 	char			*comment;
 	float			start;
 	float			end;
+	t_noise			noise;
 }					t_object;
 
 /*
