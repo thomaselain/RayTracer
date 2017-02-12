@@ -12,6 +12,7 @@
 
 #ifndef PARSE_GENERAL_FUNCTIONS_H
 # define PARSE_GENERAL_FUNCTIONS_H
+# include <core.h>
 
 /*
 ** Should be called after every detail or object,
@@ -38,7 +39,7 @@ void			character_skipper(char **s);
 ** NO_ERROR elseway;
 */
 
-static char		*get_structure_param(int param_num);
+char			*get_structure_param(int param_num);
 
 /*
 ** Return a parameter, or 0, if arguments are wrong

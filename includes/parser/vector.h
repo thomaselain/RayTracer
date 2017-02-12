@@ -14,6 +14,7 @@
 # define VECTOR_H
 # include <stdlib.h>
 # include <math.h>
+# include <core.h>
 # define X			f[0]
 # define Y			f[1]
 # define Z			f[2]

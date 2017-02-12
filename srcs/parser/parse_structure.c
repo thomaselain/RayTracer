@@ -16,10 +16,11 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <errno.h>
-#include <parse_major.h>
+#include "parse_major.h"
 #include <stdio.h>
-#include <parse_general_functions.h>
-#include <parse_details.h>
+#include "parse_general_functions.h"
+#include "parse_details.h"
+#include "parse_error.h"
 #define STRUCT		5
 #define CEC			5
 #define INDEX		n[0]
@@ -41,17 +42,17 @@ void			fill_structure(char **s, t_noise *n, int init)
 	if (init == 1)
 	{
 		n->material_type = NONE;
-		n->a = 0.0;
-		n->b = 0.0;
+		n->zoom = 0.0;
+		n->intensity = 1.0;
 		n->c = 0.0;
 	}
 	else
 	{
 		if (ft_strnstr(*s, "\"material_type\"", 15) != 0)
 			data_i = 1;
-		else if (ft_strnstr(*s, "\"a\"", 3) != 0)
+		else if (ft_strnstr(*s, "\"zoom\"", 6) != 0)
 			data_i = 2;
-		else if (ft_strnstr(*s, "\"b\"", 3) != 0)
+		else if (ft_strnstr(*s, "\"intensity\"", 11) != 0)
 			data_i = 3;
 		else if (ft_strnstr(*s, "\"c\"", 3) != 0)
 			data_i = 4;
@@ -59,9 +60,9 @@ void			fill_structure(char **s, t_noise *n, int init)
 		if (data_i == 1)
 			n->material_type = parse_noise_type(s);
 		else if (data_i == 2)
-			n->a = parse_float(s);
+			n->zoom = parse_float(s);
 		else if (data_i == 3)
-			n->b = parse_float(s);
+			n->intensity = parse_float(s);
 		else if (data_i == 4)
 			n->c = parse_float(s);
 	}

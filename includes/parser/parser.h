@@ -31,6 +31,6 @@ t_scene			*scene_parse_file(const char *filename);
 ** Destroy the scene variable
 */
 
-void			scene_destroy(t_scene *scene);
+t_scene			*scene_destroy(t_scene *scene);
 
 #endif
