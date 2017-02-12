@@ -77,7 +77,7 @@
 				{
 					"material_type":"PERLIN",
 					"zoom":2,
-					"b":1.04, 
+					"intensity":1.04, 
 					"c":-10.9
 				},
 				"start":3.0,

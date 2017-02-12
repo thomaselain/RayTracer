@@ -43,7 +43,7 @@ void			fill_structure(char **s, t_noise *n, int init)
 	{
 		n->material_type = NONE;
 		n->zoom = 0.0;
-		n->b = 0.0;
+		n->intensity = 1.0;
 		n->c = 0.0;
 	}
 	else
@@ -52,7 +52,7 @@ void			fill_structure(char **s, t_noise *n, int init)
 			data_i = 1;
 		else if (ft_strnstr(*s, "\"zoom\"", 6) != 0)
 			data_i = 2;
-		else if (ft_strnstr(*s, "\"b\"", 3) != 0)
+		else if (ft_strnstr(*s, "\"intensity\"", 11) != 0)
 			data_i = 3;
 		else if (ft_strnstr(*s, "\"c\"", 3) != 0)
 			data_i = 4;
@@ -62,7 +62,7 @@ void			fill_structure(char **s, t_noise *n, int init)
 		else if (data_i == 2)
 			n->zoom = parse_float(s);
 		else if (data_i == 3)
-			n->b = parse_float(s);
+			n->intensity = parse_float(s);
 		else if (data_i == 4)
 			n->c = parse_float(s);
 	}

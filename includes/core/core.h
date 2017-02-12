@@ -44,7 +44,7 @@ typedef enum		e_noise_type
 typedef	struct		s_noise
 {
 	float			zoom;
-	float			b;
+	float			intensity;
 	float			c;
 	t_noise_type	material_type;
 }					t_noise;

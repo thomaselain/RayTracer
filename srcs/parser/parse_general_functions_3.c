@@ -42,7 +42,7 @@ static char		*get_structure_param(int param_num)
 	if (param_num == 2)
 		return ("\"zoom\"");
 	if (param_num == 3)
-		return ("\"b\"");
+		return ("\"intensity\"");
 	if (param_num == 4)
 		return ("\"c\"");
 	return (0);
