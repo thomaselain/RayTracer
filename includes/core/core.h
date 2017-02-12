@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 17:28:23 by aljourda          #+#    #+#             */
-/*   Updated: 2017/02/06 21:36:26 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/12 14:58:24 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,20 @@
 # define WIDTH	1000
 # define HEIGHT	800
 # define WHSIZE	(WIDTH * HEIGHT)
+
+
+typedef	enum		e_noise_type
+{
+	PERLIN, MARBLE, WOOD
+}					t_noise_type;
+
+typedef	struct		s_noise
+{
+	t_noise_type	type;
+	float			coef_a;
+	float			coef_b;
+	float			coef_c;
+}					t_noise;
 
 /*
 ** Contains every objects types
@@ -60,6 +74,7 @@ typedef struct		s_camera
 typedef struct		s_object
 {
 	t_type			type;
+	t_noise			noise;
 	t_vector4f		origin;
 	t_vector4f		direction;
 	int				color;

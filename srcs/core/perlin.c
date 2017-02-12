@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/10 16:10:58 by telain            #+#    #+#             */
-/*   Updated: 2017/02/10 16:12:59 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/12 14:56:43 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	init_perlin(int perlin[512])
 	}
 }
 
-double noise(double x, double y, double z)
+float perlin(float x, float y, float z)
 {
 	int perlin[512];
 

@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:49:13 by telain            #+#    #+#             */
-/*   Updated: 2017/02/10 16:48:05 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/12 14:57:17 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int			adjust_color(t_scene *s, t_object *hit, t_ray ray)
 				c = find_grid_color(hit, ray); 
 //			c = color_add(hit->color, color_mul(((t_object*)light->content)->color, specular_light(s, hit, ray, v_light)));           //Work in progress :/
 //			c = color_div(c, vector_dist(ray.pos, hit->origin) / 10 + 1.0); // effet brouillard lointain
-			c = color_mul(c, coef * sin(ray.pos.x / 10 + (noise(ray.pos.x / 10, ray.pos.y / 10, ray.pos.z / 10))));
+			c = color_mul(c, coef * noise(first_hit, ray.pos));
 			if (first_hit)
 				c = color_mul(c, first_hit->reflection * 2.0);
 			light = light->next;
