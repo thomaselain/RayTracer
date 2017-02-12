@@ -15,6 +15,7 @@
 #include <parse_general_functions.h>
 #include <parse_details.h>
 #include <parse_major.h>
+#include "fill_datas.h"
 #define VECTOR			0
 #define CAMERA			1
 #define OBJECT			2

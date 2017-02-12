@@ -16,10 +16,11 @@
 #include <unistd.h>
 #include <fcntl.h>
 #include <errno.h>
-#include <parse_major.h>
+#include "parse_major.h"
 #include <stdio.h>
-#include <parse_general_functions.h>
-#include <parse_details.h>
+#include "parse_general_functions.h"
+#include "parse_details.h"
+#include "parse_error.h"
 #define STRUCT		5
 #define CEC			5
 #define INDEX		n[0]

@@ -17,6 +17,7 @@
 #include <fcntl.h>
 #include <errno.h>
 #include <parse_major.h>
+#include "parse_error.h"
 #include <stdio.h>
 #define GET		0
 #define INIT	1
@@ -112,8 +113,9 @@ t_scene			*scene_parse_file(const char *filename)
 ** Destroy the scene variable
 */
 
-void			scene_destroy(t_scene *scene)
+t_scene			*scene_destroy(t_scene *scene)
 {
 	scene_content(CLEAN);
 	scene = 0;
+	return (scene);
 }

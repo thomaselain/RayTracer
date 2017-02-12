@@ -85,7 +85,7 @@
 				"reflection":0.1,
 				"diffuse":0.1,
 				"radius":1.0,
-				"comment":"Cone"
+				"comment":"Cylindre"
 			}
 		],
 		"lights":

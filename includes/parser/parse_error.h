@@ -12,11 +12,19 @@
 
 #ifndef PARSE_ERROR_H
 # define PARSE_ERROR_H
+# include <core.h>
 
 /*
 ** Print a message and clean allocated memory on error
 */
 
 void		error_close(int type, int error);
+
+/*
+** Print a message and exits the function
+*/
+
+void			display_error(int errnum);
+
 
 #endif
