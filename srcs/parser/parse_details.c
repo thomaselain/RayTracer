@@ -192,6 +192,8 @@ t_filter_type	parse_filter_type(char **string)
 		ret = GREEN_FILTER;
 	else if (ft_strnstr(*string, "\"BLUE_FILTER\"", (index = 13)) != 0)	
 		ret = BLUE_FILTER;
+	else if (ft_strnstr(*string, "\"BLACK_WHITE\"", (index = 13)) != 0)	
+		ret = BLACK_WHITE;
 	else
 		index = 0;
 	*string = *string + index;

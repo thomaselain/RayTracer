@@ -13,6 +13,8 @@
 #ifndef COLOR_H
 # define COLOR_H
 
+#include <core.h>
+
 /*
 **	Returns c1 + c2 in a new unsigned int as a color
 */
@@ -41,5 +43,36 @@ unsigned int		color_div(unsigned int c, float d);
 */
 
 unsigned int		color_avg(unsigned int c1, unsigned int c2);
+
+/*
+** Returns the color of the scene after the application of a sepia filter 
+*/
+
+unsigned int		get_sepia(unsigned int c, int argb[4]);
+
+/*
+** Returns the color of the scene after the application of a black and white filter
+*/
+
+unsigned int		get_black_white(unsigned int c, int argb[4]);
+
+/*
+** Returns the color of the scene after the application of a negative filter
+*/
+
+unsigned int		get_negative(unsigned int c, int argb[4]);
+
+/*
+** Returns the color of the scene after the application of a red or green or blue filter depending on the parameter file
+*/
+
+unsigned int		get_one_color(unsigned int c, int argb[4], t_filter_type filter);
+
+/*
+** Returns the filtered argb color at pixel (x, y);
+*/
+
+unsigned int		add_filter(unsigned int c, t_filter_type filter);
+
 
 #endif

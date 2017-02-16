@@ -43,7 +43,7 @@ typedef enum		e_noise_type
 
 typedef enum		e_filter_type
 {
-	SEPIA, NEGATIVE, RED_FILTER, GREEN_FILTER, BLUE_FILTER, NO_FILTER
+	SEPIA, NEGATIVE, RED_FILTER, GREEN_FILTER, BLUE_FILTER, NO_FILTER, BLACK_WHITE
 }					t_filter_type;
 
 /*

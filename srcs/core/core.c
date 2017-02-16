@@ -45,25 +45,6 @@ t_vector4f			get_ray(t_scene *scene, int x, int y)
 	return (ret);
 }
 
-unsigned int		add_filter(unsigned int c, t_filter_type filter)
-{
-	int 			a;
-	int				r;
-	int				g;
-	int				b;
-	int				avg;
-
-	a = (c >> 24) & 0xff;
-	r = (c >> 16) & 0xff;
-	g = (c >> 8) & 0xff;
-	b = c & 0xff;
-	if (filter == NEGATIVE)
-		return (255 - c);
-	avg = (r + g + b) / 3;
-	c = (a << 24) | (avg << 16) | (avg << 8) | avg;
-	return (c);
-}
-
 unsigned int		ray_pixel(t_scene *scene, int x, int y)
 {
 	t_ray			ray;
@@ -75,6 +56,5 @@ unsigned int		ray_pixel(t_scene *scene, int x, int y)
 	ray.pos = scene->camera.origin;
 	hit = get_intersection(scene, &ray);
 	c = adjust_color(scene, hit, ray);
-	c = add_filter(c, scene->camera.filter);
 	return (c);
 }
