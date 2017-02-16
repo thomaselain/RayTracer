@@ -60,6 +60,8 @@ static char		*get_camera_param(int param_num)
 		return ("\"direction\"");
 	if (param_num == 3)
 		return ("\"fov\"");
+	if (param_num == 4)
+		return ("\"filter\"");
 	return (0);
 }
 

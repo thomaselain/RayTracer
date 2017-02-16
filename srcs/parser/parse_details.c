@@ -170,3 +170,30 @@ t_noise_type	parse_noise_type(char **string)
 	*string = *string + index;
 	return (ret);
 }
+
+t_filter_type	parse_filter_type(char **string)
+{
+	t_type	ret;
+	int		index;
+
+	ret = UNKNOWN;
+	character_skipper(string);
+	if (**string != '\"')
+		return (ret);
+	if (ft_strnstr(*string, "\"SEPIA\"", (index = 7)) != 0)
+		ret = SEPIA;
+	else if (ft_strnstr(*string, "\"NEGATIVE\"", (index = 10)) != 0)
+		ret = NEGATIVE;
+	else if (ft_strnstr(*string, "\"NO_FILTER\"", (index = 11)) != 0)	
+		ret = NO_FILTER;
+	else if (ft_strnstr(*string, "\"RED_FILTER\"", (index = 12)) != 0)	
+		ret = RED_FILTER;
+	else if (ft_strnstr(*string, "\"GREEN_FILTER\"", (index = 14)) != 0)	
+		ret = GREEN_FILTER;
+	else if (ft_strnstr(*string, "\"BLUE_FILTER\"", (index = 13)) != 0)	
+		ret = BLUE_FILTER;
+	else
+		index = 0;
+	*string = *string + index;
+	return (ret);
+}

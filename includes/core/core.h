@@ -38,6 +38,15 @@ typedef enum		e_noise_type
 }					t_noise_type;
 
 /*
+** Contains every filter types
+*/
+
+typedef enum		e_filter_type
+{
+	SEPIA, NEGATIVE, RED_FILTER, GREEN_FILTER, BLUE_FILTER, NO_FILTER
+}					t_filter_type;
+
+/*
 ** Contains every informations about the material (noise)
 */
 
@@ -72,6 +81,7 @@ typedef struct		s_camera
 	t_vector4f		right;
 	t_vector4f		up;
 	char			fov;
+	t_filter_type	filter;
 }					t_camera;
 
 /*

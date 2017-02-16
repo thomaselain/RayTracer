@@ -50,5 +50,12 @@ t_type			parse_type(char **string);
 
 t_noise_type	parse_noise_type(char **string);
 
+/*
+** Parse the color filter of the camera from parameter string
+*/
+
+t_filter_type	parse_filter_type(char **string);
+
+
 
 #endif

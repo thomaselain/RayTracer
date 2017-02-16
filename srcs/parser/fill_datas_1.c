@@ -82,8 +82,10 @@ void			fill_camera(char **s, t_camera *c, int init)
 			c->origin = parse_vector(s);
 		else if (index == 2)
 			c->direction = parse_vector(s);
-		else
+		else if (index == 3)
 			c->fov = parse_int(s);
+		else if (index == 4)
+			c->filter = parse_filter_type(s);
 	}
 }
 
