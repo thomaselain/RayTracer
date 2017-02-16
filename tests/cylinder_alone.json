@@ -82,7 +82,7 @@
 			},
 			"start":3.0,
 			"end":3.0,
-			"reflection":0.1,
+			"reflection":0.0,
 			"diffuse":0.1,
 			"radius":1.0,
 			"comment":"Cylindre"
@@ -91,13 +91,19 @@
 	"lights":
 	[
 		{
-			"type":"SPOT",
+			"type":"DIRECTIONAL",
 			"color":0xc0ffee,
 			"origin":
 			{
 				"x":0.0,
-				"y":-10,
-				"z":-5
+				"y":10,
+				"z":-10
+			},
+			"direction":
+			{
+				"x":0.0,
+				"y":-1.0,
+				"z":-1.0
 			},
 			"radius":1
 		}

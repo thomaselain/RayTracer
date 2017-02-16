@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 17:28:23 by aljourda          #+#    #+#             */
-/*   Updated: 2017/02/12 18:17:57 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/16 18:34:27 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 
 typedef enum		e_type
 {
-	UNKNOWN, DIRECTIONAL, SPOT, PLANE, SPHERE, CONE, CYLINDER, CIRCLE, SQUARE
+	DIRECTIONAL, SPOT, PLANE, SPHERE, CONE, CYLINDER, CIRCLE, SQUARE, UNKNOWN
 }					t_type;
 
 /*
@@ -36,6 +36,15 @@ typedef enum		e_noise_type
 {
 	PERLIN, MARBLE, WOOD, NONE
 }					t_noise_type;
+
+/*
+** Contains every filter types
+*/
+
+typedef enum		e_filter_type
+{
+	SEPIA, NEGATIVE, RED_FILTER, GREEN_FILTER, BLUE_FILTER, NO_FILTER
+}					t_filter_type;
 
 /*
 ** Contains every informations about the material (noise)
@@ -71,6 +80,7 @@ typedef struct		s_camera
 	t_vector4f		direction;
 	t_vector4f		right;
 	t_vector4f		up;
+	t_filter_type	filter;
 	char			fov;
 }					t_camera;
 

@@ -30,7 +30,7 @@
 			"material":
 			{
 				"material_type": "PERLIN",
-				"a":1
+				"zoom":1
 			},
 			"direction":
 			{
@@ -61,7 +61,7 @@
 			"material":
 			{
 				"material_type": "PERLIN",
-				"a":1
+				"zoom":1
 			},
 			"start":3,
 			"end":3,
