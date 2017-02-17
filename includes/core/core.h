@@ -82,7 +82,6 @@ typedef struct		s_camera
 	t_vector4f		up;
 	t_filter_type	filter;
 	char			fov;
-	t_filter_type	filter;
 }					t_camera;
 
 /*
