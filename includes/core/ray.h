@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:56:12 by telain            #+#    #+#             */
-/*   Updated: 2017/02/16 16:16:16 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/17 17:44:19 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define CAMDIR					(s->camera->direction)
 # define CAMPOS					(s->camera->origin)
-# define MAX_REFLECTION			(2)
+# define MAX_REFLECTION			(7)
 # define MAX_SIZE				(100000.0)
 # define COLOR_R(color)			(color & 0xff)
 # define COLOR_G(color)			((color & 0xff00) >> 8)
@@ -41,7 +41,7 @@ t_vector4f				get_ray(t_scene *scene, int x, int y);
 **	Returns a new Color (Changed with the object param)
 */
 
-int						adjust_color(t_scene *s, t_object *hit, t_ray ray);
+int						adjust_color(t_scene *s, t_object *hit, t_ray ray, int reflects);
 
 /*
 **	Calculates the intersection with all objects
@@ -85,6 +85,12 @@ float					find_cap(t_ray *r, t_object *o, float r1, float r2);
 */
 
 float					find_shadow(t_scene *s, t_object *hit, t_ray ray, t_ray light);
+
+/*
+**	Calculates everything and returns the new color
+*/
+
+unsigned int			compute_light(t_scene *s, t_object *o, t_ray ray, t_object *light);
 
 /*
 **	Calculates the specular light for the given object

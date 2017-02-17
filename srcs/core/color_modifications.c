@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:49:13 by telain            #+#    #+#             */
-/*   Updated: 2017/02/16 19:46:39 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/17 17:44:22 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <ray.h>
 #include <img.h>
 #include <color.h>
-
+/*
 float		vector_dist(t_vector4f v1, t_vector4f v2);
 
 int			adjust_color(t_scene *s, t_object *hit, t_ray ray)
@@ -43,6 +43,7 @@ int			adjust_color(t_scene *s, t_object *hit, t_ray ray)
 		while (light != 0)
 		{
 			v_light.dir = get_light_vector((t_object*)light->content, ray);
+			v_light.pos = ((t_object*)light->content)->origin;
 			if (vector_dot(v_light.dir, get_normal(hit, ray)) >= 0)
 				c = color_mul(c, vector_dot(v_light.dir, get_normal(hit, ray)));
 			else
@@ -68,5 +69,5 @@ t_object	*get_reflect(t_scene *s, t_object *hit, t_ray *ray)
 	normal = get_normal(hit, *ray);
 	ray->dir = ADD(ray->dir, MUL(normal, -2.0 * vector_dot(normal, ray->dir)));
 	return (get_intersection(s, ray));
-}
+}*/
 
