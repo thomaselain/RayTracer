@@ -14,8 +14,8 @@
 			"y":1,
 			"z":0
 		},
-		"fov": 100,
-		"filter":"BLACK_WHITE"
+		"fov": 90,
+		"filter":"NO_FILTER"
 	},
 	"objects":
 	[	
