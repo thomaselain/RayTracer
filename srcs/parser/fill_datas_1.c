@@ -70,6 +70,7 @@ void			fill_camera(char **s, t_camera *c, int init)
 		fill_vector(0, &(c->origin), 1);
 		fill_vector(0, &(c->direction), 1);
 		c->fov = 0;
+		c->filter = NO_FILTER;
 	}
 	else
 	{

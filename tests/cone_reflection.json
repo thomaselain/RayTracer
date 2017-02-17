@@ -36,7 +36,7 @@
 				"material":
 				{
 					"material_type":"PERLIN",
-					"a": 10
+					"zoom": 10
 				},
 				"reflection":0.1,
 				"diffuse":0.5,
@@ -150,7 +150,7 @@
 				"material":
 				{
 					"material_type":"PERLIN",
-					"a":1
+					"zoom":1
 				},
 				"origin":
 				{

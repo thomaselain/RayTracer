@@ -14,7 +14,8 @@
 			"y":1,
 			"z":0
 		},
-		"fov":60
+		"fov":60,
+		"filter":"NO_FILTER"
 	},
 	"objects":
 	[
@@ -53,8 +54,6 @@
 				"y":1,
 				"z":0
 			},
-			"fov":60,
-			"filter":"SEPIA"
 			"reflection":0.0,
 			"diffuse":0.0,
 			"radius":0.5,
