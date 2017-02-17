@@ -4,9 +4,9 @@
 		{
 			"origin":
 			{
-				"x":0,
+				"x":-4,
 				"y":-9,
-				"z":0
+				"z":-4
 			},
 			"direction":
 			{
@@ -32,6 +32,11 @@
 					"x":0,
 					"y":0,
 					"z":1
+				},
+				"material":
+				{
+					"material_type":"PERLIN",
+					"a": 10
 				},
 				"reflection":0.1,
 				"diffuse":0.5,
@@ -142,6 +147,11 @@
 			{
 				"type":"CONE",
 				"color":0xffffff,
+				"material":
+				{
+					"material_type":"PERLIN",
+					"a":1
+				},
 				"origin":
 				{
 					"x":0,

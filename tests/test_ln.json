@@ -1,5 +1,5 @@
 {
-	"background":0x000000,
+	"background":0xffffff,
 		"camera":
 		{
 			"origin":
@@ -180,17 +180,6 @@
 			[
 			{
 				"type":"SPOT",
-				"color":0xffffff,
-				"origin":
-				{
-					"x":7,
-					"y":0,
-					"z":0
-				},
-				"radius":1
-			},
-			{
-				"type":"DIRECTIONAL",
 				"color":0xffffff,
 				"origin":
 				{

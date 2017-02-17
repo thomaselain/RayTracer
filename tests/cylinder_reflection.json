@@ -142,6 +142,11 @@
 			{
 				"type":"CYLINDER",
 				"color":0xff0000,
+				"material":
+				{
+					"material_type":"PERLIN",
+					"a": 1
+				},
 				"origin":
 				{
 					"x":0,

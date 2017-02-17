@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 17:28:23 by aljourda          #+#    #+#             */
-/*   Updated: 2017/02/06 21:36:26 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/16 19:46:46 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 
 typedef enum		e_type
 {
-	UNKNOWN, DIRECTIONAL, SPOT, PLANE, SPHERE, CONE, CYLINDER, CIRCLE, SQUARE
+	DIRECTIONAL, SPOT, PLANE, SPHERE, CONE, CYLINDER, CIRCLE, SQUARE, UNKNOWN
 }					t_type;
 
 /*
@@ -80,6 +80,7 @@ typedef struct		s_camera
 	t_vector4f		direction;
 	t_vector4f		right;
 	t_vector4f		up;
+	t_filter_type	filter;
 	char			fov;
 	t_filter_type	filter;
 }					t_camera;

@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 13:22:31 by svassal           #+#    #+#             */
-/*   Updated: 2017/02/07 21:00:43 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/12 15:22:49 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,8 @@
 #define SET		3
 
 /*
-** Write the second string over the first one
-*/
+ * ** Write the second string over the first one
+ * */
 
 static void		str_write_over(char **s1, char *s2)
 {
@@ -36,8 +36,8 @@ static void		str_write_over(char **s1, char *s2)
 }
 
 /*
-** Parse the file given as filedescriptor
-*/
+ * ** Parse the file given as filedescriptor
+ * */
 
 static void		parse(int fd)
 {
@@ -69,8 +69,8 @@ static void		parse(int fd)
 }
 
 /*
-** Returns 0 if the extension of the file is .json, otherwise the function will return -1
-*/
+ * ** Returns 0 if the extension of the file is .json, otherwise the function will return -1
+ * */
 
 int				check_extension(const char *filename)
 {
@@ -84,8 +84,8 @@ int				check_extension(const char *filename)
 }
 
 /*
-** Parse the file into a t_scene variable
-*/
+ * ** Parse the file into a t_scene variable
+ * */
 
 t_scene			*scene_parse_file(const char *filename)
 {
@@ -110,8 +110,8 @@ t_scene			*scene_parse_file(const char *filename)
 }
 
 /*
-** Destroy the scene variable
-*/
+ * ** Destroy the scene variable
+ * */
 
 t_scene			*scene_destroy(t_scene *scene)
 {

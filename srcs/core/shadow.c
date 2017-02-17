@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 18:29:56 by telain            #+#    #+#             */
-/*   Updated: 2017/02/06 22:19:13 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/16 17:32:01 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,14 @@
 #include <ray.h>
 #include <color.h>
 
-float	find_shadow(t_scene *s, t_object *hit, t_ray ray, t_vector4f light)
+float	find_shadow(t_scene *s, t_object *hit, t_ray ray, t_ray light)
 {
-	ray.pos = ADD(ray.pos, MUL(light, 0));
-	ray.dir = light;
-	if (get_intersection(s, &ray) != NULL)
+	t_vector4f	before;
+
+	before = ray.pos;
+	ray.pos = ADD(ray.pos, MUL(light.dir, 0.1));
+	ray.dir = light.dir;
+	if (get_intersection(s, &ray) != NULL && vector_dist(before, ray.pos) <= vector_dist(before, light.pos))
 		return (0.3);
 	return (1);
 }
@@ -42,7 +45,7 @@ float	specular_light(t_scene *s, t_object *hit, t_ray ray, t_vector4f light)
 	   2 * vector_dot(MUL(ray.dir, -1), get_normal(hit, ray)))))),
 	   hit->diffuse);
 	   */
-	return (specular >= 1 ? 1 : specular);
+	return (specular >= 1.0 ? 1.0 : specular);
 }
 
 t_vector4f	get_light_vector(t_object *light, t_ray ray)
