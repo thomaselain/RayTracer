@@ -19,7 +19,7 @@ float	find_shadow(t_scene *s, t_object *hit, t_ray ray, t_ray light)
 	t_vector4f	before;
 
 	before = ray.pos;
-	ray.pos = ADD(ray.pos, MUL(light.dir, 0.1));
+	ray.pos = ADD(ray.pos, MUL(light.dir, 0.001));
 	ray.dir = light.dir;
 	if (get_intersection(s, &ray) != NULL && vector_dist(before, ray.pos) <= vector_dist(before, light.pos))
 		return (0.3);

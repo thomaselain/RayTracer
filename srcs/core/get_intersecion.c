@@ -27,42 +27,42 @@ t_object	*get_intersection(t_scene *s, t_ray *ray)
 	{
 		if (((t_object*)obj->content)->type == SPHERE && (d =
 					find_sphere_inter(ray, (t_object*)obj->content)) <
-				closest && d >= 0.1)
+				closest && d >= 0.001)
 		{
 			hit = (t_object*)obj->content;
 			closest = d;
 		}
 		else if (((t_object*)obj->content)->type == PLANE && (d =
 					find_plane_inter(ray, (t_object*)obj->content)) <
-				closest && d >= 0.1)
+				closest && d >= 0.001)
 		{
 			hit = (t_object*)obj->content;
 			closest = d;
 		}
 		else if (((t_object*)obj->content)->type == CYLINDER && (d =
 					find_cylinder_inter(ray, (t_object*)obj->content)) <
-				closest && d >= 0.1)
+				closest && d >= 0.001)
 		{
 			hit = (t_object*)obj->content;
 			closest = d;
 		}
 		else if (((t_object*)obj->content)->type == CONE && (d =
 					find_cone_inter(ray, (t_object*)obj->content)) <
-				closest && d >= 0.1)
+				closest && d >= 0.001)
 		{
 			hit = (t_object*)obj->content;
 			closest = d;
 		}
 		else if (((t_object*)obj->content)->type == SQUARE && (d =
 					find_square_inter(ray, (t_object*)obj->content)) <
-				closest && d >= 0.1)
+				closest && d >= 0.001)
 		{
 			hit = (t_object*)obj->content;
 			closest = d;
 		}
 		else if (((t_object*)obj->content)->type == CIRCLE && (d =
 					find_circle_inter(ray, (t_object*)obj->content)) <
-				closest && d >= 0.1)
+				closest && d >= 0.001)
 		{
 			hit = (t_object*)obj->content;
 			closest = d;

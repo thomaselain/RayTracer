@@ -15,7 +15,7 @@
 			"z":0
 		},
 		"fov":60,
-		"filter":"NEGATIVE"
+		"filter":"NO_FILTER"
 	},
 	"objects":
 	[

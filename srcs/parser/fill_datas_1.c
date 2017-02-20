@@ -126,6 +126,17 @@ static void		fill_objects_sub(char **s, t_object *o)
 		o->end = parse_float(s);
 	else if (index == 11)
 		o->noise = parse_structure(s);
+	// else if (o->type && o->type == CYLINDER)
+	// {
+	// 	s2 = ft_strdup("\"origin\"");
+	// 	s2 = ft_strcat(s, "x: y: z");
+	// 	/* Simuler un fichier avec les parametres des deux disques, le tout dans une autre fonction*/
+	// 	/* On cree deux objets circle (cap1 et cap2) pour faire les couvercles d'un cylindre*/
+	// 	/* Les donnees contenues dedans seront les resultats d'equations que Thomas me donne*/
+	// 	/* Refaire une fonction fill_objects sans avoir besoin de **s)*/
+	// 	o->cap1 = parse_object(s2);
+	// 	o->cap2 = parse_object(s2);
+	// }
 }
 
 /*
