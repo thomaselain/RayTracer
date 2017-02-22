@@ -50,4 +50,10 @@ void			fill_list(char **s, t_list **l);
 
 void			fill_scene(char **s, t_scene *sc, int init);
 
+/*
+** Fill the cap of a finished cylinder
+*/
+
+void			fill_cap(t_object *cylinder, t_object *cap, int num);
+
 #endif

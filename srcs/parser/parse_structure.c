@@ -49,10 +49,7 @@ void			fill_structure(char **s, t_noise *n, int init)
 	else
 	{
 		if (ft_strnstr(*s, "\"material_type\"", 15) != 0)
-		{
-			ft_putendl(*s);
 			data_i = 1;
-		}
 		else if (ft_strnstr(*s, "\"zoom\"", 6) != 0)
 			data_i = 2;
 		else if (ft_strnstr(*s, "\"intensity\"", 11) != 0)

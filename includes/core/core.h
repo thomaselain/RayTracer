@@ -106,8 +106,8 @@ typedef struct		s_object
 	float			start;
 	float			end;
 	t_noise			noise;
-	t_object		cap1;
-	t_object		cap2;
+	struct s_object	*cap1;
+	struct s_object	*cap2;
 }					t_object;
 
 /*

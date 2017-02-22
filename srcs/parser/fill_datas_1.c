@@ -125,19 +125,39 @@ static void		fill_objects_sub(char **s, t_object *o)
 	else if (index == 10)
 		o->end = parse_float(s);
 	else if (index == 11)
+	{
 		o->noise = parse_structure(s);
-	// else if (o->type && o->type == CYLINDER)
-	// {
-	// 	s2 = ft_strdup("\"origin\"");
-	// 	s2 = ft_strcat(s, "x: y: z");
-	// 	/* Simuler un fichier avec les parametres des deux disques, le tout dans une autre fonction*/
-	// 	/* On cree deux objets circle (cap1 et cap2) pour faire les couvercles d'un cylindre*/
-	// 	/* Les donnees contenues dedans seront les resultats d'equations que Thomas me donne*/
-	// 	/* Refaire une fonction fill_objects sans avoir besoin de **s)*/
-	// 	o->cap1 = parse_object(s2);
-	// 	o->cap2 = parse_object(s2);
-	// }
+		if (o->type == CYLINDER && !o->cap1 && !o->cap2) // On place l'initialisation des cap ici puisque si index == 11, c'est qu'on a deja initialise les autres valeurs (type, comment, etc...)
+		{
+			o->cap1 = ft_memalloc(sizeof(t_object));
+			o->cap2 = ft_memalloc(sizeof(t_object));
+			fill_cap(o, o->cap1, 1);
+			fill_cap(o, o->cap2, 2);
+		}
+	}
 }
+
+/*
+** Fill the cap of a finished cylinder
+*/
+
+void			fill_cap(t_object *cylinder, t_object *cap, int num)
+{
+	cap->type = CIRCLE;
+	fill_vector(0, &(cap->origin), 1);
+	fill_vector(0, &(cap->direction), 1);
+	cap->color = cylinder->color;
+	cap->diffuse = cylinder->diffuse;
+	cap->reflection = cylinder->reflection;
+	cap->intensity = cylinder->intensity;
+	cap->comment = num == 1 ? ft_strdup("1") : ft_strdup("2");
+	cap->start = cylinder->start;
+	cap->end = cylinder->end;
+	fill_structure(0, &(cap->noise), 1);
+	cap->cap1 = NULL;
+	cap->cap2 = NULL;
+}
+
 
 /*
 ** Fill object with 0 if init is equal to 1, or with the JSON datas elseway
@@ -158,6 +178,8 @@ void			fill_objects(char **s, t_object *o, int init)
 		o->start = 0.0;
 		o->end = 0.0;
 		fill_structure(0, &(o->noise), 1);
+		o->cap1 = NULL;
+		o->cap2 = NULL;
 	}
 	else
 		fill_objects_sub(s, o);
