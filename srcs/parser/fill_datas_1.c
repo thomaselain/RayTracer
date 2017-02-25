@@ -6,11 +6,12 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 13:35:30 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/28 18:33:13 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/24 18:57:20 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <core.h>
+#include <ray.h>
 #include <libft.h>
 #include <parse_general_functions.h>
 #include <parse_details.h>
@@ -115,7 +116,14 @@ static void		fill_objects_sub(char **s, t_object *o)
 	else if (index == 5)
 		o->diffuse = parse_float(s);
 	else if (index == 6)
+	{
 		o->intensity = parse_float(s);
+			if (o->type == CYLINDER && !o->cap1 && !o->cap2) // On place l'initialisation des cap ici puisque si index == 11, c'est qu'on a deja initialise les autres valeurs (type, comment, etc...)
+		{
+		o->cap1 = fill_cap(o, 1.0);
+			o->cap2 = fill_cap(o, -1.0);
+		}
+	}
 	else if (index == 7)
 		o->direction = parse_vector(s);
 	else if (index == 8)
@@ -127,35 +135,32 @@ static void		fill_objects_sub(char **s, t_object *o)
 	else if (index == 11)
 	{
 		o->noise = parse_structure(s);
-		if (o->type == CYLINDER && !o->cap1 && !o->cap2) // On place l'initialisation des cap ici puisque si index == 11, c'est qu'on a deja initialise les autres valeurs (type, comment, etc...)
-		{
-			o->cap1 = ft_memalloc(sizeof(t_object));
-			o->cap2 = ft_memalloc(sizeof(t_object));
-			fill_cap(o, o->cap1, 1);
-			fill_cap(o, o->cap2, 2);
-		}
-	}
+}
 }
 
 /*
 ** Fill the cap of a finished cylinder
 */
 
-void			fill_cap(t_object *cylinder, t_object *cap, int num)
+t_object		*fill_cap(t_object *cylinder, float num)
 {
+	t_object *cap;
+
+	cap = ft_memalloc(sizeof(t_object));
 	cap->type = CIRCLE;
 	fill_vector(0, &(cap->origin), 1);
 	fill_vector(0, &(cap->direction), 1);
+	cap->radius = cylinder->radius;
 	cap->color = cylinder->color;
 	cap->diffuse = cylinder->diffuse;
 	cap->reflection = cylinder->reflection;
 	cap->intensity = cylinder->intensity;
 	cap->comment = num == 1 ? ft_strdup("1") : ft_strdup("2");
-	cap->start = cylinder->start;
-	cap->end = cylinder->end;
 	fill_structure(0, &(cap->noise), 1);
-	cap->cap1 = NULL;
-	cap->cap2 = NULL;
+	cap->origin = ADD(cylinder->origin,
+			MUL(vector_normalize(cylinder->direction), cylinder->end * num));
+	cap->direction = MUL(vector_normalize(cylinder->direction), num);
+	return (cap);
 }
 
 

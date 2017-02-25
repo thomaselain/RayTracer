@@ -71,34 +71,34 @@
 			"direction":
 			{
 				"x":-1,
-				"y":0,
+				"y":4,
 				"z":-4
 			},
 			"material":
 			{
-				"material_type":"PERLIN",
+				"material_type":"WOOD",
 				"zoom":2,
 				"intensity":1.04, 
 				"c":-10.9
 			},
+			"radius":1.0,
 			"start":3.0,
-			"end":3.0,
+			"end":0.5,
 			"reflection":0.0,
 			"diffuse":0.1,
-			"radius":1.0,
 			"comment":"Cylindre"
 		}
 	],
 	"lights":
 	[
 		{
-			"type":"DIRECTIONAL",
+			"type":"SPOT",
 			"color":0xc0ffee,
 			"origin":
 			{
-				"x":0.0,
-				"y":10,
-				"z":-10
+				"x":4,
+				"y":0,
+				"z":0
 			},
 			"direction":
 			{

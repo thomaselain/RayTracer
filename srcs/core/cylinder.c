@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 20:04:35 by svassal           #+#    #+#             */
-/*   Updated: 2017/02/10 18:42:39 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/24 18:53:41 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,12 @@
 #define B		f[1]
 #define C		f[2]
 #define D		f[3]
-#define RES_0	f[4]
-#define RES_1	f[5]
+#define RES_1	f[4]
+#define RES_2	f[5]
+#define CAP_1	f[6]
+#define CAP_2	f[7]
+#define PROJ_1	f[8]
+#define PROJ_2	f[9]
 
 /*
  ** Check if the ray intersects with the cylinder given as parameter
@@ -26,7 +30,7 @@
 
 float		find_cylinder_inter(t_ray *r, t_object *o)
 {
-	float		f[6];
+	float		f[10];
 
 	A = vector_dot(r->dir, r->dir) - powf(vector_dot(o->direction,
 				r->dir), 2);
@@ -39,10 +43,14 @@ float		find_cylinder_inter(t_ray *r, t_object *o)
 	D = powf(B, 2) - 4 * A * C;
 	if (D < 0)
 		return (MAX_SIZE);
-	RES_0 = (-B - sqrtf(D)) / (A + A);
-	RES_1 = (-B + sqrtf(D)) / (A + A);
-	return (find_cap(r, o, RES_0 < RES_1 ? RES_0 : RES_1,
-				RES_0 < RES_1 ? RES_1 : RES_0));
+	RES_1 = (-B - sqrtf(D)) / (A + A);
+	RES_2 = (-B + sqrtf(D)) / (A + A);
+	CAP_1 = find_circle_inter(r, o->cap1);
+	CAP_2 = find_circle_inter(r, o->cap2);
+	if ((PROJ_1 = vector_dist(o->origin, vector_projection(o->origin,
+						o->direction, ADD(r->pos, MUL(r->dir, RES_1))))) >= o->end 	&& (PROJ_2 = vector_dist(o->origin, vector_projection(o->origin, o->direction, ADD(r->pos, MUL(r->dir, RES_2))))) >= o->end)
+		return (CAP_1 < CAP_2 ? CAP_1 : CAP_2);
+	return (RES_1 < RES_2 ? RES_1 : RES_2);
 }
 
 t_vector4f	cylinder_normal(t_object *o, t_ray ray)

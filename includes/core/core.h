@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 17:28:23 by aljourda          #+#    #+#             */
-/*   Updated: 2017/02/16 19:46:46 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/24 18:49:04 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,8 +99,8 @@ typedef struct		s_object
 	union
 	{
 		float		intensity;
-		float		radius;
 		float		angle;
+		float		radius;
 	};
 	char			*comment;
 	float			start;
