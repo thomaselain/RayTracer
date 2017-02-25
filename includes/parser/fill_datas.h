@@ -56,4 +56,17 @@ void			fill_scene(char **s, t_scene *sc, int init);
 
 t_object		*fill_cap(t_object *cylinder, float num);
 
+/*
+** Checks if the object is a cylinder, and calculates his caps coordinates based on the cylinder's coordinates
+*/
+
+void			get_cap(t_object *o);
+
+/*
+** Allows an inheritance for a structure
+*/
+
+void			copy_structure(t_noise *src, t_noise *dest);
+
+
 #endif

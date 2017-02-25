@@ -24,6 +24,21 @@
 #define ERROR		(-1)
 
 /*
+** Checks if the object is a cylinder, and calculates his caps coordinates based on the cylinder's coordinates
+*/
+
+void			get_cap(t_object *o)
+{
+	if (o->type == CYLINDER) // On place l'initialisation des cap ici puisque si index == 11, c'est qu'on a deja initialise les autres valeurs (type, comment, etc...)
+	{
+		o->top_cap = ft_memalloc(sizeof(t_object));
+		o->bot_cap = ft_memalloc(sizeof(t_object));
+		fill_cap(o, o->top_cap, 1);
+		fill_cap(o, o->bot_cap, 2);
+	}
+}
+
+/*
 ** Return a parsed object (fill missing datas with 0),
 ** manage objects errors *not-yet*
 */
@@ -53,5 +68,6 @@ t_object		parse_object(char **string)
 			*string = tmp;
 			INDEX = -1;
 		}
+	get_cap(&ret);
 	return (ret);
 }

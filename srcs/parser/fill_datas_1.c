@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 13:35:30 by svassal           #+#    #+#             */
-/*   Updated: 2017/02/24 18:57:20 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/25 17:56:44 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,14 +116,7 @@ static void		fill_objects_sub(char **s, t_object *o)
 	else if (index == 5)
 		o->diffuse = parse_float(s);
 	else if (index == 6)
-	{
 		o->intensity = parse_float(s);
-			if (o->type == CYLINDER && !o->cap1 && !o->cap2) // On place l'initialisation des cap ici puisque si index == 11, c'est qu'on a deja initialise les autres valeurs (type, comment, etc...)
-		{
-		o->cap1 = fill_cap(o, 1.0);
-			o->cap2 = fill_cap(o, -1.0);
-		}
-	}
 	else if (index == 7)
 		o->direction = parse_vector(s);
 	else if (index == 8)
@@ -133,9 +126,7 @@ static void		fill_objects_sub(char **s, t_object *o)
 	else if (index == 10)
 		o->end = parse_float(s);
 	else if (index == 11)
-	{
 		o->noise = parse_structure(s);
-}
 }
 
 /*
@@ -163,7 +154,6 @@ t_object		*fill_cap(t_object *cylinder, float num)
 	return (cap);
 }
 
-
 /*
 ** Fill object with 0 if init is equal to 1, or with the JSON datas elseway
 */
@@ -183,8 +173,8 @@ void			fill_objects(char **s, t_object *o, int init)
 		o->start = 0.0;
 		o->end = 0.0;
 		fill_structure(0, &(o->noise), 1);
-		o->cap1 = NULL;
-		o->cap2 = NULL;
+		o->top_cap = NULL;
+		o->bot_cap = NULL;
 	}
 	else
 		fill_objects_sub(s, o);

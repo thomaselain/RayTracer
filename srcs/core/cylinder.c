@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 20:04:35 by svassal           #+#    #+#             */
-/*   Updated: 2017/02/24 18:53:41 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/25 17:54:14 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,8 +45,8 @@ float		find_cylinder_inter(t_ray *r, t_object *o)
 		return (MAX_SIZE);
 	RES_1 = (-B - sqrtf(D)) / (A + A);
 	RES_2 = (-B + sqrtf(D)) / (A + A);
-	CAP_1 = find_circle_inter(r, o->cap1);
-	CAP_2 = find_circle_inter(r, o->cap2);
+	CAP_1 = find_circle_inter(r, o->top_cap);
+	CAP_2 = find_circle_inter(r, o->bot_cap);
 	if ((PROJ_1 = vector_dist(o->origin, vector_projection(o->origin,
 						o->direction, ADD(r->pos, MUL(r->dir, RES_1))))) >= o->end 	&& (PROJ_2 = vector_dist(o->origin, vector_projection(o->origin, o->direction, ADD(r->pos, MUL(r->dir, RES_2))))) >= o->end)
 		return (CAP_1 < CAP_2 ? CAP_1 : CAP_2);
