@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 12:59:44 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/26 20:31:46 by svassal          ###   ########.fr       */
+/*   Updated: 2017/02/25 18:25:47 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,10 +31,8 @@ void			get_cap(t_object *o)
 {
 	if (o->type == CYLINDER) // On place l'initialisation des cap ici puisque si index == 11, c'est qu'on a deja initialise les autres valeurs (type, comment, etc...)
 	{
-		o->top_cap = ft_memalloc(sizeof(t_object));
-		o->bot_cap = ft_memalloc(sizeof(t_object));
-		fill_cap(o, o->top_cap, 1);
-		fill_cap(o, o->bot_cap, 2);
+		o->bot_cap = fill_cap(o, 1);
+		o->top_cap = fill_cap(o, -1);
 	}
 }
 

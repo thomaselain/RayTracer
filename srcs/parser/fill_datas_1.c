@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 13:35:30 by svassal           #+#    #+#             */
-/*   Updated: 2017/02/25 17:56:44 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/25 20:37:05 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -139,8 +139,6 @@ t_object		*fill_cap(t_object *cylinder, float num)
 
 	cap = ft_memalloc(sizeof(t_object));
 	cap->type = CIRCLE;
-	fill_vector(0, &(cap->origin), 1);
-	fill_vector(0, &(cap->direction), 1);
 	cap->radius = cylinder->radius;
 	cap->color = cylinder->color;
 	cap->diffuse = cylinder->diffuse;
@@ -151,6 +149,7 @@ t_object		*fill_cap(t_object *cylinder, float num)
 	cap->origin = ADD(cylinder->origin,
 			MUL(vector_normalize(cylinder->direction), cylinder->end * num));
 	cap->direction = MUL(vector_normalize(cylinder->direction), num);
+	cap->direction = vector_normalize(cap->direction);
 	return (cap);
 }
 
