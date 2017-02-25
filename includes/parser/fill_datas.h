@@ -62,5 +62,11 @@ void			fill_cap(t_object *cylinder, t_object *cap, int num);
 
 void			get_cap(t_object *o);
 
+/*
+** Allows an inheritance for a structure
+*/
+
+void			copy_structure(t_noise *src, t_noise *dest);
+
 
 #endif

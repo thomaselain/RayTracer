@@ -30,6 +30,20 @@
 #define NEUTRAL		(0)
 #define ERROR		(-1)
 
+/*
+** Allows an inheritance for a structure
+*/
+
+void			copy_structure(t_noise *src, t_noise *dest)
+{
+	if (src && dest)
+	{
+		dest->material_type = src->material_type;
+		dest->zoom = src->zoom;
+		dest->intensity = src->intensity;
+		dest->c = src->c;
+	}
+}
 
 /*
 ** Fill structure with 0 if init is equal to 1, or with the JSON datas elseway

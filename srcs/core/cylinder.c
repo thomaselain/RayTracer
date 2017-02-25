@@ -41,6 +41,8 @@ float		find_cylinder_inter(t_ray *r, t_object *o)
 		return (MAX_SIZE);
 	RES_0 = (-B - sqrtf(D)) / (A + A);
 	RES_1 = (-B + sqrtf(D)) / (A + A);
+	// if (o->top_cap && o->bot_cap)
+	// 	printf("Radius cylindre : %0.3f\nRadius top_cap : %0.3f\nRadius bot_cap : %0.3f\n", o->noise.zoom, o->top_cap->noise.zoom, o->bot_cap->noise.zoom);
 	return (find_cap(r, o, RES_0 < RES_1 ? RES_0 : RES_1,
 				RES_0 < RES_1 ? RES_1 : RES_0));
 }

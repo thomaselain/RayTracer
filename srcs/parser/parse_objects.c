@@ -31,10 +31,10 @@ void			get_cap(t_object *o)
 {
 	if (o->type == CYLINDER) // On place l'initialisation des cap ici puisque si index == 11, c'est qu'on a deja initialise les autres valeurs (type, comment, etc...)
 	{
-		o->cap1 = ft_memalloc(sizeof(t_object));
-		o->cap2 = ft_memalloc(sizeof(t_object));
-		fill_cap(o, o->cap1, 1);
-		fill_cap(o, o->cap2, 2);
+		o->top_cap = ft_memalloc(sizeof(t_object));
+		o->bot_cap = ft_memalloc(sizeof(t_object));
+		fill_cap(o, o->top_cap, 1);
+		fill_cap(o, o->bot_cap, 2);
 	}
 }
 
