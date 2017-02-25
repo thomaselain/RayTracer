@@ -56,4 +56,11 @@ void			fill_scene(char **s, t_scene *sc, int init);
 
 void			fill_cap(t_object *cylinder, t_object *cap, int num);
 
+/*
+** Checks if the object is a cylinder, and calculates his caps coordinates based on the cylinder's coordinates
+*/
+
+void			get_cap(t_object *o);
+
+
 #endif

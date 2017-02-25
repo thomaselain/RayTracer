@@ -125,15 +125,13 @@ static void		fill_objects_sub(char **s, t_object *o)
 	else if (index == 10)
 		o->end = parse_float(s);
 	else if (index == 11)
-	{
 		o->noise = parse_structure(s);
-		if (o->type == CYLINDER && !o->cap1 && !o->cap2) // On place l'initialisation des cap ici puisque si index == 11, c'est qu'on a deja initialise les autres valeurs (type, comment, etc...)
-		{
-			o->cap1 = ft_memalloc(sizeof(t_object));
-			o->cap2 = ft_memalloc(sizeof(t_object));
-			fill_cap(o, o->cap1, 1);
-			fill_cap(o, o->cap2, 2);
-		}
+	if (o->type == CYLINDER && !o->cap1 && !o->cap2) // On place l'initialisation des cap ici puisque si index == 11, c'est qu'on a deja initialise les autres valeurs (type, comment, etc...)
+	{
+		o->cap1 = ft_memalloc(sizeof(t_object));
+		o->cap2 = ft_memalloc(sizeof(t_object));
+		fill_cap(o, o->cap1, 1);
+		fill_cap(o, o->cap2, 2);
 	}
 }
 
@@ -149,7 +147,7 @@ void			fill_cap(t_object *cylinder, t_object *cap, int num)
 	cap->color = cylinder->color;
 	cap->diffuse = cylinder->diffuse;
 	cap->reflection = cylinder->reflection;
-	cap->intensity = cylinder->intensity;
+	cap->radius = cylinder->radius;
 	cap->comment = num == 1 ? ft_strdup("1") : ft_strdup("2");
 	cap->start = cylinder->start;
 	cap->end = cylinder->end;
