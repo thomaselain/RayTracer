@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 13:35:30 by svassal           #+#    #+#             */
-/*   Updated: 2017/02/25 20:37:05 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/27 23:18:10 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -147,7 +147,7 @@ t_object		*fill_cap(t_object *cylinder, float num)
 	cap->comment = num == 1 ? ft_strdup("1") : ft_strdup("2");
 	fill_structure(0, &(cap->noise), 1);
 	cap->origin = ADD(cylinder->origin,
-			MUL(vector_normalize(cylinder->direction), cylinder->end * num));
+			MUL(vector_normalize(cylinder->direction), cylinder->end * num * 0.999));
 	cap->direction = MUL(vector_normalize(cylinder->direction), num);
 	cap->direction = vector_normalize(cap->direction);
 	return (cap);

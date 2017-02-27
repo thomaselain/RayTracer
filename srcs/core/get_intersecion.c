@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:56:24 by telain            #+#    #+#             */
-/*   Updated: 2017/02/25 20:37:10 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/27 23:33:22 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,9 +43,9 @@ t_object	*get_intersection(t_scene *s, t_ray *ray)
 		}
 		else if (((t_object*)obj->content)->type == CYLINDER)
 		{
-			if ((d = find_cylinder_inter(ray, (t_object*)obj->content)) < closest && d >= 0.001)
+			if ((d = find_circle_inter(ray, ((t_object*)obj->content)->bot_cap)) < closest && d >= 0.001)
 			{
-				hit = (t_object*)obj->content;
+				hit = ((t_object*)obj->content)->bot_cap;
 				closest = d;
 			}
 			if ((d = find_circle_inter(ray, ((t_object*)obj->content)->top_cap)) < closest && d >= 0.001)
@@ -53,9 +53,9 @@ t_object	*get_intersection(t_scene *s, t_ray *ray)
 				hit = ((t_object*)obj->content)->top_cap;
 				closest = d;
 			}
-			if ((d = find_circle_inter(ray, ((t_object*)obj->content)->bot_cap)) < closest && d >= 0.001)
+		if ((d = find_cylinder_inter(ray, (t_object*)obj->content)) < closest && d >= 0.001)
 			{
-				hit = ((t_object*)obj->content)->bot_cap;
+				hit = (t_object*)obj->content;
 				closest = d;
 			}
 		}

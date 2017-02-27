@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:56:12 by telain            #+#    #+#             */
-/*   Updated: 2017/02/17 17:44:19 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/27 23:04:24 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define CAMDIR					(s->camera->direction)
 # define CAMPOS					(s->camera->origin)
-# define MAX_REFLECTION			(7)
+# define MAX_REFLECTION			(15)
 # define MAX_SIZE				(100000.0)
 # define COLOR_R(color)			(color & 0xff)
 # define COLOR_G(color)			((color & 0xff00) >> 8)
@@ -73,12 +73,6 @@ t_vector4f				get_normal(t_object *o, t_ray ray);
 t_vector4f				cone_normal(t_object *o, t_ray ray);
 t_vector4f				sphere_normal(t_object *o, t_ray ray);
 t_vector4f				cylinder_normal(t_object *o, t_ray ray);
-
-/*
-**	Ends an object
-*/
-
-float					find_cap(t_ray *r, t_object *o, float r1, float r2);
 
 /*
 **	Tells if the given object is in a shadow cone or not
