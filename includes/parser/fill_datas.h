@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 13:37:51 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/14 14:45:40 by svassal          ###   ########.fr       */
+/*   Updated: 2017/02/24 18:47:59 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void			fill_scene(char **s, t_scene *sc, int init);
 ** Fill the cap of a finished cylinder
 */
 
-void			fill_cap(t_object *cylinder, t_object *cap, int num);
+t_object		*fill_cap(t_object *cylinder, float num);
 
 /*
 ** Checks if the object is a cylinder, and calculates his caps coordinates based on the cylinder's coordinates

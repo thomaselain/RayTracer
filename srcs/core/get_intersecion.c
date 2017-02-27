@@ -6,12 +6,14 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:56:24 by telain            #+#    #+#             */
-/*   Updated: 2017/02/09 16:58:19 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/25 20:37:10 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <core.h>
 #include <ray.h>
+#define	CAP_1 caps[0]
+#define	CAP_2 caps[1]
 
 t_object	*get_intersection(t_scene *s, t_ray *ray)
 {
@@ -39,12 +41,23 @@ t_object	*get_intersection(t_scene *s, t_ray *ray)
 			hit = (t_object*)obj->content;
 			closest = d;
 		}
-		else if (((t_object*)obj->content)->type == CYLINDER && (d =
-					find_cylinder_inter(ray, (t_object*)obj->content)) <
-				closest && d >= 0.001)
+		else if (((t_object*)obj->content)->type == CYLINDER)
 		{
-			hit = (t_object*)obj->content;
-			closest = d;
+			if ((d = find_cylinder_inter(ray, (t_object*)obj->content)) < closest && d >= 0.001)
+			{
+				hit = (t_object*)obj->content;
+				closest = d;
+			}
+			if ((d = find_circle_inter(ray, ((t_object*)obj->content)->top_cap)) < closest && d >= 0.001)
+			{
+				hit = ((t_object*)obj->content)->top_cap;
+				closest = d;
+			}
+			if ((d = find_circle_inter(ray, ((t_object*)obj->content)->bot_cap)) < closest && d >= 0.001)
+			{
+				hit = ((t_object*)obj->content)->bot_cap;
+				closest = d;
+			}
 		}
 		else if (((t_object*)obj->content)->type == CONE && (d =
 					find_cone_inter(ray, (t_object*)obj->content)) <
@@ -69,6 +82,6 @@ t_object	*get_intersection(t_scene *s, t_ray *ray)
 		}
 		obj = obj->next;
 	}
-	ray->pos = ADD(ray->pos, MUL(ray->dir, closest - 0.1));
+	ray->pos = ADD(ray->pos, MUL(ray->dir, closest - 0.001));
 	return (hit);
 }
