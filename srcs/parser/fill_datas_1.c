@@ -145,7 +145,7 @@ t_object		*fill_cap(t_object *cylinder, float num)
 	cap->reflection = cylinder->reflection;
 	cap->intensity = cylinder->intensity;
 	cap->comment = num == 1 ? ft_strdup("1") : ft_strdup("2");
-	fill_structure(0, &(cap->noise), 1);
+	copy_structure(&(cylinder->noise), &(cap->noise));
 	cap->origin = ADD(cylinder->origin,
 			MUL(vector_normalize(cylinder->direction), cylinder->end * num * 0.999));
 	cap->direction = MUL(vector_normalize(cylinder->direction), num);
