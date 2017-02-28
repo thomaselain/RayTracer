@@ -58,7 +58,7 @@
 			"reflection":0.0,
 			"diffuse":0.1,
 			"radius":1.0,
-			"comment":"Sphere"
+			"comment":"Partie haute"
 		},
 		{
 			"type":"SPHERE",
@@ -80,7 +80,7 @@
 			"reflection":0.0,
 			"diffuse":0.1,
 			"radius":1.0,
-			"comment":"Sphere"
+			"comment":"Partie basse"
 		},
 		{
 			"type":"CYLINDER",
@@ -102,7 +102,7 @@
 			"end":0.1,
 			"reflection":0.0,
 			"diffuse":0.1,
-			"comment":"Cylindre"
+			"comment":"Bouton central 1"
 		},
 		{
 			"type":"CYLINDER",
@@ -124,7 +124,7 @@
 			"end":0.1,
 			"reflection":0.0,
 			"diffuse":0.1,
-			"comment":"Cylindre"
+			"comment":"Bordure du bouton 1"
 		},
 		{
 			"type":"CYLINDER",
@@ -146,7 +146,7 @@
 			"end":0.1,
 			"reflection":0.0,
 			"diffuse":0.1,
-			"comment":"Cylindre"
+			"comment":"Ceinture de la pokeball"
 		}
 	],
 	"lights":
