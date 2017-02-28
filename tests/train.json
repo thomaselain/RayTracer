@@ -1,20 +1,20 @@
 {
-	"background":0xffffff,
+	"background":0xcccccc,
 		"camera":
 		{
 			"origin":
 			{
-				"x":0,
-				"y":0,
-				"z":-1
+				"x":-2,
+				"y":5,
+				"z":-0.3
 			},
 			"direction":
 			{
-				"x":0,
-				"y":1,
-				"z":0
+				"x":-0.7,
+				"y":1.0,
+				"z":0.3
 			},
-			"fov":80
+			"fov":120
 		},
 		"objects":
 			[
@@ -33,13 +33,14 @@
 					"y":0,
 					"z":-1
 				},
-				"reflection":0.0,
+				"reflection":0.6,
 				"diffuse":0.0,
 				"radius":1.0,
 				"comment":"Sol"
 			},
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -59,6 +60,7 @@
 			},
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -78,6 +80,7 @@
 			},
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -95,8 +98,9 @@
 				"radius":0.7,
 				"comment":"Cheminee 1 (la grande)"
 			},
-						{
+			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -116,6 +120,7 @@
 			},
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -135,6 +140,7 @@
 			},
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -154,6 +160,7 @@
 			},
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -173,6 +180,7 @@
 			},
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -192,6 +200,7 @@
 			},
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -212,6 +221,7 @@
 
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -231,6 +241,7 @@
 			},
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -251,6 +262,7 @@
 
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -270,6 +282,7 @@
 			},
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -289,6 +302,7 @@
 			},
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -308,6 +322,7 @@
 			},
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -327,6 +342,7 @@
 			},
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -346,6 +362,7 @@
 			},
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -363,8 +380,9 @@
 				"radius":0.5,
 				"comment":"roue wagon"
 			},
-									{
+			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0xffffff,
 				"origin":
 				{
@@ -382,8 +400,9 @@
 				"radius":0.2,
 				"comment":"Lien entre le wagon et le train"
 			},
-						{
+			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -403,6 +422,7 @@
 			},
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -423,6 +443,7 @@
 
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -442,6 +463,7 @@
 			},
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -462,6 +484,7 @@
 
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -481,6 +504,7 @@
 			},
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -500,6 +524,7 @@
 			},
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -519,6 +544,7 @@
 			},
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -538,6 +564,7 @@
 			},
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -557,6 +584,7 @@
 			},
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -574,8 +602,9 @@
 				"radius":0.5,
 				"comment":"Roue"
 			},
-						{
+			{
 				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -595,6 +624,58 @@
 			},
 			{
 				"type":"CYLINDER",
+				"reflection":0.3,
+				"color":0xffffff,
+				"origin":
+				{
+					"x":0,
+					"y":9,
+					"z":0
+				},
+				"direction":
+				{
+					"x":1,
+					"y":0,
+					"z":0
+				},
+				"material":
+				{
+					"material_type":"PERLIN",
+					"zoom":0.1
+				},
+				"end":1000,
+				"radius":0.1,
+				"comment":"rails"
+			},
+				{
+				"type":"CYLINDER",
+				"reflection":0.3,
+				"color":0xffffff,
+				"origin":
+				{
+					"x":0,
+					"y":11,
+					"z":0
+				},
+				"direction":
+				{
+					"x":1,
+					"y":0,
+					"z":0
+				},
+				"material":
+				{
+					"material_type":"PERLIN",
+					"zoom":0.1
+				},
+				"end":1000,
+				"radius":0.1,
+				"comment":"rails"
+			},
+
+			{
+				"type":"CYLINDER",
+				"reflection":0.3,
 				"color":0x4040ff,
 				"origin":
 				{
@@ -614,6 +695,7 @@
 			},
 			{
 				"type":"CIRCLE",
+				"reflection":0.3,
 				"color":0xffffff,
 				"origin":
 				{
@@ -632,6 +714,7 @@
 			},
 			{
 				"type":"CIRCLE",
+				"reflection":0.3,
 				"color":0xffffff,
 				"origin":
 				{
@@ -650,6 +733,7 @@
 			},
 			{
 				"type":"CIRCLE",
+				"reflection":0.3,
 				"color":0xffffff,
 				"origin":
 				{
@@ -668,6 +752,7 @@
 			},
 			{
 				"type":"CIRCLE",
+				"reflection":0.3,
 				"color":0x000000,
 				"origin":
 				{
@@ -686,6 +771,7 @@
 			},
 			{
 				"type":"CIRCLE",
+				"reflection":0.3,
 				"color":0x000000,
 				"origin":
 				{
@@ -704,6 +790,7 @@
 			},	
 			{
 				"type":"SQUARE",
+				"reflection":0.3,
 				"color":0x3030ff,
 				"origin":
 				{
@@ -722,6 +809,7 @@
 			},	
 			{
 				"type":"SQUARE",
+				"reflection":0.3,
 				"color":0x3030ff,
 				"origin":
 				{
@@ -740,6 +828,7 @@
 			},
 			{
 				"type":"SQUARE",
+				"reflection":0.3,
 				"color":0x3030ff,
 				"origin":
 				{
@@ -758,6 +847,7 @@
 			},
 			{
 				"type":"SQUARE",
+				"reflection":0.3,
 				"color":0x3030ff,
 				"origin":
 				{
@@ -794,6 +884,7 @@
 			},	
 			{
 				"type":"SQUARE",
+				"reflection":0.3,
 				"color":0x3030ff,
 				"origin":
 				{
@@ -812,6 +903,7 @@
 			},
 			{
 				"type":"SQUARE",
+				"reflection":0.3,
 				"color":0x3030ff,
 				"origin":
 				{
@@ -830,6 +922,7 @@
 			},
 			{
 				"type":"SQUARE",
+				"reflection":0.3,
 				"color":0x3030ff,
 				"origin":
 				{
@@ -845,6 +938,25 @@
 				},
 				"radius":0.8,
 				"comment":"Toit"
+			},
+			{
+				"type":"SPHERE",
+				"color":0x3030ff,
+				"origin":
+				{
+					"x":-8,
+					"y":10,
+					"z":-4
+				},
+				"direction":
+				{
+					"x":-1,
+					"y":0,
+					"z":0
+				},
+				"reflection":1.0,
+				"radius":5,
+				"comment":"Mirroir"
 			}
 	],
 		"lights":
