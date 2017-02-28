@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/06 18:41:59 by telain            #+#    #+#             */
-/*   Updated: 2017/02/07 20:59:00 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/28 18:11:58 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,19 @@
 
 float		find_square_inter(t_ray *r, t_object *o)
 {
+	float		d;
 	t_vector4f	u;
 	t_vector4f	v;
-	t_vector4f	u_d;
-	t_vector4f	v_d;
+	t_vector4f	up;
+	t_vector4f	inter;
 
-	u = vector_normalize(vector_cross(o->direction, new_vector(0, 0, 1)));
-	v = vector_normalize(vector_cross(u, o->direction));
-	u_d = vector_projection(o->origin, u, r->pos);
-	v_d = vector_projection(o->origin, v, r->pos);
-	if (vector_dist(u_d, o->origin) <= o->radius / 2.0 && vector_dist(v_d, o->origin)
-		<= o->radius / 2.0)
-		return (find_plane_inter(r, o));
-	return (MAX_SIZE);
+	up = (t_vector4f){0, 0, -1, 0};
+	u = vector_cross(o->direction, up);
+	v = vector_cross(u, o->direction);
+	d = find_plane_inter(r, o);
+	inter = ADD(r->pos, MUL(r->dir, d));
+	if (vector_dist(vector_projection(o->origin, u, inter), o->origin) > o->radius ||
+			vector_dist(vector_projection(o->origin, v, inter), o->origin) > o->radius)
+		return (MAX_SIZE);
+	return (find_plane_inter(r, o));
 }
