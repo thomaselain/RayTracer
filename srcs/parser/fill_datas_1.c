@@ -170,7 +170,7 @@ void			fill_objects(char **s, t_object *o, int init)
 		o->intensity = 0.0;
 		o->comment = "NONE";
 		o->start = 0.0;
-		o->end = 0.0;
+		o->end = MAX_SIZE;
 		fill_structure(0, &(o->noise), 1);
 		o->top_cap = NULL;
 		o->bot_cap = NULL;
