@@ -20,7 +20,7 @@ SRC := $(shell find ./srcs -name *.c)
 INC := -I includes/libft -I includes/graphics -I includes/core -I includes/matrix_vector -I includes/parser -I includes/threads -I includes/color
 OBJ := $(SRC:.c=.o)
 
-CFLAGS := $(INC) -g -F libs/ -Wall -Wextra #-Werror
+CFLAGS := $(INC) -g -F libs/ -Wall -Wextra #-Werror -Weverything
 LDFLAGS := -L libs/libft/ -L libs/matrix_vector/ -lft -lpthread -lm -lmv
 
 ifeq ($(OS),GNU/Linux)

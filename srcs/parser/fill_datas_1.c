@@ -131,7 +131,6 @@ static void		fill_objects_sub(char **s, t_object *o)
 		o->transparence = parse_float(s);
 	else if (index == 13)
 		o->refraction = parse_float(s);
-	return (0);
 }
 
 /*

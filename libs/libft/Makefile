@@ -106,18 +106,20 @@ RESET =			\033[0m
 
 $(NAME) :
 	@$(MAKE) -j $(OBJ)
-	@ar -rcs $(NAME) $(OBJ) && printf "$(CYAN)Libft$(RESET) : Built $(YELLOW)library$(RESET)\n"
+	@ar -rcs $(NAME) $(OBJ)
 
 all :				$(NAME)
 
 clean :
-	@rm -rf $(OBJ_DIR) && printf "$(RED)Libft$(RESET) : Removed $(YELLOW)objs/$(RESET)\n"
+	@rm -rf $(OBJ_DIR)
+	printf "$(RED)Libft$(RESET) : Removed $(YELLOW)objs/$(RESET)\n"
 
 fclean :			clean
-	@rm -f $(NAME) && printf "$(PURPLE)Libft$(RESET) : Removed $(YELLOW)library$(RESET)\n"
+	@rm -f $(NAME)
+	printf "$(PURPLE)Libft$(RESET) : Removed $(YELLOW)library$(RESET)\n"
 
 re :				fclean all
 
 $(OBJ_DIR)/%.o :	$(SRC_DIR)/%.c
 	@test -d $(dir $@) || mkdir -p $(dir $@) 2>/dev/null
-	@$(COMP) -c $(FLAG) $^ -o $@ && printf "$(GREEN)Libft$(RESET) : Built $(YELLOW)$@$(RESET)\n"
+	@$(COMP) -c $(FLAG) $^ -o $@
