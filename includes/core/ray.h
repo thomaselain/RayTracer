@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:56:12 by telain            #+#    #+#             */
-/*   Updated: 2017/02/28 22:51:03 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/02 17:36:30 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,10 +93,11 @@ unsigned int			compute_light(t_scene *s, t_object *o, t_ray ray, t_object *light
 float					specular_light(t_scene *s, t_object *hit, t_ray ray, t_vector4f light);
 
 /*
-**	Changes the ray coordinates to get the reflected object
+**	Changes the ray coordinates to get the reflected or refracted object
 */
 
 t_object*				get_reflect(t_scene *s, t_object *hit, t_ray *ray);
+t_object*				get_refract(t_scene *s, t_object *hit, t_ray *ray);
 
 /*
 *	TO_DELETE	returns a color, depending on the ray position to draw a grid on the plane

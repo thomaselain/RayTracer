@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:56:24 by telain            #+#    #+#             */
-/*   Updated: 2017/02/28 20:25:08 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/02 17:14:36 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,4 +84,4 @@ t_object	*get_intersection(t_scene *s, t_ray *ray)
 	}
 	ray->pos = ADD(ray->pos, MUL(ray->dir, closest - 0.001));
 	return (hit);
-}
+

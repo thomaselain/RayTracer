@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 18:42:04 by telain            #+#    #+#             */
-/*   Updated: 2017/02/28 22:51:08 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/02 17:46:53 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,27 @@ int		adjust_color(t_scene *s, t_object *hit, t_ray ray, int reflects)
 		return (color_add(color_mul(adjust_color(s, tmp_hit, ray, reflects + 1),
 						hit->reflection * noise(hit, MUL(ray.pos, 0.1))), c * n));
 	}
-	/*
-	   else if ( "Truc pour la refraction" )
-	   {
-	   }
-   */
+	if (hit != 0 && hit->transparence >= 0.0 && reflects <= MAX_REFLECTION)
+	{
+		n = noise(hit, MUL(ray.pos, 0.1));
+		tmp_hit = get_refract(s, hit, &ray);
+		return (color_add(color_mul(adjust_color(s, tmp_hit, ray, reflects + 1),
+						hit->transparence * noise(hit, MUL(ray.pos, 0.1))), c * n));
+	}
 	return (c);
+}
+
+t_object	*get_refract(t_scene *s, t_object *hit, t_ray *ray)
+{
+	t_vector4f	normal;
+	float		angle;
+
+	normal = get_normal(hit, *ray);
+	angle = vector_dot(ray->dir, normal);
+	ray->dir = ADD(MUL(ray->dir, 1 / hit->refraction), MUL(normal,
+				1 / hit->refraction * sqrt(1 - pow(1 / hit->refraction, 2) *
+					pow(sin(angle), 2))));
+	return (get_intersection(s, ray));
 }
 
 t_object	*get_reflect(t_scene *s, t_object *hit, t_ray *ray)
