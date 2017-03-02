@@ -18,9 +18,9 @@
 		},
 		"objects":
 			[	
-				{
+			{
 				"type":"PLANE",
-				"color":0xcccccc,
+				"color":0x0000ff,
 				"origin":
 				{
 					"x":0,
@@ -33,14 +33,14 @@
 					"y":0,
 					"z":1
 				},
-				"reflection":0.0,
+				"reflection":1.0,
 				"diffuse":0.5,
 				"radius":1.0,
 				"comment":"Plane (background)"
 			},	
-				{
+			{
 				"type":"PLANE",
-				"color":0xcccccc,
+				"color":0x00ff00,
 				"origin":
 				{
 					"x":0,
@@ -59,7 +59,7 @@
 				"comment":"Plane (background)"
 			},
 
-						{
+			{
 				"type":"PLANE",
 				"color":0xcccccc,
 				"origin":
@@ -79,7 +79,7 @@
 				"radius":0.5,
 				"comment":"Plane (background)"
 			},	
-				{
+			{
 				"type":"PLANE",
 				"color":0xcccccc,
 				"origin":
@@ -139,7 +139,7 @@
 				"radius":0.5,
 				"comment":"Plane (background)"
 			},
-						{
+			{
 				"type":"SPHERE",
 				"color":0xcccccc,
 				"origin":
@@ -162,11 +162,6 @@
 			{
 				"type":"CYLINDER",
 				"color":0xff0000,
-				"material":
-				{
-					"material_type":"PERLIN",
-					"zoom": 0.1
-				},
 				"origin":
 				{
 					"x":0,
@@ -193,8 +188,8 @@
 				"color":0xffffff,
 				"origin":
 				{
-					"x":4,
-					"y":-4,
+					"x":0,
+					"y":-9,
 					"z":0
 				},
 				"radius":1,

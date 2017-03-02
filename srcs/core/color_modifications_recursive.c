@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 18:42:04 by telain            #+#    #+#             */
-/*   Updated: 2017/02/17 17:44:23 by telain           ###   ########.fr       */
+/*   Updated: 2017/02/28 22:51:08 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,13 @@
 int		adjust_color(t_scene *s, t_object *hit, t_ray ray, int reflects)
 {
 	unsigned int	c;
+	float			n;
 	t_object		*tmp_hit;
 	t_list			*light;
 
 	light = s->lights;
 	c = s->background;
-	if (hit != 0 && hit->reflection > 0.0 && reflects <= MAX_REFLECTION)
-	{
-		tmp_hit = get_reflect(s, hit, &ray);
-		return (color_mul(adjust_color(s, tmp_hit, ray, reflects + 1), hit->reflection));
-	}
-	/*
-	   else if ( "Truc pour la refraction" )
-	   {
-	   }
-	   */
-	else if (hit != 0)
+	if (hit != 0)
 	{
 		while (light != 0)
 		{
@@ -42,6 +33,18 @@ int		adjust_color(t_scene *s, t_object *hit, t_ray ray, int reflects)
 			light = light->next;
 		}
 	}
+	if (hit != 0 && hit->reflection > 0.0 && reflects <= MAX_REFLECTION)
+	{
+		n = noise(hit, MUL(ray.pos, 0.1));
+		tmp_hit = get_reflect(s, hit, &ray);
+		return (color_add(color_mul(adjust_color(s, tmp_hit, ray, reflects + 1),
+						hit->reflection * noise(hit, MUL(ray.pos, 0.1))), c * n));
+	}
+	/*
+	   else if ( "Truc pour la refraction" )
+	   {
+	   }
+   */
 	return (c);
 }
 
@@ -58,7 +61,7 @@ unsigned int	compute_light(t_scene *s, t_object *o, t_ray ray, t_object *light)
 {
 	unsigned int	c;
 	t_ray			v_light;
-	
+
 	c = o->color; //peut etre a mettre en haut
 	v_light.pos = light->origin;
 	v_light.dir = get_light_vector(light, ray);

@@ -14,8 +14,7 @@
 				"y":1,
 				"z":0.5
 			},
-			"fov":90,
-			"filter":"SEPIA"
+			"fov":110
 		},
 		"objects":
 			[	
@@ -34,7 +33,7 @@
 					"y":0,
 					"z":-1
 				},
-				"reflection":0.0,
+				"reflection":0.9,
 				"diffuse":0.5,
 				"radius":0.5,
 				"comment":"Plane (background)"
@@ -54,7 +53,7 @@
 					"y":0,
 					"z":1
 				},
-				"reflection":0.0,
+				"reflection":0.9,
 				"diffuse":0.5,
 				"radius":0.5,
 				"comment":"Plane (background)"
@@ -75,7 +74,7 @@
 					"y":0,
 					"z":0
 				},
-				"reflection":0.5,
+				"reflection":0.9,
 				"diffuse":0.5,
 				"radius":0.5,
 				"comment":"Plane (background)"
@@ -95,7 +94,7 @@
 					"y":0,
 					"z":0
 				},
-				"reflection":0.5,
+				"reflection":0.9,
 				"diffuse":0.5,
 				"radius":0.5,
 				"comment":"Plane (background)"
@@ -115,7 +114,7 @@
 					"y":1,
 					"z":0
 				},
-				"reflection":1.0,
+				"reflection":0.9,
 				"diffuse":0.5,
 				"radius":0.5,
 				"comment":"Plane (background)"
@@ -135,7 +134,7 @@
 					"y":-1,
 					"z":0
 				},
-				"reflection":1.0,
+				"reflection":0.9,
 				"diffuse":0.5,
 				"radius":0.5,
 				"comment":"Plane (background)"
@@ -155,7 +154,7 @@
 					"y":0,
 					"z":1
 				},
-				"reflection":0.1,
+				"reflection":0.9,
 				"diffuse":0.5,
 				"radius":1,
 				"comment":"Cone"

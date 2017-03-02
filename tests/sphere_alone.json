@@ -70,18 +70,17 @@
 			"direction":
 			{
 				"x":0,
-				"y":1,
-				"z":-1
+				"y":-1,
+				"z":1
 			},
 			"material":
 			{
 				"material_type":"PERLIN",
-				"zoom":1
+				"zoom":0.1
 			},
 			"start":3.0,
 			"end":3.0,
-			"reflection":0.0,
-			"diffuse":0.1,
+			"reflection":0.5,
 			"radius":1.0,
 			"comment":"Cone"
 		}
