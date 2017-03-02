@@ -41,6 +41,8 @@
 		{
 			"type":"SPHERE",
 			"color":0xff0000,
+			"transparence":2.4,
+			"refraction":1.8,
 			"origin":
 			{
 				"x":0,
@@ -63,6 +65,8 @@
 		{
 			"type":"SPHERE",
 			"color":0xffffff,
+			"transparence":2.0,
+			"refraction":1.2,
 			"origin":
 			{
 				"x":0,

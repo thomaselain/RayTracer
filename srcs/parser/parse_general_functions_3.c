@@ -93,6 +93,10 @@ static char		*get_object_param(int param_num)
 		return ("\"end\"");
 	if (param_num == 11)
 		return ("\"material\"");
+	if (param_num == 12)
+		return ("\"transparence\"");
+	if (param_num == 13)
+		return ("\"refraction\"");
 	return (0);
 }
 

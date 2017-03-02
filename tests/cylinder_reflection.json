@@ -142,6 +142,8 @@
 			{
 				"type":"SPHERE",
 				"color":0xcccccc,
+				"refraction":3.0,
+				"transparence":2.4,
 				"origin":
 				{
 					"x":0,

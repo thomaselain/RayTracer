@@ -127,6 +127,11 @@ static void		fill_objects_sub(char **s, t_object *o)
 		o->end = parse_float(s);
 	else if (index == 11)
 		o->noise = parse_structure(s);
+	else if (index == 12)
+		o->transparence = parse_float(s);
+	else if (index == 13)
+		o->refraction = parse_float(s);
+	return (0);
 }
 
 /*
@@ -150,6 +155,8 @@ t_object		*fill_cap(t_object *cylinder, float num)
 			MUL(vector_normalize(cylinder->direction), cylinder->end * num * 0.999));
 	cap->direction = MUL(vector_normalize(cylinder->direction), num);
 	cap->direction = vector_normalize(cap->direction);
+	cap->transparence = cylinder->transparence;
+	cap->refraction = cylinder->refraction;
 	return (cap);
 }
 
@@ -174,6 +181,8 @@ void			fill_objects(char **s, t_object *o, int init)
 		fill_structure(0, &(o->noise), 1);
 		o->top_cap = NULL;
 		o->bot_cap = NULL;
+		o->transparence = 0.0;
+		o->refraction = 1.0;
 	}
 	else
 		fill_objects_sub(s, o);
