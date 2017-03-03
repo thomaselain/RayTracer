@@ -44,7 +44,7 @@ float		find_cone_inter(t_ray *r, t_object *o)
 	RES_0 = (-B - sqrtf(D)) / (A + A);
 	RES_1 = (-B + sqrtf(D)) / (A + A);
 	return (RES_0 < RES_1 ? RES_0 : RES_1,
-				RES_0 < RES_1 ? RES_1 : RES_0);
+		RES_0 < RES_1 ? RES_1 : RES_0);
 }
 
 t_vector4f	cone_normal(t_object *o, t_ray ray)

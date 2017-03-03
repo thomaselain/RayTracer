@@ -74,5 +74,11 @@ unsigned int		get_one_color(unsigned int c, int argb[4], t_filter_type filter);
 
 unsigned int		add_filter(unsigned int c, t_filter_type filter);
 
+/*
+** Isolates the ARGB components and place them into an int tab called argb
+*/
+
+int					*get_argb_comp(unsigned int c, int argb[4]);
+
 
 #endif

@@ -15,7 +15,7 @@
 			"z":0
 		},
 		"fov":60,
-		"filter":"NO_FILTER"
+		"filter":"SEPIA"
 	},
 	"objects":
 	[
