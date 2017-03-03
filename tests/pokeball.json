@@ -1,11 +1,11 @@
 {
-	"background":0xffffff,
+	"background":0x000000,
 	"camera":
 	{
 		"origin":
 		{
 			"x":0,
-			"y":0,
+			"y":-10,
 			"z":0
 		},
 		"direction":
@@ -20,7 +20,7 @@
 	[
 		{
 			"type":"PLANE",
-			"color":0xffffff,
+			"color":0xcccccc,
 			"origin":
 			{
 				"x":0,
@@ -33,16 +33,12 @@
 				"y":0,
 				"z":-1
 			},
-			"reflection":0.0,
-			"diffuse":0.0,
-			"radius":1.0,
-			"comment":"Plane (background)"
+			"reflection":0.8,
+			"radius":1.0
 		},
 		{
 			"type":"SPHERE",
 			"color":0xff0000,
-			"transparence":2.4,
-			"refraction":1.8,
 			"origin":
 			{
 				"x":0,
@@ -55,12 +51,8 @@
 				"y":1,
 				"z":-1
 			},
-			"start":3.0,
-			"end":3.0,
-			"reflection":0.0,
-			"diffuse":0.1,
-			"radius":1.0,
-			"comment":"Sphere"
+			"reflection":0.3,
+			"radius":1.0
 		},
 		{
 			"type":"SPHERE",
@@ -79,12 +71,8 @@
 				"y":1,
 				"z":-1
 			},
-			"start":3.0,
-			"end":3.0,
-			"reflection":0.0,
-			"diffuse":0.1,
-			"radius":1.0,
-			"comment":"Sphere"
+			"reflection":0.3,
+			"radius":1.0
 		},
 		{
 			"type":"CYLINDER",

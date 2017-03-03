@@ -54,8 +54,7 @@
 					"y":1,
 					"z":0
 				},
-				"transparence":1,
-				"refraction":1.0,
+				"reflection":0.4,
 				"diffuse":0.5,
 				"radius":10,
 				"comment":"Sphere (background)"

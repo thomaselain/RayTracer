@@ -38,8 +38,29 @@
 				"radius":1.0
 			},
 			{
+				"type":"CYLINDER",
+				"color":0x666666,
+				"origin":
+				{
+					"x":0,
+					"y":6,
+					"z":-7
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":1
+				},
+				"refraction": 1.3,
+				"transparence":1.0,
+				"end":1.0,
+				"radius":0.2
+			},	
+
+			{
 				"type":"SPHERE",
-				"color":0x000000,
+				"color":0x666666,
 				"origin":
 				{
 					"x":0,
@@ -52,7 +73,7 @@
 					"y":-1,
 					"z":0
 				},
-				"refraction":2.0,
+				"refraction": 1.3,
 				"transparence":1.0,
 				"radius":1.0
 			},	

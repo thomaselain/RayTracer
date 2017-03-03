@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 18:42:04 by telain            #+#    #+#             */
-/*   Updated: 2017/03/03 01:53:41 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/03 15:42:47 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,14 +38,14 @@ int		adjust_color(t_scene *s, t_object *hit, t_ray ray, int reflects)
 		n = noise(hit, MUL(ray.pos, 0.1));
 		tmp_hit = get_reflect(s, hit, &ray);
 		return (color_add(color_mul(adjust_color(s, tmp_hit, ray, reflects + 1),
-						hit->reflection * noise(hit, MUL(ray.pos, 0.1))), c));
+						hit->reflection/* * noise(hit, MUL(ray.pos, 0.1))*/), c));
 	}
 if (hit != 0 && hit->transparence >= 0.0 && reflects <= MAX_REFLECTION)
 	{
 		n = noise(hit, MUL(ray.pos, 0.1));
 		tmp_hit = get_refract(s, hit, &ray);
 		return (color_add(color_mul(adjust_color(s, tmp_hit, ray, reflects + 1),
-						hit->transparence * noise(hit, MUL(ray.pos, 0.1))), c));
+						hit->transparence * noise(hit, MUL(ray.pos, 0.1))), color_mul(c, n)));
 	}
 	return (c);
 }
