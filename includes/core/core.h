@@ -96,6 +96,8 @@ typedef struct		s_object
 	int				color;
 	float			diffuse;
 	float			reflection;
+	float			refraction;
+	float			transparence;
 	union
 	{
 		float		intensity;

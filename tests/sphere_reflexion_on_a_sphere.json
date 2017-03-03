@@ -1,98 +1,123 @@
 {
-	"background":0xffffff,
-	"camera":
-	{
-		"origin":
+	"background":0x000000,
+		"camera":
 		{
-			"x":0,
-			"y":0,
-			"z":-1
-		},
-		"direction":
-		{
-			"x":0,
-			"y":1,
-			"z":0
-		},
-		"fov":60,
-		"filter":"NO_FILTER"
-	},
-	"objects":
-	[
-		{
-			"type":"PLANE",
-			"color":0xc0ffee,
 			"origin":
 			{
-				"x":0,
-				"y":0,
-				"z":4
-			},
-			"direction":
-			{
-				"x":0,
-				"y":0,
+				"x":-7,
+				"y":-20,
 				"z":-1
 			},
-			"reflection":0.0,
-			"diffuse":0.5,
-			"radius":1.0,
-			"comment":"Sphere (background)"
-		},
-		{
-			"type":"SPHERE",
-			"color":0xffffff,
-			"origin":
-			{
-				"x":0,
-				"y":20,
-				"z":0
-			},
 			"direction":
 			{
 				"x":0,
 				"y":1,
 				"z":0
 			},
-			"reflection":1.0,
-			"diffuse":0.5,
-			"radius":10,
-			"comment":"Sphere (background)"
+			"fov":60,
+			"filter":"NO_FILTER"
 		},
-		{
-			"type":"SPHERE",
-			"color":0xdddddd,
-			"origin":
+		"objects":
+			[
 			{
-				"x":-8,
-				"y":9,
-				"z":-4
+				"type":"PLANE",
+				"color":0xc0ffee,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":4
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":-1
+				},
+				"reflection":0.0,
+				"diffuse":0.5,
+				"radius":1.0,
+				"comment":"Sphere (background)"
 			},
-			"direction":
 			{
-				"x":0,
-				"y":1,
-				"z":0
+				"type":"SPHERE",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":0,
+					"y":20,
+					"z":0
+				},
+				"direction":
+				{
+					"x":0,
+					"y":1,
+					"z":0
+				},
+				"transparence":1,
+				"refraction":1.0,
+				"diffuse":0.5,
+				"radius":10,
+				"comment":"Sphere (background)"
 			},
-			"reflection":0.0,
-			"diffuse":0.5,
-			"radius":2,
-			"comment":"Sphere"
-		}
+			{
+				"type":"CIRCLE",
+				"color":0xcccccc,
+				"origin":
+				{
+					"x":0.0,
+					"y":-4,
+					"z":0
+				},
+				"direction":
+				{
+					"x":0,
+					"y":1,
+					"z":0
+				},
+				"material":
+				{
+					"material_type":"PERLIN",
+					"zoom":10.0
+				},
+				"transparence":1.0,
+				"refraction":1.0,
+				"radius":4.0
+			},
+			{
+				"type":"SPHERE",
+				"color":0xdddddd,
+				"origin":
+				{
+					"x":-8,
+					"y":9,
+					"z":-4
+				},
+				"direction":
+				{
+					"x":0,
+					"y":-1,
+					"z":0
+				},
+				"reflection":0.0,
+				"diffuse":0.5,
+				"radius":2,
+				"comment":"Sphere"
+			}
 	],
-	"lights":
-	[
-		{
-			"type":"SPOT",
-			"color":0xffffff,
-			"origin":
+		"lights":
+			[
 			{
-				"x":0,
-				"y":0,
-				"z":0
-			},
-			"radius":1,
-			"comment":"Deuxieme lumiere"
-		}
+				"type":"SPOT",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":0
+				},
+				"radius":1,
+				"comment":"Deuxieme lumiere"
+			}
 	]
 }

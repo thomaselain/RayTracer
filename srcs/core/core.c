@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:24:34 by telain            #+#    #+#             */
-/*   Updated: 2017/02/28 17:09:49 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/03 01:42:22 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,6 @@ unsigned int		ray_pixel(t_scene *scene, int x, int y)
 	ray.dir = vector_normalize(SUB(get_ray(scene, x, y), scene->camera.origin));
 	ray.pos = scene->camera.origin;
 	hit = get_intersection(scene, &ray);
-	c = adjust_color(scene, hit, ray, 0);
+	c = adjust_color(scene, hit, ray, 1);
 	return (c);
 }
