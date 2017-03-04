@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   square.c                                           :+:      :+:    :+:   */
+/*   rectangle.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,7 +13,7 @@
 #include <core.h>
 #include <ray.h>
 
-float		find_square_inter(t_ray *r, t_object *o)
+float		find_rectangle_inter(t_ray *r, t_object *o)
 {
 	float		d;
 	t_vector4f	u;

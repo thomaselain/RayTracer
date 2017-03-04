@@ -66,8 +66,8 @@ t_object	*get_intersection(t_scene *s, t_ray *ray)
 			hit = (t_object*)obj->content;
 			closest = d;
 		}
-		else if (((t_object*)obj->content)->type == SQUARE && (d =
-					find_square_inter(ray, (t_object*)obj->content)) <
+		else if (((t_object*)obj->content)->type == RECTANGLE && (d =
+					find_rectangle_inter(ray, (t_object*)obj->content)) <
 				closest && d >= 0.001)
 		{
 			hit = (t_object*)obj->content;
