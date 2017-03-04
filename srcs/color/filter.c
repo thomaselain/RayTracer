@@ -13,13 +13,12 @@
 #include <color.h>
 #include <math.h>
 
-int					*get_argb_comp(unsigned int c, int argb[4])
+void				get_argb_comp(unsigned int c, int argb[4])
 {
 	argb[0] = (c >> 24) & 0xff;
 	argb[1] = (c >> 16) & 0xff;
 	argb[2] = (c >> 8) & 0xff;
 	argb[3] = c & 0xff;
-	return (argb);
 }
 
 unsigned int		get_sepia(unsigned int c, int argb[4])
@@ -28,7 +27,7 @@ unsigned int		get_sepia(unsigned int c, int argb[4])
 	int				tg;
 	int				tb;
 
-	argb = get_argb_comp(c, argb);
+	get_argb_comp(c, argb);
 	tr = (int)(0.393 * argb[1] + 0.769 * argb[2] + 0.189 * argb[3]);
 	tg = (int)(0.349 * argb[1] + 0.686 * argb[2] + 0.168 * argb[3]);
 	tb = (int)(0.272 * argb[1] + 0.534 * argb[2] + 0.131 * argb[3]);
@@ -43,7 +42,7 @@ unsigned int		get_black_white(unsigned int c, int argb[4])
 {
 	int				avg;
 
-	argb = get_argb_comp(c, argb);
+	get_argb_comp(c, argb);
 	avg = (argb[1] + argb[2] + argb[3]) / 3;
 	c = (avg << 16) | (avg << 8) | avg;
 	return (c);
@@ -55,7 +54,7 @@ unsigned int		get_negative(unsigned int c, int argb[4])
 	int				g;
 	int				b;
 
-	argb = get_argb_comp(c, argb);
+	get_argb_comp(c, argb);
 	r = 255 - argb[1];
 	g = 255 - argb[2];
 	b = 255 - argb[3];
@@ -69,7 +68,7 @@ unsigned int		get_one_color(unsigned int c, int argb[4], t_filter_type filter)
 	int				g;
 	int				b;
 
-	argb = get_argb_comp(c, argb);
+	get_argb_comp(c, argb);
 	if (filter == RED_FILTER)
 	{
 		r = argb[1];

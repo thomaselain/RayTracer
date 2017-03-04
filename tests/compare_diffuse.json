@@ -15,23 +15,18 @@
 			"z":0
 		},
 		"fov": 90,
-		"filter":"NO_FILTER"
+		"filter":"SEPIA"
 	},
 	"objects":
 	[	
 		{			
 			"type":"PLANE",
-			"color":0xffffff,
+			"color":0x704214,
 			"origin":
 			{
 				"x":0,
 				"y":10,
 				"z":0
-			},
-			"material":
-			{
-				"material_type": "PERLIN",
-				"zoom":20
 			},
 			"direction":
 			{
