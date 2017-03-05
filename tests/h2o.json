@@ -40,7 +40,8 @@
 				},
 				"reflection":0.0,
 				"diffuse":0.0,
-				"radius":3.3
+				"end":4.3,
+				"start":3.3
 			},
 			{
 				"type":"RECTANGLE",
@@ -59,7 +60,8 @@
 				},
 				"reflection":0.9,
 				"diffuse":0.0,
-				"radius":3.0
+				"end":4.0,
+				"start":3.0
 			},
 			{
 				"type":"RECTANGLE",
@@ -83,7 +85,8 @@
 				},
 				"reflection":0.0,
 				"diffuse":0.0,
-				"radius":3.3
+				"end":4.3,
+				"start":3.3
 			},
 			{
 				"type":"RECTANGLE",
@@ -102,7 +105,8 @@
 				},
 				"reflection":0.9,
 				"diffuse":0.0,
-				"radius":3.0
+				"end":4.0,
+				"start":3.0
 			},
 			{
 				"type":"CYLINDER",
