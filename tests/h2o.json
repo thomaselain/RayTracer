@@ -19,7 +19,7 @@
 		"objects":
 			[
 			{
-				"type":"SQUARE",
+				"type":"RECTANGLE",
 				"color":0xffffff,
 				"origin":
 				{
@@ -43,7 +43,7 @@
 				"radius":3.3
 			},
 			{
-				"type":"SQUARE",
+				"type":"RECTANGLE",
 				"color":0xcccccc,
 				"origin":
 				{
@@ -62,7 +62,7 @@
 				"radius":3.0
 			},
 			{
-				"type":"SQUARE",
+				"type":"RECTANGLE",
 				"color":0xc0ffee,
 				"origin":
 				{
@@ -86,7 +86,7 @@
 				"radius":3.3
 			},
 			{
-				"type":"SQUARE",
+				"type":"RECTANGLE",
 				"color":0xcccccc,
 				"origin":
 				{

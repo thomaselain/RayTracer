@@ -20,7 +20,7 @@ t_vector4f	get_normal(t_object *o, t_ray ray)
 	n = ((t_vector4f){0.0, 0.0, 0.0, 1.0});
 	if (o->type == SPHERE)
 		n = sphere_normal(o, ray);
-	else if (o->type == PLANE || o->type == CIRCLE || o->type == SQUARE)
+	else if (o->type == PLANE || o->type == CIRCLE || o->type == RECTANGLE)
 	{
 		n = vector_normalize(o->direction);
 		if (vector_dot(n, ray.dir) > 0)
