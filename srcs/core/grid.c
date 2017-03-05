@@ -1,28 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   noise.c                                            :+:      :+:    :+:   */
+/*   grid.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/12 14:48:32 by telain            #+#    #+#             */
-/*   Updated: 2017/03/05 20:30:48 by telain           ###   ########.fr       */
+/*   Created: 2017/03/05 20:04:06 by telain            #+#    #+#             */
+/*   Updated: 2017/03/05 20:48:54 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <core.h>
 #include <ray.h>
 
-float		noise(t_object *o, t_vector4f pos)
+float		grid(t_vector4f pos, float size)
 {
-	float	ret;
-
-	ret = 1;
-	pos = DIV(pos, o->noise.zoom / 10);
-	if (o->noise.material_type == PERLIN)
-		ret = perlin(pos.x, pos.y, pos.z);
-	else if (o->noise.material_type == WOOD)
-		ret = grid(pos, o->noise.zoom);
-	ret = ret >= 1.0 ? 1.0 : ret;
-	return (ret);
+	if (sin(M_PI * pos.x + size) * cos(M_PI * pos.y + size) * sin(M_PI * pos.z + size) >= 0)
+		return (1);
+	return (0.5);
 }
