@@ -789,7 +789,7 @@
 				"comment":"pupille droite"
 			},	
 			{
-				"type":"SQUARE",
+				"type":"RECTANGLE",
 				"reflection":0.3,
 				"color":0x3030ff,
 				"origin":
@@ -808,7 +808,7 @@
 				"comment":"Cabine"
 			},	
 			{
-				"type":"SQUARE",
+				"type":"RECTANGLE",
 				"reflection":0.3,
 				"color":0x3030ff,
 				"origin":
@@ -827,7 +827,7 @@
 				"comment":"Cabine"
 			},
 			{
-				"type":"SQUARE",
+				"type":"RECTANGLE",
 				"reflection":0.3,
 				"color":0x3030ff,
 				"origin":
@@ -846,7 +846,7 @@
 				"comment":"Cabine"
 			},
 			{
-				"type":"SQUARE",
+				"type":"RECTANGLE",
 				"reflection":0.3,
 				"color":0x3030ff,
 				"origin":
@@ -865,7 +865,7 @@
 				"comment":"Cabine"
 			},
 			{
-				"type":"SQUARE",
+				"type":"RECTANGLE",
 				"color":0x3030ff,
 				"origin":
 				{
@@ -883,7 +883,7 @@
 				"comment":"Toit"
 			},	
 			{
-				"type":"SQUARE",
+				"type":"RECTANGLE",
 				"reflection":0.3,
 				"color":0x3030ff,
 				"origin":
@@ -902,7 +902,7 @@
 				"comment":"Toit"
 			},
 			{
-				"type":"SQUARE",
+				"type":"RECTANGLE",
 				"reflection":0.3,
 				"color":0x3030ff,
 				"origin":
@@ -921,7 +921,7 @@
 				"comment":"Toit"
 			},
 			{
-				"type":"SQUARE",
+				"type":"RECTANGLE",
 				"reflection":0.3,
 				"color":0x3030ff,
 				"origin":

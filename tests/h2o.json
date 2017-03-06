@@ -120,7 +120,7 @@
 					"z":1
 				},
 				"reflection":0.3,
-				"end":1.0,
+				"height":1.0,
 				"radius":0.15,
 				"comment":"link"
 			},
@@ -140,7 +140,7 @@
 					"z":1
 				},
 				"reflection":0.3,
-				"end":1.0,
+				"height":1.0,
 				"radius":0.15,
 				"comment":"link"
 			},
@@ -160,7 +160,7 @@
 					"z":0
 				},
 				"reflection":0.3,
-				"start":3.0,
+				"width":3.0,
 				"radius":0.5,
 				"comment":"Hydrogen"
 			},
@@ -180,7 +180,7 @@
 					"z":1
 				},
 				"reflection":0.3,
-				"start":3.0,
+				"width":3.0,
 				"radius":0.5,
 				"comment":"Hydrogen"
 			},
@@ -201,7 +201,7 @@
 				},
 
 				"reflection":0.3,
-				"start":3.0,
+				"width":3.0,
 				"radius":1.0,
 				"comment":"Oxygen"
 			}

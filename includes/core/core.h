@@ -105,8 +105,8 @@ typedef struct		s_object
 		float		radius;
 	};
 	char			*comment;
-	float			start;
-	float			end;
+	float			width;
+	float			height;
 	t_noise			noise;
 	struct s_object	*top_cap;
 	struct s_object	*bot_cap;

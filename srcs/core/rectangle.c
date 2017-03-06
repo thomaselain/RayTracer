@@ -26,8 +26,8 @@ float		find_rectangle_inter(t_ray *r, t_object *o)
 	v = vector_cross(u, o->direction);
 	d = find_plane_inter(r, o);
 	inter = ADD(r->pos, MUL(r->dir, d));
-	if (vector_dist(vector_projection(o->origin, u, inter), o->origin) > o->start ||
-			vector_dist(vector_projection(o->origin, v, inter), o->origin) > o->end)
+	if (vector_dist(vector_projection(o->origin, u, inter), o->origin) > o->width ||
+			vector_dist(vector_projection(o->origin, v, inter), o->origin) > o->height)
 		return (MAX_SIZE);
 	return (find_plane_inter(r, o));
 }
