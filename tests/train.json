@@ -54,7 +54,7 @@
 					"y":0,
 					"z":1
 				},
-				"end":0.6,
+				"height":0.6,
 				"radius":0.2,
 				"comment":"Cheminee 2"
 			},
@@ -74,7 +74,7 @@
 					"y":0,
 					"z":1
 				},
-				"end":0.6,
+				"height":0.6,
 				"radius":0.2,
 				"comment":"Cheminee 3"
 			},
@@ -94,7 +94,7 @@
 					"y":0,
 					"z":1
 				},
-				"end":1,
+				"height":1,
 				"radius":0.7,
 				"comment":"Cheminee 1 (la grande)"
 			},
@@ -114,7 +114,7 @@
 					"y":0,
 					"z":0
 				},
-				"end":3,
+				"height":3,
 				"radius":0.1,
 				"comment":"Bareau train derriere"
 			},
@@ -134,7 +134,7 @@
 					"y":0,
 					"z":0
 				},
-				"end":3,
+				"height":3,
 				"radius":0.1,
 				"comment":"Barreau train devant"
 			},
@@ -154,7 +154,7 @@
 					"y":0,
 					"z":0
 				},
-				"end":3,
+				"height":3,
 				"radius":0.1,
 				"comment":"Bareau wagon derriere"
 			},
@@ -174,7 +174,7 @@
 					"y":0,
 					"z":0
 				},
-				"end":3,
+				"height":3,
 				"radius":0.1,
 				"comment":"Barreau wagon devant"
 			},
@@ -194,7 +194,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"roue wagon"
 			},
@@ -214,7 +214,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"roue wagon"
 			},
@@ -235,7 +235,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"roue wagon"
 			},
@@ -255,7 +255,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"roue wagon"
 			},
@@ -276,7 +276,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"roue wagon"
 			},
@@ -296,7 +296,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"roue wagon"
 			},
@@ -316,7 +316,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"roue wagon"
 			},
@@ -336,7 +336,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"roue wagon"
 			},
@@ -356,7 +356,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"roue wagon"
 			},
@@ -376,7 +376,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"roue wagon"
 			},
@@ -396,7 +396,7 @@
 					"y":0,
 					"z":0
 				},
-				"end":3.0,
+				"height":3.0,
 				"radius":0.2,
 				"comment":"Lien entre le wagon et le train"
 			},
@@ -416,7 +416,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"Roue"
 			},
@@ -436,7 +436,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"Roue"
 			},
@@ -457,7 +457,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"Roue"
 			},
@@ -477,7 +477,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"Roue"
 			},
@@ -498,7 +498,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"Roue"
 			},
@@ -518,7 +518,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"Roue"
 			},
@@ -538,7 +538,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"Roue"
 			},
@@ -558,7 +558,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"Roue"
 			},
@@ -578,7 +578,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"Roue"
 			},
@@ -598,7 +598,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"Roue"
 			},
@@ -618,7 +618,7 @@
 					"y":0,
 					"z":0
 				},
-				"end":3.0,
+				"height":3.0,
 				"radius":1.0,
 				"comment":"Wagon"
 			},
@@ -643,7 +643,7 @@
 					"material_type":"PERLIN",
 					"zoom":0.1
 				},
-				"end":1000,
+				"height":1000,
 				"radius":0.1,
 				"comment":"rails"
 			},
@@ -668,7 +668,7 @@
 					"material_type":"PERLIN",
 					"zoom":0.1
 				},
-				"end":1000,
+				"height":1000,
 				"radius":0.1,
 				"comment":"rails"
 			},
@@ -689,7 +689,7 @@
 					"y":0,
 					"z":0
 				},
-				"end":3.0,
+				"height":3.0,
 				"radius":1.0,
 				"comment":"Train"
 			},
