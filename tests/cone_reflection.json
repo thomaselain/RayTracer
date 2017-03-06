@@ -164,7 +164,7 @@
 					"y":0,
 					"z":-3
 				},
-				"start":3.0,
+				"width":3.0,
 				"reflection":0.0,
 				"diffuse":0.5,
 				"radius":0.8,

@@ -100,8 +100,8 @@
 				"c":-10.9
 			},
 			"radius":1.0,
-			"start":3.0,
-			"end":0.1,
+			"width":3.0,
+			"height":0.1,
 			"reflection":0.0,
 			"diffuse":0.1,
 			"comment":"Cylindre"
