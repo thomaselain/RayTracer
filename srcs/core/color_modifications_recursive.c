@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 18:42:04 by telain            #+#    #+#             */
-/*   Updated: 2017/03/07 18:04:39 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/07 19:19:11 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ unsigned int	compute_light(t_scene *s, t_object *o, t_ray ray, t_object *light)
 	else
 		c = 0;
 	// Lumiere speculaire
-	c = color_div(c, vector_dist(ray.pos, o->origin) / 10); // effet brouillard
+	c = color_div(c, vector_dist(ray.pos, o->origin) / 10 + 1.0); // effet brouillard
 	c = color_mul(c, find_shadow(s, o, ray, v_light) * noise(o, ray.pos));
 	return (c);
 }

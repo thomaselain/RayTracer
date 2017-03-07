@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 17:28:23 by aljourda          #+#    #+#             */
-/*   Updated: 2017/03/05 20:06:38 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/07 18:34:38 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,8 +105,8 @@ typedef struct		s_object
 		float		radius;
 	};
 	char			*comment;
-	float			start;
-	float			end;
+	float			width;
+	float			height;
 	t_noise			noise;
 	struct s_object	*top_cap;
 	struct s_object	*bot_cap;

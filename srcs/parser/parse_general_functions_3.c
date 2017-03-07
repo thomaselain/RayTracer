@@ -88,9 +88,9 @@ static char		*get_object_param(int param_num)
 	if (param_num == 8)
 		return ("\"comment\"");
 	if (param_num == 9)
-		return ("\"start\"");
+		return ("\"width\"");
 	if (param_num == 10)
-		return ("\"end\"");
+		return ("\"height\"");
 	if (param_num == 11)
 		return ("\"material\"");
 	if (param_num == 12)

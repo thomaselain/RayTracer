@@ -26,11 +26,13 @@ unsigned int		get_sepia(unsigned int c, int argb[4])
 	int 			tr;
 	int				tg;
 	int				tb;
+	int				avg;
 
 	get_argb_comp(c, argb);
-	tr = (int)(0.393 * argb[1] + 0.769 * argb[2] + 0.189 * argb[3]);
-	tg = (int)(0.349 * argb[1] + 0.686 * argb[2] + 0.168 * argb[3]);
-	tb = (int)(0.272 * argb[1] + 0.534 * argb[2] + 0.131 * argb[3]);
+	avg = (argb[1] + argb[2] + argb[3]) / 3;
+	tr = 1.5 * avg;
+	tg = 1 * avg;
+	tb = 0.5 * avg;
 	argb[1] = (tr > 255 ? 255 : tr);
 	argb[2] = (tg > 255 ? 255 : tg);
 	argb[3] = (tb > 255 ? 255 : tb);

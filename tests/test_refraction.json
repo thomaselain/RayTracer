@@ -54,7 +54,7 @@
 				},
 				"refraction": 1.3,
 				"transparence":1.0,
-				"end":1.0,
+				"height":1.0,
 				"radius":0.2
 			},	
 			{
