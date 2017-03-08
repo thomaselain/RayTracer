@@ -59,6 +59,8 @@ float					find_plane_inter(t_ray *ray, t_object *obj);
 float					find_cylinder_inter(t_ray *ray, t_object *obj);
 float					find_circle_inter(t_ray *ray, t_object *obj);
 float					find_rectangle_inter(t_ray *r, t_object *o);
+float					find_triangle_inter(t_ray *r, t_object *o);
+
 
 /*
 **	Calls the good function, depending of the type of the hit object

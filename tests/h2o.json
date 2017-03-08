@@ -14,7 +14,8 @@
 				"y":1,
 				"z":0
 			},
-			"fov":60
+			"fov":60,
+			"filter":"NO_FILTER"
 		},
 		"objects":
 			[

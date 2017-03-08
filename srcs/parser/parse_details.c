@@ -146,6 +146,8 @@ t_type		parse_type(char **string)
 		ret = RECTANGLE;
 	else if (ft_strnstr(*string, "\"CUBOID\"", (index = 8)) != 0)
 		ret = CUBOID;
+	else if (ft_strnstr(*string, "\"TRIANGLE\"", (index = 10)) != 0)
+		ret = TRIANGLE;
 	else
 		index = 0;
 	*string = *string + index;

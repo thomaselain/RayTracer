@@ -21,7 +21,7 @@
 			[
 			{
 				"type":"PLANE",
-				"color":0xcccccc,
+				"color":0xc0ffee,
 				"origin":
 				{
 					"x":0,
@@ -39,7 +39,7 @@
 			},
 			{
 				"type":"CYLINDER",
-				"color":0x666666,
+				"color":0x00ff00,
 				"origin":
 				{
 					"x":0,
@@ -60,7 +60,7 @@
 
 			{
 				"type":"SPHERE",
-				"color":0x666666,
+				"color":0x0000ff,
 				"origin":
 				{
 					"x":0,
