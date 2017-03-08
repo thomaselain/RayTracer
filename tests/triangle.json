@@ -39,8 +39,28 @@
 			"comment":"Plane (background)"
 		},
 		{
-			"type":"TRIANGLE",
-			"color":0xc0ffee,
+			"type":"PLANE",
+			"color":0xffffff,
+			"origin":
+			{
+				"x":0,
+				"y":20,
+				"z":0
+			},
+			"direction":
+			{
+				"x":0,
+				"y":1,
+				"z":0
+			},
+			"reflection":0.8,
+			"diffuse":0.0,
+			"radius":0.0,
+			"comment":"Plane (background)"
+		},
+		{
+			"type":"RECTANGLE",
+			"color":0xff0000,
 			"origin":
 			{
 				"x":0,
@@ -71,9 +91,8 @@
 				"y":10,
 				"z":-1
 			},
-			"width":3.0,
-			"height":3.0,
-			"radius":1.0,
+			"width":2.0,
+			"height":4,
 			"comment":"Triangle"
 		}
 	],

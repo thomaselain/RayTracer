@@ -127,5 +127,11 @@ t_vector4f				normal_modifications(t_object *o, t_vector4f n, t_ray ray);
 float					noise(t_object *o, t_vector4f pos);
 float					perlin(float x, float y, float z);
 
+/*
+** Returns 0 if the ray hits the triangle that is into the plane, -1 otherwise
+*/
+
+int				calcul_sommet(t_vector4f som0, t_vector4f som1, t_vector4f inter, t_vector4f n);
+
 
 #endif
