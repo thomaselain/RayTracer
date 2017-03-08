@@ -97,6 +97,12 @@ static char		*get_object_param(int param_num)
 		return ("\"transparence\"");
 	if (param_num == 13)
 		return ("\"refraction\"");
+	if (param_num == 14)
+		return ("\"som0\"");
+	if (param_num == 15)
+		return ("\"som1\"");
+	if (param_num == 16)
+		return ("\"som2\"");
 	return (0);
 }
 

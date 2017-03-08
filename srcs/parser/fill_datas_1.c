@@ -131,6 +131,12 @@ static void		fill_objects_sub(char **s, t_object *o)
 		o->transparence = parse_float(s);
 	else if (index == 13)
 		o->refraction = parse_float(s);
+	else if (index == 14)
+		o->som0 = parse_vector(s);
+	else if (index == 15)
+		o->som1 = parse_vector(s);
+	else if (index == 16)
+		o->som2 = parse_vector(s);
 }
 
 /*
@@ -182,6 +188,9 @@ void			fill_objects(char **s, t_object *o, int init)
 		o->bot_cap = NULL;
 		o->transparence = 0.0;
 		o->refraction = 1.0;
+		fill_vector(0, &(o->som0), 1);
+		fill_vector(0, &(o->som1), 1);
+		fill_vector(0, &(o->som2), 1);
 	}
 	else
 		fill_objects_sub(s, o);

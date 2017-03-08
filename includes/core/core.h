@@ -93,6 +93,9 @@ typedef struct		s_object
 	t_type			type;
 	t_vector4f		origin;
 	t_vector4f		direction;
+	t_vector4f		som0;
+	t_vector4f		som1;
+	t_vector4f		som2;
 	int				color;
 	float			diffuse;
 	float			reflection;
