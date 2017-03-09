@@ -53,13 +53,13 @@
 				"y":1,
 				"z":0
 			},
-			"reflection":0.8,
+			"reflection":1.5,
 			"diffuse":0.0,
 			"radius":0.0,
 			"comment":"Plane (background)"
 		},
 		{
-			"type":"RECTANGLE",
+			"type":"TRIANGLE",
 			"color":0xff0000,
 			"origin":
 			{
