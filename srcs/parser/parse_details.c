@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 10:20:15 by svassal           #+#    #+#             */
-/*   Updated: 2017/02/06 17:21:37 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/09 15:46:52 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,7 +130,7 @@ t_type		parse_type(char **string)
 		ret = SPOT;
 	else if (ft_strnstr(*string, "\"DIRECTIONAL\"", (index = 6)) != 0)
 		ret = DIRECTIONAL;
-	else if (ft_strnstr(*string, "\"PLANE\"", (index = 7)) != 0)	
+	else if (ft_strnstr(*string, "\"PLANE\"", (index = 7)) != 0)
 		ret = PLANE;
 	else if (ft_strnstr(*string, "\"SPHERE\"", (index = 8)) != 0)
 		ret = SPHERE;
@@ -167,7 +167,7 @@ t_noise_type	parse_noise_type(char **string)
 		ret = PERLIN;
 	else if (ft_strnstr(*string, "\"MARBLE\"", (index = 8)) != 0)
 		ret = MARBLE;
-	else if (ft_strnstr(*string, "\"WOOD\"", (index = 6)) != 0)	
+	else if (ft_strnstr(*string, "\"WOOD\"", (index = 6)) != 0)
 		ret = WOOD;
 	else
 		index = 0;
@@ -188,15 +188,15 @@ t_filter_type	parse_filter_type(char **string)
 		ret = SEPIA;
 	else if (ft_strnstr(*string, "\"NEGATIVE\"", (index = 10)) != 0)
 		ret = NEGATIVE;
-	else if (ft_strnstr(*string, "\"NO_FILTER\"", (index = 11)) != 0)	
+	else if (ft_strnstr(*string, "\"NO_FILTER\"", (index = 11)) != 0)
 		ret = NO_FILTER;
-	else if (ft_strnstr(*string, "\"RED_FILTER\"", (index = 12)) != 0)	
+	else if (ft_strnstr(*string, "\"RED_FILTER\"", (index = 12)) != 0)
 		ret = RED_FILTER;
-	else if (ft_strnstr(*string, "\"GREEN_FILTER\"", (index = 14)) != 0)	
+	else if (ft_strnstr(*string, "\"GREEN_FILTER\"", (index = 14)) != 0)
 		ret = GREEN_FILTER;
-	else if (ft_strnstr(*string, "\"BLUE_FILTER\"", (index = 13)) != 0)	
+	else if (ft_strnstr(*string, "\"BLUE_FILTER\"", (index = 13)) != 0)
 		ret = BLUE_FILTER;
-	else if (ft_strnstr(*string, "\"BLACK_WHITE\"", (index = 13)) != 0)	
+	else if (ft_strnstr(*string, "\"BLACK_WHITE\"", (index = 13)) != 0)
 		ret = BLACK_WHITE;
 	else
 		index = 0;
