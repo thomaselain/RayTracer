@@ -4,7 +4,7 @@
 		{
 			"origin":
 			{
-				"x":0,
+				"x":-2,
 				"y":0,
 				"z":-5
 			},
@@ -21,7 +21,7 @@
 			[
 			{
 				"type":"PLANE",
-				"color":0xcccccc,
+				"color":0xffffff,
 				"origin":
 				{
 					"x":0,
@@ -34,12 +34,12 @@
 					"y":0,
 					"z":-1
 				},
-				"reflection":1.0,
-				"radius":1.0
+				"reflection":0.6,
+				"transparence":0.5
 			},
 			{
 				"type":"CYLINDER",
-				"color":0x666666,
+				"color":0x00ff00,
 				"origin":
 				{
 					"x":0,
@@ -52,14 +52,12 @@
 					"y":0,
 					"z":1
 				},
-				"refraction": 1.3,
-				"transparence":1.0,
-				"end":1.0,
+				"height":1.0,
 				"radius":0.2
 			},	
 			{
 				"type":"SPHERE",
-				"color":0xffffff,
+				"color":0x0000ff,
 				"origin":
 				{
 					"x":0,
@@ -72,8 +70,7 @@
 					"y":-1,
 					"z":0
 				},
-				"refraction": 0.7,
-				"transparence":1.0,
+				"transparence":0.0,
 				"radius":1.0
 			},	
 			{
@@ -92,6 +89,7 @@
 					"z":0
 				},
 				"reflection":0.5,
+				"transparence":0.5,
 				"radius":1.0
 			},
 			{
@@ -109,7 +107,8 @@
 					"y":0,
 					"z":1
 				},
-				"reflection":0.5,
+				"reflection":0.9,
+				"transparence":0.5,
 				"radius":1.0
 			},
 			{
@@ -128,6 +127,7 @@
 					"z":1
 				},
 				"reflection":0.5,
+				"transparence":0.5,
 				"radius":1.0
 			}
 	],

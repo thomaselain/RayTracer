@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 17:28:23 by aljourda          #+#    #+#             */
-/*   Updated: 2017/03/05 20:06:38 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/07 18:34:38 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 
 typedef enum		e_type
 {
-	DIRECTIONAL, SPOT, PLANE, SPHERE, CONE, CYLINDER, CIRCLE, UNKNOWN, RECTANGLE, CUBOID
+	DIRECTIONAL, SPOT, PLANE, SPHERE, CONE, CYLINDER, CIRCLE, UNKNOWN, RECTANGLE, CUBOID, TRIANGLE
 }					t_type;
 
 /*
@@ -93,6 +93,9 @@ typedef struct		s_object
 	t_type			type;
 	t_vector4f		origin;
 	t_vector4f		direction;
+	t_vector4f		som0;
+	t_vector4f		som1;
+	t_vector4f		som2;
 	int				color;
 	float			diffuse;
 	float			reflection;
@@ -105,8 +108,8 @@ typedef struct		s_object
 		float		radius;
 	};
 	char			*comment;
-	float			start;
-	float			end;
+	float			width;
+	float			height;
 	t_noise			noise;
 	struct s_object	*top_cap;
 	struct s_object	*bot_cap;

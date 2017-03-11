@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:56:24 by telain            #+#    #+#             */
-/*   Updated: 2017/03/02 19:41:11 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/07 18:13:38 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,13 @@ t_object	*get_intersection(t_scene *s, t_ray *ray)
 		}
 		else if (((t_object*)obj->content)->type == CIRCLE && (d =
 					find_circle_inter(ray, (t_object*)obj->content)) <
+				closest && d >= 0.001)
+		{
+			hit = (t_object*)obj->content;
+			closest = d;
+		}
+		else if (((t_object*)obj->content)->type == TRIANGLE && (d =
+					find_triangle_inter(ray, (t_object*)obj->content)) <
 				closest && d >= 0.001)
 		{
 			hit = (t_object*)obj->content;

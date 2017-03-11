@@ -43,8 +43,8 @@ RESET =			\033[0m
 
 $(NAME) :
 		@$(MAKE) -j $(OBJ)
-		@ar -rcs $(NAME) $(OBJ)
-		
+		@ar -rcs $(NAME) $(OBJ) && printf "$(CYAN)Libmv$(RESET) : Built $(YELLOW)library$(RESET)\n" 
+
 all :				$(NAME)
 
 clean :
@@ -59,5 +59,4 @@ re :				fclean all
 
 $(OBJ_DIR)/%.o :	$(SRC_DIR)/%.c
 		@test -d $(dir $@) || mkdir -p $(dir $@) 2> /dev/null
-		@$(COMP) -c $(FLAG) $^ -o $@
-		
+		@$(COMP) -c $(FLAG) $^ -o $@ && printf "$(GREEN)Libmv$(RESET) : Built $(YELLOW)$@$(RESET)\n"

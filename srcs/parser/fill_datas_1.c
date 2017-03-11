@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 13:35:30 by svassal           #+#    #+#             */
-/*   Updated: 2017/03/02 17:50:11 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/09 16:13:57 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -122,15 +122,21 @@ static void		fill_objects_sub(char **s, t_object *o)
 	else if (index == 8)
 		o->comment = parse_string(s);
 	else if (index == 9)
-		o->start = parse_float(s);
+		o->width = parse_float(s);
 	else if (index == 10)
-		o->end = parse_float(s);
+		o->height = parse_float(s);
 	else if (index == 11)
 		o->noise = parse_structure(s);
 	else if (index == 12)
 		o->transparence = parse_float(s);
 	else if (index == 13)
 		o->refraction = parse_float(s);
+	else if (index == 14)
+		o->som0 = parse_vector(s);
+	else if (index == 15)
+		o->som1 = parse_vector(s);
+	else if (index == 16)
+		o->som2 = parse_vector(s);
 }
 
 /*
@@ -151,7 +157,7 @@ t_object		*fill_cap(t_object *cylinder, float num)
 	cap->comment = num == 1 ? ft_strdup("1") : ft_strdup("2");
 	copy_structure(&(cylinder->noise), &(cap->noise));
 	cap->origin = ADD(cylinder->origin,
-			MUL(vector_normalize(cylinder->direction), cylinder->end * num * 0.999));
+			MUL(vector_normalize(cylinder->direction), cylinder->height * num * 0.999));
 	cap->direction = MUL(vector_normalize(cylinder->direction), num);
 	cap->direction = vector_normalize(cap->direction);
 	cap->transparence = cylinder->transparence;
@@ -174,14 +180,17 @@ void			fill_objects(char **s, t_object *o, int init)
 		o->diffuse = 0.0;
 		o->reflection = 0.0;
 		o->intensity = 0.0;
-		o->comment = "NONE";
-		o->start = 0.0;
-		o->end = MAX_SIZE;
+		o->comment = 0;
+		o->width = MAX_SIZE;
+		o->height = MAX_SIZE;
 		fill_structure(0, &(o->noise), 1);
-		o->top_cap = NULL;
-		o->bot_cap = NULL;
+		o->top_cap = 0;
+		o->bot_cap = 0;
 		o->transparence = 0.0;
 		o->refraction = 1.0;
+		fill_vector(0, &(o->som0), 1);
+		fill_vector(0, &(o->som1), 1);
+		fill_vector(0, &(o->som2), 1);
 	}
 	else
 		fill_objects_sub(s, o);

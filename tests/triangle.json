@@ -1,5 +1,5 @@
 {
-	"background":0x000000,
+	"background":0xffffff,
 	"camera":
 	{
 		"origin":
@@ -14,8 +14,7 @@
 			"y":1,
 			"z":0
 		},
-		"fov":60,
-		"filter":"SEPIA"
+		"fov":60	
 	},
 	"objects":
 	[
@@ -36,7 +35,7 @@
 			},
 			"reflection":0.0,
 			"diffuse":0.0,
-			"radius":0.5,
+			"radius":1.0,
 			"comment":"Plane (background)"
 		},
 		{
@@ -44,7 +43,7 @@
 			"color":0xffffff,
 			"origin":
 			{
-				"x":1,
+				"x":0,
 				"y":20,
 				"z":0
 			},
@@ -54,32 +53,14 @@
 				"y":1,
 				"z":0
 			},
-			"reflection":0.7,
+			"reflection":1.5,
 			"diffuse":0.0,
-			"radius":0.5,
+			"radius":0.0,
 			"comment":"Plane (background)"
 		},
 		{
-			"type":"CIRCLE",
-			"color":0x00ffff,
-			"origin":
-			{
-				"x":0.0,
-				"y":9,
-				"z":0.0
-			},
-			"direction":
-			{
-				"x":0.0,
-				"y":1.0,
-				"z":-0.4
-			},
-			"radius":1.0,
-			"reflection":0.0
-		},
-		{
-			"type":"CYLINDER",
-			"color":0xdd6010,
+			"type":"TRIANGLE",
+			"color":0xff0000,
 			"origin":
 			{
 				"x":0,
@@ -88,41 +69,43 @@
 			},
 			"direction":
 			{
-				"x":-1,
+				"x":1,
 				"y":-1,
+				"z":0
+			},
+			"som0":
+			{
+				"x":1,
+				"y":10,
+				"z":-2
+			},
+			"som1":
+			{
+				"x":0,
+				"y":11,
+				"z":-2
+			},
+			"som2":
+			{
+				"x":0,
+				"y":10,
 				"z":-1
 			},
-			"material":
-			{
-				"material_type":"PERLIN",
-				"zoom":2,
-				"intensity":1.04, 
-				"c":-10.9
-			},
-			"radius":1.0,
-			"width":3.0,
-			"height":0.1,
-			"reflection":0.0,
-			"diffuse":0.1,
-			"comment":"Cylindre"
+			"width":2.0,
+			"height":4,
+			"comment":"Triangle"
 		}
 	],
 	"lights":
 	[
 		{
 			"type":"SPOT",
-			"color":0xc0ffee,
+			"color":0xffffff,
 			"origin":
-			{
-				"x":0,
-				"y":0,
-				"z":0
-			},
-			"direction":
 			{
 				"x":0.0,
 				"y":0,
-				"z":-1
+				"z":0
 			},
 			"radius":1
 		}

@@ -43,7 +43,7 @@ float		find_cylinder_inter(t_ray *r, t_object *o)
 	RES_1 = (-B - sqrtf(D)) / (A + A);
 	RES_2 = (-B + sqrtf(D)) / (A + A);
 	if ((PROJ = vector_dist(o->origin, vector_projection(o->origin,
-						o->direction, ADD(r->pos, MUL(r->dir, RES_1))))) >= o->end)
+						o->direction, ADD(r->pos, MUL(r->dir, RES_1))))) >= o->height)
 		return (MAX_SIZE);
 	return (RES_1 < RES_2 ? RES_1 : RES_2);
 }

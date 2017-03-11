@@ -90,8 +90,8 @@
 				"z":0
 			},
 			"radius":0.3,
-			"start":3.0,
-			"end":0.1,
+			"width":3.0,
+			"height":0.1,
 			"reflection":0.0,
 			"diffuse":0.1,
 			"comment":"Cylindre"
@@ -112,8 +112,8 @@
 				"z":0
 			},
 			"radius":0.35,
-			"start":3.0,
-			"end":0.1,
+			"width":3.0,
+			"height":0.1,
 			"reflection":0.0,
 			"diffuse":0.1,
 			"comment":"Cylindre"
@@ -134,8 +134,8 @@
 				"z":1
 			},
 			"radius":1.0,
-			"start":3.0,
-			"end":0.1,
+			"width":3.0,
+			"height":0.1,
 			"reflection":0.0,
 			"diffuse":0.1,
 			"comment":"Cylindre"

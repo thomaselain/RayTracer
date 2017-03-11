@@ -1,20 +1,20 @@
 {
-	"background":0x000000,
+	"background":0xffffff,
 		"camera":
 		{
 			"origin":
 			{
-				"x":-2,
-				"y":5,
-				"z":-0.3
+				"x":0,
+				"y":-5,
+				"z":-6
 			},
 			"direction":
 			{
-				"x":-0.7,
+				"x":0,
 				"y":1.0,
-				"z":0.3
+				"z":0
 			},
-			"fov":120
+			"fov":90
 		},
 		"objects":
 			[
@@ -54,7 +54,7 @@
 					"y":0,
 					"z":1
 				},
-				"end":0.6,
+				"height":0.6,
 				"radius":0.2,
 				"comment":"Cheminee 2"
 			},
@@ -74,7 +74,7 @@
 					"y":0,
 					"z":1
 				},
-				"end":0.6,
+				"height":0.6,
 				"radius":0.2,
 				"comment":"Cheminee 3"
 			},
@@ -94,7 +94,8 @@
 					"y":0,
 					"z":1
 				},
-				"end":1,
+				"height":2.0,
+				"width":2.0,
 				"radius":0.7,
 				"comment":"Cheminee 1 (la grande)"
 			},
@@ -114,7 +115,7 @@
 					"y":0,
 					"z":0
 				},
-				"end":3,
+				"height":3,
 				"radius":0.1,
 				"comment":"Bareau train derriere"
 			},
@@ -134,7 +135,7 @@
 					"y":0,
 					"z":0
 				},
-				"end":3,
+				"height":3,
 				"radius":0.1,
 				"comment":"Barreau train devant"
 			},
@@ -154,7 +155,7 @@
 					"y":0,
 					"z":0
 				},
-				"end":3,
+				"height":3,
 				"radius":0.1,
 				"comment":"Bareau wagon derriere"
 			},
@@ -174,7 +175,7 @@
 					"y":0,
 					"z":0
 				},
-				"end":3,
+				"height":3,
 				"radius":0.1,
 				"comment":"Barreau wagon devant"
 			},
@@ -194,7 +195,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"roue wagon"
 			},
@@ -214,7 +215,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"roue wagon"
 			},
@@ -235,7 +236,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"roue wagon"
 			},
@@ -255,7 +256,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"roue wagon"
 			},
@@ -276,7 +277,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"roue wagon"
 			},
@@ -296,7 +297,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"roue wagon"
 			},
@@ -316,7 +317,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"roue wagon"
 			},
@@ -336,7 +337,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"roue wagon"
 			},
@@ -356,7 +357,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"roue wagon"
 			},
@@ -376,7 +377,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"roue wagon"
 			},
@@ -396,7 +397,7 @@
 					"y":0,
 					"z":0
 				},
-				"end":3.0,
+				"height":3.0,
 				"radius":0.2,
 				"comment":"Lien entre le wagon et le train"
 			},
@@ -416,7 +417,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"Roue"
 			},
@@ -436,7 +437,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"Roue"
 			},
@@ -457,7 +458,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"Roue"
 			},
@@ -477,7 +478,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"Roue"
 			},
@@ -498,7 +499,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"Roue"
 			},
@@ -518,7 +519,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"Roue"
 			},
@@ -538,7 +539,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"Roue"
 			},
@@ -558,7 +559,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"Roue"
 			},
@@ -578,7 +579,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"Roue"
 			},
@@ -598,7 +599,7 @@
 					"y":1,
 					"z":0
 				},
-				"end":0.3,
+				"height":0.3,
 				"radius":0.5,
 				"comment":"Roue"
 			},
@@ -618,7 +619,7 @@
 					"y":0,
 					"z":0
 				},
-				"end":3.0,
+				"height":3.0,
 				"radius":1.0,
 				"comment":"Wagon"
 			},
@@ -643,7 +644,7 @@
 					"material_type":"PERLIN",
 					"zoom":0.1
 				},
-				"end":1000,
+				"height":1000,
 				"radius":0.1,
 				"comment":"rails"
 			},
@@ -668,7 +669,7 @@
 					"material_type":"PERLIN",
 					"zoom":0.1
 				},
-				"end":1000,
+				"height":1000,
 				"radius":0.1,
 				"comment":"rails"
 			},
@@ -689,7 +690,7 @@
 					"y":0,
 					"z":0
 				},
-				"end":3.0,
+				"height":3.0,
 				"radius":1.0,
 				"comment":"Train"
 			},
@@ -789,7 +790,7 @@
 				"comment":"pupille droite"
 			},	
 			{
-				"type":"SQUARE",
+				"type":"RECTANGLE",
 				"reflection":0.3,
 				"color":0x3030ff,
 				"origin":
@@ -805,10 +806,12 @@
 					"z":0
 				},
 				"radius":1,
+				"height":2.0,
+				"width":2.0,
 				"comment":"Cabine"
 			},	
 			{
-				"type":"SQUARE",
+				"type":"RECTANGLE",
 				"reflection":0.3,
 				"color":0x3030ff,
 				"origin":
@@ -824,10 +827,12 @@
 					"z":0
 				},
 				"radius":1,
+				"height":2.0,
+				"width":2.0,
 				"comment":"Cabine"
 			},
 			{
-				"type":"SQUARE",
+				"type":"RECTANGLE",
 				"reflection":0.3,
 				"color":0x3030ff,
 				"origin":
@@ -843,10 +848,12 @@
 					"z":0
 				},
 				"radius":1,
+				"height":2.0,
+				"width":2.0,
 				"comment":"Cabine"
 			},
 			{
-				"type":"SQUARE",
+				"type":"RECTANGLE",
 				"reflection":0.3,
 				"color":0x3030ff,
 				"origin":
@@ -862,10 +869,12 @@
 					"z":0
 				},
 				"radius":1,
+				"height":2.0,
+				"width":2.0,
 				"comment":"Cabine"
 			},
 			{
-				"type":"SQUARE",
+				"type":"RECTANGLE",
 				"color":0x3030ff,
 				"origin":
 				{
@@ -880,10 +889,12 @@
 					"z":-1
 				},
 				"radius":0.8,
+				"height":2.0,
+				"width":2.0,
 				"comment":"Toit"
 			},	
 			{
-				"type":"SQUARE",
+				"type":"RECTANGLE",
 				"reflection":0.3,
 				"color":0x3030ff,
 				"origin":
@@ -899,10 +910,12 @@
 					"z":-1
 				},
 				"radius":0.8,
+				"height":2.0,
+				"width":2.0,
 				"comment":"Toit"
 			},
 			{
-				"type":"SQUARE",
+				"type":"RECTANGLE",
 				"reflection":0.3,
 				"color":0x3030ff,
 				"origin":
@@ -918,10 +931,12 @@
 					"z":-1
 				},
 				"radius":0.8,
+				"height":2.0,
+				"width":2.0,
 				"comment":"Toit"
 			},
 			{
-				"type":"SQUARE",
+				"type":"RECTANGLE",
 				"reflection":0.3,
 				"color":0x3030ff,
 				"origin":
@@ -937,6 +952,8 @@
 					"z":-1
 				},
 				"radius":0.8,
+				"height":2.0,
+				"width":2.0,
 				"comment":"Toit"
 			},
 			{
@@ -954,7 +971,8 @@
 					"y":0,
 					"z":0
 				},
-				"reflection":1.0,
+				"transparence":0.7,
+				"reflection":0.7,
 				"radius":5,
 				"comment":"Mirroir"
 			}
