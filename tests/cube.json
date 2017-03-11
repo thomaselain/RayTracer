@@ -1,5 +1,5 @@
 {
-	"background":0xb0ffff,
+	"background":0xffffff,
 		"camera":
 		{
 			"origin":
@@ -33,17 +33,17 @@
 					"y":0,
 					"z":-1
 				},
-								"material":
+				"material":
 				{
 					"material_type":"PERLIN",
 					"zoom":1
 				},
-				"reflection":0.4,
+				"reflection":0.7,
 				"comment":"sol"
 			},			
 			{
 				"type":"RECTANGLE",
-				"color":0xff00ff,
+				"color":0xffffff,
 				"origin":
 				{
 					"x":-1,
@@ -63,12 +63,12 @@
 				},
 				"width":2.0,
 				"height":2.0,
-				"reflection":0.6,
+				"transparence":0.9,
 				"comment":"morceau de de"
 			},	
 			{
 				"type":"RECTANGLE",
-				"color":0xff00ff,
+				"color":0xffffff,
 				"origin":
 				{
 					"x":1,
@@ -88,12 +88,12 @@
 				},
 				"width":2.0,
 				"height":2.0,
-				"reflection":0.6,
+				"transparence":0.9,
 				"comment":"morceau de de"
 			},	
 			{
 				"type":"RECTANGLE",
-				"color":0xff00ff,
+				"color":0xffffff,
 				"origin":
 				{
 					"x":0,
@@ -113,12 +113,12 @@
 				},
 				"width":2.0,
 				"height":2.0,
-				"reflection":0.6,
+				"transparence":0.9,
 				"comment":"morceau de de"
 			},
 			{
 				"type":"RECTANGLE",
-				"color":0xff00ff,
+				"color":0xffffff,
 				"origin":
 				{
 					"x":0,
@@ -138,12 +138,12 @@
 				},
 				"width":2.0,
 				"height":2.0,
-				"reflection":0.6,
+				"transparence":0.3,
 				"comment":"morceau de de"
 			},
 			{
 				"type":"RECTANGLE",
-				"color":0xff00ff,
+				"color":0xffffff,
 				"origin":
 				{
 					"x":0,
@@ -163,12 +163,12 @@
 				},
 				"width":2.0,
 				"height":2.0,
-				"reflection":0.6,
+				"transparence":0.9,
 				"comment":"morceau de de"
 			},
 			{
 				"type":"RECTANGLE",
-				"color":0xff00ff,
+				"color":0xff0000,
 				"origin":
 				{
 					"x":0,
@@ -188,7 +188,6 @@
 				},
 				"width":2.0,
 				"height":2.0,
-				"reflection":0.6,
 				"comment":"morceau de de"
 			}
 	],

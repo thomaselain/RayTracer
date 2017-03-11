@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 18:42:04 by telain            #+#    #+#             */
-/*   Updated: 2017/03/07 19:19:11 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/11 23:11:00 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,12 +40,12 @@ int		adjust_color(t_scene *s, t_object *hit, t_ray ray, int reflects)
 		return (color_add(color_mul(adjust_color(s, tmp_hit, ray, reflects + 1),
 						hit->reflection), c));
 	}
-if (hit != 0 && hit->transparence >= 0.0 && reflects <= MAX_REFLECTION)
+	if (hit != 0 && hit->transparence > 0.0 && reflects <= MAX_REFLECTION)
 	{
 		n = noise(hit, MUL(ray.pos, 0.1));
 		tmp_hit = get_refract(s, hit, &ray);
-		return (color_add(color_mul(adjust_color(s, tmp_hit, ray, reflects + 1),
-						hit->transparence), c));
+		return (color_add(color_mul(adjust_color(s, tmp_hit, ray, reflects + 1), hit->transparence),
+						 color_mul(c, 1 - hit->transparence)));
 	}
 	return (c);
 }
@@ -55,11 +55,16 @@ t_object	*get_refract(t_scene *s, t_object *hit, t_ray *ray)
 	t_vector4f	normal;
 	float		angle;
 
-	normal = get_normal(hit, *ray);
-	angle = vector_dot(ray->dir, normal);
-	ray->dir = vector_normalize(ADD(MUL(ray->dir, 1.0 / hit->refraction), MUL(normal,
-				1.0 / hit->refraction * angle -  sqrt(1.0 - pow(1.0 / hit->refraction, 2.0) * (1.0 -
-					pow(angle, 2.0))))));
+	if (hit->refraction > 1.0)
+	{
+		normal = get_normal(hit, *ray);
+		angle = vector_dot(ray->dir, normal);
+		ray->dir = vector_normalize(ADD(MUL(ray->dir, 1.0 / hit->refraction), MUL(normal,
+						1.0 / hit->refraction * angle -  sqrt(1.0 - pow(1.0 / hit->refraction, 2.0)
+							* (1.0 - pow(angle, 2.0))))));
+	}
+	else
+		ray->pos = ADD(ray->pos, MUL(ray->dir, 0.001));
 	return (get_intersection(s, ray));
 }
 
