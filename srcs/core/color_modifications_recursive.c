@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 18:42:04 by telain            #+#    #+#             */
-/*   Updated: 2017/03/11 23:11:00 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/12 00:13:54 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,13 @@ int		adjust_color(t_scene *s, t_object *hit, t_ray ray, int reflects)
 {
 	unsigned int	c;
 	float			n;
+	t_ray			ray_cpy;
 	t_object		*tmp_hit;
 	t_list			*light;
 
 	light = s->lights;
 	c = s->background;
+	ray_cpy = ray;
 	if (hit != 0)
 	{
 		while (light != 0)
@@ -37,15 +39,16 @@ int		adjust_color(t_scene *s, t_object *hit, t_ray ray, int reflects)
 	{
 		n = noise(hit, MUL(ray.pos, 0.1));
 		tmp_hit = get_reflect(s, hit, &ray);
-		return (color_add(color_mul(adjust_color(s, tmp_hit, ray, reflects + 1),
-						hit->reflection), c));
+		c = color_add(color_mul(adjust_color(s, tmp_hit, ray, reflects + 1),
+					hit->reflection), c);
 	}
 	if (hit != 0 && hit->transparence > 0.0 && reflects <= MAX_REFLECTION)
 	{
-		n = noise(hit, MUL(ray.pos, 0.1));
-		tmp_hit = get_refract(s, hit, &ray);
-		return (color_add(color_mul(adjust_color(s, tmp_hit, ray, reflects + 1), hit->transparence),
-						 color_mul(c, 1 - hit->transparence)));
+		n = noise(hit, MUL(ray_cpy.pos, 0.1));
+		tmp_hit = get_refract(s, hit, &ray_cpy);
+		c = color_add(color_mul(adjust_color(s, tmp_hit, ray_cpy, reflects + 1),
+					hit->transparence),
+				color_mul(c, 1 - hit->transparence));
 	}
 	return (c);
 }
@@ -59,9 +62,10 @@ t_object	*get_refract(t_scene *s, t_object *hit, t_ray *ray)
 	{
 		normal = get_normal(hit, *ray);
 		angle = vector_dot(ray->dir, normal);
-		ray->dir = vector_normalize(ADD(MUL(ray->dir, 1.0 / hit->refraction), MUL(normal,
-						1.0 / hit->refraction * angle -  sqrt(1.0 - pow(1.0 / hit->refraction, 2.0)
-							* (1.0 - pow(angle, 2.0))))));
+		ray->dir = vector_normalize(ADD(MUL(ray->dir, 1.0 / hit->refraction),
+					MUL(normal, 1.0 / hit->refraction * angle -  sqrt(1.0 -
+							pow(1.0 / hit->refraction, 2.0)	* (1.0 -
+								pow(angle, 2.0))))));
 	}
 	else
 		ray->pos = ADD(ray->pos, MUL(ray->dir, 0.001));

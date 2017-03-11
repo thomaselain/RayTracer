@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:56:12 by telain            #+#    #+#             */
-/*   Updated: 2017/03/11 20:03:13 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/12 00:13:57 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define CAMDIR					(s->camera->direction)
 # define CAMPOS					(s->camera->origin)
-# define MAX_REFLECTION			(6)
+# define MAX_REFLECTION			(10)
 # define MAX_SIZE				(100000.0)
 # define COLOR_R(color)			(color & 0xff)
 # define COLOR_G(color)			((color & 0xff00) >> 8)
@@ -59,6 +59,8 @@ float					find_plane_inter(t_ray *ray, t_object *obj);
 float					find_cylinder_inter(t_ray *ray, t_object *obj);
 float					find_circle_inter(t_ray *ray, t_object *obj);
 float					find_rectangle_inter(t_ray *r, t_object *o);
+float					find_triangle_inter(t_ray *r, t_object *o);
+
 
 /*
 **	Calls the good function, depending of the type of the hit object
@@ -119,6 +121,12 @@ t_vector4f				normal_modifications(t_object *o, t_vector4f n, t_ray ray);
 float					noise(t_object *o, t_vector4f pos);
 float					perlin(float x, float y, float z);
 float					grid(t_vector4f pos, float size);
+
+/*
+** Returns 0 if the ray hits the triangle that is into the plane, -1 otherwise
+*/
+
+int				calcul_sommet(t_vector4f som0, t_vector4f som1, t_vector4f inter, t_vector4f n);
 
 
 #endif

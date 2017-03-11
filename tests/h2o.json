@@ -14,10 +14,11 @@
 				"y":1,
 				"z":0
 			},
-			"fov":60
+			"fov":60,
+			"filter":"NO_FILTER"
 		},
 		"objects":
-			[
+			[	
 			{
 				"type":"RECTANGLE",
 				"color":0xffffff,
@@ -40,8 +41,8 @@
 				},
 				"reflection":0.0,
 				"diffuse":0.0,
-				"end":4.3,
-				"start":3.3
+				"height":4.3,
+				"width":3.3
 			},
 			{
 				"type":"RECTANGLE",
@@ -60,8 +61,8 @@
 				},
 				"reflection":0.9,
 				"diffuse":0.0,
-				"end":4.0,
-				"start":3.0
+				"height":4.0,
+				"width":3.0
 			},
 			{
 				"type":"RECTANGLE",
@@ -85,8 +86,8 @@
 				},
 				"reflection":0.0,
 				"diffuse":0.0,
-				"end":4.3,
-				"start":3.3
+				"height":4.3,
+				"width":3.3
 			},
 			{
 				"type":"RECTANGLE",
@@ -105,8 +106,8 @@
 				},
 				"reflection":0.9,
 				"diffuse":0.0,
-				"end":4.0,
-				"start":3.0
+				"height":4.0,
+				"width":3.0
 			},
 			{
 				"type":"CYLINDER",

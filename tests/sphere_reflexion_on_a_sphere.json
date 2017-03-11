@@ -34,10 +34,12 @@
 				"y":0,
 				"z":-1
 			},
-			"reflection":0.0,
-			"diffuse":0.5,
-			"radius":1.0,
-			"comment":"Sphere (background)"
+			"material":
+			{
+				"material_type":"WOOD",
+				"zoom":10
+			},
+			"reflection":0.0
 		},
 		{
 			"type":"SPHERE",
@@ -56,13 +58,12 @@
 			},
 			"material":
 			{
-				"material_type":"WOOD",
+				"material_type":"PERLIN",
 				"zoom":10.0
 			},
 			"reflection":0.4,
-			"diffuse":0.5,
-			"radius":10,
-			"comment":"Sphere (background)"
+			"transparence":0.3,
+			"radius":10
 		},
 		{
 			"type":"CIRCLE",

@@ -21,7 +21,7 @@
 			[
 			{
 				"type":"PLANE",
-				"color":0xcccccc,
+				"color":0xffffff,
 				"origin":
 				{
 					"x":0,
@@ -34,11 +34,12 @@
 					"y":0,
 					"z":-1
 				},
-				"reflection":0.2
+				"reflection":0.6,
+				"transparence":0.5
 			},
 			{
 				"type":"CYLINDER",
-				"color":0xffffff,
+				"color":0x00ff00,
 				"origin":
 				{
 					"x":0,
@@ -88,6 +89,7 @@
 					"z":0
 				},
 				"reflection":0.5,
+				"transparence":0.5,
 				"radius":1.0
 			},
 			{
@@ -106,6 +108,7 @@
 					"z":1
 				},
 				"reflection":0.9,
+				"transparence":0.5,
 				"radius":1.0
 			},
 			{
@@ -124,6 +127,7 @@
 					"z":1
 				},
 				"reflection":0.5,
+				"transparence":0.5,
 				"radius":1.0
 			}
 	],

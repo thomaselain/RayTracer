@@ -1,20 +1,20 @@
 {
-	"background":0x000000,
+	"background":0xffffff,
 		"camera":
 		{
 			"origin":
 			{
-				"x":-2,
-				"y":5,
-				"z":-0.3
+				"x":0,
+				"y":-5,
+				"z":-6
 			},
 			"direction":
 			{
-				"x":-0.7,
-				"y":-1.0,
-				"z":0.3
+				"x":0,
+				"y":1.0,
+				"z":0
 			},
-			"fov":120
+			"fov":90
 		},
 		"objects":
 			[
@@ -94,8 +94,8 @@
 					"y":0,
 					"z":1
 				},
-				"height":0.5,
-				"width":0.5,
+				"height":2.0,
+				"width":2.0,
 				"radius":0.7,
 				"comment":"Cheminee 1 (la grande)"
 			},
@@ -806,8 +806,8 @@
 					"z":0
 				},
 				"radius":1,
-				"height":0.5,
-				"width":0.5,
+				"height":2.0,
+				"width":2.0,
 				"comment":"Cabine"
 			},	
 			{
@@ -827,8 +827,8 @@
 					"z":0
 				},
 				"radius":1,
-				"height":0.5,
-				"width":0.5,
+				"height":2.0,
+				"width":2.0,
 				"comment":"Cabine"
 			},
 			{
@@ -848,8 +848,8 @@
 					"z":0
 				},
 				"radius":1,
-				"height":0.5,
-				"width":0.5,
+				"height":2.0,
+				"width":2.0,
 				"comment":"Cabine"
 			},
 			{
@@ -869,8 +869,8 @@
 					"z":0
 				},
 				"radius":1,
-				"height":0.5,
-				"width":0.5,
+				"height":2.0,
+				"width":2.0,
 				"comment":"Cabine"
 			},
 			{
@@ -889,8 +889,8 @@
 					"z":-1
 				},
 				"radius":0.8,
-				"height":0.5,
-				"width":0.5,
+				"height":2.0,
+				"width":2.0,
 				"comment":"Toit"
 			},	
 			{
@@ -910,8 +910,8 @@
 					"z":-1
 				},
 				"radius":0.8,
-				"height":0.5,
-				"width":0.5,
+				"height":2.0,
+				"width":2.0,
 				"comment":"Toit"
 			},
 			{
@@ -931,8 +931,8 @@
 					"z":-1
 				},
 				"radius":0.8,
-				"height":0.5,
-				"width":0.5,
+				"height":2.0,
+				"width":2.0,
 				"comment":"Toit"
 			},
 			{
@@ -952,8 +952,8 @@
 					"z":-1
 				},
 				"radius":0.8,
-				"height":0.5,
-				"width":0.5,
+				"height":2.0,
+				"width":2.0,
 				"comment":"Toit"
 			},
 			{
@@ -971,7 +971,8 @@
 					"y":0,
 					"z":0
 				},
-				"reflection":1.0,
+				"transparence":0.7,
+				"reflection":0.7,
 				"radius":5,
 				"comment":"Mirroir"
 			}

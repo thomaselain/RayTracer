@@ -50,8 +50,8 @@
 					"y":1,
 					"z":0
 				},
-				"transparence":0.5,
-				"reflection":0.5
+				"transparence":0.6,
+				"reflection":0.9
 			},
 			{
 				"type":"SPHERE",

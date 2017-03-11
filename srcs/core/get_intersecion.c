@@ -80,6 +80,13 @@ t_object	*get_intersection(t_scene *s, t_ray *ray)
 			hit = (t_object*)obj->content;
 			closest = d;
 		}
+		else if (((t_object*)obj->content)->type == TRIANGLE && (d =
+					find_triangle_inter(ray, (t_object*)obj->content)) <
+				closest && d >= 0.001)
+		{
+			hit = (t_object*)obj->content;
+			closest = d;
+		}
 		obj = obj->next;
 	}
 	ray->pos = ADD(ray->pos, MUL(ray->dir, closest - 0.001));

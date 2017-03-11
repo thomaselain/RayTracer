@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 18:36:58 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/14 14:47:36 by svassal          ###   ########.fr       */
+/*   Updated: 2017/03/09 16:27:19 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,17 @@
 #define INIT		1
 #define CLEAN		2
 #define SET		3
+
+static void		sub_clean(t_object *obj)
+{
+	if (obj->top_cap != 0)
+		sub_clean(obj->top_cap);
+	if (obj->bot_cap != 0)
+		sub_clean(obj->bot_cap);
+	if (obj->comment != 0)
+		free(obj->comment);
+	free(obj);
+}
 
 /*
 ** Clean the memory allocated to the scene datas
@@ -31,7 +42,7 @@ static t_scene	*clean(t_scene *scene)
 	while (scene->lights != 0)
 	{
 		if (scene->lights->content != 0)
-			free(scene->lights->content);
+			sub_clean((t_object *)(scene->lights->content));
 		tmp2 = scene->lights;
 		scene->lights = scene->lights->next;
 		free(tmp2);
@@ -41,7 +52,7 @@ static t_scene	*clean(t_scene *scene)
 	while (scene->objects != 0)
 	{
 		if (scene->objects->content != 0)
-			free(scene->objects->content);
+			sub_clean((t_object *)(scene->objects->content));
 		tmp2 = scene->objects;
 		scene->objects = scene->objects->next;
 		free(tmp2);
