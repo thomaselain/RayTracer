@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/31 15:59:09 by aljourda          #+#    #+#             */
-/*   Updated: 2017/02/28 18:11:59 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/13 22:47:24 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ __attribute__((weak)) unsigned int ray_pixel(t_scene *scene, int x, int y){
 	return (ret);
 }
 
-static void		calculation(t_scene *e, t_win *win, const int nbthread)
+static int		calculation(t_scene *e, t_win *win, const int nbthread)
 {
 	t_img		img;
 	float		loading;
@@ -104,8 +104,7 @@ static void		calculation(t_scene *e, t_win *win, const int nbthread)
 			break;
 		case SDL_KEYUP:
 			key = &event.key;
-			if (key->keysym.scancode == 41)
-				status = 2;
+			status = 3;
 			break;
 		case SDL_MOUSEMOTION:
 			break;
@@ -124,6 +123,7 @@ static void		calculation(t_scene *e, t_win *win, const int nbthread)
 
 	img_save(&img, "capture.bmp");
 	img_destroy(&img);
+	return status;
 }
 
 __attribute__((weak)) int				main(int ac, char **av)
@@ -154,7 +154,9 @@ __attribute__((weak)) int				main(int ac, char **av)
 		if (status == 3)
 		{
 			get_camera_plane(e);
-			calculation(e, &win, 60);
+			status = calculation(e, &win, 60);
+			if(status == 2)
+				continue ;
 		}
 		status = 0;
 		//Event management
