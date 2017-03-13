@@ -34,7 +34,7 @@ typedef enum		e_type
 
 typedef enum		e_noise_type
 {
-	PERLIN, MARBLE, WOOD, NONE
+	PERLIN, MARBLE, WOOD, NONE, GRID
 }					t_noise_type;
 
 /*

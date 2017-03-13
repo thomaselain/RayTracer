@@ -21,7 +21,7 @@ float		noise(t_object *o, t_vector4f pos)
 	pos = DIV(pos, o->noise.zoom / 10);
 	if (o->noise.material_type == PERLIN)
 		ret = perlin(pos.x, pos.y, pos.z);
-	else if (o->noise.material_type == WOOD)
+	else if (o->noise.material_type == GRID)
 		ret = grid(pos, o->noise.zoom);
 	ret = ret >= 1.0 ? 1.0 : ret;
 	return (ret);
