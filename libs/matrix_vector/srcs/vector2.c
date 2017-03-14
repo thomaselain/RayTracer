@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/15 14:36:15 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/25 23:17:29 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/13 21:41:19 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,6 @@ t_vector4f		vector_rotate(t_vector4f v, t_vector4f axis, float angle)
 	Z += v.z * (COS + powf(axis.z, 2) * (1 - COS));
 	W = 0;
 	define_vector(&r_v, f);
-
 	return (r_v);
 }
 

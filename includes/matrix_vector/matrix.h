@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/13 15:56:40 by svassal           #+#    #+#             */
-/*   Updated: 2016/10/16 15:36:54 by svassal          ###   ########.fr       */
+/*   Updated: 2017/03/13 20:55:46 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ t_matrix4f		*matrix_rotation_flo(float f[3]);
 ** Make a matrix rotation using three float numbers and an angle in float
 */
 
-t_matrix4f		*matrix_rotation_flo_angle(float f[3], float angle);
+t_matrix4f		matrix_rotation_flo_angle(float f[3], float angle);
 
 /*
 ** Make a matrix rotation using two vectors
@@ -95,19 +95,19 @@ t_matrix4f		*matrix_rotation_vec_three(t_vector4f *forward,
 ** Multiply two matrix
 */
 
-t_matrix4f		*matrix_mul(t_matrix4f *m1, t_matrix4f *m2);
+t_matrix4f		matrix_mul(t_matrix4f m1, t_matrix4f m2);
 
 /*
 ** Scale matrix
 */
 
-t_matrix4f		*matrix_init_scale(float x, float y, float z);
+t_matrix4f		matrix_init_scale(float x, float y, float z);
 
 /*
 ** Convert a matrix to a vector
 */
 
-t_vector4f		*matrix_trans_to_vec(t_matrix4f *m, t_vector4f *v);
+t_vector4f		matrix_trans_to_vec(t_matrix4f m, t_vector4f v);
 
 /*
 ** Init matrix screen space translation

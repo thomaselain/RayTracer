@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 18:29:56 by telain            #+#    #+#             */
-/*   Updated: 2017/03/11 20:38:42 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/13 23:12:33 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,20 @@ float	find_shadow(t_scene *s, t_object *hit, t_ray ray, t_ray light)
 {
 	t_vector4f	before;
 	t_object	*new_hit;
+	float		t;
 
 	before = ray.pos;
-	ray.pos = ADD(ray.pos, MUL(light.dir, 0.001));
+	ray.pos = ADD(ray.pos, MUL(light.dir, 0.0001));
 	ray.dir = light.dir;
 	if ((new_hit = get_intersection(s, &ray)) != NULL && vector_dist(before, ray.pos) <= vector_dist(before, light.pos))
-		return (new_hit->transparence == 0 ? 0.3 : new_hit->transparence);
+	{
+		if (new_hit->transparence == 0)
+			return (0.3);
+		else if ((t = find_shadow(s, new_hit, ray, light)) >= 1.0)
+			return (new_hit->transparence);
+		else
+			return (0.3);
+	}
 	return (1);
 }
 
