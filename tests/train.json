@@ -1,5 +1,5 @@
 {
-	"background":0xffffff,
+	"background":0x000000,
 		"camera":
 		{
 			"origin":
@@ -20,7 +20,7 @@
 			[
 			{
 				"type":"PLANE",
-				"color":0xffffff,
+				"color":0xcccccc,
 				"origin":
 				{
 					"x":0,
@@ -971,7 +971,6 @@
 					"y":0,
 					"z":0
 				},
-				"transparence":0.7,
 				"reflection":0.7,
 				"radius":5,
 				"comment":"Mirroir"
@@ -984,9 +983,9 @@
 				"color":0x111111,
 				"origin":
 				{
-					"x":-7,
-					"y":0,
-					"z":-1
+					"x":0,
+					"y":-5,
+					"z":-6
 				},
 				"direction":
 				{
