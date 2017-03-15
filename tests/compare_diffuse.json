@@ -422,7 +422,7 @@
 				"y":0,
 				"z":-1
 			},
-			"reflection":0.7,
+			"reflection":0.0,
 			"brightness":1.0,
 			"radius":1,
 			"comment":"Blue sphere 5"
@@ -436,11 +436,68 @@
 				"y":0,
 				"z":-1
 			},
-			"reflection":0.7,
+			"reflection":0.0,
 			"brightness":1.0,
 			"transparence":0.9,
 			"radius":1,
 			"comment":"Glass sphere 5"
+		},
+		{
+			"type":"SPHERE",
+			"color":0xff0000,
+			"origin":
+			{
+				"x":0,
+				"y":0,
+				"z":1
+			},
+			"reflection":0.9,
+			"brightness":1.0,
+			"radius":1,
+			"comment":"Red sphere 6"
+		},
+		{
+			"type":"SPHERE",
+			"color":0x00ff00,
+			"origin":
+			{
+				"x":-2,
+				"y":0,
+				"z":1
+			},
+			"reflection":0.9,
+			"brightness":1.0,
+			"radius":1,
+			"comment":"Green sphere 6"
+		},
+		{
+			"type":"SPHERE",
+			"color":0x0000ff,
+			"origin":
+			{
+				"x":-4,
+				"y":0,
+				"z":1
+			},
+			"reflection":0.9,
+			"brightness":1.0,
+			"radius":1,
+			"comment":"Blue sphere 6"
+		},
+		{
+			"type":"SPHERE",
+			"color":0xffffff,
+			"origin":
+			{
+				"x":-6,
+				"y":0,
+				"z":1
+			},
+			"reflection":0.9,
+			"brightness":1.0,
+			"transparence":0.9,
+			"radius":1,
+			"comment":"Glass sphere 6"
 		}
 	],
 	"lights":
@@ -450,7 +507,7 @@
 			"color":0xffffff,
 			"origin":
 			{
-				"x":5,
+				"x":6,
 				"y":-5,
 				"z":-5
 			},
