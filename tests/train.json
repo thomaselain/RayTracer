@@ -981,7 +981,7 @@
 			[
 			{
 				"type":"SPOT",
-				"color":0xffffff,
+				"color":0x111111,
 				"origin":
 				{
 					"x":-7,

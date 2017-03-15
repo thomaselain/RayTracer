@@ -163,7 +163,7 @@
 			},
 			{
 				"type":"CYLINDER",
-				"color":0xff0000,
+				"color":0xffffff,
 				"origin":
 				{
 					"x":0,
@@ -177,7 +177,7 @@
 					"z":1
 				},
 				"height":3,
-				"reflection":1.0,
+				"reflection":0.0,
 				"diffuse":0.5,
 				"radius":1,
 				"comment":"Cone"
