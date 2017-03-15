@@ -80,7 +80,7 @@ static char		*get_object_param(int param_num)
 	if (param_num == 4)
 		return ("\"reflection\"");
 	if (param_num == 5)
-		return ("\"diffuse\"");
+		return ("\"brightness\"");
 	if (param_num == 6)
 		return ("\"radius\"");
 	if (param_num == 7)

@@ -97,7 +97,7 @@ typedef struct		s_object
 	t_vector4f		som1;
 	t_vector4f		som2;
 	int				color;
-	float			diffuse;
+	float			brightness;
 	float			reflection;
 	float			refraction;
 	float			transparence;

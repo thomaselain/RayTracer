@@ -92,6 +92,22 @@ void			fill_camera(char **s, t_camera *c, int init)
 }
 
 /*
+** A specific function for the brightness variable that requires some attention from us
+*/
+
+float			get_brightness(char **s)
+{
+	float		b;
+
+	b = parse_float(s);
+	if (b <= 0)
+		return (0.0);
+	if (b >= 1.0)
+		b = 1.0;
+	return (100 - (b * 1250 / 100));
+}
+
+/*
 ** Subcalled by fill_objects_sub
 */
 
@@ -114,7 +130,7 @@ static void		fill_objects_sub(char **s, t_object *o)
 	else if (index == 4)
 		o->reflection = parse_float(s);
 	else if (index == 5)
-		o->diffuse = parse_float(s);
+		o->brightness = get_brightness(s);
 	else if (index == 6)
 		o->intensity = parse_float(s);
 	else if (index == 7)
@@ -151,7 +167,7 @@ t_object		*fill_cap(t_object *cylinder, float num)
 	cap->type = CIRCLE;
 	cap->radius = cylinder->radius;
 	cap->color = cylinder->color;
-	cap->diffuse = cylinder->diffuse;
+	cap->brightness = cylinder->brightness;
 	cap->reflection = cylinder->reflection;
 	cap->intensity = cylinder->intensity;
 	cap->comment = num == 1 ? ft_strdup("1") : ft_strdup("2");
@@ -177,7 +193,7 @@ void			fill_objects(char **s, t_object *o, int init)
 		fill_vector(0, &(o->origin), 1);
 		fill_vector(0, &(o->direction), 1);
 		o->color = 0xFFFFFF;
-		o->diffuse = 0.0;
+		o->brightness = 0.0;
 		o->reflection = 0.0;
 		o->intensity = 0.0;
 		o->comment = 0;
