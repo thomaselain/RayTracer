@@ -60,7 +60,7 @@
 				},
 				"material":
 				{
-					"material_type":"WOOD",
+					"material_type":"GRID",
 					"zoom":1
 				},
 				"width":2.0,
@@ -85,7 +85,7 @@
 				},
 				"material":
 				{
-					"material_type":"WOOD",
+					"material_type":"GRID",
 					"zoom":1
 				},
 				"width":2.0,
@@ -110,7 +110,7 @@
 				},
 				"material":
 				{
-					"material_type":"WOOD",
+					"material_type":"GRID",
 					"zoom":1
 				},
 				"width":2.0,
@@ -135,7 +135,7 @@
 				},
 				"material":
 				{
-					"material_type":"WOOD",
+					"material_type":"GRID",
 					"zoom":1
 				},
 				"width":2.0,
@@ -160,7 +160,7 @@
 				},
 				"material":
 				{
-					"material_type":"WOOD",
+					"material_type":"GRID",
 					"zoom":1
 				},
 				"width":2.0,
@@ -185,7 +185,7 @@
 				},
 				"material":
 				{
-					"material_type":"WOOD",
+					"material_type":"GRID",
 					"zoom":1
 				},
 				"width":2.0,

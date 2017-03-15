@@ -169,6 +169,8 @@ t_noise_type	parse_noise_type(char **string)
 		ret = MARBLE;
 	else if (ft_strnstr(*string, "\"WOOD\"", (index = 6)) != 0)
 		ret = WOOD;
+	else if (ft_strnstr(*string, "\"GRID\"", (index = 6)) != 0)
+		ret = GRID;
 	else
 		index = 0;
 	*string = *string + index;

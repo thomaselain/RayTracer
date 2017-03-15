@@ -5,7 +5,7 @@
 			"origin":
 			{
 				"x":0,
-				"y":-7,
+				"y":0,
 				"z":0
 			},
 			"direction":
@@ -20,45 +20,43 @@
 			[
 			{
 				"type":"PLANE",
-				"color":0xcccccc,
+				"color":0xc0ffee,
 				"origin":
 				{
 					"x":0,
-					"y":0,
-					"z":4
+					"y":5,
+					"z":0
 				},
 				"direction":
 				{
 					"x":0,
-					"y":0,
-					"z":-1
+					"y":2,
+					"z":0
 				},
 				"material":
 				{
 					"material_type":"GRID",
 					"zoom":10
-				},
-				"transparence":0,
-				"reflection":0.4
+				}
 			},
 			{
-				"type":"RECTANGLE",
+				"type":"SPHERE",
 				"color":0xffffff,
 				"origin":
 				{
 					"x":0,
-					"y":0,
+					"y":2,
 					"z":0
 				},
 				"direction":
 				{
-					"x":1,
-					"y":1,
+					"x":0,
+					"y":2,
 					"z":0
 				},
-				"diffuse":0.75,
-				"width":1.0,
-				"height":1.0
+				"transparence":0.8,
+				"radius":0.5,
+				"refraction":1.00029
 			}
 	],
 		"lights":
@@ -68,15 +66,9 @@
 				"color":0xffffff,
 				"origin":
 				{
-					"x":0.0,
-					"y":-6,
+					"x":0,
+					"y":0,
 					"z":0
-				},
-				"direction":
-				{
-					"x":0.0,
-					"y":-1,
-					"z":-1
 				},
 				"radius":1
 			}

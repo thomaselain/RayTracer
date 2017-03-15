@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 18:42:04 by telain            #+#    #+#             */
-/*   Updated: 2017/03/15 11:35:18 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/15 16:46:33 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,12 @@ int		adjust_color(t_scene *s, t_object *hit, t_ray ray, int reflects)
 	light = s->lights;
 	c = s->background;
 	ray_cpy = ray;
-		while (light != 0)
-		{
-			if (hit != 0)
+	while (light != 0)
+	{
+		if (hit != 0)
 			c = color_add(c, compute_light(s, hit, ray, (t_object*)light->content));
-			light = light->next;
-		}
+		light = light->next;
+	}
 	if (hit != 0 && hit->reflection > 0.0 && reflects <= MAX_REFLECTION)
 	{
 		n = noise(hit, MUL(ray.pos, 0.1));
@@ -90,7 +90,7 @@ unsigned int	compute_light(t_scene *s, t_object *o, t_ray ray, t_object *light)
 	v_light.dir = get_light_vector(light, ray);
 	specular = ray;
 	get_reflect(s, o, &specular);
-	c = color_add(c, color_mul(light->color, -1 * pow(vector_dot(v_light.dir, specular.dir), 100)));
+	c = color_add(c, color_mul(light->color, -1 * pow(vector_dot(v_light.dir, specular.dir), o->brightness)));
 	if (vector_dot(v_light.dir, get_normal(o, ray)) >= 0)
 		c = color_mul(c, vector_dot(v_light.dir, get_normal(o, ray)));
 	else
