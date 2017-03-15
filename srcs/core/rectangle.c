@@ -25,7 +25,7 @@ float		find_rectangle_inter(t_ray *r, t_object *o)
 	t_vector4f	inter;
 
 	up = (t_vector4f){0, 0.000000001, -1, 0};
-	up = NORMAL(ROTATE(up, o->direction, o->diffuse));
+	up = NORMAL(ROTATE(up, o->direction, o->brightness));
 	u = vector_cross(o->direction, up);
 	v = vector_cross(u, o->direction);
 	d = find_plane_inter(r, o);

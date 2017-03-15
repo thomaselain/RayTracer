@@ -100,11 +100,12 @@ float			get_brightness(char **s)
 	float		b;
 
 	b = parse_float(s);
+	printf("%0.3f\n", b);
 	if (b <= 0)
 		return (0.0);
 	if (b >= 1.0)
 		b = 1.0;
-	return (100 - (b * 1250 / 100));
+	return (1200 - b * 1200 + 10);
 }
 
 /*

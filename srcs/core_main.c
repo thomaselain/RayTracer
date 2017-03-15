@@ -38,7 +38,7 @@ static void		print_content(t_scene *s)
 		printf("\t\t\tCOLOR = %x\n", ((t_object *)s->objects->content)->color);
 		printf("\t\t\tRADIUS = %f\n", ((t_object *)s->objects->content)->intensity);
 		printf("\t\t\tREFLECTION = %f\n", ((t_object *)s->objects->content)->reflection);
-		printf("\t\t\tDIFFUSE = %f\n", ((t_object *)s->objects->content)->diffuse);
+		printf("\t\t\tBRIGHTNESS = %f\n", ((t_object *)s->objects->content)->brightness);
 		printf("\t\t\tCOMMENT = %s\n", ((t_object *)s->objects->content)->comment);
 		obj = obj->next;
 	}
@@ -51,7 +51,7 @@ static void		print_content(t_scene *s)
 		printf("\t\t\tCOLOR = %x\n", ((t_object *)s->lights->content)->color);
 		printf("\t\t\tINTENSITY = %f\n", ((t_object *)s->lights->content)->intensity);
 		printf("\t\t\tREFLECTION = %f\n", ((t_object *)s->lights->content)->reflection);
-		printf("\t\t\tDIFFUSE = %f\n", ((t_object *)s->lights->content)->diffuse);
+		printf("\t\t\tBRIGHTNESS = %f\n", ((t_object *)s->lights->content)->brightness);
 		printf("\t\t\tCOMMENT = %s\n", ((t_object *)s->lights->content)->comment);
 		light = light->next;
 	}
