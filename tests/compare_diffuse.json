@@ -169,7 +169,7 @@
 			"reflection":0.0,
 			"brightness":0.0,
 			"radius":1,
-			"comment":"Red sphere"
+			"comment":"Red sphere 1 (top)"
 		},
 		{
 			"type":"SPHERE",
@@ -181,9 +181,9 @@
 				"z":-9
 			},
 			"reflection":0.0,
-			"brightness":1.0,
+			"brightness":0.0,
 			"radius":1,
-			"comment":"Green sphere"
+			"comment":"Green sphere 1 (top)"
 		},
 		{
 			"type":"SPHERE",
@@ -195,9 +195,9 @@
 				"z":-9
 			},
 			"reflection":0.0,
-			"brightness":1.0,
+			"brightness":0.0,
 			"radius":1,
-			"comment":"Blue sphere"
+			"comment":"Blue sphere 1 (top)"
 		},
 		{
 			"type":"SPHERE",
@@ -211,7 +211,7 @@
 			"reflection":0.0,
 			"brightness":0.2,
 			"radius":1,
-			"comment":"Red sphere"
+			"comment":"Red sphere 2"
 		},
 		{
 			"type":"SPHERE",
@@ -223,9 +223,9 @@
 				"z":-5
 			},
 			"reflection":0.0,
-			"brightness":0.25,
+			"brightness":0.2,
 			"radius":1,
-			"comment":"Green sphere"
+			"comment":"Green sphere 2"
 		},
 		{
 			"type":"SPHERE",
@@ -237,9 +237,9 @@
 				"z":-5
 			},
 			"reflection":0.0,
-			"brightness":0.5,
+			"brightness":0.2,
 			"radius":1,
-			"comment":"Blue sphere"
+			"comment":"Blue sphere 2"
 		},
 		{
 			"type":"SPHERE",
@@ -253,7 +253,7 @@
 			"reflection":0.0,
 			"brightness":0.4,
 			"radius":1,
-			"comment":"Red sphere"
+			"comment":"Red sphere 3"
 		},
 		{
 			"type":"SPHERE",
@@ -265,9 +265,9 @@
 				"z":-7
 			},
 			"reflection":0.0,
-			"brightness":0.5,
+			"brightness":0.4,
 			"radius":1,
-			"comment":"Green sphere"
+			"comment":"Green sphere 3"
 		},
 		{
 			"type":"SPHERE",
@@ -279,9 +279,9 @@
 				"z":-7
 			},
 			"reflection":0.0,
-			"brightness":0.5,
+			"brightness":0.4,
 			"radius":1,
-			"comment":"Blue sphere"
+			"comment":"Blue sphere 3"
 		},
 		{
 			"type":"SPHERE",
@@ -295,7 +295,7 @@
 			"reflection":0.0,
 			"brightness":0.7,
 			"radius":1,
-			"comment":"Red sphere"
+			"comment":"Red sphere 4"
 		},
 		{
 			"type":"SPHERE",
@@ -307,9 +307,9 @@
 				"z":-3
 			},
 			"reflection":0.0,
-			"brightness":0.1,
+			"brightness":0.7,
 			"radius":1,
-			"comment":"Green sphere"
+			"comment":"Green sphere 4"
 		},
 		{
 			"type":"SPHERE",
@@ -321,9 +321,9 @@
 				"z":-3
 			},
 			"reflection":0.0,
-			"brightness":0.1,
+			"brightness":0.7,
 			"radius":1,
-			"comment":"Blue sphere"
+			"comment":"Blue sphere 4"
 		},
 		{
 			"type":"SPHERE",
@@ -337,7 +337,7 @@
 			"reflection":0.0,
 			"brightness":1.0,
 			"radius":1,
-			"comment":"Red sphere"
+			"comment":"Red sphere 5"
 		},
 		{
 			"type":"SPHERE",
@@ -349,9 +349,9 @@
 				"z":-1
 			},
 			"reflection":0.0,
-			"brightness":0.01,
+			"brightness":1.0,
 			"radius":1,
-			"comment":"Green sphere"
+			"comment":"Green sphere 5"
 		},
 		{
 			"type":"SPHERE",
@@ -363,9 +363,9 @@
 				"z":-1
 			},
 			"reflection":0.7,
-			"brightness":0.01,
+			"brightness":1.0,
 			"radius":1,
-			"comment":"Blue sphere"
+			"comment":"Blue sphere 5"
 		}
 	],
 	"lights":
