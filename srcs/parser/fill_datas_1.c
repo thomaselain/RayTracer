@@ -133,7 +133,12 @@ float			get_brightness(char **s)
 
 void			get_texture(char **s, t_object *o)
 {
-	if (img_init_bmp(&(o->texture), parse_string(s)) == 0)
+	t_img		texture;
+	
+	
+	if (img_init_bmp(&(texture), parse_string(s)) == 1)
+		o->texture = texture;
+	else
 		error_close(2, 1);	
 	return (1200.0 - b * 1200.0 + 10.0);
 }
