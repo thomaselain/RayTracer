@@ -92,6 +92,26 @@ void			fill_camera(char **s, t_camera *c, int init)
 }
 
 /*
+** Gets a number between 0 and 360 degrees and then converts it in radian
+*/
+
+float			get_angle(char **s)
+{
+	float		ret;
+	float		rad;
+
+	ret = parse_float(s);
+	if (ret < 0 || ret > 360)
+	{
+		printf("%0.3f\n", ret);
+		error_close(2, 1);
+	}
+	rad = ret * (M_PI / 180);
+	return (rad);
+}
+
+
+/*
 ** A specific function for the brightness variable that requires some attention from us
 */
 
@@ -165,6 +185,8 @@ static void		fill_objects_sub(char **s, t_object *o)
 		o->som2 = parse_vector(s);
 	else if (index == 17)
 		get_texture(s, o);
+	else if (index == 18)
+		o->rotation = get_angle(s);
 }
 
 /*
@@ -191,6 +213,7 @@ t_object		*fill_cap(t_object *cylinder, float num)
 	cap->transparence = cylinder->transparence;
 	cap->refraction = cylinder->refraction;
 	cap->texture = cylinder->texture;
+	cap->rotation = cylinder->rotation;
 	return (cap);
 }
 
@@ -220,6 +243,7 @@ void			fill_objects(char **s, t_object *o, int init)
 		fill_vector(0, &(o->som0), 1);
 		fill_vector(0, &(o->som1), 1);
 		fill_vector(0, &(o->som2), 1);
+		o->rotation = 0;
 	}
 	else
 		fill_objects_sub(s, o);

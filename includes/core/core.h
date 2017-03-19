@@ -116,6 +116,7 @@ typedef struct		s_object
 	struct s_object	*top_cap;
 	struct s_object	*bot_cap;
 	t_img			texture;
+	float			rotation;
 }					t_object;
 
 /*

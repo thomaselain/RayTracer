@@ -328,6 +328,42 @@
 				},
 				"radius":0.5,
 				"comment":"HOLE#4"
+			},
+			{
+				"type":"CIRCLE",
+				"color":0x000000,
+				"origin":
+				{
+					"x":0,
+					"y":4.6,
+					"z":0.98
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":1
+				},
+				"radius":0.5,
+				"comment":"HOLE#4"
+			},
+			{
+				"type":"CIRCLE",
+				"color":0x000000,
+				"origin":
+				{
+					"x":0,
+					"y":-4.6,
+					"z":0.98
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":1
+				},
+				"radius":0.5,
+				"comment":"HOLE#4"
 			}
 	],
 		"lights":

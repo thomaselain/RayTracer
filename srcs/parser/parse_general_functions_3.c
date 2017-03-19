@@ -105,6 +105,8 @@ static char		*get_object_param(int param_num)
 		return ("\"som2\"");
 	if (param_num == 17)
 		return ("\"texture\"");
+	if (param_num == 18)
+		return ("\"rotation\"");
 	return (0);
 }
 
