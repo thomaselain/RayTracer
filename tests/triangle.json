@@ -34,7 +34,7 @@
 				"z":-1
 			},
 			"reflection":0.0,
-			"diffuse":0.0,
+			"brightness":0.0,
 			"radius":1.0,
 			"comment":"Plane (background)"
 		},
@@ -54,7 +54,7 @@
 				"z":0
 			},
 			"reflection":1.5,
-			"diffuse":0.0,
+			"brightness":0.0,
 			"radius":0.0,
 			"comment":"Plane (background)"
 		},

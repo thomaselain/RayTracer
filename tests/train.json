@@ -34,7 +34,7 @@
 					"z":-1
 				},
 				"reflection":0.6,
-				"diffuse":0.0,
+				"brightness":0.0,
 				"radius":1.0,
 				"comment":"Sol"
 			},

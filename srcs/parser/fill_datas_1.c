@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 13:35:30 by svassal           #+#    #+#             */
-/*   Updated: 2017/03/09 16:13:57 by svassal          ###   ########.fr       */
+/*   Updated: 2017/03/15 18:43:30 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,6 +135,7 @@ void			get_texture(char **s, t_object *o)
 {
 	if (img_init_bmp(&(o->texture), parse_string(s)) == 0)
 		error_close(2, 1);	
+	return (1200.0 - b * 1200.0 + 10.0);
 }
 
 /*

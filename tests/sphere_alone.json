@@ -6,7 +6,7 @@
 			{
 				"x":0,
 				"y":-7,
-				"z":0
+				"z":-5
 			},
 			"direction":
 			{
@@ -14,13 +14,13 @@
 				"y":1,
 				"z":0
 			},
-			"fov":60
+			"fov":90
 		},
 		"objects":
 			[
 			{
 				"type":"PLANE",
-				"color":0xc0ffee,
+				"color":0x00ff00,
 				"origin":
 				{
 					"x":0,
@@ -39,7 +39,47 @@
 					"zoom":10
 				},
 				"transparence":0.0,
-				"reflection":0.3
+				"reflection":0.1
+			},
+						{
+				"type":"RECTANGLE",
+				"color":0x505050,
+				"origin":
+				{
+					"x":0.7,
+					"y":12,
+					"z":0
+				},
+				"direction":
+				{
+					"x":1,
+					"y":0,
+					"z":-0.3
+				},
+				"width":50.0,
+				"height":5.0,
+				"transparence":0.0,
+				"reflection":0.0
+			},
+			{
+				"type":"RECTANGLE",
+				"color":0x505050,
+				"origin":
+				{
+					"x":-0.7,
+					"y":18,
+					"z":0
+				},
+				"direction":
+				{
+					"x":1,
+					"y":0,
+					"z":0.3
+				},
+				"width":50.0,
+				"height":5.0,
+				"transparence":0.0,
+				"reflection":0.0
 			},
 			{
 				"type":"PLANE",
@@ -56,8 +96,8 @@
 					"y":1,
 					"z":0
 				},
-				"transparence":0.5,
-				"reflection":0.6
+				"transparence":0.0,
+				"reflection":0.5
 			},
 			{
 				"type":"SPHERE",
@@ -80,7 +120,7 @@
 			},
 			{
 				"type":"SPHERE",
-				"color":0x999999,
+				"color":0x00ffff,
 				"origin":
 				{
 					"x":0,
@@ -93,6 +133,7 @@
 					"y":-1,
 					"z":1
 				},
+				"brightness":0.9,
 				"reflection":0.0,
 				"brightness":0.8,
 				"radius":2.0
@@ -102,7 +143,24 @@
 			[
 			{
 				"type":"SPOT",
-				"color":0xffffff,
+				"color":0x00ff00,
+				"origin":
+				{
+					"x":10,
+					"y":0,
+					"z":0
+				},
+				"direction":
+				{
+					"x":0.0,
+					"y":-1,
+					"z":-1
+				},
+				"radius":10
+			},
+			{
+				"type":"SPOT",
+				"color":0xff00ff,
 				"origin":
 				{
 					"x":-10,

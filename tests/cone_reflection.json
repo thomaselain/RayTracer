@@ -39,7 +39,7 @@
 					"zoom": 10
 				},
 				"reflection":0.1,
-				"diffuse":0.5,
+				"brightness":0.5,
 				"radius":0.5,
 				"comment":"Plane (background)"
 			},	
@@ -59,7 +59,7 @@
 					"z":1
 				},
 				"reflection":0.1,
-				"diffuse":0.5,
+				"brightness":0.5,
 				"radius":0.5,
 				"comment":"Plane (background)"
 			},
@@ -80,7 +80,7 @@
 					"z":0
 				},
 				"reflection":0.5,
-				"diffuse":0.5,
+				"brightness":0.5,
 				"radius":0.5,
 				"comment":"Plane (background)"
 			},	
@@ -100,7 +100,7 @@
 					"z":0
 				},
 				"reflection":0.5,
-				"diffuse":0.5,
+				"brightness":0.5,
 				"radius":0.5,
 				"comment":"Plane (background)"
 			},
@@ -120,7 +120,7 @@
 					"z":0
 				},
 				"reflection":1.0,
-				"diffuse":0.5,
+				"brightness":0.5,
 				"radius":0.5,
 				"comment":"Plane (background)"
 			},
@@ -140,7 +140,7 @@
 					"z":0
 				},
 				"reflection":1.0,
-				"diffuse":1.0,
+				"brightness":1.0,
 				"radius":0.5,
 				"comment":"Plane (background)"
 			},
@@ -166,7 +166,7 @@
 				},
 				"width":3.0,
 				"reflection":0.0,
-				"diffuse":0.5,
+				"brightness":0.5,
 				"radius":0.8,
 				"comment":"Cone"
 			}
