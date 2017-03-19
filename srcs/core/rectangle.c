@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/06 18:41:59 by telain            #+#    #+#             */
-/*   Updated: 2017/03/15 07:40:54 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/15 17:33:59 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ float		find_rectangle_inter(t_ray *r, t_object *o)
 	t_vector4f	inter;
 
 	up = (t_vector4f){0, 0.000000001, -1, 0};
-	up = NORMAL(ROTATE(up, o->direction, o->diffuse));
 	u = vector_cross(o->direction, up);
 	v = vector_cross(u, o->direction);
 	d = find_plane_inter(r, o);

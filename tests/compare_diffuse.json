@@ -34,7 +34,6 @@
 				"z":0
 			},
 			"reflection":0.0,
-			"diffuse":0.0,
 			"radius":0,
 			"comment":"Background plane"
 		},	
@@ -61,7 +60,7 @@
 			"width":3,
 			"height":3,
 			"reflection":0.0,
-			"diffuse":0.25,
+			"brightness":1.0,
 			"radius":1.0,
 			"comment":"Green cylinder"
 		},	
@@ -83,7 +82,7 @@
 			"width":3,
 			"height":3,
 			"reflection":0.0,
-			"diffuse":0.5,
+			"brightness":1.0,
 			"radius":1.0,
 			"comment":"Blue cylinder"
 		},	
@@ -107,7 +106,7 @@
 			"width":3,
 			"height":3,
 			"reflection":0.0,
-			"diffuse":0.75,
+			"brightness":0.75,
 			"radius":1.0,
 			"comment":"Red cylinder"
 		},	
@@ -130,7 +129,7 @@
 			"width":3,
 			"height":3,
 			"reflection":0.0,
-			"diffuse":0.5,
+			"brightness":0.5,
 			"radius":1.0,
 			"comment":"Black cylinder"
 		},	
@@ -152,7 +151,7 @@
 			"width":3,
 			"height":3,
 			"reflection":0.0,
-			"diffuse":10.0,
+			"brightness":10.0,
 			"radius":1.0,
 			"comment":"White cylinder"
 		},	
@@ -167,7 +166,7 @@
 				"z":-9
 			},
 			"reflection":0.0,
-			"diffuse":1.0,
+			"brightness":1.0,
 			"radius":1,
 			"comment":"Red sphere"
 		},
@@ -181,7 +180,7 @@
 				"z":-9
 			},
 			"reflection":0.0,
-			"diffuse":1.0,
+			"brightness":1.0,
 			"radius":1,
 			"comment":"Green sphere"
 		},
@@ -195,7 +194,7 @@
 				"z":-9
 			},
 			"reflection":0.0,
-			"diffuse":1.0,
+			"brightness":1.0,
 			"radius":1,
 			"comment":"Blue sphere"
 		},
@@ -209,7 +208,7 @@
 				"z":-5
 			},
 			"reflection":0.0,
-			"diffuse":0.25,
+			"brightness":0.25,
 			"radius":1,
 			"comment":"Red sphere"
 		},
@@ -223,7 +222,7 @@
 				"z":-5
 			},
 			"reflection":0.0,
-			"diffuse":0.25,
+			"brightness":0.25,
 			"radius":1,
 			"comment":"Green sphere"
 		},
@@ -237,7 +236,7 @@
 				"z":-5
 			},
 			"reflection":0.0,
-			"diffuse":0.5,
+			"brightness":0.5,
 			"radius":1,
 			"comment":"Blue sphere"
 		},
@@ -251,7 +250,7 @@
 				"z":-7
 			},
 			"reflection":0.0,
-			"diffuse":0.5,
+			"brightness":0.5,
 			"radius":1,
 			"comment":"Red sphere"
 		},
@@ -265,7 +264,7 @@
 				"z":-7
 			},
 			"reflection":0.0,
-			"diffuse":0.5,
+			"brightness":0.5,
 			"radius":1,
 			"comment":"Green sphere"
 		},
@@ -279,7 +278,7 @@
 				"z":-7
 			},
 			"reflection":0.0,
-			"diffuse":0.5,
+			"brightness":0.5,
 			"radius":1,
 			"comment":"Blue sphere"
 		},
@@ -293,7 +292,7 @@
 				"z":-3
 			},
 			"reflection":0.0,
-			"diffuse":0.1,
+			"brightness":0.1,
 			"radius":1,
 			"comment":"Red sphere"
 		},
@@ -307,7 +306,7 @@
 				"z":-3
 			},
 			"reflection":0.0,
-			"diffuse":0.1,
+			"brightness":0.1,
 			"radius":1,
 			"comment":"Green sphere"
 		},
@@ -321,7 +320,7 @@
 				"z":-3
 			},
 			"reflection":0.0,
-			"diffuse":0.1,
+			"brightness":0.1,
 			"radius":1,
 			"comment":"Blue sphere"
 		},
@@ -335,7 +334,7 @@
 				"z":-1
 			},
 			"reflection":0.0,
-			"diffuse":0.01,
+			"brightness":0.01,
 			"radius":1,
 			"comment":"Red sphere"
 		},
@@ -349,7 +348,7 @@
 				"z":-1
 			},
 			"reflection":0.0,
-			"diffuse":0.01,
+			"brightness":0.01,
 			"radius":1,
 			"comment":"Green sphere"
 		},
@@ -363,7 +362,7 @@
 				"z":-1
 			},
 			"reflection":0.7,
-			"diffuse":0.01,
+			"brightness":0.9,
 			"radius":1,
 			"comment":"Blue sphere"
 		}

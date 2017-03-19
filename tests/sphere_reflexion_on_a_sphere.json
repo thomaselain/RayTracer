@@ -1,5 +1,5 @@
 {
-	"background":0xffffff,
+	"background":0x000000,
 	"camera":
 	{
 		"origin":
@@ -39,11 +39,11 @@
 				"material_type":"GRID",
 				"zoom":10
 			},
-			"reflection":0.0
+			"reflection":0.6
 		},
 		{
 			"type":"SPHERE",
-			"color":0xffffff,
+			"color":0xbbbbbb,
 			"origin":
 			{
 				"x":0,
@@ -56,13 +56,8 @@
 				"y":1,
 				"z":0
 			},
-			"material":
-			{
-				"material_type":"PERLIN",
-				"zoom":10.0
-			},
-			"reflection":0.4,
-			"transparence":0.3,
+			"reflection":0.3,
+			"transparence":0.0,
 			"radius":10
 		},
 		{
@@ -85,13 +80,13 @@
 				"material_type":"GRID",
 				"zoom":3
 			},
-			"transparence":1.0,
-			"refraction":1.0,
+			"transparence":0.5,
+			"reflection":0.5,
 			"radius":4.0
 		},
 		{
 			"type":"SPHERE",
-			"color":0xdddddd,
+			"color":0xbbbbbb,
 			"origin":
 			{
 				"x":-8,
@@ -105,7 +100,7 @@
 				"z":0
 			},
 			"reflection":0.0,
-			"diffuse":0.5,
+			"brightness":0.5,
 			"radius":2,
 			"comment":"Sphere"
 		}
@@ -118,7 +113,7 @@
 			"origin":
 			{
 				"x":0,
-				"y":0,
+				"y":8,
 				"z":0
 			},
 			"radius":1,

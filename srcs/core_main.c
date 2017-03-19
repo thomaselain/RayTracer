@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/31 15:59:09 by aljourda          #+#    #+#             */
-/*   Updated: 2017/03/13 22:47:24 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/19 11:29:16 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,6 @@ static void		print_content(t_scene *s)
 		printf("\t\t\tCOLOR = %x\n", ((t_object *)s->objects->content)->color);
 		printf("\t\t\tRADIUS = %f\n", ((t_object *)s->objects->content)->intensity);
 		printf("\t\t\tREFLECTION = %f\n", ((t_object *)s->objects->content)->reflection);
-		printf("\t\t\tDIFFUSE = %f\n", ((t_object *)s->objects->content)->diffuse);
 		printf("\t\t\tCOMMENT = %s\n", ((t_object *)s->objects->content)->comment);
 		obj = obj->next;
 	}
@@ -51,7 +50,6 @@ static void		print_content(t_scene *s)
 		printf("\t\t\tCOLOR = %x\n", ((t_object *)s->lights->content)->color);
 		printf("\t\t\tINTENSITY = %f\n", ((t_object *)s->lights->content)->intensity);
 		printf("\t\t\tREFLECTION = %f\n", ((t_object *)s->lights->content)->reflection);
-		printf("\t\t\tDIFFUSE = %f\n", ((t_object *)s->lights->content)->diffuse);
 		printf("\t\t\tCOMMENT = %s\n", ((t_object *)s->lights->content)->comment);
 		light = light->next;
 	}

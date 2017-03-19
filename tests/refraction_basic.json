@@ -1,11 +1,11 @@
 {
-	"background":0xffffff,
+	"background":0x000000,
 		"camera":
 		{
 			"origin":
 			{
 				"x":0,
-				"y":0,
+				"y":-2,
 				"z":0
 			},
 			"direction":
@@ -19,8 +19,31 @@
 		"objects":
 			[
 			{
-				"type":"PLANE",
+				"type":"RECTANGLE",
 				"color":0xc0ffee,
+				"origin":
+				{
+					"x":0,
+					"y":20,
+					"z":0
+				},
+				"direction":
+				{
+					"x":0,
+					"y":1,
+					"z":0
+				},
+				"material":
+				{
+					"material_type":"GRID",
+					"zoom":15
+				},
+				"width":10,
+				"height":10
+			},
+			{
+				"type":"SPHERE",
+				"color":0xffffff,
 				"origin":
 				{
 					"x":0,
@@ -33,40 +56,19 @@
 					"y":2,
 					"z":0
 				},
-				"material":
-				{
-					"material_type":"GRID",
-					"zoom":10
-				}
-			},
-			{
-				"type":"SPHERE",
-				"color":0xffffff,
-				"origin":
-				{
-					"x":0,
-					"y":2,
-					"z":0
-				},
-				"direction":
-				{
-					"x":0,
-					"y":2,
-					"z":0
-				},
-				"transparence":0.8,
-				"radius":0.5,
-				"refraction":1.00029
+				"brightness":0.9,
+				"transparence":0.3,
+				"radius":2,
 			}
 	],
 		"lights":
 			[
 			{
 				"type":"SPOT",
-				"color":0xffffff,
+				"color":0x101010,
 				"origin":
 				{
-					"x":0,
+					"x":1,
 					"y":0,
 					"z":0
 				},
