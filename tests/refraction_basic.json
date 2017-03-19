@@ -37,7 +37,8 @@
 				{
 					"material_type":"GRID",
 					"zoom":10
-				}
+				},
+				"brightness":0.8
 			},
 			{
 				"type":"SPHERE",
@@ -56,7 +57,9 @@
 				},
 				"transparence":0.8,
 				"radius":0.5,
-				"refraction":1.00029
+				"refraction":1.00029,
+				"brightness":0.8,
+				"texture":"texture.bmp"
 			}
 	],
 		"lights":

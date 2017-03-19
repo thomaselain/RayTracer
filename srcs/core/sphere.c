@@ -10,6 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <core.h>
+#include <ray.h>
 #define A		(val[0])
 #define B		(val[1])
 #define C		(val[2])
@@ -17,8 +19,6 @@
 #define X1		(val[5])
 #define X2		(val[6])
 #define RET		(val[4])
-#include <core.h>
-#include <ray.h>
 
 float		find_sphere_inter(t_ray *ray, t_object *obj)
 {

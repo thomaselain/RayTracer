@@ -14,6 +14,8 @@
 # define CORE_H
 # include <vector.h>
 # include <libft.h>
+# include <img.h>
+# include <parse_error.h>
 #include <stdio.h>
 # define WIDTH	1000
 # define HEIGHT	800
@@ -113,6 +115,7 @@ typedef struct		s_object
 	t_noise			noise;
 	struct s_object	*top_cap;
 	struct s_object	*bot_cap;
+	t_img			texture;
 }					t_object;
 
 /*

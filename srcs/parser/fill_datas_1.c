@@ -100,12 +100,21 @@ float			get_brightness(char **s)
 	float		b;
 
 	b = parse_float(s);
-	printf("%0.3f\n", b);
 	if (b <= 0)
 		return (0.0);
 	if (b >= 1.0)
 		b = 1.0;
 	return (1200 - b * 1200 + 10);
+}
+
+/*
+** A specific function to get the texture file's name and to manage errors properly
+*/
+
+void			get_texture(char **s, t_object *o)
+{
+	if (img_init_bmp(&(o->texture), parse_string(s)) == 0)
+		error_close(2, 1);	
 }
 
 /*
@@ -154,6 +163,8 @@ static void		fill_objects_sub(char **s, t_object *o)
 		o->som1 = parse_vector(s);
 	else if (index == 16)
 		o->som2 = parse_vector(s);
+	else if (index == 17)
+		get_texture(s, o);
 }
 
 /*
@@ -179,6 +190,7 @@ t_object		*fill_cap(t_object *cylinder, float num)
 	cap->direction = vector_normalize(cap->direction);
 	cap->transparence = cylinder->transparence;
 	cap->refraction = cylinder->refraction;
+	cap->texture = cylinder->texture;
 	return (cap);
 }
 
