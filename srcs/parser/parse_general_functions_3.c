@@ -103,6 +103,8 @@ static char		*get_object_param(int param_num)
 		return ("\"som1\"");
 	if (param_num == 16)
 		return ("\"som2\"");
+	if (param_num == 17)
+		return ("\"texture\"");
 	return (0);
 }
 

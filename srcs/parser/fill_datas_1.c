@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 13:35:30 by svassal           #+#    #+#             */
-/*   Updated: 2017/03/15 18:43:30 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/19 14:30:45 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,6 +108,19 @@ float			get_brightness(char **s)
 }
 
 /*
+** A specific function to get the texture file's name and to manage errors properly
+*/
+
+void			get_texture(char **s, t_object *o)
+{
+	o->texture.srf = NULL;
+	o->texture.w = 1;
+	o->texture.h = 1;
+	if (img_init_bmp(&(o->texture), parse_string(s)) == 0)
+		error_close(2, 1);
+}
+
+/*
 ** Subcalled by fill_objects_sub
 */
 
@@ -153,6 +166,8 @@ static void		fill_objects_sub(char **s, t_object *o)
 		o->som1 = parse_vector(s);
 	else if (index == 16)
 		o->som2 = parse_vector(s);
+	else if (index == 17)
+		get_texture(s, o);
 }
 
 /*
@@ -178,6 +193,7 @@ t_object		*fill_cap(t_object *cylinder, float num)
 	cap->direction = vector_normalize(cap->direction);
 	cap->transparence = cylinder->transparence;
 	cap->refraction = cylinder->refraction;
+	cap->texture = cylinder->texture;
 	return (cap);
 }
 
@@ -190,6 +206,9 @@ void			fill_objects(char **s, t_object *o, int init)
 	if (init == 1)
 	{
 		o->type = UNKNOWN;
+		o->texture.w = 1;
+		o->texture.h = 1;
+		o->texture.srf = NULL;
 		fill_vector(0, &(o->origin), 1);
 		fill_vector(0, &(o->direction), 1);
 		o->color = 0xFFFFFF;

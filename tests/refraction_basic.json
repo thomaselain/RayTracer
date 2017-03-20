@@ -36,10 +36,16 @@
 				"material":
 				{
 					"material_type":"GRID",
+<<<<<<< HEAD
 					"zoom":15
 				},
 				"width":10,
 				"height":10
+=======
+					"zoom":10
+				},
+				"brightness":0.8
+>>>>>>> cchicote
 			},
 			{
 				"type":"SPHERE",
@@ -56,9 +62,17 @@
 					"y":2,
 					"z":0
 				},
+<<<<<<< HEAD
 				"brightness":0.9,
 				"transparence":0.3,
 				"radius":2,
+=======
+				"transparence":0.8,
+				"radius":0.5,
+				"refraction":1.00029,
+				"brightness":0.8,
+				"texture":"texture.bmp"
+>>>>>>> cchicote
 			}
 	],
 		"lights":

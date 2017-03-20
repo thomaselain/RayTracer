@@ -68,5 +68,11 @@ void			get_cap(t_object *o);
 
 void			copy_structure(t_noise *src, t_noise *dest);
 
+/*
+** A specific function to get the texture file's name and to manage errors properly
+*/
+
+void			get_texture(char **s, t_object *o);
+
 
 #endif
