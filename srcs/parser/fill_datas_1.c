@@ -140,7 +140,6 @@ void			get_texture(char **s, t_object *o)
 		o->texture = texture;
 	else
 		error_close(2, 1);	
-	return (1200.0 - b * 1200.0 + 10.0);
 }
 
 /*

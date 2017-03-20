@@ -364,6 +364,18 @@
 				},
 				"radius":0.5,
 				"comment":"HOLE#4"
+			},
+			{
+				"type":"SPHERE",
+				"color":0xff0000,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":0.80
+				},
+				"radius":0.25,
+				"brightness":0.9
 			}
 	],
 		"lights":

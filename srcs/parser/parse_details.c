@@ -156,10 +156,10 @@ t_type		parse_type(char **string)
 
 t_noise_type	parse_noise_type(char **string)
 {
-	t_type	ret;
+	t_noise_type	ret;
 	int		index;
 
-	ret = UNKNOWN;
+	ret = NONE;
 	character_skipper(string);
 	if (**string != '\"')
 		return (ret);
@@ -179,10 +179,10 @@ t_noise_type	parse_noise_type(char **string)
 
 t_filter_type	parse_filter_type(char **string)
 {
-	t_type	ret;
+	t_filter_type	ret;
 	int		index;
 
-	ret = UNKNOWN;
+	ret = NO_FILTER;
 	character_skipper(string);
 	if (**string != '\"')
 		return (ret);
