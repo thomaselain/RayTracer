@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 17:28:23 by aljourda          #+#    #+#             */
-/*   Updated: 2017/03/19 10:44:26 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/19 14:53:57 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ typedef struct		s_ray
 {
 	t_vector4f		pos;
 	t_vector4f		dir;
+	unsigned int	pixel_x;
+	unsigned int	pixel_y;
 }					t_ray;
 
 /*

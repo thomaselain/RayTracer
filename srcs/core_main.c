@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/31 15:59:09 by aljourda          #+#    #+#             */
-/*   Updated: 2017/03/19 11:29:16 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/19 14:55:46 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ static void		print_content(t_scene *s)
 		light = light->next;
 	}
 }
-
 
 __attribute__((weak))void	get_camera_plane(t_scene *scene){
 	
@@ -154,7 +153,7 @@ __attribute__((weak)) int				main(int ac, char **av)
 		if (status == 3)
 		{
 			get_camera_plane(e);
-			status = calculation(e, &win, 60);
+			status = calculation(e, &win, 10);
 			if(status == 2)
 				continue ;
 		}

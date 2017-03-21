@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 13:35:30 by svassal           #+#    #+#             */
-/*   Updated: 2017/03/15 18:43:30 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/19 14:30:45 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -124,7 +124,7 @@ float			get_brightness(char **s)
 		return (0.0);
 	if (b >= 1.0)
 		b = 1.0;
-	return (1200 - b * 1200 + 10);
+	return (1200.0 - b * 1200.0 + 10.0);
 }
 
 /*
@@ -140,6 +140,9 @@ void			get_texture(char **s, t_object *o)
 		o->texture = texture;
 	else
 		error_close(2, 1);	
+	o->texture.srf = NULL;
+	o->texture.w = 1;
+	o->texture.h = 1;
 }
 
 /*
@@ -231,6 +234,9 @@ void			fill_objects(char **s, t_object *o, int init)
 	if (init == 1)
 	{
 		o->type = UNKNOWN;
+		o->texture.w = 1;
+		o->texture.h = 1;
+		o->texture.srf = NULL;
 		fill_vector(0, &(o->origin), 1);
 		fill_vector(0, &(o->direction), 1);
 		o->color = 0xFFFFFF;
