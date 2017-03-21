@@ -69,6 +69,7 @@
 				"y":0,
 				"z":-1
 			},
+			"texture":"images/sun.bmp",
 			"brightness":0.4,
 			"reflection":0.6,
 			"radius":12
@@ -88,6 +89,7 @@
 				"y":0,
 				"z":-1
 			},
+			"texture":"images/earth.bmp",
 			"brightness":0.4,
 			"reflection":0.0,
 			"radius":1
