@@ -34,10 +34,7 @@
 				"z":0
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-=======
 			"brightness":1.0,
->>>>>>> cchicote
 			"radius":0,
 			"comment":"Background plane"
 		},	
@@ -64,11 +61,7 @@
 			"width":3,
 			"height":3,
 			"reflection":0.0,
-<<<<<<< HEAD
-			"brightness":1.0,
-=======
 			"brightness":0.25,
->>>>>>> cchicote
 			"radius":1.0,
 			"comment":"Green cylinder"
 		},	
@@ -90,11 +83,7 @@
 			"width":3,
 			"height":3,
 			"reflection":0.0,
-<<<<<<< HEAD
-			"brightness":1.0,
-=======
 			"brightness":0.5,
->>>>>>> cchicote
 			"radius":1.0,
 			"comment":"Blue cylinder"
 		},	
@@ -163,11 +152,7 @@
 			"width":3,
 			"height":3,
 			"reflection":0.0,
-<<<<<<< HEAD
 			"brightness":10.0,
-=======
-			"brightness":0.0,
->>>>>>> cchicote
 			"radius":1.0,
 			"comment":"White cylinder"
 		},	
@@ -182,11 +167,7 @@
 				"z":-9
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-			"brightness":1.0,
-=======
 			"brightness":0.0,
->>>>>>> cchicote
 			"radius":1,
 			"comment":"Red sphere 1 (top)"
 		},
@@ -200,11 +181,7 @@
 				"z":-9
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-			"brightness":1.0,
-=======
 			"brightness":0.0,
->>>>>>> cchicote
 			"radius":1,
 			"comment":"Green sphere 1 (top)"
 		},
@@ -218,11 +195,7 @@
 				"z":-9
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-			"brightness":1.0,
-=======
 			"brightness":0.0,
->>>>>>> cchicote
 			"radius":1,
 			"comment":"Blue sphere 1 (top)"
 		},
@@ -251,11 +224,7 @@
 				"z":-7
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
 			"brightness":0.25,
-=======
-			"brightness":0.2,
->>>>>>> cchicote
 			"radius":1,
 			"comment":"Red sphere 2"
 		},
@@ -269,11 +238,7 @@
 				"z":-7
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
 			"brightness":0.25,
-=======
-			"brightness":0.2,
->>>>>>> cchicote
 			"radius":1,
 			"comment":"Green sphere 2"
 		},
@@ -301,12 +266,8 @@
 				"z":-7
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-			"brightness":0.5,
-=======
 			"brightness":0.2,
 			"transparence":0.9,
->>>>>>> cchicote
 			"radius":1,
 			"comment":"Glass sphere 2"
 		},
@@ -320,11 +281,7 @@
 				"z":-5
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-			"brightness":0.5,
-=======
 			"brightness":0.4,
->>>>>>> cchicote
 			"radius":1,
 			"comment":"Red sphere 3"
 		},
@@ -338,11 +295,7 @@
 				"z":-5
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-			"brightness":0.5,
-=======
 			"brightness":0.4,
->>>>>>> cchicote
 			"radius":1,
 			"comment":"Green sphere 3"
 		},
@@ -370,12 +323,8 @@
 				"z":-5
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-			"brightness":0.5,
-=======
 			"brightness":0.4,
 			"transparence":0.9,
->>>>>>> cchicote
 			"radius":1,
 			"comment":"Glass sphere 3"
 		},
@@ -389,11 +338,7 @@
 				"z":-3
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-			"brightness":0.1,
-=======
 			"brightness":0.7,
->>>>>>> cchicote
 			"radius":1,
 			"comment":"Red sphere 4"
 		},
@@ -407,11 +352,7 @@
 				"z":-3
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-			"brightness":0.1,
-=======
 			"brightness":0.7,
->>>>>>> cchicote
 			"radius":1,
 			"comment":"Green sphere 4"
 		},
@@ -425,9 +366,6 @@
 				"z":-3
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-			"brightness":0.1,
-=======
 			"brightness":0.7,
 			"radius":1,
 			"comment":"Blue sphere 4"
@@ -444,7 +382,6 @@
 			"reflection":0.0,
 			"brightness":0.7,
 			"transparence":0.9,
->>>>>>> cchicote
 			"radius":1,
 			"comment":"Glass sphere 4"
 		},
@@ -458,11 +395,7 @@
 				"z":-1
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-			"brightness":0.01,
-=======
 			"brightness":1.0,
->>>>>>> cchicote
 			"radius":1,
 			"comment":"Red sphere 5"
 		},
@@ -476,11 +409,7 @@
 				"z":-1
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-			"brightness":0.01,
-=======
 			"brightness":1.0,
->>>>>>> cchicote
 			"radius":1,
 			"comment":"Green sphere 5"
 		},
@@ -493,12 +422,8 @@
 				"y":0,
 				"z":-1
 			},
-<<<<<<< HEAD
 			"reflection":0.7,
 			"brightness":0.9,
-=======
-			"reflection":0.0,
-			"brightness":1.0,
 			"radius":1,
 			"comment":"Blue sphere 5"
 		},
@@ -571,7 +496,6 @@
 			"reflection":0.9,
 			"brightness":1.0,
 			"transparence":0.9,
->>>>>>> cchicote
 			"radius":1,
 			"comment":"Glass sphere 6"
 		}

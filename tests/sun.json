@@ -88,8 +88,8 @@
 				"y":0,
 				"z":-1
 			},
-			"texture":"images/nature.bmp",
-			"brightness":0.9,
+			"brightness":0.4,
+			"reflection":0.0,
 			"radius":1
 		}
 	],
