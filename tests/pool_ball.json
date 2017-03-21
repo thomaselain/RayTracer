@@ -1,5 +1,5 @@
 {
-	"background":0x000000,
+	"background":0x303030,
 		"camera":
 		{
 			"origin":
@@ -19,8 +19,8 @@
 		"objects":
 			[
 			{
-				"type":"RECTANGLE",
-				"color":0x556B2F,
+				"type":"PLANE",
+				"color":0x000000,
 				"origin":
 				{
 					"x":0,
@@ -31,10 +31,9 @@
 				{
 					"x":0,
 					"y":0,
-					"z":2
+					"z":-1
 				},
-				"width":2.0,
-				"height":2.0
+				"reflection":0.7
 			},
 			{
 				"type":"SPHERE",
@@ -43,10 +42,11 @@
 				{
 					"x":0,
 					"y":0,
-					"z":0
+					"z":-1
 				},
-				"radius":0.5,
-				"brightness":0.9
+				"radius":1,
+				"brightness": 0.3,
+				"texture": "images/joan.bmp"
 			}
 	],
 		"lights":
@@ -57,7 +57,7 @@
 				"origin":
 				{
 					"x":0,
-					"y":2,
+					"y":5,
 					"z":0
 				},
 				"radius":1
@@ -68,7 +68,7 @@
 				"origin":
 				{
 					"x":0,
-					"y":-2,
+					"y":-5,
 					"z":0
 				},
 				"radius":1
@@ -78,7 +78,7 @@
 				"color":0xffffff,
 				"origin":
 				{
-					"x":-2,
+					"x":-5,
 					"y":0,
 					"z":0
 				},
@@ -89,7 +89,7 @@
 				"color":0xffffff,
 				"origin":
 				{
-					"x":2,
+					"x":5,
 					"y":0,
 					"z":0
 				},
@@ -102,7 +102,7 @@
 				{
 					"x":0,
 					"y":0,
-					"z":-2
+					"z":-5
 				},
 				"radius":1
 			}

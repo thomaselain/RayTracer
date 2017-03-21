@@ -153,7 +153,7 @@ __attribute__((weak)) int				main(int ac, char **av)
 		if (status == 3)
 		{
 			get_camera_plane(e);
-			status = calculation(e, &win, 10);
+			status = calculation(e, &win, 20);
 			if(status == 2)
 				continue ;
 		}
