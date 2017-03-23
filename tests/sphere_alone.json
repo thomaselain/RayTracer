@@ -1,5 +1,5 @@
 {
-	"background":0x000000,
+	"background":0xffffff,
 	"camera":
 	{
 		"origin":
@@ -33,9 +33,10 @@
 				"y":1,
 				"z":0
 			},
-			"texture":"images/earth.bmp",
-			"brightness":0.4,
-			"reflection":0
+			"transparence":0.0,
+			"reflection":0.3,
+			"texture":"images/Denis.bmp",
+			"brightness":0.4
 		},
 		{
 			"type":"PLANE",
@@ -51,6 +52,11 @@
 				"x":0,
 				"y":0,
 				"z":-1
+			},
+			"material":
+			{
+				"material_type":"GRID",
+				"zoom":30
 			},
 			"brightness":0.0,
 			"reflection":0
@@ -70,8 +76,9 @@
 				"y":0,
 				"z":-1
 			},
+			"texture":"images/bricks.bmp",
 			"brightness":0.4,
-			"reflection":0.6,
+			"reflection":0.0,
 			"radius":12
 		},
 		{
@@ -89,7 +96,6 @@
 				"y":0,
 				"z":-1
 			},
-			"texture":"images/nature.bmp",
 			"brightness":0.9,
 			"radius":1
 		}

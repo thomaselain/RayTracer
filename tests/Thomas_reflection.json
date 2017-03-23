@@ -154,7 +154,7 @@
 					"y":0,
 					"z":1
 				},
-				"texture":"images/Rozana.bmp",
+				"texture":"images/Thomas.bmp",
 				"height":3,
 				"reflection":0.0,
 				"brightness":0.5,
@@ -163,7 +163,7 @@
 	],
 		"lights":
 			[		
-				{
+			{
 				"type":"SPOT",
 				"color":0x303030,
 				"origin":

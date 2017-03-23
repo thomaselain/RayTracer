@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:56:12 by telain            #+#    #+#             */
-/*   Updated: 2017/03/21 16:38:20 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/22 19:34:06 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # define CAMDIR					(s->camera->direction)
 # define CAMPOS					(s->camera->origin)
-# define MAX_REFLECTION			(3)
+# define MAX_REFLECTION			(10)
 # define MAX_SIZE				(10000.0)
 # define COLOR_R(color)			(color & 0xff)
 # define COLOR_G(color)			((color & 0xff00) >> 8)
@@ -134,6 +134,7 @@ int				calcul_sommet(t_vector4f som0, t_vector4f som1, t_vector4f inter, t_vecto
 
 unsigned int	get_texture_pixel(t_object *hit, t_ray ray);
 unsigned int	find_plane_texture(t_object *o, t_ray ray);
+unsigned int	find_cylinder_texture(t_object *o, t_ray ray);
 unsigned int	find_sphere_texture(t_object *o, t_ray ray);
 
 #endif
