@@ -15,6 +15,7 @@
 #define OBJECT		2
 #define SCENE		3
 #define STRUCTURE 	5
+#define TEXTURE		6
 
 /*
 ** Return a vector parmeter
@@ -47,6 +48,20 @@ static char		*get_structure_param(int param_num)
 		return ("\"c\"");
 	return (0);
 }
+
+/*
+** Returns a texture parameter
+*/
+
+static char		*get_texture_param(int param_num)
+{
+	if (param_num == 1)
+		return ("\"path\"");
+	if (param_num == 2)
+		return ("\"scale\"");
+	return (0);
+}
+
 
 /*
 ** Return a camera parameter
@@ -141,6 +156,8 @@ char			*get_param_list(int type, int param_num)
 		return (get_object_param(param_num));
 	if (type == STRUCTURE)
 		return (get_structure_param(param_num));
+	if (type == TEXTURE)
+		return (get_texture_param(param_num));
 	if (type == SCENE)
 		return (get_scene_param(param_num));
 	return (0);

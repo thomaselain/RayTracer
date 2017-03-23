@@ -128,20 +128,6 @@ float			get_brightness(char **s)
 }
 
 /*
-** A specific function to get the texture file's name and to manage errors properly
-*/
-
-void			get_texture(char **s, t_object *o)
-{
-	t_img		texture;
-		
-	if (img_init_bmp(&(texture), parse_string(s)) == 1)
-		o->texture = texture;
-	else
-		error_close(2, 1);
-}
-
-/*
 ** Subcalled by fill_objects_sub
 */
 
@@ -188,7 +174,7 @@ static void		fill_objects_sub(char **s, t_object *o)
 	else if (index == 16)
 		o->som2 = parse_vector(s);
 	else if (index == 17)
-		get_texture(s, o);
+		o->texture = parse_texture(s);
 	else if (index == 18)
 		o->rotation = get_angle(s);
 }
@@ -218,6 +204,7 @@ t_object		*fill_cap(t_object *cylinder, float num)
 	cap->refraction = cylinder->refraction;
 	cap->texture = cylinder->texture;
 	cap->rotation = cylinder->rotation;
+	copy_texture(&(cylinder->texture), &(cap->texture));
 	return (cap);
 }
 
@@ -250,6 +237,7 @@ void			fill_objects(char **s, t_object *o, int init)
 		fill_vector(0, &(o->som0), 1);
 		fill_vector(0, &(o->som1), 1);
 		fill_vector(0, &(o->som2), 1);
+		fill_texture(0, &(o->texture), 1);
 		o->rotation = 0;
 	}
 	else

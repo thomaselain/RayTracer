@@ -24,6 +24,7 @@ typedef struct		s_img
 	SDL_Surface		*srf;
 	int				w;
 	int				h;
+	float			scale;
 }					t_img;
 
 int					img_init(t_img *img, int width, int height,

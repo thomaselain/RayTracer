@@ -154,7 +154,11 @@
 					"y":0,
 					"z":1
 				},
-				"texture":"images/Thomas.bmp",
+				"texture":
+				{
+					"path":"images/Thomas.bmp",
+					"scale":0.8
+				},
 				"height":3,
 				"reflection":0.0,
 				"brightness":0.5,
