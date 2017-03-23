@@ -33,6 +33,11 @@
 					"y":0,
 					"z":1
 				},
+				"texture":
+				{
+					"path":"images/Thomas.bmp",
+					"scale":5
+				},
 				"reflection":1.0,
 				"brightness":0.5,
 				"radius":1.0,
@@ -52,6 +57,11 @@
 					"x":0,
 					"y":0,
 					"z":1
+				},
+				"texture":
+				{
+					"path":"images/Thomas.bmp",
+					"scale":5
 				},
 				"reflection":0.0,
 				"brightness":0.5,
@@ -114,6 +124,11 @@
 					"y":1,
 					"z":0
 				},
+				"texture":
+				{
+					"path":"images/Thomas.bmp",
+					"scale":5
+				},
 				"reflection":0.0,
 				"brightness":0.5,
 				"radius":0.5,
@@ -133,6 +148,11 @@
 					"x":0,
 					"y":1,
 					"z":0
+				},
+				"texture":
+				{
+					"path":"images/Thomas.bmp",
+					"scale":5
 				},
 				"reflection":0.0,
 				"brightness":0.5,
@@ -157,59 +177,59 @@
 				"texture":
 				{
 					"path":"images/Thomas.bmp",
-					"scale":0.8
+					"scale":0.7
 				},
-				"height":3,
-				"reflection":0.0,
-				"brightness":0.5,
-				"radius":1
+				"height":0.3,
+				"reflection":0.1,
+				"brightness":0.9,
+				"radius":3
 			}
-	],
-		"lights":
+			],
+			"lights":
 			[		
-			{
-				"type":"SPOT",
-				"color":0x303030,
-				"origin":
 				{
-					"x":-3,
-					"y":0,
-					"z":0
+					"type":"SPOT",
+					"color":0x303030,
+					"origin":
+					{
+						"x":5,
+						"y":0,
+						"z":-5
+					},
+					"radius":1
 				},
-				"radius":1
-			},
-			{
-				"type":"SPOT",
-				"color":0x303030,
-				"origin":
 				{
-					"x":3,
-					"y":0,
-					"z":0
-				},
-				"radius":1
-			},
-			{
-				"type":"SPOT",
-				"color":0x303030,
-				"origin":
+					"type":"SPOT",
+					"color":0x303030,
+					"origin":
+					{
+						"x":-5,
+						"y":0,
+						"z":0
+					},
+					"radius":1
+				},,
 				{
-					"x":0,
-					"y":3,
-					"z":0
+					"type":"SPOT",
+					"color":0x303030,
+					"origin":
+					{
+						"x":0,
+						"y":5,
+						"z":0
+					},
+					"radius":1
 				},
-				"radius":1
-			},
-			{
-				"type":"SPOT",
-				"color":0x303030,
-				"origin":
 				{
-					"x":0,
-					"y":-3,
-					"z":0
-				},
-				"radius":1
-			}
-	]
+					"type":"SPOT",
+					"color":0x303030,
+					"origin":
+					{
+						"x":0,
+						"y":-5,
+						"z":0
+					},
+					"radius":1
+				}
+			]
 }

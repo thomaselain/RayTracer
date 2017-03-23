@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 16:23:02 by telain            #+#    #+#             */
-/*   Updated: 2017/03/23 15:00:33 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/23 18:36:54 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 unsigned int		get_texture_pixel(t_object *hit, t_ray ray)
 {
-	if (hit->type == PLANE || hit->type == RECTANGLE)
+	if (hit->type == PLANE || hit->type == RECTANGLE || hit->type == CIRCLE)
 		return (find_plane_texture(hit, ray));
 	if (hit->type == SPHERE)
 		return (find_sphere_texture(hit, ray));
@@ -37,7 +37,7 @@ unsigned int		find_cylinder_texture(t_object *o, t_ray ray)
 	
 	theta = atan(ray.pos.y / ray.pos.x);
 	h = ray.pos.z;
-	u = o->radius / (2 * M_PI * o->radius) * (theta + o->height);
+	u = o->radius / (2 * M_PI * o->radius * o->texture.scale) * (theta + o->height);
 	v = 1 / (o->height * 2) * (h + o->height);
 	return (img_get_pixel(&o->texture,
 				u * o->texture.w,
@@ -58,9 +58,8 @@ unsigned int		find_plane_texture(t_object *o, t_ray ray)
 	t = vector_normalize(t);
 	d = vector_dist(ray.pos, o->origin);
 	alpha = acos(vector_dot(t, vector_normalize(SUB(o->origin, ray.pos))));
-	u = cos(alpha) * d / 50;
-	v = sin(alpha) * d / 50;
-//	u = u < 0 ? -u : u;
+	u = cos(alpha) * d / o->texture.scale;
+	v = sin(alpha) * d / o->texture.scale;
 	v = v < 0 ? 1 + v : v;
 	return (img_get_pixel(&o->texture,
 				(int)(u * o->texture.w) % o->texture.w,
