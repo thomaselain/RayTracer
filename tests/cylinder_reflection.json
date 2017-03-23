@@ -14,7 +14,7 @@
 				"y":1,
 				"z":0
 			},
-			"fov":120
+			"fov":70
 		},
 		"objects":
 			[	
@@ -33,14 +33,14 @@
 					"y":0,
 					"z":1
 				},
-				"reflection":1.0,
-				"brightness":0.5,
+				"reflection":0.3,
+				"brightness":0.2,
 				"radius":1.0,
 				"comment":"Plane (background)"
 			},	
 			{
 				"type":"PLANE",
-				"color":0x00ff00,
+				"color":0xcccccc,
 				"origin":
 				{
 					"x":0,
@@ -135,28 +135,7 @@
 					"z":0
 				},
 				"reflection":0.0,
-				"brightness":0.5,
-				"radius":0.5,
-				"comment":"Plane (background)"
-			},
-			{
-				"type":"SPHERE",
-				"color":0xcccccc,
-				"refraction":3.0,
-				"transparence":2.4,
-				"origin":
-				{
-					"x":0,
-					"y":8,
-					"z":0
-				},
-				"direction":
-				{
-					"x":0,
-					"y":1,
-					"z":0
-				},
-				"reflection":0.0,
+				"texture":"images/water.bmp",
 				"brightness":0.5,
 				"radius":0.5,
 				"comment":"Plane (background)"
@@ -176,8 +155,8 @@
 					"y":0,
 					"z":1
 				},
-				"height":3,
-				"reflection":0.0,
+				"height":30,
+				"reflection":0.4,
 				"brightness":0.5,
 				"radius":1,
 				"comment":"Cone"
@@ -187,15 +166,25 @@
 			[
 			{
 				"type":"SPOT",
-				"color":0xffffff,
+				"color":0xa0a0a0,
+				"origin":
+				{
+					"x":0,
+					"y":9,
+					"z":0
+				},
+				"radius":1
+			},
+			{
+				"type":"SPOT",
+				"color":0xa0a0a0,
 				"origin":
 				{
 					"x":0,
 					"y":-9,
 					"z":0
 				},
-				"radius":1,
-				"comment":"Deuxieme lumiere"
+				"radius":1
 			}
 	]
 }
