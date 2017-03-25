@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 16:56:24 by telain            #+#    #+#             */
-/*   Updated: 2017/03/19 13:38:55 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/25 18:25:17 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ t_object	*get_intersection(t_scene *s, t_ray *ray)
 				hit = ((t_object*)obj->content)->top_cap;
 				closest = d;
 			}
-		if ((d = find_cylinder_inter(ray, (t_object*)obj->content)) < closest && d >= 0.001)
+			if ((d = find_cylinder_inter(ray, (t_object*)obj->content)) < closest && d >= 0.001)
 			{
 				hit = (t_object*)obj->content;
 				closest = d;
@@ -90,5 +90,9 @@ t_object	*get_intersection(t_scene *s, t_ray *ray)
 		obj = obj->next;
 	}
 	ray->pos = ADD(ray->pos, MUL(ray->dir, closest - 0.001));
+	if (hit)
+		ray->state = hit->refraction;
+	else
+		ray->state = 1.0;
 	return (hit);
 }

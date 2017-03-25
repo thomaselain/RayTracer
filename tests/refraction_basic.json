@@ -1,5 +1,5 @@
 {
-	"background":0x000000,
+	"background":0xffffff,
 		"camera":
 		{
 			"origin":
@@ -36,28 +36,34 @@
 				"material":
 				{
 					"material_type":"GRID",
-<<<<<<< HEAD
 					"zoom":10
 				},
 				"brightness":0.8,
 				"width":10,
 				"height":10
-=======
-<<<<<<< HEAD
-					"zoom":15
-				},
-				"width":10,
-				"height":10
-=======
-					"zoom":10
-				},
-				"brightness":0.8
->>>>>>> cchicote
->>>>>>> origin/telain
 			},
 			{
-				"type":"SPHERE",
-				"color":0xffffff,
+				"type":"CYLINDER",
+				"color":0xa00000,
+				"origin":
+				{
+					"x":0.1,
+					"y":5,
+					"z":0
+				},
+				"direction":
+				{
+					"x":0.5,
+					"y":-0.5,
+					"z":-1
+				},
+				"height":1.5,
+				"brightness":0.9,
+				"radius":0.01
+			},
+			{
+				"type":"CYLINDER",
+				"color":0xa0a0a0,
 				"origin":
 				{
 					"x":0,
@@ -67,40 +73,30 @@
 				"direction":
 				{
 					"x":0,
-					"y":2,
-					"z":0
+					"y":0,
+					"z":-1
 				},
-<<<<<<< HEAD
-				"transparence":0.8,
-				"texture":"texture.bmp",
+				"texture":
+				{
+					"path":"images/water.bmp"
+				},
+				"height":1.0,
 				"brightness":0.9,
-				"transparence":0.3,
-				"radius":2,
-=======
-<<<<<<< HEAD
-				"brightness":0.9,
-				"transparence":0.3,
-				"radius":2,
-=======
-				"transparence":0.8,
-				"radius":0.5,
-				"refraction":1.00029,
-				"brightness":0.8,
-				"texture":"texture.bmp"
->>>>>>> cchicote
->>>>>>> origin/telain
+				"radius":1.0,
+				"refraction":1.333,
+				"transparence":0.3
 			}
 	],
 		"lights":
 			[
 			{
 				"type":"SPOT",
-				"color":0x101010,
+				"color":0xffffff,
 				"origin":
 				{
 					"x":1,
 					"y":0,
-					"z":0
+					"z":-5
 				},
 				"radius":1
 			}

@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 18:42:04 by telain            #+#    #+#             */
-/*   Updated: 2017/03/25 13:42:13 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/25 18:25:02 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,9 +62,9 @@ t_object	*get_refract(t_scene *s, t_object *hit, t_ray *ray)
 	{
 		normal = get_normal(hit, *ray);
 		angle = vector_dot(ray->dir, normal);
-		ray->dir = vector_normalize(ADD(MUL(ray->dir, 1.0 / hit->refraction),
-					MUL(normal, 1.0 / hit->refraction * angle -  sqrt(1.0 -
-							pow(1.0 / hit->refraction, 2.0)	* (1.0 -
+		ray->dir = vector_normalize(ADD(MUL(ray->dir, ray->state / hit->refraction),
+					MUL(normal, ray->state / hit->refraction * angle -  sqrt(1.0 -
+							pow(ray->state / hit->refraction, 2.0)	* (1.0 -
 								pow(angle, 2.0))))));
 	}
 	else
@@ -75,10 +75,13 @@ t_object	*get_refract(t_scene *s, t_object *hit, t_ray *ray)
 t_object	*get_reflect(t_scene *s, t_object *hit, t_ray *ray)
 {
 	t_vector4f	normal;
+	t_object	*new_hit;
 
 	normal = get_normal(hit, *ray);
 	ray->dir = ADD(ray->dir, MUL(normal, -2.0 * vector_dot(normal, ray->dir)));
-	return (get_intersection(s, ray));
+	new_hit = get_intersection(s, ray);
+	ray->pos = SUB(ray->pos, MUL(ray->dir, 0.01));
+	return (new_hit);
 }
 
 unsigned int	compute_light(t_scene *s, t_object *o, t_ray ray, t_object *light)
@@ -87,7 +90,7 @@ unsigned int	compute_light(t_scene *s, t_object *o, t_ray ray, t_object *light)
 	t_ray			v_light;
 	t_ray			specular;
 
-	c = o->color; //peut etre a mettre en haut
+	c = o->color;
 	if (o && o->texture.srf != NULL)
 		c = get_texture_pixel(o, ray);
 	v_light.pos = light->origin;
