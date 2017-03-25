@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 17:28:23 by aljourda          #+#    #+#             */
-/*   Updated: 2017/03/19 14:53:57 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/25 13:38:16 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -134,6 +134,7 @@ typedef struct		s_scene
 	unsigned int	background;
 	t_list			*objects;
 	t_list			*lights;
+	float			r; //A SUPPRIMER (ELLE EST LA POUR DES TESTS)
 }					t_scene;
 
 /*
