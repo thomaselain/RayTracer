@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 16:23:02 by telain            #+#    #+#             */
-/*   Updated: 2017/03/23 18:36:54 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/25 14:42:03 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ unsigned int		find_plane_texture(t_object *o, t_ray ray)
 		t = vector_cross(o->direction, (t_vector4f){0, 0, 1, 0});
 	t = vector_normalize(t);
 	d = vector_dist(ray.pos, o->origin);
-	alpha = acos(vector_dot(t, vector_normalize(SUB(o->origin, ray.pos))));
+	alpha = acos(vector_dot(t, vector_rotate(vector_normalize(SUB(o->origin,
+							ray.pos)), o->direction, 0 /*remplacer scale par rotate*/)));
 	u = cos(alpha) * d / o->texture.scale;
 	v = sin(alpha) * d / o->texture.scale;
 	v = v < 0 ? 1 + v : v;
