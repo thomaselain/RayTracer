@@ -63,7 +63,7 @@ unsigned int		find_plane_texture(t_object *o, t_ray ray)
 	v = sin(alpha) * d / o->texture.scale + 10;
 	v = v < 0 ? 1 + v : v;
 	return (img_get_pixel(&o->texture,
-				(int)(u * o->texture.w) % o->texture.w,
+				(int)(u * -o->texture.w) % o->texture.w,
 				(int)(v * o->texture.h) % o->texture.h));
 }
 
