@@ -10,7 +10,7 @@
 		},
 		"direction":
 		{
-			"x":-0.5,
+			"x":0,
 			"y":1,
 			"z":0
 		},
@@ -33,9 +33,13 @@
 				"y":1,
 				"z":0
 			},
+			"texture":
+			{
+				"path":"images/Denis.bmp",
+				"scale":10
+			},
 			"transparence":0.0,
-			"reflection":0.3,
-			"texture":"images/Denis.bmp",
+			"reflection":0.0,
 			"brightness":0.4
 		},
 		{
@@ -74,9 +78,13 @@
 			{
 				"x":0,
 				"y":0,
-				"z":-1
+				"z":1
 			},
-			"texture":"images/bricks.bmp",
+			"texture":
+			{
+				"path":"images/earth.bmp",
+				"scale":4
+			},
 			"brightness":0.4,
 			"reflection":0.0,
 			"radius":12
@@ -96,6 +104,7 @@
 				"y":0,
 				"z":-1
 			},
+			"reflection":0.6,
 			"brightness":0.9,
 			"radius":1
 		}
@@ -109,7 +118,7 @@
 			{
 				"x":5,
 				"y":4,
-				"z":0
+				"z":-1
 			},
 			"direction":
 			{

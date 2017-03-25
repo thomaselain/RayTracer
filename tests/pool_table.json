@@ -4,14 +4,14 @@
 		{
 			"origin":
 			{
-				"x":0,
-				"y":9,
-				"z":-2
+				"x":-10,
+				"y":-10,
+				"z":-3
 			},
 			"direction":
 			{
-				"x":0,
-				"y":-1,
+				"x":0.9,
+				"y":1,
 				"z":0.2
 			},
 			"fov":60
@@ -31,13 +31,17 @@
 				{
 					"x":0,
 					"y":0,
-					"z":2
+					"z":1
+				},
+				"texture":
+				{
+					"path":"images/table_green.bmp",
+					"scale":10
 				},
 				"width":20.0,
 				"height":10.0,
-				"comment":"Green",
 				"brightness": 0.9,
-				"texture": "images/pool_table_green.bmp"
+				"comment":"Green"
 			},
 			{
 				"type":"RECTANGLE",
@@ -54,11 +58,15 @@
 					"y":0,
 					"z":2
 				},
+				"texture":
+				{
+					"path":"images/bois.bmp",
+					"scale":2
+				},
 				"width":20.0,
 				"height":0.8,
 				"comment":"Sidebar1#1",
-				"brightness": 0.9,
-				"texture": "images/pool_table_wood.bmp"
+				"brightness": 0.9
 			},
 			{
 				"type":"RECTANGLE",
@@ -74,6 +82,11 @@
 					"x":0,
 					"y":2,
 					"z":0
+				},
+				"texture":
+				{
+					"path":"images/bois.bmp",
+					"scale":2
 				},
 				"width":20.0,
 				"height":0.5,
@@ -95,6 +108,11 @@
 					"y":0,
 					"z":2
 				},
+				"texture":
+				{
+					"path":"images/bois.bmp",
+					"scale":2
+				},
 				"width":20.0,
 				"height":0.8,
 				"comment":"Sidebar2#1",
@@ -114,6 +132,11 @@
 					"x":0,
 					"y":2,
 					"z":0
+				},
+				"texture":
+				{
+					"path":"images/bois.bmp",
+					"scale":2
 				},
 				"width":20.0,
 				"height":0.5,
@@ -135,6 +158,11 @@
 					"y":0,
 					"z":50
 				},
+				"texture":
+				{
+					"path":"images/bois.bmp",
+					"scale":2
+				},
 				"width":10.0,
 				"height":0.8,
 				"comment":"Sidebar3#1",
@@ -154,6 +182,11 @@
 					"x":2,
 					"y":0,
 					"z":0
+				},
+				"texture":
+				{
+					"path":"images/bois.bmp",
+					"scale":2
 				},
 				"width":10.0,
 				"height":0.5,
@@ -175,6 +208,11 @@
 					"y":0,
 					"z":50
 				},
+				"texture":
+				{
+					"path":"images/bois.bmp",
+					"scale":2
+				},
 				"width":10.0,
 				"height":0.8,
 				"comment":"Sidebar4#1",
@@ -194,6 +232,11 @@
 					"x":2,
 					"y":0,
 					"z":0
+				},
+				"texture":
+				{
+					"path":"images/bois.bmp",
+					"scale":2
 				},
 				"width":10.0,
 				"height":0.5,
@@ -394,6 +437,17 @@
 					"x":0,
 					"y":0,
 					"z":0.80
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":0.8
+				},
+				"texture":
+				{
+					"path":"images/8.bmp",
+					"scale":1
 				},
 				"radius":0.25,
 				"brightness":0.9
