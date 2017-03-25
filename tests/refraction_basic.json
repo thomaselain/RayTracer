@@ -36,28 +36,16 @@
 				"material":
 				{
 					"material_type":"GRID",
-<<<<<<< HEAD
-					"zoom":10
-				},
-				"brightness":0.8,
-				"width":10,
-				"height":10
-=======
-<<<<<<< HEAD
 					"zoom":15
 				},
 				"width":10,
-				"height":10
-=======
-					"zoom":10
-				},
-				"brightness":0.8
->>>>>>> cchicote
->>>>>>> origin/telain
+				"height":10,
+				"brightness":0.8,
+				"comment": "GRID"
 			},
 			{
 				"type":"SPHERE",
-				"color":0xffffff,
+				"color":0xff0000,
 				"origin":
 				{
 					"x":0,
@@ -70,25 +58,10 @@
 					"y":2,
 					"z":0
 				},
-<<<<<<< HEAD
-				"transparence":0.8,
-				"texture":"texture.bmp",
-				"brightness":0.9,
-				"transparence":0.3,
-				"radius":2,
-=======
-<<<<<<< HEAD
-				"brightness":0.9,
-				"transparence":0.3,
-				"radius":2,
-=======
 				"transparence":0.8,
 				"radius":0.5,
-				"refraction":1.00029,
 				"brightness":0.8,
-				"texture":"texture.bmp"
->>>>>>> cchicote
->>>>>>> origin/telain
+				"comment":"SPHERE"
 			}
 	],
 		"lights":

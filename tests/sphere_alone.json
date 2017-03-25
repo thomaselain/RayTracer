@@ -35,7 +35,7 @@
 			},
 			"texture":
 			{
-				"path":"images/Denis.bmp",
+				"path":"images/bowl_cut.bmp",
 				"scale":10
 			},
 			"transparence":0.0,
@@ -44,7 +44,7 @@
 		},
 		{
 			"type":"PLANE",
-			"color":0xff0000,
+			"color":0xFF1493,
 			"origin":
 			{
 				"x":0,
@@ -59,7 +59,7 @@
 			},
 			"material":
 			{
-				"material_type":"GRID",
+				"material_type":"PERLIN",
 				"zoom":30
 			},
 			"brightness":0.0,
