@@ -177,7 +177,8 @@
 				"texture":
 				{
 					"path":"images/Thomas.bmp",
-					"scale":0.7
+					"scale":0.7,
+					"rotation":0.5
 				},
 				"height":0.3,
 				"reflection":0.1,

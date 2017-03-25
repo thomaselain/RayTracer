@@ -52,6 +52,7 @@ void			copy_texture(t_img *src, t_img *dest)
 		dest->w = src->w;
 		dest->h = src->h;
 		dest->scale = src->scale;
+		dest->rotation = src->rotation;
 	}
 }
 
@@ -70,6 +71,7 @@ void			fill_texture(char **s, t_img *n, int init)
 		n->w = 1.0;
 		n->h = 1.0;
 		n->scale = 1.0;
+		n->rotation = 0.0;
 	}
 	else
 	{
@@ -77,11 +79,15 @@ void			fill_texture(char **s, t_img *n, int init)
 			data_i = 1;
 		else if (ft_strnstr(*s, "\"scale\"", 7) != 0)
 			data_i = 2;
+		else if (ft_strnstr(*s, "\"rotation\"", 12) != 0)
+			data_i = 3;
 		*s = ft_strchr(*s, ':') + 1;
 		if (data_i == 1)
 			get_texture(s, n);
 		else if (data_i == 2)
 			n->scale = parse_float(s);
+		else if (data_i == 3)
+			n->rotation = parse_float(s);
 	}
 }
 
