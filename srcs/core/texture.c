@@ -59,12 +59,12 @@ unsigned int		find_plane_texture(t_object *o, t_ray ray)
 	d = vector_dist(ray.pos, o->origin);
 	alpha = acos(vector_dot(t, vector_rotate(vector_normalize(SUB(o->origin,
 							ray.pos)), o->direction, 0 /*remplacer scale par rotate*/)));
-	u = cos(alpha) * d / o->texture.scale + 10;
-	v = sin(alpha) * d / o->texture.scale + 10;
+	u = cos(alpha) * d / o->texture.scale;
+	v = sin(alpha) * d / o->texture.scale;
 	v = v < 0 ? 1 + v : v;
 	return (img_get_pixel(&o->texture,
-				(int)(u * -o->texture.w) % o->texture.w,
-				(int)(v * o->texture.h) % o->texture.h));
+				(int)(u * -o->texture.w + 1) % o->texture.w,
+				(int)(v * o->texture.h + 1) % o->texture.h));
 }
 
 unsigned int		find_sphere_texture(t_object *o, t_ray ray)
