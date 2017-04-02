@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 13:35:30 by svassal           #+#    #+#             */
-/*   Updated: 2017/03/09 16:13:57 by svassal          ###   ########.fr       */
+/*   Updated: 2017/03/19 14:30:45 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,42 @@ void			fill_camera(char **s, t_camera *c, int init)
 }
 
 /*
+** Gets a number between 0 and 360 degrees and then converts it in radian
+*/
+
+float			get_angle(char **s)
+{
+	float		ret;
+	float		rad;
+
+	ret = parse_float(s);
+	if (ret < 0 || ret > 360)
+	{
+		printf("%0.3f\n", ret);
+		error_close(2, 1);
+	}
+	rad = ret * (M_PI / 180);
+	return (rad);
+}
+
+
+/*
+** A specific function for the brightness variable that requires some attention from us
+*/
+
+float			get_brightness(char **s)
+{
+	float		b;
+
+	b = parse_float(s);
+	if (b <= 0)
+		return (0.0);
+	if (b >= 1.0)
+		b = 1.0;
+	return (1200.0 - b * 1200.0 + 10.0);
+}
+
+/*
 ** Subcalled by fill_objects_sub
 */
 
@@ -114,7 +150,7 @@ static void		fill_objects_sub(char **s, t_object *o)
 	else if (index == 4)
 		o->reflection = parse_float(s);
 	else if (index == 5)
-		o->diffuse = parse_float(s);
+		o->brightness = get_brightness(s);
 	else if (index == 6)
 		o->intensity = parse_float(s);
 	else if (index == 7)
@@ -137,6 +173,10 @@ static void		fill_objects_sub(char **s, t_object *o)
 		o->som1 = parse_vector(s);
 	else if (index == 16)
 		o->som2 = parse_vector(s);
+	else if (index == 17)
+		o->texture = parse_texture(s);
+	else if (index == 18)
+		o->rotation = get_angle(s);
 }
 
 /*
@@ -151,7 +191,7 @@ t_object		*fill_cap(t_object *cylinder, float num)
 	cap->type = CIRCLE;
 	cap->radius = cylinder->radius;
 	cap->color = cylinder->color;
-	cap->diffuse = cylinder->diffuse;
+	cap->brightness = cylinder->brightness;
 	cap->reflection = cylinder->reflection;
 	cap->intensity = cylinder->intensity;
 	cap->comment = num == 1 ? ft_strdup("1") : ft_strdup("2");
@@ -162,6 +202,9 @@ t_object		*fill_cap(t_object *cylinder, float num)
 	cap->direction = vector_normalize(cap->direction);
 	cap->transparence = cylinder->transparence;
 	cap->refraction = cylinder->refraction;
+	cap->texture = cylinder->texture;
+	cap->rotation = cylinder->rotation;
+	copy_texture(&(cylinder->texture), &(cap->texture));
 	return (cap);
 }
 
@@ -174,10 +217,13 @@ void			fill_objects(char **s, t_object *o, int init)
 	if (init == 1)
 	{
 		o->type = UNKNOWN;
+		o->texture.w = 1;
+		o->texture.h = 1;
+		o->texture.srf = NULL;
 		fill_vector(0, &(o->origin), 1);
 		fill_vector(0, &(o->direction), 1);
 		o->color = 0xFFFFFF;
-		o->diffuse = 0.0;
+		o->brightness = 0.0;
 		o->reflection = 0.0;
 		o->intensity = 0.0;
 		o->comment = 0;
@@ -191,6 +237,8 @@ void			fill_objects(char **s, t_object *o, int init)
 		fill_vector(0, &(o->som0), 1);
 		fill_vector(0, &(o->som1), 1);
 		fill_vector(0, &(o->som2), 1);
+		fill_texture(0, &(o->texture), 1);
+		o->rotation = 0;
 	}
 	else
 		fill_objects_sub(s, o);

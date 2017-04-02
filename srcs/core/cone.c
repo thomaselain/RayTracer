@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 19:32:35 by svassal           #+#    #+#             */
-/*   Updated: 2017/02/27 23:01:44 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/25 15:37:28 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,9 @@ float		find_cone_inter(t_ray *r, t_object *o)
 		return (MAX_SIZE);
 	RES_0 = (-B - sqrtf(D)) / (A + A);
 	RES_1 = (-B + sqrtf(D)) / (A + A);
-	return (RES_0 < RES_1 ? RES_0 : RES_1,
-		RES_0 < RES_1 ? RES_1 : RES_0);
+	if (vector_dist(o->origin, vector_projection(o->origin, o->direction, ADD(r->pos, MUL(r->dir, RES_0)))) > o->height)
+		return (MAX_SIZE);
+	return (RES_0 < RES_1 ? RES_0 : RES_1);
 }
 
 t_vector4f	cone_normal(t_object *o, t_ray ray)

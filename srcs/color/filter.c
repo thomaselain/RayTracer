@@ -70,6 +70,9 @@ unsigned int		get_one_color(unsigned int c, int argb[4], t_filter_type filter)
 	int				g;
 	int				b;
 
+	r = 0;
+	g = 0;
+	b = 0;
 	get_argb_comp(c, argb);
 	if (filter == RED_FILTER)
 	{

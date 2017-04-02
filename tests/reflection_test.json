@@ -1,5 +1,5 @@
 {
-	"background":0xbbbbbb,
+	"background":0x101010,
 		"camera":
 		{
 			"origin":
@@ -20,7 +20,7 @@
 			[	
 				{
 				"type":"PLANE",
-				"color":0xbb0000,
+				"color":0xaaaaaa,
 				"origin":
 				{
 					"x":0,
@@ -33,14 +33,14 @@
 					"y":0,
 					"z":-1
 				},
-				"reflection":0.9,
-				"diffuse":0.5,
+				"reflection":0.1,
+				"brightness":0.5,
 				"radius":0.5,
 				"comment":"Plane (background)"
 			},	
 				{
 				"type":"PLANE",
-				"color":0xbb0000,
+				"color":0xaaaaaa,
 				"origin":
 				{
 					"x":0,
@@ -53,15 +53,15 @@
 					"y":0,
 					"z":1
 				},
-				"reflection":0.9,
-				"diffuse":0.5,
+				"reflection":0.1,
+				"brightness":0.5,
 				"radius":0.5,
 				"comment":"Plane (background)"
 			},
 
 						{
 				"type":"PLANE",
-				"color":0x00bb00,
+				"color":0xaaaaaa,
 				"origin":
 				{
 					"x":-10,
@@ -74,14 +74,14 @@
 					"y":0,
 					"z":0
 				},
-				"reflection":0.9,
-				"diffuse":0.5,
+				"reflection":0.1,
+				"brightness":0.5,
 				"radius":0.5,
 				"comment":"Plane (background)"
 			},	
 				{
 				"type":"PLANE",
-				"color":0x00bb00,
+				"color":0xaaaaaa,
 				"origin":
 				{
 					"x":10,
@@ -94,14 +94,14 @@
 					"y":0,
 					"z":0
 				},
-				"reflection":0.9,
-				"diffuse":0.5,
+				"reflection":0.1,
+				"brightness":0.5,
 				"radius":0.5,
 				"comment":"Plane (background)"
 			},
 			{
 				"type":"PLANE",
-				"color":0x0000bb,
+				"color":0x000010,
 				"origin":
 				{
 					"x":0,
@@ -115,13 +115,13 @@
 					"z":0
 				},
 				"reflection":0.9,
-				"diffuse":0.5,
+				"brightness":0.5,
 				"radius":0.5,
 				"comment":"Plane (background)"
 			},
 			{
 				"type":"PLANE",
-				"color":0x0000bb,
+				"color":0x000010,
 				"origin":
 				{
 					"x":0,
@@ -135,13 +135,13 @@
 					"z":0
 				},
 				"reflection":0.9,
-				"diffuse":0.5,
+				"brightness":0.5,
 				"radius":0.5,
 				"comment":"Plane (background)"
 			},
 			{
 				"type":"SPHERE",
-				"color":0xbbbbbb,
+				"color":0x202020,
 				"origin":
 				{
 					"x":0,
@@ -155,19 +155,31 @@
 					"z":1
 				},
 				"reflection":0.9,
-				"diffuse":0.5,
+				"brightness":0.5,
 				"radius":1,
 				"comment":"Cone"
 			}
 	],
 		"lights":
 			[
-			{
+						{
 				"type":"SPOT",
-				"color":0xbbbbbb,
+				"color":0xcccccc,
 				"origin":
 				{
-					"x":0,
+					"x":6,
+					"y":0,
+					"z":-6
+				},
+				"radius":1,
+				"comment":"Deuxieme lumiere"
+			}
+			{
+				"type":"SPOT",
+				"color":0xcccccc,
+				"origin":
+				{
+					"x":-6,
 					"y":0,
 					"z":-6
 				},

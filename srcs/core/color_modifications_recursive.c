@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 18:42:04 by telain            #+#    #+#             */
-/*   Updated: 2017/03/12 00:13:54 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/25 13:42:13 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,15 +25,15 @@ int		adjust_color(t_scene *s, t_object *hit, t_ray ray, int reflects)
 	t_list			*light;
 
 	light = s->lights;
-	c = s->background;
+	c = 0;
 	ray_cpy = ray;
-	if (hit != 0)
+	while (light != 0)
 	{
-		while (light != 0)
-		{
-			c = compute_light(s, hit, ray, (t_object*)light->content);
-			light = light->next;
-		}
+		if (hit != 0)
+			c = color_add(c, compute_light(s, hit, ray, (t_object*)light->content));
+		else
+			c = s->background;
+		light = light->next;
 	}
 	if (hit != 0 && hit->reflection > 0.0 && reflects <= MAX_REFLECTION)
 	{
@@ -85,16 +85,21 @@ unsigned int	compute_light(t_scene *s, t_object *o, t_ray ray, t_object *light)
 {
 	unsigned int	c;
 	t_ray			v_light;
+	t_ray			specular;
 
 	c = o->color; //peut etre a mettre en haut
+	if (o && o->texture.srf != NULL)
+		c = get_texture_pixel(o, ray);
 	v_light.pos = light->origin;
 	v_light.dir = get_light_vector(light, ray);
+	specular = ray;
+	get_reflect(s, o, &specular);
+	if (o->brightness > 0.0)
+		c = color_add(c, color_mul(light->color, -1 * pow(vector_dot(v_light.dir, specular.dir), o->brightness)));
 	if (vector_dot(v_light.dir, get_normal(o, ray)) >= 0)
 		c = color_mul(c, vector_dot(v_light.dir, get_normal(o, ray)));
 	else
 		c = 0;
-	// Lumiere speculaire
-	c = color_div(c, vector_dist(ray.pos, o->origin) / 10 + 1.0); // effet brouillard
 	c = color_mul(c, find_shadow(s, o, ray, v_light) * noise(o, ray.pos));
 	return (c);
 }

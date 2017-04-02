@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse.c                                            :+:      :+:    :+:   */
+/*   parse_structure.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: cchicote <cchicote@student.42.fr>            +#+  +:+       +#+      */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -53,6 +53,7 @@ void			fill_structure(char **s, t_noise *n, int init)
 {
 	int		data_i;
 
+	data_i = 0;
 	if (init == 1)
 	{
 		n->material_type = NONE;

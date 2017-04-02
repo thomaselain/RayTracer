@@ -80,4 +80,10 @@ int				get_param_length(char *s);
 
 void			skip_brackets_braces(char **string);
 
+/*
+** Returns a texture parameter
+*/
+
+char		*get_texture_param(int param_num);
+
 #endif

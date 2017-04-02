@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 17:28:23 by aljourda          #+#    #+#             */
-/*   Updated: 2017/03/07 18:34:38 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/25 13:38:16 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define CORE_H
 # include <vector.h>
 # include <libft.h>
+# include <img.h>
+# include <parse_error.h>
 #include <stdio.h>
 # define WIDTH	1000
 # define HEIGHT	800
@@ -34,7 +36,7 @@ typedef enum		e_type
 
 typedef enum		e_noise_type
 {
-	PERLIN, MARBLE, WOOD, NONE
+	PERLIN, MARBLE, WOOD, NONE, GRID
 }					t_noise_type;
 
 /*
@@ -66,6 +68,8 @@ typedef struct		s_ray
 {
 	t_vector4f		pos;
 	t_vector4f		dir;
+	unsigned int	pixel_x;
+	unsigned int	pixel_y;
 }					t_ray;
 
 /*
@@ -97,7 +101,7 @@ typedef struct		s_object
 	t_vector4f		som1;
 	t_vector4f		som2;
 	int				color;
-	float			diffuse;
+	float			brightness;
 	float			reflection;
 	float			refraction;
 	float			transparence;
@@ -113,6 +117,8 @@ typedef struct		s_object
 	t_noise			noise;
 	struct s_object	*top_cap;
 	struct s_object	*bot_cap;
+	t_img			texture;
+	float			rotation;
 }					t_object;
 
 /*
@@ -128,6 +134,7 @@ typedef struct		s_scene
 	unsigned int	background;
 	t_list			*objects;
 	t_list			*lights;
+	float			r; //A SUPPRIMER (ELLE EST LA POUR DES TESTS)
 }					t_scene;
 
 /*

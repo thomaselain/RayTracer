@@ -40,7 +40,7 @@
 					"zoom":4
 				},
 				"reflection":0.0,
-				"diffuse":0.0,
+				"brightness":0.0,
 				"height":4.3,
 				"width":3.3
 			},
@@ -60,7 +60,7 @@
 					"z":-1
 				},
 				"reflection":0.9,
-				"diffuse":0.0,
+				"brightness":0.0,
 				"height":4.0,
 				"width":3.0
 			},
@@ -85,7 +85,7 @@
 					"zoom":4
 				},
 				"reflection":0.0,
-				"diffuse":0.0,
+				"brightness":0.0,
 				"height":4.3,
 				"width":3.3
 			},
@@ -105,7 +105,7 @@
 					"z":-1
 				},
 				"reflection":0.9,
-				"diffuse":0.0,
+				"brightness":0.0,
 				"height":4.0,
 				"width":3.0
 			},
@@ -165,6 +165,7 @@
 					"z":0
 				},
 				"reflection":0.3,
+				"transparence":0.4,
 				"width":3.0,
 				"radius":0.5,
 				"comment":"Hydrogen"
@@ -185,6 +186,7 @@
 					"z":1
 				},
 				"reflection":0.3,
+				"transparence":0.4,
 				"width":3.0,
 				"radius":0.5,
 				"comment":"Hydrogen"
@@ -204,7 +206,7 @@
 					"y":-1,
 					"z":1
 				},
-
+				"transparence":0.4,
 				"reflection":0.3,
 				"width":3.0,
 				"radius":1.0,

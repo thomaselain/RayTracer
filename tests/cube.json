@@ -1,26 +1,26 @@
 {
-	"background":0xffffff,
+	"background":0x000000,
 		"camera":
 		{
 			"origin":
 			{
-				"x":-4,
-				"y":-5,
+				"x":-8,
+				"y":-20,
 				"z":2
 			},
 			"direction":
 			{
 				"x":1,
 				"y":1,
-				"z":0
+				"z":0.3
 			},
-			"fov":60
+			"fov":90
 		},
 		"objects":
 			[
 			{
-				"type":"PLANE",
-				"color":0xcccccc,
+				"type":"RECTANGLE",
+				"color":0x0000ff,
 				"origin":
 				{
 					"x":0,
@@ -36,39 +36,42 @@
 				"material":
 				{
 					"material_type":"PERLIN",
-					"zoom":1
+					"zoom":10
 				},
-				"reflection":0.7,
+				"width":20.0,
+				"height":20.0,
+				"reflection":0.2,
 				"comment":"sol"
 			},			
 			{
 				"type":"RECTANGLE",
-				"color":0xffffff,
+				"color":0xa0a0a0,
 				"origin":
 				{
 					"x":-1,
 					"y":0,
-					"z":4
+					"z":3.5
 				},
 				"direction":
 				{
 					"x":1,
 					"y":0,
-					"z":0
+					"z":1
 				},
 				"material":
 				{
-					"material_type":"WOOD",
+					"material_type":"GRID",
 					"zoom":1
 				},
 				"width":2.0,
 				"height":2.0,
-				"transparence":0.9,
+				"reflection":0.3,
+				"transparence":0.0,
 				"comment":"morceau de de"
 			},	
 			{
 				"type":"RECTANGLE",
-				"color":0xffffff,
+				"color":0xa0a0a0,
 				"origin":
 				{
 					"x":1,
@@ -83,17 +86,18 @@
 				},
 				"material":
 				{
-					"material_type":"WOOD",
+					"material_type":"GRID",
 					"zoom":1
 				},
+				"reflection":0.3,
 				"width":2.0,
 				"height":2.0,
-				"transparence":0.9,
+				"transparence":0.0,
 				"comment":"morceau de de"
 			},	
 			{
 				"type":"RECTANGLE",
-				"color":0xffffff,
+				"color":0xa0a0a0,
 				"origin":
 				{
 					"x":0,
@@ -108,17 +112,18 @@
 				},
 				"material":
 				{
-					"material_type":"WOOD",
+					"material_type":"GRID",
 					"zoom":1
 				},
+				"reflection":0.3,
 				"width":2.0,
 				"height":2.0,
-				"transparence":0.9,
+				"transparence":0.0,
 				"comment":"morceau de de"
 			},
 			{
 				"type":"RECTANGLE",
-				"color":0xffffff,
+				"color":0xa0a0a0,
 				"origin":
 				{
 					"x":0,
@@ -133,17 +138,18 @@
 				},
 				"material":
 				{
-					"material_type":"WOOD",
+					"material_type":"GRID",
 					"zoom":1
 				},
+				"reflection":0.3,
 				"width":2.0,
 				"height":2.0,
-				"transparence":0.3,
+				"transparence":0.0,
 				"comment":"morceau de de"
 			},
 			{
 				"type":"RECTANGLE",
-				"color":0xffffff,
+				"color":0xa0a0a0,
 				"origin":
 				{
 					"x":0,
@@ -158,17 +164,18 @@
 				},
 				"material":
 				{
-					"material_type":"WOOD",
+					"material_type":"GRID",
 					"zoom":1
 				},
+				"reflection":0.3,
 				"width":2.0,
 				"height":2.0,
-				"transparence":0.9,
+				"transparence":0.0,
 				"comment":"morceau de de"
 			},
 			{
 				"type":"RECTANGLE",
-				"color":0xff0000,
+				"color":0xa0a0a0,
 				"origin":
 				{
 					"x":0,
@@ -183,24 +190,37 @@
 				},
 				"material":
 				{
-					"material_type":"WOOD",
+					"material_type":"GRID",
 					"zoom":1
 				},
+				"reflection":0.3,
 				"width":2.0,
 				"height":2.0,
+				"transparence":0.0,
 				"comment":"morceau de de"
 			}
 	],
 		"lights":
 			[
-			{
+						{
 				"type":"SPOT",
-				"color":0xffffff,
+				"color":0x202020,
 				"origin":
 				{
-					"x":-10,
-					"y":-10,
-					"z":-10
+					"x":0,
+					"y":0,
+					"z":2.5
+				},
+				"radius":1
+			},
+			{
+				"type":"SPOT",
+				"color":0xff0000,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":4
 				},
 				"radius":1
 			}

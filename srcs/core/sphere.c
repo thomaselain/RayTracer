@@ -6,10 +6,12 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 18:16:37 by telain            #+#    #+#             */
-/*   Updated: 2017/02/27 23:33:21 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/19 11:55:25 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <core.h>
+#include <ray.h>
 #define A		(val[0])
 #define B		(val[1])
 #define C		(val[2])
@@ -17,8 +19,6 @@
 #define X1		(val[5])
 #define X2		(val[6])
 #define RET		(val[4])
-#include <core.h>
-#include <ray.h>
 
 float		find_sphere_inter(t_ray *ray, t_object *obj)
 {
@@ -35,7 +35,7 @@ float		find_sphere_inter(t_ray *ray, t_object *obj)
 		return (MAX_SIZE);
 	X1 = (-B - sqrt(D)) / (A + A);
 	X2 = (-B + sqrt(D)) / (A + A);
-	return (X1 < X2 ? X1 : X2);
+	return (X1 == 0 ? 0 : (X2 == 0 ? 0 :(X1 < X2 ? X1 : X2)));
 }
 
 t_vector4f	sphere_normal(t_object *o, t_ray ray)

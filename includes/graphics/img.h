@@ -6,7 +6,7 @@
 /*   By: aljourda <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/13 11:01:40 by aljourda          #+#    #+#             */
-/*   Updated: 2017/01/03 18:08:11 by aljourda         ###   ########.fr       */
+/*   Updated: 2017/03/23 15:00:32 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ typedef struct		s_img
 	SDL_Surface		*srf;
 	int				w;
 	int				h;
+	float			scale;
+	float			rotation;
 }					t_img;
 
 int					img_init(t_img *img, int width, int height,

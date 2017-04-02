@@ -68,5 +68,26 @@ void			get_cap(t_object *o);
 
 void			copy_structure(t_noise *src, t_noise *dest);
 
+/*
+** A specific function to get the texture file's name and to manage errors properly
+*/
+
+void			get_texture(char **s, t_img *n);
+/*
+** Allows an inheritance for a texture
+*/
+
+void			copy_texture(t_img *src, t_img *dest);
+/*
+** Fill texture with 0 if init is equal to 1, or with the JSON datas elseway
+*/
+
+void			fill_texture(char **s, t_img *n, int init);
+/*
+** Return a parsed texture (fill missing datas with 0)
+*/
+
+t_img				parse_texture(char **string);
+
 
 #endif

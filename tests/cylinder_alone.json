@@ -14,8 +14,7 @@
 			"y":1,
 			"z":0
 		},
-		"fov":60,
-		"filter":"SEPIA"
+		"fov":60
 	},
 	"objects":
 	[
@@ -35,7 +34,7 @@
 				"z":-1
 			},
 			"reflection":0.0,
-			"diffuse":0.0,
+			"brightness":0.0,
 			"radius":0.5,
 			"comment":"Plane (background)"
 		},
@@ -55,27 +54,9 @@
 				"z":0
 			},
 			"reflection":0.7,
-			"diffuse":0.0,
+			"brightness":0.0,
 			"radius":0.5,
 			"comment":"Plane (background)"
-		},
-		{
-			"type":"CIRCLE",
-			"color":0x00ffff,
-			"origin":
-			{
-				"x":0.0,
-				"y":9,
-				"z":0.0
-			},
-			"direction":
-			{
-				"x":0.0,
-				"y":1.0,
-				"z":-0.4
-			},
-			"radius":1.0,
-			"reflection":0.0
 		},
 		{
 			"type":"CYLINDER",
@@ -103,7 +84,7 @@
 			"width":3.0,
 			"height":0.1,
 			"reflection":0.0,
-			"diffuse":0.1,
+			"brightness":0.1,
 			"comment":"Cylindre"
 		}
 	],
