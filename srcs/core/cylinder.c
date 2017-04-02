@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 20:04:35 by svassal           #+#    #+#             */
-/*   Updated: 2017/02/28 21:15:15 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/02 17:59:04 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,8 @@ float		find_cylinder_inter(t_ray *r, t_object *o)
 	RES_1 = (-B - sqrtf(D)) / (A + A);
 	RES_2 = (-B + sqrtf(D)) / (A + A);
 	if ((PROJ = vector_dist(o->origin, vector_projection(o->origin,
-						o->direction, ADD(r->pos, MUL(r->dir, RES_1))))) >= o->height)
+						o->direction, ADD(r->pos, MUL(r->dir,
+							RES_1))))) >= o->height)
 		return (MAX_SIZE);
 	return (RES_1 < RES_2 ? RES_1 : RES_2);
 }

@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 13:41:03 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/26 20:35:45 by svassal          ###   ########.fr       */
+/*   Updated: 2017/04/02 18:42:41 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@
 #define ERROR		(-1)
 
 /*
-** Return a parsed camera (fill missing datas with 0),
-** manage camera errors *not-yet*
+** Return a parsed camera (fill missing datas with 0)
 */
 
 t_camera		parse_camera(char **string)

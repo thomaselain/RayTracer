@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_texture.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchicote <cchicote@student.42.fr>            +#+  +:+       +#+      */
+/*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/03/22 13:22:31 by cchicote           #+#    #+#            */
-/*   Updated: 2017/03/22 21:00:43 by cchicote           ###   ########.fr     */
+/*   Created: 2017/03/22 13:22:31 by cchicote          #+#    #+#             */
+/*   Updated: 2017/04/02 19:16:01 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,8 @@ void			fill_texture(char **s, t_img *n, int init)
 		n->h = 1.0;
 		n->scale = 1.0;
 		n->rotation = 0.0;
+		return ;
 	}
-	else
-	{
 		if (ft_strnstr(*s, "\"path\"", 6) != 0)
 			data_i = 1;
 		else if (ft_strnstr(*s, "\"scale\"", 7) != 0)
@@ -88,7 +87,6 @@ void			fill_texture(char **s, t_img *n, int init)
 			n->scale = parse_float(s);
 		else if (data_i == 3)
 			n->rotation = parse_float(s);
-	}
 }
 
 /*

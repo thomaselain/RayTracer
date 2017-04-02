@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   filter.c                                           :+:      :+:    :+:   */
+/*   filter1.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchicote <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 17:15:34 by cchicote          #+#    #+#             */
-/*   Updated: 2017/02/16 18:55:42 by cchicote         ###   ########.fr       */
+/*   Updated: 2017/04/02 18:14:09 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,38 +75,11 @@ unsigned int		get_one_color(unsigned int c, int argb[4], t_filter_type filter)
 	b = 0;
 	get_argb_comp(c, argb);
 	if (filter == RED_FILTER)
-	{
 		r = argb[1];
-		g = 0;
-		b = 0;
-	}
 	else if (filter == GREEN_FILTER)
-	{
-		r = 0;
 		g = argb[2];
-		b = 0;
-	}
 	else if (filter == BLUE_FILTER)
-	{
-		r = 0;
-		g = 0;
 		b = argb[3];
-	}
 	c = (r << 16) | (g << 8) | b;
-	return (c);
-}
-
-unsigned int		add_filter(unsigned int c, t_filter_type filter)
-{
-	int				argb[4];
-
-	if (filter == NEGATIVE)
-		c = get_negative(c, argb);
-	else if (filter == BLACK_WHITE)
-		c = get_black_white(c, argb);
-	else if (filter == SEPIA)
-		c = get_sepia(c, argb);
-	else if (filter == RED_FILTER || filter == GREEN_FILTER || filter == BLUE_FILTER)
-		c = get_one_color(c, argb, filter);
 	return (c);
 }
