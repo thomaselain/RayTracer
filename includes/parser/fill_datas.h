@@ -89,5 +89,11 @@ void			fill_texture(char **s, t_img *n, int init);
 
 t_img				parse_texture(char **string);
 
+/*
+** Fill the cap of a finished cone
+*/
+
+t_object			*fill_cap_cone(t_object *cone, float num);
+
 
 #endif

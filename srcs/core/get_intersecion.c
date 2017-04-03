@@ -59,12 +59,23 @@ t_object	*get_intersection(t_scene *s, t_ray *ray)
 				closest = d;
 			}
 		}
-		else if (((t_object*)obj->content)->type == CONE && (d =
-					find_cone_inter(ray, (t_object*)obj->content)) <
-				closest && d >= 0.001)
+		else if (((t_object*)obj->content)->type == CONE)
 		{
-			hit = (t_object*)obj->content;
-			closest = d;
+			if ((d = find_circle_inter(ray, ((t_object*)obj->content)->bot_cap)) < closest && d >= 0.001)
+			{
+				hit = ((t_object*)obj->content)->bot_cap;
+				closest = d;
+			}
+			if ((d = find_circle_inter(ray, ((t_object*)obj->content)->top_cap)) < closest && d >= 0.001)
+			{
+				hit = ((t_object*)obj->content)->top_cap;
+				closest = d;
+			}
+			if ((d = find_cone_inter(ray, (t_object*)obj->content)) < closest && d >= 0.001)
+			{
+				hit = (t_object*)obj->content;
+				closest = d;
+			}
 		}
 		else if (((t_object*)obj->content)->type == RECTANGLE && (d =
 					find_rectangle_inter(ray, (t_object*)obj->content)) <

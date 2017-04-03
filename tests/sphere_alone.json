@@ -25,7 +25,7 @@
 			{
 				"x":0,
 				"y":-30,
-				"z":0
+				"z":00
 			},
 			"direction":
 			{
@@ -35,7 +35,7 @@
 			},
 			"texture":
 			{
-				"path":"images/columbine.bmp",
+				"path":"images/Denis.bmp",
 				"scale":10
 			},
 			"transparence":0.0,

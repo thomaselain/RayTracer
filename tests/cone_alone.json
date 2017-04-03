@@ -1,17 +1,17 @@
 {
-	"background":0x303030,
+	"background":0xffffff,
 		"camera":
 		{
 			"origin":
 			{
-				"x":0,
-				"y":3,
+				"x":3,
+				"y":0,
 				"z":0
 			},
 			"direction":
 			{
-				"x":0,
-				"y":-1,
+				"x":-1,
+				"y":0,
 				"z":0
 			},
 			"fov":60
@@ -19,37 +19,41 @@
 		"objects":
 			[
 			{
-				"type":"PLANE",
-				"color":0x000000,
-				"origin":
-				{
-					"x":0,
-					"y":0,
-					"z":0.5
-				},
-				"direction":
-				{
-					"x":0,
-					"y":0,
-					"z":-1
-				},
-				"reflection":0.7
+			"type":"CONE",
+			"color":0xff0000,
+			"origin":
+			{
+				"x":0,
+				"y":0,
+				"z":0
+			},
+			"direction":
+			{
+				"x":0,
+				"y":1,
+				"z":0
+			},
+			"reflection":0,
+			"angle":60,
+			"height":1.8
 			},
 			{
-				"type":"SPHERE",
-				"color":0xff0000,
-				"origin":
-				{
-					"x":0,
-					"y":0,
-					"z":-1
-				},
-				"texture":
-				{
-					"path":"images/bowl_cut.bmp"
-				},
-				"radius":1,
-				"brightness": 0.3
+			"type":"CYLINDER",
+			"color":0x0000ff,
+			"origin":
+			{
+				"x":0,
+				"y":0,
+				"z":10
+			},
+			"direction":
+			{
+				"x":0,
+				"y":1,
+				"z":0
+			},
+			"reflection":0,
+			"radius":1.0
 			}
 	],
 		"lights":
@@ -63,7 +67,7 @@
 					"y":5,
 					"z":0
 				},
-				"radius":1
+				"radius":20
 			}
 			{
 				"type":"SPOT",
@@ -74,7 +78,7 @@
 					"y":-5,
 					"z":0
 				},
-				"radius":1
+				"radius":20
 			}
 			{
 				"type":"SPOT",
@@ -85,7 +89,7 @@
 					"y":0,
 					"z":0
 				},
-				"radius":1
+				"radius":20
 			}
 			{
 				"type":"SPOT",
@@ -96,7 +100,7 @@
 					"y":0,
 					"z":0
 				},
-				"radius":1
+				"radius":20
 			}
 			{
 				"type":"SPOT",
@@ -107,7 +111,7 @@
 					"y":0,
 					"z":-5
 				},
-				"radius":1
+				"radius":20
 			}
 	]
 }

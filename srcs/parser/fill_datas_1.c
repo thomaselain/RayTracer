@@ -110,7 +110,6 @@ float			get_angle(char **s)
 	return (rad);
 }
 
-
 /*
 ** A specific function for the brightness variable that requires some attention from us
 */
@@ -177,6 +176,8 @@ static void		fill_objects_sub(char **s, t_object *o)
 		o->texture = parse_texture(s);
 	else if (index == 18)
 		o->rotation = get_angle(s);
+	else if (index == 19)
+		o->angle = get_angle(s);
 }
 
 /*
@@ -205,6 +206,35 @@ t_object		*fill_cap(t_object *cylinder, float num)
 	cap->texture = cylinder->texture;
 	cap->rotation = cylinder->rotation;
 	copy_texture(&(cylinder->texture), &(cap->texture));
+	return (cap);
+}
+
+/*
+** Fill the cap of a finished cone
+*/
+
+t_object		*fill_cap_cone(t_object *cone, float num)
+{
+	t_object *cap;
+
+	cap = ft_memalloc(sizeof(t_object));
+	cap->type = CIRCLE;
+	cap->radius = 0;
+	cap->color = cone->color;
+	cap->brightness = cone->brightness;
+	cap->reflection = cone->reflection;
+	// cap->intensity = cone->intensity;
+	cap->comment = num == 1 ? ft_strdup("1") : ft_strdup("2");
+	copy_structure(&(cone->noise), &(cap->noise));
+	cap->origin = ADD(cone->origin,
+			MUL(vector_normalize(cone->direction), cone->height * num * 0.999));
+	cap->direction = MUL(vector_normalize(cone->direction), num);
+	cap->direction = vector_normalize(cap->direction);
+	cap->transparence = cone->transparence;
+	cap->refraction = cone->refraction;
+	cap->texture = cone->texture;
+	cap->rotation = cone->rotation;
+	copy_texture(&(cone->texture), &(cap->texture));
 	return (cap);
 }
 

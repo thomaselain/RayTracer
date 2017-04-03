@@ -35,8 +35,8 @@
 				},
 				"texture":
 				{
-					"path":"images/Denis.bmp",
-					"scale":10
+					"path":"images/table_green.bmp",
+					"scale":5
 				},
 				"width":20.0,
 				"height":10.0,

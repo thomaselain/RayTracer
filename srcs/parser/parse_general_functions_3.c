@@ -124,6 +124,8 @@ static char		*get_object_param(int param_num)
 		return ("\"texture\"");
 	if (param_num == 18)
 		return ("\"rotation\"");
+	if (param_num == 19)
+		return ("\"angle\"");
 	return (0);
 }
 
