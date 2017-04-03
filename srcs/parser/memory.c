@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 18:36:58 by svassal           #+#    #+#             */
-/*   Updated: 2017/03/09 16:27:19 by svassal          ###   ########.fr       */
+/*   Updated: 2017/04/03 13:29:45 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ static void		sub_clean(t_object *obj)
 		sub_clean(obj->bot_cap);
 	if (obj->comment != 0)
 		free(obj->comment);
+	if (obj->texture.srf != 0)
+		img_destroy(&(obj->texture));
 	free(obj);
 }
 

@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 13:35:30 by svassal           #+#    #+#             */
-/*   Updated: 2017/04/02 18:40:53 by svassal          ###   ########.fr       */
+/*   Updated: 2017/04/03 13:24:51 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,7 +126,7 @@ static void		object_init(t_object *o)
 	o->type = UNKNOWN;
 	o->texture.w = 1;
 	o->texture.h = 1;
-	o->texture.srf = NULL;
+	o->texture.srf = 0;
 	fill_vector(0, &(o->origin), 1);
 	fill_vector(0, &(o->direction), 1);
 	o->color = 0xFFFFFF;
