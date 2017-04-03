@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 19:32:35 by svassal           #+#    #+#             */
-/*   Updated: 2017/03/25 15:37:28 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/02 17:58:23 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,21 +76,14 @@ float		find_cone_inter(t_ray *r, t_object *o)
 	B = (2 * r->pos.x * r->dir.x) + (2 * r->pos.z * r->dir.z) - (2 * tan_alpha * r->pos.y * r->dir.y);
 	C = powf(r->pos.x, 2) + powf(r->pos.z, 2) - tan_alpha * powf(r->pos.y, 2);
 	D = powf(B, 2) - 4 * A * C;
-	if (D > 0.0)
-	{
-		RES_0 = (-B - sqrtf(D)) / (A + A);
-		RES_1 = (-B + sqrtf(D)) / (A + A);
-		if (RES_0 > 0)
-			RES = RES_0;
-		else
-			RES = RES_1;
-		// ret_ray = tmp_ray;
-		if (vector_dist(o->origin, vector_projection(o->origin, o->direction, ADD(r->pos, MUL(r->dir, RES_0)))) > o->height)
-			return (MAX_SIZE);
-	}
-	else
-		return (-1);
-	return (RES);
+	if (D < 0.0)
+		return (MAX_SIZE);
+	RES_0 = (-B - sqrtf(D)) / (A + A);
+	RES_1 = (-B + sqrtf(D)) / (A + A);
+	if (vector_dist(o->origin, vector_projection(o->origin, o->direction,
+		ADD(r->pos, MUL(r->dir, RES_0)))) > o->height)
+		return (MAX_SIZE);
+	return (RES_0 < RES_1 ? RES_0 : RES_1);
 }
 
 
@@ -126,6 +119,11 @@ t_vector4f		cone_normal(t_object *o, t_ray ray)
 	float		tan_alpha;
 
 	// printf("%0.3f\n", o->angle);
+	if (o->top_cap->radius <= 0 && o->top_cap->radius <= 0) // On definit la taille des caps, j'ai mis ca la parce que je savais pas ou le mettre autrement :)
+	{
+		o->top_cap->radius = tanf(o->angle / 2) * (vector_dot(ray.dir, vector_mul_flo(o->direction, find_cone_inter(&ray, o))) + vector_dot(vector_sub_vec(ray.pos, o->origin), o->direction));
+		o->bot_cap->radius = tanf(o->angle / 2) * (vector_dot(ray.dir, vector_mul_flo(o->direction, find_cone_inter(&ray, o))) + vector_dot(vector_sub_vec(ray.pos, o->origin), o->direction));
+	}
 	tan_alpha = powf(tanf(o->angle / 2), 2);
 	inter = vector_add_vec(ray.pos, vector_mul_flo(ray.dir, find_cone_inter(&ray, o)));
 	ret.x = 2 * inter.x;
@@ -134,11 +132,6 @@ t_vector4f		cone_normal(t_object *o, t_ray ray)
 	ret.w = 0;
 	vector_normalize(ret);
 	// printf("%0.3f\n", o->top_cap->radius);
-	if (o->top_cap->radius <= 0 && o->top_cap->radius <= 0) // On definit la taille des caps, j'ai mis ca la parce que je savais pas ou le mettre autrement :)
-	{
-		o->top_cap->radius = tanf(o->angle / 2) * (vector_dot(ray.dir, vector_mul_flo(o->direction, find_cone_inter(&ray, o))) + vector_dot(vector_sub_vec(ray.pos, o->origin), o->direction));
-		o->bot_cap->radius = tanf(o->angle / 2) * (vector_dot(ray.dir, vector_mul_flo(o->direction, find_cone_inter(&ray, o))) + vector_dot(vector_sub_vec(ray.pos, o->origin), o->direction));
-	}
 	return (ret);
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_structure.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: cchicote <cchicote@student.42.fr>            +#+  +:+       +#+      */
+/*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/02/10 13:22:31 by cchicote           #+#    #+#            */
-/*   Updated: 2017/02/10 21:00:43 by cchicote           ###   ########.fr     */
+/*   Created: 2017/02/10 13:22:31 by cchicote          #+#    #+#             */
+/*   Updated: 2017/04/02 19:38:03 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,23 @@ void			copy_structure(t_noise *src, t_noise *dest)
 }
 
 /*
+** Sub function called by fill_structure
+*/
+
+static void		sub_fill_struct(char **s, t_noise *n, int i)
+{
+	*s = ft_strchr(*s, ':') + 1;
+	if (i == 1)
+		n->material_type = parse_noise_type(s);
+	else if (i == 2)
+		n->zoom = parse_float(s);
+	else if (i == 3)
+		n->intensity = parse_float(s);
+	else if (i == 4)
+		n->c = parse_float(s);
+}
+
+/*
 ** Fill structure with 0 if init is equal to 1, or with the JSON datas elseway
 */
 
@@ -60,10 +77,9 @@ void			fill_structure(char **s, t_noise *n, int init)
 		n->zoom = 0.0;
 		n->intensity = 1.0;
 		n->c = 0.0;
+		return ;
 	}
-	else
-	{
-		if (ft_strnstr(*s, "\"material_type\"", 15) != 0)
+	if (ft_strnstr(*s, "\"material_type\"", 15) != 0)
 			data_i = 1;
 		else if (ft_strnstr(*s, "\"zoom\"", 6) != 0)
 			data_i = 2;
@@ -71,16 +87,7 @@ void			fill_structure(char **s, t_noise *n, int init)
 			data_i = 3;
 		else if (ft_strnstr(*s, "\"c\"", 3) != 0)
 			data_i = 4;
-		*s = ft_strchr(*s, ':') + 1;
-		if (data_i == 1)
-			n->material_type = parse_noise_type(s);
-		else if (data_i == 2)
-			n->zoom = parse_float(s);
-		else if (data_i == 3)
-			n->intensity = parse_float(s);
-		else if (data_i == 4)
-			n->c = parse_float(s);
-	}
+		sub_fill_struct(s, n, data_i);
 }
 
 /*

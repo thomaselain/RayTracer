@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 13:35:30 by svassal           #+#    #+#             */
-/*   Updated: 2017/03/19 14:30:45 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/03 13:24:51 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,8 @@ void			fill_vector(char **s, t_vector4f *v, int init)
 		v->x = 0;
 		v->y = 0;
 		v->z = 0;
+		return ;
 	}
-	else
-	{
 		if (ft_strnstr(*s, "\"x\"", 3) != 0)
 			xyz = 1;
 		else if (ft_strnstr(*s, "\"y\"", 3) != 0)
@@ -54,83 +53,45 @@ void			fill_vector(char **s, t_vector4f *v, int init)
 			v->y = parse_float(s);
 		else
 			v->z = parse_float(s);
-	}
 }
 
 /*
-** Fill camera with 0 if init is equal to 1, or with the JSON datas elseway
+** Subcalled by fill_objects
 */
 
-void			fill_camera(char **s, t_camera *c, int init)
+static void		fill_objects_sub2(char **s, t_object *o, int i)
 {
-	int		index;
-	char	*str;
-
-	if (init == 1)
-	{
-		fill_vector(0, &(c->origin), 1);
-		fill_vector(0, &(c->direction), 1);
-		c->fov = 0;
-		c->filter = NO_FILTER;
-	}
-	else
-	{
-		index = 0;
-		while ((str = get_param_list(CAMERA, ++index)) != 0)
-			if ((str = ft_strnstr(*s, str, ft_strlen(str))) != 0)
-				break ;
-		*s = ft_strchr(*s, ':') + 1;
-		if (index == 1)
-			c->origin = parse_vector(s);
-		else if (index == 2)
-			c->direction = parse_vector(s);
-		else if (index == 3)
-			c->fov = parse_int(s);
-		else if (index == 4)
-			c->filter = parse_filter_type(s);
-	}
+	if (i == 8)
+		o->comment = parse_string(s);
+	else if (i == 9)
+		o->width = parse_float(s);
+	else if (i == 10)
+		o->height = parse_float(s);
+	else if (i == 11)
+		o->noise = parse_structure(s);
+	else if (i == 12)
+		o->transparence = parse_float(s);
+	else if (i == 13)
+		o->refraction = parse_float(s);
+	else if (i == 14)
+		o->som0 = parse_vector(s);
+	else if (i == 15)
+		o->som1 = parse_vector(s);
+	else if (i == 16)
+		o->som2 = parse_vector(s);
+	else if (i == 17)
+		o->texture = parse_texture(s);
+	else if (i == 18)
+		o->rotation = get_angle(s);
+	else if (i == 19)
+		o->angle = get_angle(s);
 }
 
 /*
-** Gets a number between 0 and 360 degrees and then converts it in radian
+** Subcalled by fill_objects
 */
 
-float			get_angle(char **s)
-{
-	float		ret;
-	float		rad;
-
-	ret = parse_float(s);
-	if (ret < 0 || ret > 360)
-	{
-		printf("%0.3f\n", ret);
-		error_close(2, 1);
-	}
-	rad = ret * (M_PI / 180);
-	return (rad);
-}
-
-/*
-** A specific function for the brightness variable that requires some attention from us
-*/
-
-float			get_brightness(char **s)
-{
-	float		b;
-
-	b = parse_float(s);
-	if (b <= 0)
-		return (0.0);
-	if (b >= 1.0)
-		b = 1.0;
-	return (1200.0 - b * 1200.0 + 10.0);
-}
-
-/*
-** Subcalled by fill_objects_sub
-*/
-
-static void		fill_objects_sub(char **s, t_object *o)
+static void		fill_objects_sub1(char **s, t_object *o)
 {
 	int		index;
 	char	*str;
@@ -154,59 +115,39 @@ static void		fill_objects_sub(char **s, t_object *o)
 		o->intensity = parse_float(s);
 	else if (index == 7)
 		o->direction = parse_vector(s);
-	else if (index == 8)
-		o->comment = parse_string(s);
-	else if (index == 9)
-		o->width = parse_float(s);
-	else if (index == 10)
-		o->height = parse_float(s);
-	else if (index == 11)
-		o->noise = parse_structure(s);
-	else if (index == 12)
-		o->transparence = parse_float(s);
-	else if (index == 13)
-		o->refraction = parse_float(s);
-	else if (index == 14)
-		o->som0 = parse_vector(s);
-	else if (index == 15)
-		o->som1 = parse_vector(s);
-	else if (index == 16)
-		o->som2 = parse_vector(s);
-	else if (index == 17)
-		o->texture = parse_texture(s);
-	else if (index == 18)
-		o->rotation = get_angle(s);
-	else if (index == 19)
-		o->angle = get_angle(s);
+	else
+		fill_objects_sub2(s, o, index);
 }
 
 /*
-** Fill the cap of a finished cylinder
+** Subfunction called by fill_objects
 */
 
-t_object		*fill_cap(t_object *cylinder, float num)
+static void		object_init(t_object *o)
 {
-	t_object *cap;
-
-	cap = ft_memalloc(sizeof(t_object));
-	cap->type = CIRCLE;
-	cap->radius = cylinder->radius;
-	cap->color = cylinder->color;
-	cap->brightness = cylinder->brightness;
-	cap->reflection = cylinder->reflection;
-	cap->intensity = cylinder->intensity;
-	cap->comment = num == 1 ? ft_strdup("1") : ft_strdup("2");
-	copy_structure(&(cylinder->noise), &(cap->noise));
-	cap->origin = ADD(cylinder->origin,
-			MUL(vector_normalize(cylinder->direction), cylinder->height * num * 0.999));
-	cap->direction = MUL(vector_normalize(cylinder->direction), num);
-	cap->direction = vector_normalize(cap->direction);
-	cap->transparence = cylinder->transparence;
-	cap->refraction = cylinder->refraction;
-	cap->texture = cylinder->texture;
-	cap->rotation = cylinder->rotation;
-	copy_texture(&(cylinder->texture), &(cap->texture));
-	return (cap);
+	o->type = UNKNOWN;
+	o->texture.w = 1;
+	o->texture.h = 1;
+	o->texture.srf = 0;
+	fill_vector(0, &(o->origin), 1);
+	fill_vector(0, &(o->direction), 1);
+	o->color = 0xFFFFFF;
+	o->brightness = 0.0;
+	o->reflection = 0.0;
+	o->intensity = 0.0;
+	o->comment = 0;
+	o->width = MAX_SIZE;
+	o->height = MAX_SIZE;
+	fill_structure(0, &(o->noise), 1);
+	o->top_cap = 0;
+	o->bot_cap = 0;
+	o->transparence = 0.0;
+	o->refraction = 1.0;
+	fill_vector(0, &(o->som0), 1);
+	fill_vector(0, &(o->som1), 1);
+	fill_vector(0, &(o->som2), 1);
+	fill_texture(0, &(o->texture), 1);
+	o->rotation = 0;
 }
 
 /*
@@ -223,7 +164,6 @@ t_object		*fill_cap_cone(t_object *cone, float num)
 	cap->color = cone->color;
 	cap->brightness = cone->brightness;
 	cap->reflection = cone->reflection;
-	// cap->intensity = cone->intensity;
 	cap->comment = num == 1 ? ft_strdup("1") : ft_strdup("2");
 	copy_structure(&(cone->noise), &(cap->noise));
 	cap->origin = ADD(cone->origin,
@@ -246,57 +186,9 @@ void			fill_objects(char **s, t_object *o, int init)
 {
 	if (init == 1)
 	{
-		o->type = UNKNOWN;
-		o->texture.w = 1;
-		o->texture.h = 1;
-		o->texture.srf = NULL;
-		fill_vector(0, &(o->origin), 1);
-		fill_vector(0, &(o->direction), 1);
-		o->color = 0xFFFFFF;
-		o->brightness = 0.0;
-		o->reflection = 0.0;
-		o->intensity = 0.0;
-		o->comment = 0;
-		o->width = MAX_SIZE;
-		o->height = MAX_SIZE;
-		fill_structure(0, &(o->noise), 1);
-		o->top_cap = 0;
-		o->bot_cap = 0;
-		o->transparence = 0.0;
-		o->refraction = 1.0;
-		fill_vector(0, &(o->som0), 1);
-		fill_vector(0, &(o->som1), 1);
-		fill_vector(0, &(o->som2), 1);
-		fill_texture(0, &(o->texture), 1);
-		o->rotation = 0;
+		object_init(o);
+		return ;
 	}
 	else
-		fill_objects_sub(s, o);
-}
-
-/*
-** Add elements to the list given as parameter
-*/
-
-void			fill_list(char **s, t_list **l)
-{
-	t_object	*obj;
-	t_list		*tmp;
-
-	obj = ft_memalloc(sizeof(t_object));
-	*obj = parse_object(s);
-	if (obj)
-		obj->direction = vector_normalize(obj->direction);
-	if (*l == 0)
-		*l = ft_lstnew((void *)obj, sizeof(t_object));
-	else
-	{
-		tmp = *l;
-		while ((*l)->next != 0)
-			*l = (*l)->next;
-		obj->direction = vector_normalize(obj->direction);
-		ft_lstpushback(l, ft_lstnew((void *)obj, sizeof(t_object)));
-		*l = tmp;
-	}
-	ft_memdel((void**)&obj);
+		fill_objects_sub1(s, o);
 }

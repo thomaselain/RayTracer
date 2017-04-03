@@ -3,14 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   perlin.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/10 16:10:58 by telain            #+#    #+#             */
-/*   Updated: 2017/02/12 19:22:42 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/03 11:15:03 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <core.h>
+#define FADE(x)			(x * x * x * (x * (x * 6 - 15)+ 10))
+#define LERP(x, y, z)	(y + x * (z - y))
+#define X_FLOOR			n[0]
+#define Y_FLOOR			n[1]
+#define Z_FLOOR			n[2]
+#define P_A				n[3]
+#define P_AA			n[4]
+#define P_AB			n[5]
+#define P_B				n[6]
+#define P_BA			n[7]
+#define P_BB			n[8]
+#define P_U				d[0]
+#define P_V				d[1]
+#define P_W				d[2]
 
 static int
 permutation[] = { 151,160,137,91,90,15,
@@ -28,17 +42,17 @@ permutation[] = { 151,160,137,91,90,15,
 	138,236,205,93,222,114,67,29,24,72,243,141,128,195,78,66,215,61,156,180
 };
 
-static double fade(double t)
-{ 
-	return (t * t * t * (t * (t * 6 - 15) + 10));
-}
+// static double fade(double t)
+// {
+// 	return (t * t * t * (t * (t * 6 - 15) + 10));
+// }
 
-static double lerp(double t, double a, double b)
-{ 
-	return (a + t * (b - a));
-}
+// static double lerp(double t, double a, double b)
+// {
+// 	return (a + t * (b - a));
+// }
 
-static double grad(int hash, double x, double y, double z)
+static double	grad(int hash, double x, double y, double z)
 {
 	int h = hash & 15;
 	// CONVERT LO 4 BITS OF HASH CODE
@@ -47,7 +61,7 @@ static double grad(int hash, double x, double y, double z)
 	return ((h & 1) == 0 ? u : -u) + ((h & 2) == 0 ? v : -v);
 }
 
-void	init_perlin(int perlin[512])
+void			init_perlin(int perlin[512])
 {
 	int i;
 
@@ -61,32 +75,39 @@ void	init_perlin(int perlin[512])
 	}
 }
 
-float perlin(float x, float y, float z)
+static void		sub_perlin(int p[512], int n[9])
 {
-	int perlin[512];
+	P_A = p[X_FLOOR] + Y_FLOOR;
+	P_AA = p[P_A] + Z_FLOOR;
+	P_AB = p[P_A + 1] + Z_FLOOR;
+	P_B = p[X_FLOOR + 1] + Y_FLOOR,
+	P_BA = p[P_B] + Z_FLOOR,
+	P_BB = p[P_B + 1] + Z_FLOOR;
+}
+
+float			perlin(float x, float y, float z)
+{
+	int		perlin[512];
+	int		n[9];
+	float	d[3];
 
 	init_perlin(perlin);
-	int x_floor = (int)floor(x) & 255,
-	y_floor = (int)floor(y) & 255,
-	z_floor = (int)floor(z) & 255;
+	X_FLOOR = (int)floor(x) & 255;
+	Y_FLOOR = (int)floor(y) & 255;
+	Z_FLOOR = (int)floor(z) & 255;
 	x -= floor(x);
 	y -= floor(y);
 	z -= floor(z);
-	double u = fade(x),
-	v = fade(y),
-	w = fade(z);
-	int A = perlin[x_floor] + y_floor,
-	AA = perlin[A] + z_floor,
-	AB = perlin[A + 1] + z_floor, 
-	B = perlin[x_floor + 1] + y_floor, 
-	BA = perlin[B] + z_floor, 
-	BB = perlin[B + 1] + z_floor;
-	return (lerp(w, lerp(v, lerp(u, grad(perlin[AA], x, y, z),		// AND ADD  
-	grad(perlin[BA], x - 1, y, z)),							// BLENDED
-	lerp(u, grad(perlin[AB], x, y - 1, z),					// RESULTS
-	grad(perlin[BB], x - 1, y - 1, z))),						// FROM 8
-	lerp(v, lerp(u, grad(perlin[AA + 1], x, y, z - 1),			// CORNERS
-	grad(perlin[BA + 1], x - 1, y, z - 1)),						// OF CUBE
-	lerp(u, grad(perlin[AB + 1], x, y - 1, z - 1 ),
-	grad(perlin[BB + 1], x - 1, y - 1, z - 1 )))));
+	P_U = FADE(x);
+	P_V = FADE(y);
+	P_W = FADE(z);
+	sub_perlin(perlin, n);
+	return (LERP(P_W, LERP(P_V, LERP(P_U, grad(perlin[P_AA], x, y, z),		// AND ADD
+	grad(perlin[P_BA], x - 1, y, z)),							// BLENDED
+	LERP(P_U, grad(perlin[P_AB], x, y - 1, z),					// RESULTS
+	grad(perlin[P_BB], x - 1, y - 1, z))),						// FROM 8
+	LERP(P_V, LERP(P_U, grad(perlin[P_AA + 1], x, y, z - 1),			// CORNERS
+	grad(perlin[P_BA + 1], x - 1, y, z - 1)),						// OF CUBE
+	LERP(P_U, grad(perlin[P_AB + 1], x, y - 1, z - 1 ),
+	grad(perlin[P_BB + 1], x - 1, y - 1, z - 1 )))));
 }

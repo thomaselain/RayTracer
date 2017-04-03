@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   circle.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/06 17:37:37 by telain            #+#    #+#             */
-/*   Updated: 2017/02/28 17:37:54 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/02 17:50:58 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,6 @@ float		find_circle_inter(t_ray *r, t_object *o)
 	float	d;
 
 	d = find_plane_inter(r, o);
-	return (vector_dist(o->origin, ADD(r->pos, MUL(r->dir, d - 0.001))) < o->radius ?
-				d : MAX_SIZE);
+	return (vector_dist(o->origin, ADD(r->pos, MUL(r->dir, d - 0.001))) <
+		o->radius ? d : MAX_SIZE);
 }

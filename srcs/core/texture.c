@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   texture.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 16:23:02 by telain            #+#    #+#             */
-/*   Updated: 2017/03/25 14:42:03 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/02 18:08:03 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,11 @@ unsigned int		find_cylinder_texture(t_object *o, t_ray ray)
 	float	v;
 	float	theta;
 	float	h;
-	
+
 	theta = atan(ray.pos.y / ray.pos.x);
 	h = ray.pos.z;
-	u = o->radius / (2 * M_PI * o->radius * o->texture.scale) * (theta + o->height);
+	u = o->radius / (2 * M_PI * o->radius * o->texture.scale) *
+		(theta + o->height);
 	v = 1 / (o->height * 2) * (h + o->height);
 	return (img_get_pixel(&o->texture,
 				u * o->texture.w,

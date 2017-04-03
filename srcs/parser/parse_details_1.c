@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_details.c                                    :+:      :+:    :+:   */
+/*   parse_details_1.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 10:20:15 by svassal           #+#    #+#             */
-/*   Updated: 2017/03/09 15:46:52 by svassal          ###   ########.fr       */
+/*   Updated: 2017/04/02 19:09:32 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,22 +94,24 @@ int			parse_hexa(char **string)
 }
 
 /*
-** Parses a substring from the parameter string
+** Subfunction called by parse_type
 */
 
-char		*parse_string(char **string)
+t_type		sub_parse_type(char **s, int *i)
 {
-	char	*ret;
-	int		index;
+	t_type	ret;
 
-	index = 1;
-	character_skipper(string);
-	if (**string != '\"')
-		return (0);
-	while (*(*string + index) != '\"')
-		index++;
-	ret = ft_strsub(*string, 1, index - 1);
-	*string = *string + index + 1;
+	ret = UNKNOWN;
+	if (ft_strnstr(*s, "\"CIRCLE\"", (*i = 8)) != 0)
+		ret = CIRCLE;
+	else if (ft_strnstr(*s, "\"RECTANGLE\"", (*i = 11)) != 0)
+		ret = RECTANGLE;
+	else if (ft_strnstr(*s, "\"CUBOID\"", (*i = 8)) != 0)
+		ret = CUBOID;
+	else if (ft_strnstr(*s, "\"TRIANGLE\"", (*i = 10)) != 0)
+		ret = TRIANGLE;
+	else
+		*i = 0;
 	return (ret);
 }
 
@@ -140,68 +142,8 @@ t_type		parse_type(char **string)
 		ret = CYLINDER;
 	else if (ft_strnstr(*string, "\"DIRECTIONAL\"", (index = 13)) != 0)
 		ret = DIRECTIONAL;
-	else if (ft_strnstr(*string, "\"CIRCLE\"", (index = 8)) != 0)
-		ret = CIRCLE;
-	else if (ft_strnstr(*string, "\"RECTANGLE\"", (index = 11)) != 0)
-		ret = RECTANGLE;
-	else if (ft_strnstr(*string, "\"CUBOID\"", (index = 8)) != 0)
-		ret = CUBOID;
-	else if (ft_strnstr(*string, "\"TRIANGLE\"", (index = 10)) != 0)
-		ret = TRIANGLE;
 	else
-		index = 0;
-	*string = *string + index;
-	return (ret);
-}
-
-t_noise_type	parse_noise_type(char **string)
-{
-	t_noise_type	ret;
-	int		index;
-
-	ret = NONE;
-	character_skipper(string);
-	if (**string != '\"')
-		return (ret);
-	if (ft_strnstr(*string, "\"PERLIN\"", (index = 8)) != 0)
-		ret = PERLIN;
-	else if (ft_strnstr(*string, "\"MARBLE\"", (index = 8)) != 0)
-		ret = MARBLE;
-	else if (ft_strnstr(*string, "\"WOOD\"", (index = 6)) != 0)
-		ret = WOOD;
-	else if (ft_strnstr(*string, "\"GRID\"", (index = 6)) != 0)
-		ret = GRID;
-	else
-		index = 0;
-	*string = *string + index;
-	return (ret);
-}
-
-t_filter_type	parse_filter_type(char **string)
-{
-	t_filter_type	ret;
-	int		index;
-
-	ret = NO_FILTER;
-	character_skipper(string);
-	if (**string != '\"')
-		return (ret);
-	if (ft_strnstr(*string, "\"SEPIA\"", (index = 7)) != 0)
-		ret = SEPIA;
-	else if (ft_strnstr(*string, "\"NEGATIVE\"", (index = 10)) != 0)
-		ret = NEGATIVE;
-	else if (ft_strnstr(*string, "\"NO_FILTER\"", (index = 11)) != 0)
-		ret = NO_FILTER;
-	else if (ft_strnstr(*string, "\"RED_FILTER\"", (index = 12)) != 0)
-		ret = RED_FILTER;
-	else if (ft_strnstr(*string, "\"GREEN_FILTER\"", (index = 14)) != 0)
-		ret = GREEN_FILTER;
-	else if (ft_strnstr(*string, "\"BLUE_FILTER\"", (index = 13)) != 0)
-		ret = BLUE_FILTER;
-	else if (ft_strnstr(*string, "\"BLACK_WHITE\"", (index = 13)) != 0)
-		ret = BLACK_WHITE;
-	else
-		index = 0;
+		ret = sub_parse_type(string, &index);
 	*string = *string + index;
 	return (ret);
 }
