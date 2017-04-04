@@ -155,7 +155,7 @@ unsigned int	compute_light(t_scene *s, t_object *o, t_ray ray, t_object *light)
 	if (o->brightness > 0.0)
 		c = color_add(c, color_mul(light->color, -1 * pow(vector_dot(
 			v_light.dir, specular.dir), o->brightness)));
-	if (vector_dot(v_light.dir, get_normal(o, ray)) >= 0)
+	if (vector_dot(v_light.dir, get_normal(o, ray)) >= 0) // C'est cette partie la qui fout des ombres bizarres sur le cone --------> c'est la fonction qui sert a trouver la normale a la surface du cone qui deconne
 		c = color_mul(c, vector_dot(v_light.dir, get_normal(o, ray)));
 	else
 		c = 0;

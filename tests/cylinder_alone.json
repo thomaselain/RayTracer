@@ -53,7 +53,7 @@
 				"y":1,
 				"z":0
 			},
-			"reflection":0.7,
+			"reflection":0.5,
 			"brightness":0.0,
 			"radius":0.5,
 			"comment":"Plane (background)"
@@ -92,7 +92,7 @@
 	[
 		{
 			"type":"SPOT",
-			"color":0xc0ffee,
+			"color":0xffffff,
 			"origin":
 			{
 				"x":0,

@@ -4,14 +4,14 @@
 	{
 		"origin":
 		{
-			"x":3,
-			"y":-2,
+			"x":10,
+			"y":60,
 			"z":0
 		},
 		"direction":
 		{
 			"x":0,
-			"y":1,
+			"y":-1,
 			"z":0
 		},
 		"fov":60
@@ -20,7 +20,6 @@
 	[
 		{
 			"type":"PLANE",
-			"color":0xa0a0a0,
 			"origin":
 			{
 				"x":0,
@@ -35,12 +34,9 @@
 			},
 			"texture":
 			{
-				"path":"images/Denis.bmp",
-				"scale":10
-			},
-			"transparence":0.0,
-			"reflection":0.0,
-			"brightness":0.4
+				"path":"images/oil_it_up.bmp",
+				"scale":200
+			}
 		},
 		{
 			"type":"PLANE",
@@ -57,10 +53,10 @@
 				"y":0,
 				"z":-1
 			},
-			"material":
+			"texture":
 			{
-				"material_type":"PERLIN",
-				"zoom":30
+				"path":"images/glass.bmp",
+				"scale":200
 			},
 			"brightness":0.0,
 			"reflection":0
@@ -111,6 +107,40 @@
 	],
 	"lights":
 	[
+		{
+			"type":"SPOT",
+			"color":0xffffff,
+			"origin":
+			{
+				"x":10,
+				"y":60,
+				"z":0
+			},
+			"direction":
+			{
+				"x":0,
+				"y":-1,
+				"z":0
+			},
+			"radius":1
+		},
+		{
+			"type":"SPOT",
+			"color":0xffffff,
+			"origin":
+			{
+				"x":20,
+				"y":50,
+				"z":0
+			},
+			"direction":
+			{
+				"x":0,
+				"y":-1,
+				"z":0
+			},
+			"radius":1
+		},
 		{
 			"type":"SPOT",
 			"color":0xffffff,

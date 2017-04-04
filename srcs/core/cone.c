@@ -86,8 +86,9 @@ float		find_cone_inter(t_ray *r, t_object *o)
 	return (RES_0 < RES_1 ? RES_0 : RES_1);
 }
 
-
-
+/*
+** METHODE DE SEB
+*/
 
 // float		find_cone_inter(t_ray *r, t_object *o)
 // {
@@ -126,12 +127,14 @@ t_vector4f		cone_normal(t_object *o, t_ray ray)
 	}
 	tan_alpha = powf(tanf(o->angle / 2), 2);
 	inter = vector_add_vec(ray.pos, vector_mul_flo(ray.dir, find_cone_inter(&ray, o)));
-	ret.x = 2 * inter.x;
-	ret.y = -2 * tan_alpha * inter.y;
-	ret.z = 2 * inter.z;
+	// ret.x = 2 * inter.x;
+	ret.x = (inter.x - o->origin.x) * (o->height / o->angle);
+	// ret.y = -2 * tan_alpha * inter.y;
+	ret.y = o->angle / o->height;
+	// ret.z = 2 * inter.z;
+	ret.z = (inter.z - o->origin.z) * (o->height / o->angle);
 	ret.w = 0;
 	vector_normalize(ret);
-	// printf("%0.3f\n", o->top_cap->radius);
 	return (ret);
 }
 
