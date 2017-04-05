@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 18:42:04 by telain            #+#    #+#             */
-/*   Updated: 2017/03/25 18:25:02 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/27 20:02:19 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,11 +86,14 @@ t_object	*get_reflect(t_scene *s, t_object *hit, t_ray *ray)
 
 unsigned int	compute_light(t_scene *s, t_object *o, t_ray ray, t_object *light)
 {
+	float			shadow_roughness;
+	int				n_ray;
 	unsigned int	c;
 	t_ray			v_light;
 	t_ray			specular;
 
 	c = o->color;
+	n_ray = -1;
 	if (o && o->texture.srf != NULL)
 		c = get_texture_pixel(o, ray);
 	v_light.pos = light->origin;
@@ -104,5 +107,5 @@ unsigned int	compute_light(t_scene *s, t_object *o, t_ray ray, t_object *light)
 	else
 		c = 0;
 	c = color_mul(c, find_shadow(s, o, ray, v_light) * noise(o, ray.pos));
-	return (c);
+		return (c);
 }

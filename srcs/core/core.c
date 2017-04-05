@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/25 18:24:34 by telain            #+#    #+#             */
-/*   Updated: 2017/03/25 13:41:17 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/27 18:05:52 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ unsigned int		ray_pixel(t_scene *scene, int x, int y)
 	unsigned int	c;
 
 	c = 0;
+	ray.state = 1.0;
 	ray.pixel_x = x;
 	ray.pixel_y = y;
 	ray.dir = vector_normalize(SUB(get_ray(scene, x, y), scene->camera.origin));

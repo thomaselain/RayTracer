@@ -59,6 +59,8 @@ static char		*get_texture_param(int param_num)
 		return ("\"path\"");
 	if (param_num == 2)
 		return ("\"scale\"");
+	if (param_num == 3)
+		return ("\"rotation\"");
 	return (0);
 }
 

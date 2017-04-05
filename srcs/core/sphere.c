@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 18:16:37 by telain            #+#    #+#             */
-/*   Updated: 2017/03/19 11:55:25 by telain           ###   ########.fr       */
+/*   Updated: 2017/03/27 18:05:51 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ float		find_sphere_inter(t_ray *ray, t_object *obj)
 	D = pow(B, 2) - (4 * A * C);
 	if (D < 0)
 		return (MAX_SIZE);
-	X1 = (-B - sqrt(D)) / (A + A);
-	X2 = (-B + sqrt(D)) / (A + A);
+	X1 = (-B - sqrtf(D)) / (A + A);
+	X2 = (-B + sqrtf(D)) / (A + A);
 	return (X1 == 0 ? 0 : (X2 == 0 ? 0 :(X1 < X2 ? X1 : X2)));
 }
 

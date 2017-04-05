@@ -5,8 +5,8 @@
 			"origin":
 			{
 				"x":0,
-				"y":-6,
-				"z":-4
+				"y":-4,
+				"z":-2
 			},
 			"direction":
 			{
@@ -18,7 +18,7 @@
 		},
 		"objects":
 			[	
-				{
+			{
 				"type":"PLANE",
 				"color":0xaaaaaa,
 				"origin":
@@ -33,12 +33,16 @@
 					"y":0,
 					"z":-1
 				},
+				"texture":
+				{
+					"path":"images/bois.bmp",
+					"scale":1
+				},
 				"reflection":0.1,
 				"brightness":0.5,
-				"radius":0.5,
-				"comment":"Plane (background)"
+				"radius":0.5
 			},	
-				{
+			{
 				"type":"PLANE",
 				"color":0xaaaaaa,
 				"origin":
@@ -53,13 +57,16 @@
 					"y":0,
 					"z":1
 				},
+				"texture":
+				{
+					"path":"images/bois.bmp",
+					"scale":1
+				},
 				"reflection":0.1,
 				"brightness":0.5,
-				"radius":0.5,
-				"comment":"Plane (background)"
+				"radius":0.5
 			},
-
-						{
+			{
 				"type":"PLANE",
 				"color":0xaaaaaa,
 				"origin":
@@ -74,12 +81,16 @@
 					"y":0,
 					"z":0
 				},
+				"texture":
+				{
+					"path":"images/metal.bmp",
+					"scale":100
+				},
 				"reflection":0.1,
 				"brightness":0.5,
-				"radius":0.5,
-				"comment":"Plane (background)"
+				"radius":0.5
 			},	
-				{
+			{
 				"type":"PLANE",
 				"color":0xaaaaaa,
 				"origin":
@@ -94,14 +105,18 @@
 					"y":0,
 					"z":0
 				},
-				"reflection":0.1,
+				"texture":
+				{
+					"path":"images/metal.bmp",
+					"scale":100
+				},
+				"reflection":0.0,
 				"brightness":0.5,
-				"radius":0.5,
-				"comment":"Plane (background)"
+				"radius":0.5
 			},
 			{
 				"type":"PLANE",
-				"color":0x000010,
+				"color":0x303030,
 				"origin":
 				{
 					"x":0,
@@ -116,12 +131,11 @@
 				},
 				"reflection":0.9,
 				"brightness":0.5,
-				"radius":0.5,
-				"comment":"Plane (background)"
+				"radius":0.5
 			},
 			{
 				"type":"PLANE",
-				"color":0x000010,
+				"color":0x303030,
 				"origin":
 				{
 					"x":0,
@@ -136,12 +150,31 @@
 				},
 				"reflection":0.9,
 				"brightness":0.5,
-				"radius":0.5,
-				"comment":"Plane (background)"
+				"radius":0.5
+			},	
+			{
+				"type":"CYLINDER",
+				"color":0xa0a0a0,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":0
+				},
+				"direction":
+				{
+					"x":1,
+					"y":0,
+					"z":0.0
+				},
+				"transparence":0.4,
+				"reflection":0.3,
+				"brightness":0.9,
+				"radius":0.5
 			},
 			{
 				"type":"SPHERE",
-				"color":0x202020,
+				"color":0xa0a0a0,
 				"origin":
 				{
 					"x":0,
@@ -154,37 +187,41 @@
 					"y":0,
 					"z":1
 				},
-				"reflection":0.9,
-				"brightness":0.5,
-				"radius":1,
-				"comment":"Cone"
+				"texture":
+				{
+					"path":"images/water.bmp",
+					"scale":1
+				},
+				"transparence":0.5,
+				"refraction":1.333,
+				"reflection":0.6,
+				"brightness":0.9,
+				"radius":1
 			}
 	],
 		"lights":
 			[
-						{
+			{
 				"type":"SPOT",
-				"color":0xcccccc,
+				"color":0x606060,
 				"origin":
 				{
 					"x":6,
 					"y":0,
 					"z":-6
 				},
-				"radius":1,
-				"comment":"Deuxieme lumiere"
-			}
+				"radius":1
+			},
 			{
 				"type":"SPOT",
-				"color":0xcccccc,
+				"color":0x606060,
 				"origin":
 				{
 					"x":-6,
 					"y":0,
 					"z":-6
 				},
-				"radius":1,
-				"comment":"Deuxieme lumiere"
+				"radius":1
 			}
 	]
 }

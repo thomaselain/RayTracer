@@ -25,6 +25,7 @@ typedef struct		s_img
 	int				w;
 	int				h;
 	float			scale;
+	float			rotation;
 }					t_img;
 
 int					img_init(t_img *img, int width, int height,
