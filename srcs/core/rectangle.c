@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rectangle.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/06 18:41:59 by telain            #+#    #+#             */
-/*   Updated: 2017/03/19 16:44:27 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/05 19:38:00 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,8 +30,9 @@ float		find_rectangle_inter(t_ray *r, t_object *o)
 	v = vector_cross(u, o->direction);
 	d = find_plane_inter(r, o);
 	inter = ADD(r->pos, MUL(r->dir, d));
-	if (vector_dist(vector_projection(o->origin, u, inter), o->origin) > o->width / 2 ||
-			vector_dist(vector_projection(o->origin, v, inter), o->origin) > o->height / 2)
+	if (vector_dist(vector_projection(o->origin, u, inter),
+		o->origin) > o->width / 2 || vector_dist(vector_projection(o->origin,
+			v, inter), o->origin) > o->height / 2)
 		return (MAX_SIZE);
 	return (d);
 }

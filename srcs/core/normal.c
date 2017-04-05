@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/27 16:18:19 by telain            #+#    #+#             */
-/*   Updated: 2017/03/27 17:52:33 by telain           ###   ########.fr       */
+/*   Created: 2017/04/05 17:11:33 by telain            #+#    #+#             */
+/*   Updated: 2017/04/05 17:11:36 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ t_vector4f	get_normal(t_object *o, t_ray ray)
 	n = ((t_vector4f){0.0, 0.0, 0.0, 1.0});
 	if (o->type == SPHERE)
 		n = sphere_normal(o, ray);
-	else if (o->type == PLANE || o->type == CIRCLE || o->type == RECTANGLE || o->type == TRIANGLE)
+	else if (o->type == PLANE || o->type == CIRCLE ||
+		o->type == RECTANGLE || o->type == TRIANGLE)
 	{
 		n = vector_normalize(o->direction);
 		if (vector_dot(n, ray.dir) > 0)

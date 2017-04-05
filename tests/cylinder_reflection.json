@@ -1,11 +1,103 @@
 {
 	"background":0x000000,
-		"camera":
+	"camera":
+	{
+		"origin":
 		{
+			"x":0,
+			"y":-9,
+			"z":0
+		},
+		"direction":
+		{
+			"x":0,
+			"y":1,
+			"z":0
+		},
+		"fov":70
+	},
+	"objects":
+	[	
+		{
+			"type":"PLANE",
+			"color":0x0000ff,
 			"origin":
 			{
 				"x":0,
-				"y":-9,
+				"y":0,
+				"z":10
+			},
+			"direction":
+			{
+				"x":0,
+				"y":0,
+				"z":1
+			},
+			"reflection":0.3,
+			"brightness":0.2
+		},	
+		{
+			"type":"PLANE",
+			"color":0xcccccc,
+			"origin":
+			{
+				"x":0,
+				"y":0,
+				"z":-10
+			},
+			"direction":
+			{
+				"x":0,
+				"y":0,
+				"z":1
+			},
+			"reflection":0.0,
+			"brightness":0.5
+		},
+
+		{
+			"type":"PLANE",
+			"color":0xcccccc,
+			"origin":
+			{
+				"x":-10,
+				"y":0,
+				"z":0
+			},
+			"direction":
+			{
+				"x":1,
+				"y":0,
+				"z":0
+			},
+			"reflection":0.0,
+			"brightness":0.5
+		},	
+		{
+			"type":"PLANE",
+			"color":0xcccccc,
+			"origin":
+			{
+				"x":10,
+				"y":0,
+				"z":0
+			},
+			"direction":
+			{
+				"x":1,
+				"y":0,
+				"z":0
+			},
+			"reflection":0.0,
+			"brightness":0.5
+		},
+		{
+			"type":"PLANE",
+			"color":0xcccccc,
+			"origin":
+			{
+				"x":0,
+				"y":-10,
 				"z":0
 			},
 			"direction":
@@ -14,177 +106,77 @@
 				"y":1,
 				"z":0
 			},
-			"fov":70
+			"reflection":0.0,
+			"brightness":0.5
 		},
-		"objects":
-			[	
+		{
+			"type":"PLANE",
+			"color":0xcccccc,
+			"origin":
 			{
-				"type":"PLANE",
-				"color":0x0000ff,
-				"origin":
-				{
-					"x":0,
-					"y":0,
-					"z":10
-				},
-				"direction":
-				{
-					"x":0,
-					"y":0,
-					"z":1
-				},
-				"reflection":0.3,
-				"brightness":0.2,
-				"radius":1.0,
-				"comment":"Plane (background)"
-			},	
-			{
-				"type":"PLANE",
-				"color":0xcccccc,
-				"origin":
-				{
-					"x":0,
-					"y":0,
-					"z":-10
-				},
-				"direction":
-				{
-					"x":0,
-					"y":0,
-					"z":1
-				},
-				"reflection":0.0,
-				"brightness":0.5,
-				"radius":1.0,
-				"comment":"Plane (background)"
+				"x":0,
+				"y":10,
+				"z":-10
 			},
-
+			"direction":
 			{
-				"type":"PLANE",
-				"color":0xcccccc,
-				"origin":
-				{
-					"x":-10,
-					"y":0,
-					"z":0
-				},
-				"direction":
-				{
-					"x":1,
-					"y":0,
-					"z":0
-				},
-				"reflection":0.0,
-				"brightness":0.5,
-				"radius":0.5,
-				"comment":"Plane (background)"
-			},	
-			{
-				"type":"PLANE",
-				"color":0xcccccc,
-				"origin":
-				{
-					"x":10,
-					"y":0,
-					"z":0
-				},
-				"direction":
-				{
-					"x":1,
-					"y":0,
-					"z":0
-				},
-				"reflection":0.0,
-				"brightness":0.5,
-				"radius":0.5,
-				"comment":"Plane (background)"
+				"x":0,
+				"y":1,
+				"z":0
 			},
+			"texture":
 			{
-				"type":"PLANE",
-				"color":0xcccccc,
-				"origin":
-				{
-					"x":0,
-					"y":-10,
-					"z":0
-				},
-				"direction":
-				{
-					"x":0,
-					"y":1,
-					"z":0
-				},
-				"reflection":0.0,
-				"brightness":0.5,
-				"radius":0.5,
-				"comment":"Plane (background)"
+				"path":"images/water.bmp",
+				"scale":30
 			},
+			"reflection":0,
+			"brightness":0.9,
+			"radius":0.5
+		},
+		{
+			"type":"CYLINDER",
+			"color":0xffffff,
+			"origin":
 			{
-				"type":"PLANE",
-				"color":0xcccccc,
-				"origin":
-				{
-					"x":0,
-					"y":10,
-					"z":0
-				},
-				"direction":
-				{
-					"x":0,
-					"y":1,
-					"z":0
-				},
-				"reflection":0.0,
-				"texture":"images/water.bmp",
-				"brightness":0.5,
-				"radius":0.5,
-				"comment":"Plane (background)"
+				"x":0,
+				"y":0,
+				"z":0
 			},
+			"direction":
 			{
-				"type":"CYLINDER",
-				"color":0xffffff,
-				"origin":
-				{
-					"x":0,
-					"y":0,
-					"z":0
-				},
-				"direction":
-				{
-					"x":0,
-					"y":0,
-					"z":1
-				},
-				"height":30,
-				"reflection":0.4,
-				"brightness":0.5,
-				"radius":1,
-				"comment":"Cone"
-			}
+				"x":0,
+				"y":0,
+				"z":1
+			},
+			"height":30,
+			"reflection":0.4,
+			"brightness":0.5,
+			"radius":1
+		}
 	],
-		"lights":
-			[
+	"lights":
+	[
+		{
+			"type":"SPOT",
+			"color":0xa0a0a0,
+			"origin":
 			{
-				"type":"SPOT",
-				"color":0xa0a0a0,
-				"origin":
-				{
-					"x":0,
-					"y":9,
-					"z":0
-				},
-				"radius":1
+				"x":0,
+				"y":9,
+				"z":0
 			},
+			"radius":1
+		},
+		{
+			"type":"SPOT",
+			"color":0xa0a0a0,
+			"origin":
 			{
-				"type":"SPOT",
-				"color":0xa0a0a0,
-				"origin":
-				{
-					"x":0,
-					"y":-9,
-					"z":0
-				},
-				"radius":1
-			}
+				"x":0,
+				"y":-9,
+				"z":0
+			},
+			"radius":1
+		}
 	]
 }

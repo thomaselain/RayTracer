@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <libft.h>
+#include <stdio.h>
 #define O_BRACES		n[0]
 #define C_BRACES		n[1]
 #define O_BRACKETS		n[2]
@@ -36,6 +37,8 @@ int			valide_coma(char *s)
 		ret = NO_ERROR;
 	else
 		ret = ERROR;
+	if (ret == -1)
+		printf("%s\n", s);
 	return (ret);
 }
 

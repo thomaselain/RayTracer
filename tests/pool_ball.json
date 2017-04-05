@@ -44,9 +44,12 @@
 					"y":0,
 					"z":-1
 				},
+				"texture":
+				{
+					"path":"images/bowl_cut.bmp"
+				},
 				"radius":1,
-				"brightness": 0.3,
-				"texture": "images/joan.bmp"
+				"brightness": 0.3
 			}
 	],
 		"lights":

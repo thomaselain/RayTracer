@@ -109,7 +109,6 @@ typedef struct		s_object
 	union
 	{
 		float		intensity;
-		float		angle;
 		float		radius;
 	};
 	char			*comment;
@@ -120,6 +119,7 @@ typedef struct		s_object
 	struct s_object	*bot_cap;
 	t_img			texture;
 	float			rotation;
+	float			angle;
 }					t_object;
 
 /*

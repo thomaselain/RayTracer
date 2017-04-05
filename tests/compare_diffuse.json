@@ -61,15 +61,7 @@
 			"width":3,
 			"height":3,
 			"reflection":0.0,
-<<<<<<< HEAD
-<<<<<<< HEAD
 			"brightness":0.25,
-=======
-			"brightness":1.0,
->>>>>>> origin/telain
-=======
-			"brightness":0.25,
->>>>>>> origin/telain
 			"radius":1.0,
 			"comment":"Green cylinder"
 		},	
@@ -91,15 +83,7 @@
 			"width":3,
 			"height":3,
 			"reflection":0.0,
-<<<<<<< HEAD
-<<<<<<< HEAD
 			"brightness":0.5,
-=======
-			"brightness":1.0,
->>>>>>> origin/telain
-=======
-			"brightness":0.5,
->>>>>>> origin/telain
 			"radius":1.0,
 			"comment":"Blue cylinder"
 		},	
@@ -168,18 +152,32 @@
 			"width":3,
 			"height":3,
 			"reflection":0.0,
-<<<<<<< HEAD
-<<<<<<< HEAD
-			"brightness":0.0,
-=======
 			"brightness":10.0,
->>>>>>> origin/telain
-=======
-			"brightness":10.0,
->>>>>>> origin/telain
 			"radius":1.0,
 			"comment":"White cylinder"
-		},	
+		},
+		{
+			"type":"CYLINDER",
+			"color":0x000000,
+			"origin":
+			{
+				"x":3,
+				"y":0,
+				"z":0
+			},
+			"direction":
+			{
+				"x":0,
+				"y":0,
+				"z":1
+			},
+			"width":3,
+			"reflection":1.0,
+			"brightness":0.5,
+			"radius":1.0,
+			"comment":"textured cylinder"
+		},
+
 
 		{
 			"type":"SPHERE",
@@ -191,15 +189,7 @@
 				"z":-9
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-<<<<<<< HEAD
 			"brightness":0.0,
-=======
-			"brightness":1.0,
->>>>>>> origin/telain
-=======
-			"brightness":0.0,
->>>>>>> origin/telain
 			"radius":1,
 			"comment":"Red sphere 1 (top)"
 		},
@@ -213,15 +203,7 @@
 				"z":-9
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-<<<<<<< HEAD
 			"brightness":0.0,
-=======
-			"brightness":1.0,
->>>>>>> origin/telain
-=======
-			"brightness":0.0,
->>>>>>> origin/telain
 			"radius":1,
 			"comment":"Green sphere 1 (top)"
 		},
@@ -235,15 +217,7 @@
 				"z":-9
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-<<<<<<< HEAD
 			"brightness":0.0,
-=======
-			"brightness":1.0,
->>>>>>> origin/telain
-=======
-			"brightness":0.0,
->>>>>>> origin/telain
 			"radius":1,
 			"comment":"Blue sphere 1 (top)"
 		},
@@ -272,15 +246,7 @@
 				"z":-7
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-<<<<<<< HEAD
 			"brightness":0.2,
-=======
-			"brightness":0.25,
->>>>>>> origin/telain
-=======
-			"brightness":0.25,
->>>>>>> origin/telain
 			"radius":1,
 			"comment":"Red sphere 2"
 		},
@@ -294,15 +260,7 @@
 				"z":-7
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-<<<<<<< HEAD
 			"brightness":0.2,
-=======
-			"brightness":0.25,
->>>>>>> origin/telain
-=======
-			"brightness":0.25,
->>>>>>> origin/telain
 			"radius":1,
 			"comment":"Green sphere 2"
 		},
@@ -330,17 +288,8 @@
 				"z":-7
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-<<<<<<< HEAD
 			"brightness":0.2,
 			"transparence":0.9,
-=======
-			"brightness":0.5,
->>>>>>> origin/telain
-=======
-			"brightness":0.2,
-			"transparence":0.9,
->>>>>>> origin/telain
 			"radius":1,
 			"comment":"Glass sphere 2"
 		},
@@ -354,15 +303,7 @@
 				"z":-5
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-<<<<<<< HEAD
 			"brightness":0.4,
-=======
-			"brightness":0.5,
->>>>>>> origin/telain
-=======
-			"brightness":0.4,
->>>>>>> origin/telain
 			"radius":1,
 			"comment":"Red sphere 3"
 		},
@@ -376,15 +317,7 @@
 				"z":-5
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-<<<<<<< HEAD
 			"brightness":0.4,
-=======
-			"brightness":0.5,
->>>>>>> origin/telain
-=======
-			"brightness":0.4,
->>>>>>> origin/telain
 			"radius":1,
 			"comment":"Green sphere 3"
 		},
@@ -412,17 +345,8 @@
 				"z":-5
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-<<<<<<< HEAD
 			"brightness":0.4,
 			"transparence":0.9,
-=======
-			"brightness":0.5,
->>>>>>> origin/telain
-=======
-			"brightness":0.4,
-			"transparence":0.9,
->>>>>>> origin/telain
 			"radius":1,
 			"comment":"Glass sphere 3"
 		},
@@ -436,15 +360,7 @@
 				"z":-3
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-<<<<<<< HEAD
 			"brightness":0.7,
-=======
-			"brightness":0.1,
->>>>>>> origin/telain
-=======
-			"brightness":0.7,
->>>>>>> origin/telain
 			"radius":1,
 			"comment":"Red sphere 4"
 		},
@@ -458,15 +374,7 @@
 				"z":-3
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-<<<<<<< HEAD
 			"brightness":0.7,
-=======
-			"brightness":0.1,
->>>>>>> origin/telain
-=======
-			"brightness":0.7,
->>>>>>> origin/telain
 			"radius":1,
 			"comment":"Green sphere 4"
 		},
@@ -480,10 +388,6 @@
 				"z":-3
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
->>>>>>> origin/telain
 			"brightness":0.7,
 			"radius":1,
 			"comment":"Blue sphere 4"
@@ -500,12 +404,6 @@
 			"reflection":0.0,
 			"brightness":0.7,
 			"transparence":0.9,
-<<<<<<< HEAD
-=======
-			"brightness":0.1,
->>>>>>> origin/telain
-=======
->>>>>>> origin/telain
 			"radius":1,
 			"comment":"Glass sphere 4"
 		},
@@ -519,15 +417,7 @@
 				"z":-1
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-<<<<<<< HEAD
 			"brightness":1.0,
-=======
-			"brightness":0.01,
->>>>>>> origin/telain
-=======
-			"brightness":1.0,
->>>>>>> origin/telain
 			"radius":1,
 			"comment":"Red sphere 5"
 		},
@@ -541,15 +431,7 @@
 				"z":-1
 			},
 			"reflection":0.0,
-<<<<<<< HEAD
-<<<<<<< HEAD
 			"brightness":1.0,
-=======
-			"brightness":0.01,
->>>>>>> origin/telain
-=======
-			"brightness":1.0,
->>>>>>> origin/telain
 			"radius":1,
 			"comment":"Green sphere 5"
 		},
@@ -562,14 +444,8 @@
 				"y":0,
 				"z":-1
 			},
-<<<<<<< HEAD
-<<<<<<< HEAD
 			"reflection":0.0,
 			"brightness":1.0,
-=======
-			"reflection":0.7,
-			"brightness":0.9,
->>>>>>> origin/telain
 			"radius":1,
 			"comment":"Blue sphere 5"
 		},
@@ -642,15 +518,122 @@
 			"reflection":0.9,
 			"brightness":1.0,
 			"transparence":0.9,
-<<<<<<< HEAD
-=======
-			"reflection":0.7,
-			"brightness":0.9,
->>>>>>> origin/telain
-=======
->>>>>>> origin/telain
 			"radius":1,
 			"comment":"Glass sphere 6"
+		},
+		{
+			"type":"SPHERE",
+			"color":0xffffff,
+			"origin":
+			{
+				"x":-8,
+				"y":0,
+				"z":-9
+			},
+			"reflection":0.0,
+			"brightness":0.0,
+			"radius":1,
+			"texture":
+			{
+				"path":"images/earth.bmp",
+				"scale":1.0
+			},
+			"comment":"textured sphere 1 (top)"
+		},
+		{
+			"type":"SPHERE",
+			"color":0xffffff,
+			"origin":
+			{
+				"x":-8,
+				"y":0,
+				"z":-7
+			},
+			"reflection":0.0,
+			"brightness":0.2,
+			"radius":1,
+			"texture":
+			{
+				"path":"images/earth.bmp",
+				"scale":1.0
+			},
+			"comment":"textured sphere 2"
+		},
+		{
+			"type":"SPHERE",
+			"color":0xffffff,
+			"origin":
+			{
+				"x":-8,
+				"y":0,
+				"z":-5
+			},
+			"reflection":0.0,
+			"brightness":0.4,
+			"radius":1,
+			"texture":
+			{
+				"path":"images/earth.bmp",
+				"scale":1.0
+			},
+			"comment":"textured sphere 3"
+		},
+		{
+			"type":"SPHERE",
+			"color":0xffffff,
+			"origin":
+			{
+				"x":-8,
+				"y":0,
+				"z":-3
+			},
+			"reflection":0.0,
+			"brightness":0.7,
+			"radius":1,
+			"texture":
+			{
+				"path":"images/earth.bmp",
+				"scale":1.0
+			},
+			"comment":"textured sphere 4"
+		},
+		{
+			"type":"SPHERE",
+			"color":0xffffff,
+			"origin":
+			{
+				"x":-8,
+				"y":0,
+				"z":-1
+			},
+			"reflection":0.0,
+			"brightness":1.0,
+			"radius":1,
+			"texture":
+			{
+				"path":"images/earth.bmp",
+				"scale":1.0
+			},
+			"comment":"textured sphere 5"
+		},
+		{
+			"type":"SPHERE",
+			"color":0xffffff,
+			"origin":
+			{
+				"x":-8,
+				"y":0,
+				"z":1
+			},
+			"reflection":0.9,
+			"brightness":1.0,
+			"radius":1,
+			"texture":
+			{
+				"path":"images/earth.bmp",
+				"scale":1.0
+			},
+			"comment":"textured sphere 6"
 		}
 	],
 	"lights":

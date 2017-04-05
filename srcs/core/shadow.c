@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/01/27 18:29:56 by telain            #+#    #+#             */
-/*   Updated: 2017/03/27 20:02:03 by telain           ###   ########.fr       */
+/*   Created: 2017/04/05 17:11:45 by telain            #+#    #+#             */
+/*   Updated: 2017/04/05 19:34:06 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <ray.h>
 #include <color.h>
 
-float	find_shadow(t_scene *s, t_object *hit, t_ray ray, t_ray light)
+float	find_shadow(t_scene *s,/* t_object *hit,*/ t_ray ray, t_ray light)
 {
 	t_vector4f	before;
 	t_object	*new_hit;
@@ -22,17 +22,18 @@ float	find_shadow(t_scene *s, t_object *hit, t_ray ray, t_ray light)
 	before = ray.pos;
 	ray.pos = ADD(ray.pos, MUL(light.dir, 0.0001));
 	ray.dir = light.dir;
-	if ((new_hit = get_intersection(s, &ray)) != NULL && vector_dist(before, ray.pos) <= vector_dist(before, light.pos))
+	if ((new_hit = get_intersection(s, &ray)) != NULL &&
+		vector_dist(before, ray.pos) <= vector_dist(before, light.pos))
 	{
 		if (new_hit->transparence == 0)
 			return (0.3);
 		else
-			return (new_hit->transparence);
+			return (new_hit->transparence) * find_shadow(s, ray, light);
 	}
 	return (1);
 }
 
-float	specular_light(t_scene *s, t_object *hit, t_ray ray, t_vector4f light)
+float	specular_light(/*t_scene *s, */t_object *hit, t_ray ray, t_vector4f light)
 {
 	float		specular;
 	t_vector4f	reflect;
@@ -41,7 +42,8 @@ float	specular_light(t_scene *s, t_object *hit, t_ray ray, t_vector4f light)
 		return (0);
 	else
 	{
-		reflect = SUB(ray.dir, MUL(get_normal(hit, ray), -2.0 * vector_dot(get_normal(hit, ray), ray.dir)));
+		reflect = SUB(ray.dir, MUL(get_normal(hit, ray), -2.0 *
+			vector_dot(get_normal(hit, ray), ray.dir)));
 		specular = vector_dot(light, reflect);
 	}
 	/*
