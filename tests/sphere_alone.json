@@ -35,11 +35,11 @@
 			},
 			"texture":
 			{
-				"path":"images/bricks.bmp",
+				"path":"images/Bricks.bmp",
 				"scale":10
 			},
 			"transparence":0.0,
-			"reflection":0.3,
+			"reflection":0.01,
 			"brightness":0.4
 		},
 		{
