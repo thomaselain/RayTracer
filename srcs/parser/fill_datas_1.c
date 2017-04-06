@@ -33,18 +33,53 @@ void			fill_vector(char **s, t_vector4f *v, int init)
 {
 	int		xyz;
 
-	if (init == 1)
+	if (init == 1 || init == 2)
 	{
 		v->x = 0;
 		v->y = 0;
 		v->z = 0;
+		if (init == 2)
+			v->z = 1.0;
 		return ;
 	}
 		if (ft_strnstr(*s, "\"x\"", 3) != 0)
 			xyz = 1;
 		else if (ft_strnstr(*s, "\"y\"", 3) != 0)
 			xyz = 2;
+		else if (ft_strnstr(*s, "\"z\"", 3) != 0)
+			xyz = 3;
+		*s = ft_strchr(*s, ':') + 1;
+		if (xyz == 1)
+			v->x = parse_float(s);
+		else if (xyz == 2)
+			v->y = parse_float(s);
 		else
+			v->z = parse_float(s);
+}
+
+/*
+** Fill vector with 0 if init is equal to 1, or with the JSON datas elseway for the apex
+*/
+
+void			fill_apex(char **s, t_vector4f *v, int init)
+{
+	int		xyz;
+
+	if (init == 1 || init == 2 || init == 3)
+	{
+		v->x = 0;
+		init == 1 ? v->x = 1 : 0;
+		v->y = 0;
+		init == 2 ? v->y = 1 : 0;
+		v->z = 0;
+		init == 3 ? v->z = 1 : 0;
+		return ;
+	}
+		if (ft_strnstr(*s, "\"x\"", 3) != 0)
+			xyz = 1;
+		else if (ft_strnstr(*s, "\"y\"", 3) != 0)
+			xyz = 2;
+		else if (ft_strnstr(*s, "\"z\"", 3) != 0)
 			xyz = 3;
 		*s = ft_strchr(*s, ':') + 1;
 		if (xyz == 1)
@@ -130,24 +165,25 @@ static void		object_init(t_object *o)
 	o->texture.h = 1;
 	o->texture.srf = 0;
 	fill_vector(0, &(o->origin), 1);
-	fill_vector(0, &(o->direction), 1);
-	o->color = 0xFFFFFF;
+	fill_vector(0, &(o->direction), 2);
+	o->color = 0xffffff;
 	o->brightness = 0.0;
 	o->reflection = 0.0;
-	o->intensity = 0.0;
+	o->intensity = 1.0;
 	o->comment = 0;
-	o->width = MAX_SIZE;
-	o->height = MAX_SIZE;
+	o->width = 1.0;
+	o->height = 1.0;
 	fill_structure(0, &(o->noise), 1);
 	o->top_cap = 0;
 	o->bot_cap = 0;
 	o->transparence = 0.0;
 	o->refraction = 1.0;
-	fill_vector(0, &(o->som0), 1);
-	fill_vector(0, &(o->som1), 1);
-	fill_vector(0, &(o->som2), 1);
+	fill_apex(0, &(o->som0), 1);
+	fill_apex(0, &(o->som1), 2);
+	fill_apex(0, &(o->som2), 3);
 	fill_texture(0, &(o->texture), 1);
 	o->rotation = 0;
+	o->angle = 45 * (M_PI / 180);
 }
 
 /*
