@@ -60,10 +60,10 @@
 		},
 		{
 			"type":"CYLINDER",
-			"height":1,
+			"height":5,
 			"texture":
 			{
-				"path":"images/oil_it_up.bmp",
+				"path":"images/philippe.bmp",
 				"scale":0.5
 			}
 		}
@@ -75,7 +75,7 @@
 			"color":0xffffff,
 			"origin":
 			{
-				"x":0,
+				"x":-4,
 				"y":-2,
 				"z":0
 			},
