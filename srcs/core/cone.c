@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 19:32:35 by svassal           #+#    #+#             */
-/*   Updated: 2017/04/05 17:28:10 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/06 17:00:41 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,45 +22,48 @@
 #define RES			f[6]
 
 /*
-** Check if the ray intersects with the cone given as parameter
+ ** Check if the ray intersects with the cone given as parameter
+ */
+
+float		find_cone_inter(t_ray *r, t_object *o)
+{
+	float		f[6];
+
+	A = vector_dot(r->dir, r->dir) - powf(vector_dot(r->dir,
+				o->direction), 2) * (1 + powf(tanf(o->angle / 2), 2));
+	B = 2 * ((vector_dot(r->dir, vector_sub_vec(r->pos, o->origin))) -
+			(1 + powf(tanf(o->angle / 2), 2)) * vector_dot(r->dir,
+				o->direction) * vector_dot(vector_sub_vec(r->pos, o->origin),
+					o->direction));
+	C = vector_dot(vector_sub_vec(r->pos, o->origin), vector_sub_vec(
+				r->pos, o->origin)) - (1 + powf(tanf(o->angle / 2), 2)) *
+		powf(vector_dot(vector_sub_vec(r->pos, o->origin),
+					o->direction), 2);
+	D = powf(B, 2) - 4 * A * C;
+	if (D < 0.0)
+		return (MAX_SIZE);
+	RES_0 = (-B - sqrtf(D)) / (A + A);
+	RES_1 = (-B + sqrtf(D)) / (A + A);
+	if (vector_dist(o->origin, vector_projection(o->origin, o->direction, ADD(r->pos, MUL(r->dir, RES_0)))) > o->height)
+		return (MAX_SIZE);
+	return (RES_0);
+}
+/*
+void		apply_transfo(t_ray *tmp, t_object *o, int index)
+{
+	if (index == 1)
+	{
+		; appliquer transformations normales
+	}
+	else if (index == -1)
+	{
+		; appliquer transformations inverses
+	}
+}
+
 */
 
-// float		find_cone_inter(t_ray *r, t_object *o)
-// {
-// 	float		f[6];
-
-// 	A = vector_dot(r->dir, r->dir) - powf(vector_dot(r->dir,
-// 		o->direction), 2) * (1 + powf(tanf(o->angle / 2), 2));
-// 	B = 2 * ((vector_dot(r->dir, vector_sub_vec(r->pos, o->origin))) -
-// 		(1 + powf(tanf(o->angle / 2), 2)) * vector_dot(r->dir,
-// 			o->direction) * vector_dot(vector_sub_vec(r->pos, o->origin),
-// 				o->direction));
-// 	C = vector_dot(vector_sub_vec(r->pos, o->origin), vector_sub_vec(
-// 		r->pos, o->origin)) - (1 + powf(tanf(o->angle / 2), 2)) *
-// 			powf(vector_dot(vector_sub_vec(r->pos, o->origin),
-// 				o->direction), 2);
-// 	D = powf(B, 2) - 4 * A * C;
-// 	if (D < 0.0)
-// 		return (MAX_SIZE);
-// 	RES_0 = (-B - sqrtf(D)) / (A + A);
-// 	RES_1 = (-B + sqrtf(D)) / (A + A);
-// 	if (vector_dist(o->origin, vector_projection(o->origin, o->direction, ADD(r->pos, MUL(r->dir, RES_0)))) > o->height)
-// 		return (MAX_SIZE);
-// 	return (RES_0 < RES_1 ? RES_0 : RES_1);
-// }
-
-// void		apply_transfo(t_ray *tmp, t_object *o, int index)
-// {
-// 	if (index == 1)
-// 	{
-// 		;// appliquer transformations normales
-// 	}
-// 	else if (index == -1)
-// 	{
-// 		;// appliquer transformations inverses
-// 	}
-// }
-
+/*
 float		find_cone_inter(t_ray *r, t_object *o)
 {
 	// t_ray	*tmp_ray; // Pour se servir de la methode de seb
@@ -81,20 +84,21 @@ float		find_cone_inter(t_ray *r, t_object *o)
 	RES_0 = (-B - sqrtf(D)) / (A + A);
 	RES_1 = (-B + sqrtf(D)) / (A + A);
 	if (vector_dist(o->origin, vector_projection(o->origin, o->direction,
-		ADD(r->pos, MUL(r->dir, RES_0)))) > o->height)
+					ADD(r->pos, MUL(r->dir, RES_0)))) > o->height)
 		return (MAX_SIZE);
 	return (RES_0 < RES_1 ? RES_0 : RES_1);
 }
+*/
 
 /*
-** METHODE DE SEB
-*/
+ ** METHODE DE SEB
+ */
 
 // float		find_cone_inter(t_ray *r, t_object *o)
 // {
 // 	float		f[6];
 // 	float		tan_alpha;
-	
+
 // 	tan_alpha = powf(tanf(o->angle / 2), 2);
 // 	A = (r->dir.x * r->dir.x) + (r->dir.z * r->dir.z) - tan_alpha * (r->dir.y * r->dir.y);
 // 	B = (2 * r->pos.x * r->dir.x) + (2 * r->pos.z * r->dir.z) - (2 * tan_alpha * r->pos.y * r->dir.y);
@@ -119,7 +123,6 @@ t_vector4f		cone_normal(t_object *o, t_ray ray)
 	t_vector4f	inter;
 	float		tan_alpha;
 
-	// printf("%0.3f\n", o->angle);
 	if (o->top_cap->radius <= 0 && o->top_cap->radius <= 0) // On definit la taille des caps, j'ai mis ca la parce que je savais pas ou le mettre autrement :)
 	{
 		o->top_cap->radius = tanf(o->angle / 2) * (vector_dot(ray.dir, vector_mul_flo(o->direction, find_cone_inter(&ray, o))) + vector_dot(vector_sub_vec(ray.pos, o->origin), o->direction));

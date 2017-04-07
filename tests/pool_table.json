@@ -1,11 +1,11 @@
 {
-	"background":0x000000,
+	"background":0xffffff,
 		"camera":
 		{
 			"origin":
 			{
-				"x":-10,
-				"y":-10,
+				"x":-20,
+				"y":-20,
 				"z":-3
 			},
 			"direction":
@@ -18,6 +18,71 @@
 		},
 		"objects":
 			[
+				{
+				"type":"CONE",
+				"color":0xffa500,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":-11
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":-1
+				},
+				"height":3,
+				"angle":100,
+				"brightness":0.6,
+				"comment":"lampe"
+			},
+			{
+				"type":"RECTANGLE",
+				"color":0xa0a0a0,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":-10
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":-1
+				},
+				"height":20,
+				"width":20,
+				"brightness":0.6,
+				"reflection":0.1,
+				"comment":"roof"
+			},
+			{
+				"type":"PLANE",
+				"color":0x404040,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":6
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":1
+				},
+				"texture":
+				{
+					"path":"images/bricks.bmp",
+					"scale":10
+				},
+				"brightness":0.6,
+				"reflection":0.1,
+				"comment":"ground"
+			},
 			{
 				"type":"RECTANGLE",
 				"color":0x006600,
@@ -450,6 +515,148 @@
 				"brightness": 0.9
 			},
 			{
+				"type":"CYLINDER",
+				"color":0x000000,
+				"origin":
+				{
+					"x":-10,
+					"y":-5,
+					"z":5
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":1
+				},
+				"texture":
+				{
+					"path":"images/bois.bmp",
+					"scale":1
+				},
+				"height":4.5,
+				"brightness": 0.4,
+				"radius":0.4,
+				"comment":"pied#4"
+			},
+			{
+				"type":"CYLINDER",
+				"color":0x000000,
+				"origin":
+				{
+					"x":10,
+					"y":-5,
+					"z":5
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":1
+				},
+				"texture":
+				{
+					"path":"images/bois.bmp",
+					"scale":1
+				},
+				"height":4.5,
+				"brightness": 0.4,
+				"radius":0.4,
+				"comment":"pied#3"
+			},
+			{
+				"type":"CYLINDER",
+				"color":0x000000,
+				"origin":
+				{
+					"x":-10,
+					"y":5,
+					"z":5
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":1
+				},
+				"texture":
+				{
+					"path":"images/bois.bmp",
+					"scale":1
+				},
+				"height":4.5,
+				"brightness": 0.4,
+				"radius":0.4,
+				"comment":"pied#2"
+			},
+			{
+				"type":"CYLINDER",
+				"color":0x000000,
+				"origin":
+				{
+					"x":10,
+					"y":5,
+					"z":5
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":1
+				},
+				"texture":
+				{
+					"path":"images/bois.bmp",
+					"scale":1
+				},
+				"height":4.5,
+				"brightness": 0.4,
+				"radius":0.4,
+				"comment":"pied#1"
+			},
+			{
+				"type":"CYLINDER",
+				"color":0x000000,
+				"origin":
+				{
+					"x":10,
+					"y":13,
+					"z":0.98
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0.4,
+					"z":1
+				},
+				"texture":
+				{
+					"path":"images/canne.bmp",
+					"scale":3
+				},
+				"height":7,
+				"brightness": 0.4,
+				"radius":0.1
+			},
+			{
+				"type":"SPHERE",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":1,
+					"y":4,
+					"z":0.80
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":0.8
+				},
+				"radius":0.25,
+				"brightness":0.9
+			},
+			{
 				"type":"SPHERE",
 				"color":0xff0000,
 				"origin":
@@ -477,67 +684,12 @@
 			[
 			{
 				"type":"SPOT",
-				"color":0xffffff,
-				"origin":
-				{
-					"x":-10,
-					"y":-5,
-					"z":0
-				},
-				"radius":1
-			},
-			{
-				"type":"SPOT",
-				"color":0xffffff,
-				"origin":
-				{
-					"x":-10,
-					"y":5,
-					"z":0
-				},
-				"radius":1
-			},
-			{
-				"type":"SPOT",
-				"color":0xffffff,
-				"origin":
-				{
-					"x":10,
-					"y":5,
-					"z":0
-				},
-				"radius":1
-			},
-			{
-				"type":"SPOT",
-				"color":0xffffff,
-				"origin":
-				{
-					"x":10,
-					"y":-5,
-					"z":0
-				},
-				"radius":1
-			},
-			{
-				"type":"SPOT",
-				"color":0xffffff,
+				"color":0xffa500,
 				"origin":
 				{
 					"x":0,
-					"y":5,
-					"z":0
-				},
-				"radius":1
-			},
-			{
-				"type":"SPOT",
-				"color":0xffffff,
-				"origin":
-				{
-					"x":0,
-					"y":-5,
-					"z":0
+					"y":0,
+					"z":-5.9
 				},
 				"radius":1
 			}
