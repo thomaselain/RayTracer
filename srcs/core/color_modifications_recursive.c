@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/04/05 17:09:05 by telain            #+#    #+#             */
-/*   Updated: 2017/04/05 17:52:44 by telain           ###   ########.fr       */
+/*   Created: 2017/02/16 18:42:04 by telain            #+#    #+#             */
+/*   Updated: 2017/03/25 13:42:13 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,87 +15,22 @@
 #include <img.h>
 #include <color.h>
 
-/*
-i[0] = reflect
-i[1] = c
-i[2] = trigger
-objet hit
-ray ray
-scene s
-int c
-int reflects
-*/
 
-/*
-** Subfunction called by adjust_color
-** i[0] = reflects, i[1] = c, i[2] = condition
-*/
-
-static int	sub_adj_col(t_scene *s, t_object *hit, t_ray ray, int i[3])
-{
-	t_object		*tmp;
-	unsigned int	c;
-	int				ref;
-
-	ref = i[0];
-	c = (unsigned int)i[1];
-	tmp = (i[2] == 1) ? (get_reflect(s, hit, &ray)) : (get_refract(s, hit, &ray));
-	if (i[2] == 1)
-		return (color_add(color_mul(adjust_color(s, tmp, ray, ref + 1),
-			hit->reflection), c));
-	return (color_add(color_mul(adjust_color(s, tmp, ray, ref + 1),
-		hit->transparence), color_mul(c, 1 - hit->transparence)));
-}
-
-/*
-** ICE
-*/
-
-// int			adjust_color(t_scene *s, t_object *hit, t_ray ray, int reflects)
-// {
-// 	unsigned int	c;
-// 	float			n;
-// 	t_ray			ray_cpy;
-// 	t_object		*tmp_hit;
-// 	t_list			*light;
-
-// 	light = s->lights;
-// 	c = 0;
-// 	ray_cpy = ray;
-// 	while (light != 0)
-// 	{
-// 		if (hit != 0)
-// 			c = color_add(c, compute_light(s, hit, ray, (t_object*)light->content));
-// 		else
-// 			c = s->background;
-// 		light = light->next;
-// 	}
-// 	if (hit != 0 && hit->reflection > 0.0 && reflects <= MAX_REFLECTION)
-// 		// c = sub_adj_col(s, hit, ray, (int [3]){reflects, c, 1});
-// 	{
-// 		n = noise(hit, MUL(ray.pos, 0.1));
-// 		tmp_hit = get_reflect(s, hit, &ray);
-// 		c = color_add(color_mul(adjust_color(s, tmp_hit, ray, reflects + 1),
-// 					hit->reflection), c);
-// 	}
-// 	if (hit != 0 && hit->transparence > 0.0 && reflects <= MAX_REFLECTION)
-// 		// c = sub_adj_col(s, hit, ray, (int [3]){reflects, c, 0});
-// 	{
-// 		n = noise(hit, MUL(ray_cpy.pos, 0.1));
-// 		tmp_hit = get_refract(s, hit, &ray_cpy);
-// 		c = color_add(color_mul(adjust_color(s, tmp_hit, ray_cpy, reflects + 1),
-// 					 hit->transparence), color_mul(c, 1 - hit->transparence));
-// 	}
-// 	return (c);
-// }
-
-int			adjust_color(t_scene *s, t_object *hit, t_ray ray, int reflects)
+int		adjust_color(t_scene *s, t_object *hit, t_ray ray, int reflects)
 {
 	unsigned int	c;
+	float			n;
+	t_ray			ray_cpy;
+	t_object		*tmp_hit;
 	t_list			*light;
 
 	light = s->lights;
 	c = 0;
+	ray_cpy = ray;
+	if (light == 0 && hit != 0)
+		c = color_add(c, compute_light(s, hit, ray, NULL));
+	else if (light == 0)
+		c = s->background;
 	while (light != 0)
 	{
 		if (hit != 0)
@@ -105,9 +40,20 @@ int			adjust_color(t_scene *s, t_object *hit, t_ray ray, int reflects)
 		light = light->next;
 	}
 	if (hit != 0 && hit->reflection > 0.0 && reflects <= MAX_REFLECTION)
-		c = sub_adj_col(s, hit, ray, (int [3]){reflects, c, 1});
+	{
+		n = noise(hit, MUL(ray.pos, 0.1));
+		tmp_hit = get_reflect(s, hit, &ray);
+		c = color_add(color_mul(adjust_color(s, tmp_hit, ray, reflects + 1),
+					hit->reflection), c);
+	}
 	if (hit != 0 && hit->transparence > 0.0 && reflects <= MAX_REFLECTION)
-		c = sub_adj_col(s, hit, ray, (int [3]){reflects, c, 0});
+	{
+		n = noise(hit, MUL(ray_cpy.pos, 0.1));
+		tmp_hit = get_refract(s, hit, &ray_cpy);
+		c = color_add(color_mul(adjust_color(s, tmp_hit, ray_cpy, reflects + 1),
+					hit->transparence),
+				color_mul(c, 1 - hit->transparence));
+	}
 	return (c);
 }
 
@@ -120,9 +66,9 @@ t_object	*get_refract(t_scene *s, t_object *hit, t_ray *ray)
 	{
 		normal = get_normal(hit, *ray);
 		angle = vector_dot(ray->dir, normal);
-		ray->dir = vector_normalize(ADD(MUL(ray->dir, ray->state / hit->refraction),
-					MUL(normal, ray->state / hit->refraction * angle -  sqrt(1.0 -
-							pow(ray->state / hit->refraction, 2.0)	* (1.0 -
+		ray->dir = vector_normalize(ADD(MUL(ray->dir, 1.0 / hit->refraction),
+					MUL(normal, 1.0 / hit->refraction * angle -  sqrt(1.0 -
+							pow(1.0 / hit->refraction, 2.0)	* (1.0 -
 								pow(angle, 2.0))))));
 	}
 	else
@@ -133,38 +79,35 @@ t_object	*get_refract(t_scene *s, t_object *hit, t_ray *ray)
 t_object	*get_reflect(t_scene *s, t_object *hit, t_ray *ray)
 {
 	t_vector4f	normal;
-	t_object	*new_hit;
 
 	normal = get_normal(hit, *ray);
 	ray->dir = ADD(ray->dir, MUL(normal, -2.0 * vector_dot(normal, ray->dir)));
-	new_hit = get_intersection(s, ray);
-	ray->pos = SUB(ray->pos, MUL(ray->dir, 0.01));
-	return (new_hit);
+	return (get_intersection(s, ray));
 }
 
 unsigned int	compute_light(t_scene *s, t_object *o, t_ray ray, t_object *light)
 {
-	float			shadow_roughness;
-	int				n_ray;
 	unsigned int	c;
+	unsigned int	backup;
 	t_ray			v_light;
 	t_ray			specular;
 
-	c = o->color;
-	n_ray = -1;
+	c = o->color; //peut etre a mettre en haut
 	if (o && o->texture.srf != NULL)
 		c = get_texture_pixel(o, ray);
+	if (light == NULL)
+		return (color_add(c, color_mul(c, 0.25)));
+	backup = c;
 	v_light.pos = light->origin;
 	v_light.dir = get_light_vector(light, ray);
 	specular = ray;
 	get_reflect(s, o, &specular);
 	if (o->brightness > 0.0)
-		c = color_add(c, color_mul(light->color, -1 * pow(vector_dot(
-			v_light.dir, specular.dir), o->brightness)));
-	if (vector_dot(v_light.dir, get_normal(o, ray)) >= 0) // C'est cette partie la qui fout des ombres bizarres sur le cone --------> c'est la fonction qui sert a trouver la normale a la surface du cone qui deconne
+		c = color_add(c, color_mul(light->color, -1 * pow(vector_dot(v_light.dir, specular.dir), o->brightness)));
+	if (vector_dot(v_light.dir, get_normal(o, ray)) >= 0)
 		c = color_mul(c, vector_dot(v_light.dir, get_normal(o, ray)));
 	else
 		c = 0;
-	c = color_mul(c, find_shadow(s,/* o,*/ ray, v_light) * noise(o, ray.pos));
-	return (c);
+	c = color_mul(c, find_shadow(s, o, ray, v_light) * noise(o, ray.pos));
+	return (color_add(c, color_mul(backup, 0.1)));
 }

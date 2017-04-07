@@ -80,7 +80,7 @@ t_vector4f				cylinder_normal(t_object *o, t_ray ray);
 **	Tells if the given object is in a shadow cone or not
 */
 
-float					find_shadow(t_scene *s,/* t_object *hit,*/ t_ray ray, t_ray light);
+float					find_shadow(t_scene *s, t_object *hit, t_ray ray, t_ray light);
 
 /*
 **	Calculates everything and returns the new color
@@ -92,7 +92,7 @@ unsigned int			compute_light(t_scene *s, t_object *o, t_ray ray, t_object *light
 **	Calculates the specular light for the given object
 */
 
-float					specular_light(/*t_scene *s, */t_object *hit, t_ray ray, t_vector4f light);
+float					specular_light(t_scene *s, t_object *hit, t_ray ray, t_vector4f light);
 
 /*
 **	Changes the ray coordinates to get the reflected or refracted object

@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/05 17:11:59 by telain            #+#    #+#             */
-/*   Updated: 2017/04/05 17:12:00 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/06 17:07:07 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -171,8 +171,8 @@ static void		object_init(t_object *o)
 	o->reflection = 0.0;
 	o->intensity = 1.0;
 	o->comment = 0;
-	o->width = 1.0;
-	o->height = 1.0;
+	o->width = MAX_SIZE;
+	o->height = MAX_SIZE;
 	fill_structure(0, &(o->noise), 1);
 	o->top_cap = 0;
 	o->bot_cap = 0;
@@ -196,14 +196,14 @@ t_object		*fill_cap_cone(t_object *cone, float num)
 
 	cap = ft_memalloc(sizeof(t_object));
 	cap->type = CIRCLE;
-	cap->radius = 0;
+	cap->radius = tan(cone->angle / 2) * cone->height;
 	cap->color = cone->color;
 	cap->brightness = cone->brightness;
 	cap->reflection = cone->reflection;
 	cap->comment = num == 1 ? ft_strdup("1") : ft_strdup("2");
 	copy_structure(&(cone->noise), &(cap->noise));
 	cap->origin = ADD(cone->origin,
-			MUL(vector_normalize(cone->direction), cone->height * num * 0.999));
+			MUL(vector_normalize(cone->direction), cone->height * num * 0.99999));
 	cap->direction = MUL(vector_normalize(cone->direction), num);
 	cap->direction = vector_normalize(cap->direction);
 	cap->transparence = cone->transparence;
