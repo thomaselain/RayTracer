@@ -97,6 +97,17 @@ void			fill_texture(char **s, t_img *n, int init)
 }
 
 /*
+** Checks if the data are correct before giving it to the program
+*/
+
+t_img				check_data_texture(t_img t)
+{
+	if (t.scale <= 0)
+		error_close(TEXTURE, 4);
+	return (t);
+}
+
+/*
 ** Return a parsed texture (fill missing datas with 0)
 */
 
@@ -126,5 +137,5 @@ t_img				parse_texture(char **string)
 			*string = tmp + 1;
 			INDEX = -1;
 		}
-	return (ret);
+	return (check_data_texture(ret));
 }

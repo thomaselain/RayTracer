@@ -20,6 +20,7 @@
 #define VECTOR		0
 #define CAMERA		1
 #define OBJECT		2
+#define TEXTURE		6
 #define LIGHT		OBJECT
 #define STRUCT		5
 #define SCENE		3
@@ -28,6 +29,7 @@
 #define EPC			1
 #define CPC			2
 #define CEC			3
+#define BP			4
 
 /*
 ** Return some text according to the error given as parameter
@@ -53,6 +55,8 @@ static char	*error_text(int error)
 		return ("found multiple occurence of the same parameter");
 	if (error == CEC)
 		return ("missing or missplaced coma");
+	if (error == BP)
+		return ("wrong parameter value");
 	return (0);
 }
 
@@ -74,6 +78,8 @@ static char	*type_text(int type)
 		return (" for one of the lists.");
 	if (type == STRUCT)
 		return (" for the structure.");
+	if (type == TEXTURE)
+		return (" for the texture.");
 	return (0);
 }
 

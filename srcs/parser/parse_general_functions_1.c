@@ -37,8 +37,6 @@ int			valide_coma(char *s)
 		ret = NO_ERROR;
 	else
 		ret = ERROR;
-	if (ret == -1)
-		printf("%s\n", s);
 	return (ret);
 }
 
