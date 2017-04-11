@@ -18,15 +18,15 @@
 #define CLEAN		2
 #define SET		3
 
-static void		sub_clean(t_object *obj)
+static void		sub_clean(t_object *obj, int m)
 {
 	if (obj->top_cap != 0)
-		sub_clean(obj->top_cap);
+		sub_clean(obj->top_cap, 0);
 	if (obj->bot_cap != 0)
-		sub_clean(obj->bot_cap);
+		sub_clean(obj->bot_cap, 0);
 	if (obj->comment != 0)
 		free(obj->comment);
-	if (obj->texture.srf != 0)
+	if (obj->texture.srf != 0 && m == 1)
 		img_destroy(&(obj->texture));
 	free(obj);
 }
@@ -44,7 +44,7 @@ static t_scene	*clean(t_scene *scene)
 	while (scene->lights != 0)
 	{
 		if (scene->lights->content != 0)
-			sub_clean((t_object *)(scene->lights->content));
+			sub_clean((t_object *)(scene->lights->content), 1);
 		tmp2 = scene->lights;
 		scene->lights = scene->lights->next;
 		free(tmp2);
@@ -54,7 +54,7 @@ static t_scene	*clean(t_scene *scene)
 	while (scene->objects != 0)
 	{
 		if (scene->objects->content != 0)
-			sub_clean((t_object *)(scene->objects->content));
+			sub_clean((t_object *)(scene->objects->content), 1);
 		tmp2 = scene->objects;
 		scene->objects = scene->objects->next;
 		free(tmp2);
