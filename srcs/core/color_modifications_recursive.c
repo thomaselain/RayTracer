@@ -57,19 +57,62 @@ int		adjust_color(t_scene *s, t_object *hit, t_ray ray, int reflects)
 	return (c);
 }
 
+// t_object	*get_refract(t_scene *s, t_object *hit, t_ray *ray)
+// {
+// 	t_vector4f	normal;
+// 	float		angle;
+
+// 	if (hit->refraction > 1.0)
+// 	{
+// 		normal = get_normal(hit, *ray);
+// 		angle = vector_dot(ray->dir, normal);
+// 		ray->dir = vector_normalize(ADD(MUL(ray->dir, 1.0 / hit->refraction),
+// 					MUL(normal, 1.0 / hit->refraction * angle -  sqrt(1.0 -
+// 							pow(1.0 / hit->refraction, 2.0)	* (1.0 -
+// 								pow(angle, 2.0))))));
+// 	}
+// 	else
+// 		ray->pos = ADD(ray->pos, MUL(ray->dir, 0.001));
+// 	return (get_intersection(s, ray));
+// }
+
 t_object	*get_refract(t_scene *s, t_object *hit, t_ray *ray)
 {
 	t_vector4f	normal;
+	float		n1;
+	float		n2;
 	float		angle;
+	float		c2;
 
 	if (hit->refraction > 1.0)
 	{
 		normal = get_normal(hit, *ray);
 		angle = vector_dot(ray->dir, normal);
-		ray->dir = vector_normalize(ADD(MUL(ray->dir, 1.0 / hit->refraction),
-					MUL(normal, 1.0 / hit->refraction * angle -  sqrt(1.0 -
-							pow(1.0 / hit->refraction, 2.0)	* (1.0 -
-								pow(angle, 2.0))))));
+		if (angle > 0)
+		{
+			n1 = hit->refraction;
+			n2 = 1.0;
+			normal = MUL(normal, -1);
+		}
+		else
+		{
+			n1 = 1.0;
+			n2 = hit->refraction;
+			angle *= -1;
+		}
+		c2 = 1 - powf(n1 / n2, 2) * (1 - powf(angle, 2));
+		c2 = sqrt(c2);
+		if (c2 < 0)
+		{
+			ray->pos = ADD(ray->pos, MUL(normal, 0.00001));
+			return (get_reflect(s, hit, ray));
+		}
+		ray->pos = SUB(ray->pos, MUL(normal, 0.00001));
+		// ray->dir = vector_normalize(ADD(MUL(ray->dir, n1 / n2),
+		// 			MUL(normal, n1 / n2 * angle -  sqrt(n1 -
+		// 					pow(n1 / n2, 2.0)	* (n1 -
+		// 						pow(angle, 2.0))))));
+		ray->dir = ADD(MUL(ray->dir, (n1 / n2)), MUL(normal, ((n1 / n2) * angle - c2)));
 	}
 	else
 		ray->pos = ADD(ray->pos, MUL(ray->dir, 0.001));

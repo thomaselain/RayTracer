@@ -532,7 +532,7 @@
 				"texture":
 				{
 					"path":"images/bois.bmp",
-					"scale":1
+					"scale":10
 				},
 				"height":4.5,
 				"brightness": 0.4,
@@ -557,7 +557,7 @@
 				"texture":
 				{
 					"path":"images/bois.bmp",
-					"scale":1
+					"scale":10
 				},
 				"height":4.5,
 				"brightness": 0.4,
@@ -582,7 +582,7 @@
 				"texture":
 				{
 					"path":"images/bois.bmp",
-					"scale":1
+					"scale":10
 				},
 				"height":4.5,
 				"brightness": 0.4,
@@ -607,7 +607,7 @@
 				"texture":
 				{
 					"path":"images/bois.bmp",
-					"scale":1
+					"scale":10
 				},
 				"height":4.5,
 				"brightness": 0.4,
@@ -636,7 +636,8 @@
 				},
 				"height":7,
 				"brightness": 0.4,
-				"radius":0.1
+				"radius":0.1,
+				"comment":"canne"
 			},
 			{
 				"type":"SPHERE",
