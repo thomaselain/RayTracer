@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <libft.h>
+#include <stdio.h>
 #define O_BRACES		n[0]
 #define C_BRACES		n[1]
 #define O_BRACKETS		n[2]

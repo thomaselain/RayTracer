@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/31 15:59:09 by aljourda          #+#    #+#             */
-/*   Updated: 2017/02/28 18:11:59 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/05 18:53:45 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ static void		print_content(t_scene *s)
 		printf("\t\t\tCOLOR = %x\n", ((t_object *)s->objects->content)->color);
 		printf("\t\t\tRADIUS = %f\n", ((t_object *)s->objects->content)->intensity);
 		printf("\t\t\tREFLECTION = %f\n", ((t_object *)s->objects->content)->reflection);
-		printf("\t\t\tDIFFUSE = %f\n", ((t_object *)s->objects->content)->diffuse);
+		printf("\t\t\tBRIGHTNESS = %f\n", ((t_object *)s->objects->content)->brightness);
 		printf("\t\t\tCOMMENT = %s\n", ((t_object *)s->objects->content)->comment);
 		obj = obj->next;
 	}
@@ -51,12 +51,11 @@ static void		print_content(t_scene *s)
 		printf("\t\t\tCOLOR = %x\n", ((t_object *)s->lights->content)->color);
 		printf("\t\t\tINTENSITY = %f\n", ((t_object *)s->lights->content)->intensity);
 		printf("\t\t\tREFLECTION = %f\n", ((t_object *)s->lights->content)->reflection);
-		printf("\t\t\tDIFFUSE = %f\n", ((t_object *)s->lights->content)->diffuse);
+		printf("\t\t\tBRIGHTNESS = %f\n", ((t_object *)s->lights->content)->brightness);
 		printf("\t\t\tCOMMENT = %s\n", ((t_object *)s->lights->content)->comment);
 		light = light->next;
 	}
 }
-
 
 __attribute__((weak))void	get_camera_plane(t_scene *scene){
 	
@@ -69,7 +68,7 @@ __attribute__((weak)) unsigned int ray_pixel(t_scene *scene, int x, int y){
 	return (ret);
 }
 
-static void		calculation(t_scene *e, t_win *win, const int nbthread)
+static int		calculation(t_scene *e, t_win *win, const int nbthread)
 {
 	t_img		img;
 	float		loading;
@@ -104,8 +103,7 @@ static void		calculation(t_scene *e, t_win *win, const int nbthread)
 			break;
 		case SDL_KEYUP:
 			key = &event.key;
-			if (key->keysym.scancode == 41)
-				status = 2;
+			status = 3;
 			break;
 		case SDL_MOUSEMOTION:
 			break;
@@ -124,6 +122,7 @@ static void		calculation(t_scene *e, t_win *win, const int nbthread)
 
 	img_save(&img, "capture.bmp");
 	img_destroy(&img);
+	return status;
 }
 
 __attribute__((weak)) int				main(int ac, char **av)
@@ -154,7 +153,9 @@ __attribute__((weak)) int				main(int ac, char **av)
 		if (status == 3)
 		{
 			get_camera_plane(e);
-			calculation(e, &win, 60);
+			status = calculation(e, &win, 20);
+			if(status == 2)
+				continue ;
 		}
 		status = 0;
 		//Event management
@@ -196,33 +197,33 @@ __attribute__((weak)) int				main(int ac, char **av)
 						if (key->keysym.scancode == 92)
 						{
 							e->camera.direction.x += e->camera.direction.x *
-								cos(-M_PI / 4) - e->camera.direction.y * sin(-M_PI / 4);
+								cos(-M_PI / 6) - e->camera.direction.y * sin(-M_PI / 6);
 							e->camera.direction.y += e->camera.direction.x *
-								sin(-M_PI / 4) + e->camera.direction.y * cos(-M_PI / 4);
+								sin(-M_PI / 6) + e->camera.direction.y * cos(-M_PI / 6);
 							e->camera.direction = vector_normalize(e->camera.direction);
 						}
 						if (key->keysym.scancode == 96)
 						{
 							e->camera.direction.z += e->camera.direction.z *
-								cos(M_PI / 4) - e->camera.direction.y * sin(M_PI / 4);
+								cos(M_PI / 6) - e->camera.direction.y * sin(M_PI / 6);
 							e->camera.direction.y += e->camera.direction.z *
-								sin(M_PI / 4) + e->camera.direction.y * cos(M_PI / 4);
+								sin(M_PI / 6) + e->camera.direction.y * cos(M_PI / 6);
 							e->camera.direction = vector_normalize(e->camera.direction);
 						}
 						if (key->keysym.scancode == 94)
 						{
 							e->camera.direction.x += e->camera.direction.x *
-								cos(M_PI / 4) - e->camera.direction.y * sin(M_PI / 4);
+								cos(M_PI / 6) - e->camera.direction.y * sin(M_PI / 6);
 							e->camera.direction.y += e->camera.direction.x *
-								sin(M_PI / 4) + e->camera.direction.y * cos(M_PI / 4);
+								sin(M_PI / 6) + e->camera.direction.y * cos(M_PI / 6);
 							e->camera.direction = vector_normalize(e->camera.direction);
 						}
 						if (key->keysym.scancode == 90)
 						{
 							e->camera.direction.z += e->camera.direction.z *
-								cos(-M_PI / 4) - e->camera.direction.y * sin(-M_PI / 4);
+								cos(-M_PI / 6) - e->camera.direction.y * sin(-M_PI / 6);
 							e->camera.direction.y += e->camera.direction.z *
-								sin(-M_PI / 4) + e->camera.direction.y * cos(-M_PI / 4);
+								sin(-M_PI / 6) + e->camera.direction.y * cos(-M_PI / 6);
 							e->camera.direction = vector_normalize(e->camera.direction);
 						}
 						status = 3;

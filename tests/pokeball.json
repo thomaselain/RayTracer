@@ -93,7 +93,7 @@
 			"width":3.0,
 			"height":0.1,
 			"reflection":0.0,
-			"diffuse":0.1,
+			"brightness":0.1,
 			"comment":"Cylindre"
 		},
 		{
@@ -115,7 +115,7 @@
 			"width":3.0,
 			"height":0.1,
 			"reflection":0.0,
-			"diffuse":0.1,
+			"brightness":0.1,
 			"comment":"Cylindre"
 		},
 		{
@@ -137,7 +137,7 @@
 			"width":3.0,
 			"height":0.1,
 			"reflection":0.0,
-			"diffuse":0.1,
+			"brightness":0.1,
 			"comment":"Cylindre"
 		}
 	],

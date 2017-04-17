@@ -4,44 +4,61 @@
 		{
 			"origin":
 			{
-				"x":0,
-				"y":-7,
+				"x":3,
+				"y":-2,
 				"z":0
 			},
 			"direction":
 			{
 				"x":0,
-				"y":1,
+				"y":-1,
 				"z":0
 			},
+<<<<<<< HEAD
 			"fov":60
+=======
+			"texture":
+			{
+				"path":"images/Bricks.bmp",
+				"scale":10
+			},
+			"transparence":0.0,
+			"reflection":0.01,
+			"brightness":0.4
+		},
+		{
+			"type":"PLANE",
+			"color":0xFF1493,
+			"origin":
+			{
+				"x":0,
+				"y":0,
+				"z":40
+			},
+			"direction":
+			{
+				"x":0,
+				"y":0,
+				"z":-1
+			},
+			"material":
+			{
+				"material_type":"PERLIN",
+				"zoom":30
+			},
+			"brightness":0.0,
+			"reflection":0
+>>>>>>> cchicote
 		},
 		"objects":
 			[
 			{
 				"type":"PLANE",
-				"color":0xcccccc,
+				"color":0xa0a0a0,
 				"origin":
 				{
 					"x":0,
-					"y":0,
-					"z":4
-				},
-				"direction":
-				{
-					"x":0,
-					"y":0,
-					"z":-1
-				},
-				"reflection":0.0
-			},
-			{
-				"type":"PLANE",
-				"color":0x555555,
-				"origin":
-				{
-					"x":0,
-					"y":20,
+					"y":-30,
 					"z":0
 				},
 				"direction":
@@ -50,43 +67,80 @@
 					"y":1,
 					"z":0
 				},
-				"transparence":0.6,
-				"reflection":0.9
+				"texture":
+				{
+					"path":"images/bricks.bmp",
+					"scale":10
+				},
+				"transparence":0.0,
+				"reflection":0.3,
+				"brightness":0.4
 			},
 			{
-				"type":"SPHERE",
-				"color":0x0000ff,
+				"type":"PLANE",
+				"color":0xFF1493,
 				"origin":
 				{
-					"x":3,
-					"y":25,
-					"z":-2
+					"x":0,
+					"y":0,
+					"z":40
 				},
 				"direction":
 				{
 					"x":0,
-					"y":-1,
-					"z":1
+					"y":0,
+					"z":-1
 				},
-				"radius":1.0
+				"material":
+				{
+					"material_type":"PERLIN",
+					"zoom":30
+				},
+				"brightness":0.0,
+				"reflection":0
 			},
 			{
 				"type":"SPHERE",
-				"color":0xff0000,
+				"color":0xa0a0a0,
 				"origin":
 				{
-					"x":0,
-					"y":10,
-					"z":-2
+					"x":10,
+					"y":40,
+					"z":0
 				},
 				"direction":
 				{
 					"x":0,
-					"y":-1,
+					"y":0,
 					"z":1
 				},
-				"reflection":0.5,
-				"radius":1.0
+				"texture":
+				{
+					"path":"images/earth.bmp",
+					"scale":4
+				},
+				"brightness":0.4,
+				"reflection":0.0,
+				"radius":12
+			},
+			{
+				"type":"SPHERE",
+				"color":0xa0a0a0,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":0
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":-1
+				},
+				"reflection":0.6,
+				"brightness":0.9,
+				"radius":1
 			}
 	],
 		"lights":
@@ -96,11 +150,34 @@
 				"color":0xffffff,
 				"origin":
 				{
-					"x":0.0,
-					"y":0,
+					"x":20,
+					"y":50,
+					"z":0
+				},
+				"direction":
+				{
+					"x":0,
+					"y":-1,
 					"z":0
 				},
 				"radius":1
+			},
+			{
+				"type":"SPOT",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":5,
+					"y":4,
+					"z":-1
+				},
+				"direction":
+				{
+					"x":0.0,
+					"y":-1,
+					"z":-1
+				},
+				"radius":10
 			}
 	]
 }

@@ -34,6 +34,11 @@ void			get_cap(t_object *o)
 		o->bot_cap = fill_cap(o, 1);
 		o->top_cap = fill_cap(o, -1);
 	}
+	else if (o->type == CONE)
+	{
+		o->bot_cap = fill_cap_cone(o, 1);
+		o->top_cap = fill_cap_cone(o, -1);
+	}
 }
 
 /*

@@ -1,12 +1,12 @@
 {
-	"background":0xbbbbbb,
+	"background":0x101010,
 		"camera":
 		{
 			"origin":
 			{
 				"x":0,
-				"y":-6,
-				"z":-4
+				"y":-4,
+				"z":-2
 			},
 			"direction":
 			{
@@ -18,9 +18,9 @@
 		},
 		"objects":
 			[	
-				{
+			{
 				"type":"PLANE",
-				"color":0xbb0000,
+				"color":0xaaaaaa,
 				"origin":
 				{
 					"x":0,
@@ -33,14 +33,18 @@
 					"y":0,
 					"z":-1
 				},
-				"reflection":0.9,
-				"diffuse":0.5,
-				"radius":0.5,
-				"comment":"Plane (background)"
-			},	
+				"texture":
 				{
+					"path":"images/bois.bmp",
+					"scale":1
+				},
+				"reflection":0.1,
+				"brightness":0.5,
+				"radius":0.5
+			},	
+			{
 				"type":"PLANE",
-				"color":0xbb0000,
+				"color":0xaaaaaa,
 				"origin":
 				{
 					"x":0,
@@ -53,15 +57,18 @@
 					"y":0,
 					"z":1
 				},
-				"reflection":0.9,
-				"diffuse":0.5,
-				"radius":0.5,
-				"comment":"Plane (background)"
+				"texture":
+				{
+					"path":"images/bois.bmp",
+					"scale":1
+				},
+				"reflection":0.1,
+				"brightness":0.5,
+				"radius":0.5
 			},
-
-						{
+			{
 				"type":"PLANE",
-				"color":0x00bb00,
+				"color":0xaaaaaa,
 				"origin":
 				{
 					"x":-10,
@@ -74,14 +81,18 @@
 					"y":0,
 					"z":0
 				},
-				"reflection":0.9,
-				"diffuse":0.5,
-				"radius":0.5,
-				"comment":"Plane (background)"
-			},	
+				"texture":
 				{
+					"path":"images/metal.bmp",
+					"scale":100
+				},
+				"reflection":0.1,
+				"brightness":0.5,
+				"radius":0.5
+			},	
+			{
 				"type":"PLANE",
-				"color":0x00bb00,
+				"color":0xaaaaaa,
 				"origin":
 				{
 					"x":10,
@@ -94,14 +105,18 @@
 					"y":0,
 					"z":0
 				},
-				"reflection":0.9,
-				"diffuse":0.5,
-				"radius":0.5,
-				"comment":"Plane (background)"
+				"texture":
+				{
+					"path":"images/metal.bmp",
+					"scale":100
+				},
+				"reflection":0.0,
+				"brightness":0.5,
+				"radius":0.5
 			},
 			{
 				"type":"PLANE",
-				"color":0x0000bb,
+				"color":0x303030,
 				"origin":
 				{
 					"x":0,
@@ -115,13 +130,12 @@
 					"z":0
 				},
 				"reflection":0.9,
-				"diffuse":0.5,
-				"radius":0.5,
-				"comment":"Plane (background)"
+				"brightness":0.5,
+				"radius":0.5
 			},
 			{
 				"type":"PLANE",
-				"color":0x0000bb,
+				"color":0x303030,
 				"origin":
 				{
 					"x":0,
@@ -135,13 +149,32 @@
 					"z":0
 				},
 				"reflection":0.9,
-				"diffuse":0.5,
-				"radius":0.5,
-				"comment":"Plane (background)"
+				"brightness":0.5,
+				"radius":0.5
+			},	
+			{
+				"type":"CYLINDER",
+				"color":0xa0a0a0,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":0
+				},
+				"direction":
+				{
+					"x":1,
+					"y":0,
+					"z":0.0
+				},
+				"transparence":0.4,
+				"reflection":0.3,
+				"brightness":0.9,
+				"radius":0.5
 			},
 			{
 				"type":"SPHERE",
-				"color":0xbbbbbb,
+				"color":0xa0a0a0,
 				"origin":
 				{
 					"x":0,
@@ -154,25 +187,41 @@
 					"y":0,
 					"z":1
 				},
-				"reflection":0.9,
-				"diffuse":0.5,
-				"radius":1,
-				"comment":"Cone"
+				"texture":
+				{
+					"path":"images/water.bmp",
+					"scale":1
+				},
+				"transparence":0.5,
+				"refraction":1.333,
+				"reflection":0.6,
+				"brightness":0.9,
+				"radius":1
 			}
 	],
 		"lights":
 			[
 			{
 				"type":"SPOT",
-				"color":0xbbbbbb,
+				"color":0x606060,
 				"origin":
 				{
-					"x":0,
+					"x":6,
 					"y":0,
 					"z":-6
 				},
-				"radius":1,
-				"comment":"Deuxieme lumiere"
+				"radius":1
+			},
+			{
+				"type":"SPOT",
+				"color":0x606060,
+				"origin":
+				{
+					"x":-6,
+					"y":0,
+					"z":-6
+				},
+				"radius":1
 			}
 	]
 }

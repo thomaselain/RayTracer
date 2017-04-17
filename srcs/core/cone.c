@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 19:32:35 by svassal           #+#    #+#             */
-/*   Updated: 2017/02/27 23:01:44 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/17 17:08:49 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 #define D			f[3]
 #define RES_0		f[4]
 #define RES_1		f[5]
+#define RES			f[6]
 
 /*
 ** Check if the ray intersects with the cone given as parameter
@@ -29,24 +30,51 @@ float		find_cone_inter(t_ray *r, t_object *o)
 	float		f[6];
 
 	A = vector_dot(r->dir, r->dir) - powf(vector_dot(r->dir,
-		o->direction), 2) * (1 + powf(tanf(o->angle / 2), 2));
+				o->direction), 2) * (1 + powf(tanf(o->angle / 2), 2));
 	B = 2 * ((vector_dot(r->dir, vector_sub_vec(r->pos, o->origin))) -
-		(1 + powf(tanf(o->angle / 2), 2)) * vector_dot(r->dir,
-			o->direction) * vector_dot(vector_sub_vec(r->pos, o->origin),
-				o->direction));
+			(1 + powf(tanf(o->angle / 2), 2)) * vector_dot(r->dir,
+				o->direction) * vector_dot(vector_sub_vec(r->pos, o->origin),
+					o->direction));
 	C = vector_dot(vector_sub_vec(r->pos, o->origin), vector_sub_vec(
-		r->pos, o->origin)) - (1 + powf(tanf(o->angle / 2), 2)) *
-			powf(vector_dot(vector_sub_vec(r->pos, o->origin),
-				o->direction), 2);
+				r->pos, o->origin)) - (1 + powf(tanf(o->angle / 2), 2)) *
+		powf(vector_dot(vector_sub_vec(r->pos, o->origin),
+					o->direction), 2);
 	D = powf(B, 2) - 4 * A * C;
 	if (D < 0.0)
 		return (MAX_SIZE);
 	RES_0 = (-B - sqrtf(D)) / (A + A);
 	RES_1 = (-B + sqrtf(D)) / (A + A);
-	return (RES_0 < RES_1 ? RES_0 : RES_1,
-		RES_0 < RES_1 ? RES_1 : RES_0);
+	if (vector_dist(o->origin, vector_projection(o->origin, o->direction,
+					ADD(r->pos, MUL(r->dir, RES_0)))) > o->height)
+		return (MAX_SIZE);
+	return (RES_0);
 }
+/*
+t_vector4f		cone_normal(t_object *o, t_ray ray)
+{
+	t_vector4f	ret;
+	t_vector4f	inter;
+	float		tan_alpha;
 
+	if (o->top_cap->radius <= 0 && o->top_cap->radius <= 0)
+	{
+		o->top_cap->radius = tanf(o->angle / 2) * (vector_dot(ray.dir,
+					vector_mul_flo(o->direction, find_cone_inter(&ray, o))) +
+				vector_dot(vector_sub_vec(ray.pos, o->origin), o->direction));
+		o->bot_cap->radius = tanf(o->angle / 2) * (vector_dot(ray.dir,
+					vector_mul_flo(o->direction, find_cone_inter(&ray, o))) +
+				vector_dot(vector_sub_vec(ray.pos, o->origin), o->direction));
+	}
+	tan_alpha = powf(tanf(o->angle / 2), 2);
+	inter = vector_add_vec(ray.pos, vector_mul_flo(ray.dir,
+				find_cone_inter(&ray, o)));
+	ret.x = (inter.x - o->origin.x) * (o->height / o->angle);
+	ret.y = o->angle / o->height;
+	ret.z = (inter.z - o->origin.z) * (o->height / o->angle);
+	ret.w = 0;
+	return (vector_normalize(ret));
+}
+*/
 t_vector4f	cone_normal(t_object *o, t_ray ray)
 {
 	t_vector4f	v1;
