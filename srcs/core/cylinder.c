@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/05 17:10:09 by telain            #+#    #+#             */
-/*   Updated: 2017/04/14 17:57:40 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/17 17:24:35 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@
 #define PROJ	f[6]
 
 /*
- ** Check if the ray intersects with the cylinder given as parameter
- */
+** Check if the ray intersects with the cylinder given as parameter
+*/
 
 float		find_cylinder_inter(t_ray *r, t_object *o)
 {

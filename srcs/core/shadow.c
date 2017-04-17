@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/05 17:11:45 by telain            #+#    #+#             */
-/*   Updated: 2017/04/06 16:16:54 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/17 17:40:26 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <ray.h>
 #include <color.h>
 
-float	find_shadow(t_scene *s, t_object *hit, t_ray ray, t_ray light)
+float			find_shadow(t_scene *s, t_object *hit, t_ray ray, t_ray light)
 {
 	t_vector4f	before;
 	t_object	*new_hit;
@@ -33,7 +33,8 @@ float	find_shadow(t_scene *s, t_object *hit, t_ray ray, t_ray light)
 	return (1);
 }
 
-float	specular_light(t_scene *s, t_object *hit, t_ray ray, t_vector4f light)
+float			specular_light(t_scene *s, t_object *hit, t_ray ray,
+		t_vector4f light)
 {
 	float		specular;
 	t_vector4f	reflect;
@@ -46,17 +47,10 @@ float	specular_light(t_scene *s, t_object *hit, t_ray ray, t_vector4f light)
 			vector_dot(get_normal(hit, ray), ray.dir)));
 		specular = vector_dot(light, reflect);
 	}
-	/*
-	   specular = pow(vector_dot(MUL(light, -1),
-	   ADD(vector_cross(ray.dir, get_normal(hit, ray)),
-	   SUB(MUL(ray.dir, -1), MUL(get_normal(hit, ray),
-	   2 * vector_dot(MUL(ray.dir, -1), get_normal(hit, ray)))))),
-	   hit->diffuse);
-	   */
 	return (specular >= 1.0 ? 1.0 : specular);
 }
 
-t_vector4f	get_light_vector(t_object *light, t_ray ray)
+t_vector4f		get_light_vector(t_object *light, t_ray ray)
 {
 	if (light->type == SPOT)
 		return (vector_normalize(SUB(light->origin, ray.pos)));

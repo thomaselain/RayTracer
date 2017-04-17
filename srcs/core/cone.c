@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 19:32:35 by svassal           #+#    #+#             */
-/*   Updated: 2017/04/17 17:08:49 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/17 17:43:25 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,32 +49,7 @@ float		find_cone_inter(t_ray *r, t_object *o)
 		return (MAX_SIZE);
 	return (RES_0);
 }
-/*
-t_vector4f		cone_normal(t_object *o, t_ray ray)
-{
-	t_vector4f	ret;
-	t_vector4f	inter;
-	float		tan_alpha;
 
-	if (o->top_cap->radius <= 0 && o->top_cap->radius <= 0)
-	{
-		o->top_cap->radius = tanf(o->angle / 2) * (vector_dot(ray.dir,
-					vector_mul_flo(o->direction, find_cone_inter(&ray, o))) +
-				vector_dot(vector_sub_vec(ray.pos, o->origin), o->direction));
-		o->bot_cap->radius = tanf(o->angle / 2) * (vector_dot(ray.dir,
-					vector_mul_flo(o->direction, find_cone_inter(&ray, o))) +
-				vector_dot(vector_sub_vec(ray.pos, o->origin), o->direction));
-	}
-	tan_alpha = powf(tanf(o->angle / 2), 2);
-	inter = vector_add_vec(ray.pos, vector_mul_flo(ray.dir,
-				find_cone_inter(&ray, o)));
-	ret.x = (inter.x - o->origin.x) * (o->height / o->angle);
-	ret.y = o->angle / o->height;
-	ret.z = (inter.z - o->origin.z) * (o->height / o->angle);
-	ret.w = 0;
-	return (vector_normalize(ret));
-}
-*/
 t_vector4f	cone_normal(t_object *o, t_ray ray)
 {
 	t_vector4f	v1;
