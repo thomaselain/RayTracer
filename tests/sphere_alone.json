@@ -14,7 +14,41 @@
 				"y":-1,
 				"z":0
 			},
+<<<<<<< HEAD
 			"fov":60
+=======
+			"texture":
+			{
+				"path":"images/Bricks.bmp",
+				"scale":10
+			},
+			"transparence":0.0,
+			"reflection":0.01,
+			"brightness":0.4
+		},
+		{
+			"type":"PLANE",
+			"color":0xFF1493,
+			"origin":
+			{
+				"x":0,
+				"y":0,
+				"z":40
+			},
+			"direction":
+			{
+				"x":0,
+				"y":0,
+				"z":-1
+			},
+			"material":
+			{
+				"material_type":"PERLIN",
+				"zoom":30
+			},
+			"brightness":0.0,
+			"reflection":0
+>>>>>>> cchicote
 		},
 		"objects":
 			[

@@ -76,7 +76,7 @@
 				},
 				"texture":
 				{
-					"path":"images/bricks.bmp",
+					"path":"images/Bricks.bmp",
 					"scale":10
 				},
 				"brightness":0.6,
@@ -100,7 +100,7 @@
 				},
 				"texture":
 				{
-					"path":"images/table_green.bmp",
+					"path":"images/pool_table_green.bmp",
 					"scale":5
 				},
 				"width":20.0,
@@ -532,7 +532,7 @@
 				"texture":
 				{
 					"path":"images/bois.bmp",
-					"scale":1
+					"scale":10
 				},
 				"height":4.5,
 				"brightness": 0.4,
@@ -557,7 +557,7 @@
 				"texture":
 				{
 					"path":"images/bois.bmp",
-					"scale":1
+					"scale":10
 				},
 				"height":4.5,
 				"brightness": 0.4,
@@ -582,7 +582,7 @@
 				"texture":
 				{
 					"path":"images/bois.bmp",
-					"scale":1
+					"scale":10
 				},
 				"height":4.5,
 				"brightness": 0.4,
@@ -607,7 +607,7 @@
 				"texture":
 				{
 					"path":"images/bois.bmp",
-					"scale":1
+					"scale":10
 				},
 				"height":4.5,
 				"brightness": 0.4,
@@ -631,12 +631,13 @@
 				},
 				"texture":
 				{
-					"path":"images/canne.bmp",
+					"path":"images/bois.bmp",
 					"scale":3
 				},
 				"height":7,
 				"brightness": 0.4,
-				"radius":0.1
+				"radius":0.1,
+				"comment":"canne"
 			},
 			{
 				"type":"SPHERE",
@@ -683,13 +684,19 @@
 		"lights":
 			[
 			{
-				"type":"SPOT",
-				"color":0xffa500,
+				"type":"DIRECTIONAL",
+				"color":0xff0000,
 				"origin":
 				{
 					"x":0,
 					"y":0,
 					"z":-5.9
+				},
+				"direction":
+				{
+					"x":1,
+					"y":0,
+					"z":-1
 				},
 				"radius":1
 			}

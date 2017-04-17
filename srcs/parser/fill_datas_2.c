@@ -165,10 +165,7 @@ float			get_angle(char **s)
 
 	ret = parse_float(s);
 	if (ret < 0 || ret > 360)
-	{
-		printf("%0.3f\n", ret);
 		error_close(2, 1);
-	}
 	rad = ret * (M_PI / 180);
 	return (rad);
 }

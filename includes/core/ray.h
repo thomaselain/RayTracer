@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/05 17:08:17 by telain            #+#    #+#             */
-/*   Updated: 2017/04/05 18:45:47 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/17 15:32:37 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ t_vector4f				cylinder_normal(t_object *o, t_ray ray);
 **	Tells if the given object is in a shadow cone or not
 */
 
-float					find_shadow(t_scene *s,/* t_object *hit,*/ t_ray ray, t_ray light);
+float					find_shadow(t_scene *s, t_object *hit, t_ray ray, t_ray light);
 
 /*
 **	Calculates everything and returns the new color
@@ -92,7 +92,7 @@ unsigned int			compute_light(t_scene *s, t_object *o, t_ray ray, t_object *light
 **	Calculates the specular light for the given object
 */
 
-float					specular_light(/*t_scene *s, */t_object *hit, t_ray ray, t_vector4f light);
+float					specular_light(t_scene *s, t_object *hit, t_ray ray, t_vector4f light);
 
 /*
 **	Changes the ray coordinates to get the reflected or refracted object
@@ -136,5 +136,11 @@ unsigned int	get_texture_pixel(t_object *hit, t_ray ray);
 unsigned int	find_plane_texture(t_object *o, t_ray ray);
 unsigned int	find_cylinder_texture(t_object *o, t_ray ray);
 unsigned int	find_sphere_texture(t_object *o, t_ray ray);
+
+/*
+**	Subfonctions for get_intersection (norme)
+*/
+
+void			get_sphere(t_object *o, float *closest, t_ray *ray, t_object **hit);
 
 #endif

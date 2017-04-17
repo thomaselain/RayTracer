@@ -14,7 +14,7 @@
 #include <ray.h>
 #include <color.h>
 
-float	find_shadow(t_scene *s,/* t_object *hit,*/ t_ray ray, t_ray light)
+float	find_shadow(t_scene *s, t_object *hit, t_ray ray, t_ray light)
 {
 	t_vector4f	before;
 	t_object	*new_hit;
@@ -28,12 +28,12 @@ float	find_shadow(t_scene *s,/* t_object *hit,*/ t_ray ray, t_ray light)
 		if (new_hit->transparence == 0)
 			return (0.3);
 		else
-			return (new_hit->transparence) * find_shadow(s, ray, light);
+			return (new_hit->transparence) * find_shadow(s, hit, ray, light);
 	}
 	return (1);
 }
 
-float	specular_light(/*t_scene *s, */t_object *hit, t_ray ray, t_vector4f light)
+float	specular_light(t_scene *s, t_object *hit, t_ray ray, t_vector4f light)
 {
 	float		specular;
 	t_vector4f	reflect;

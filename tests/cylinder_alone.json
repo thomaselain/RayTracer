@@ -5,7 +5,7 @@
 		"origin":
 		{
 			"x":0,
-			"y":0,
+			"y":-10,
 			"z":0
 		},
 		"direction":
@@ -60,32 +60,12 @@
 		},
 		{
 			"type":"CYLINDER",
-			"color":0xdd6010,
-			"origin":
+			"height":5,
+			"texture":
 			{
-				"x":0,
-				"y":10,
-				"z":0
-			},
-			"direction":
-			{
-				"x":0,
-				"y":0,
-				"z":1
-			},
-			"material":
-			{
-				"material_type":"PERLIN",
-				"zoom":2,
-				"intensity":1.04, 
-				"c":-10.9
-			},
-			"radius":1.0,
-			"width":3.0,
-			"height":1.0,
-			"reflection":0.0,
-			"brightness":0.1,
-			"comment":"Cylindre"
+				"path":"images/philippe.bmp",
+				"scale":0.5
+			}
 		}
 	],
 	"lights":
@@ -95,17 +75,12 @@
 			"color":0xffffff,
 			"origin":
 			{
-				"x":0,
-				"y":0,
+				"x":-4,
+				"y":-2,
 				"z":0
 			},
-			"direction":
-			{
-				"x":0.0,
-				"y":0,
-				"z":-1
-			},
-			"radius":1
+			"radius":1,
+			"comment":"Deuxieme lumiere"
 		}
 	]
 }
