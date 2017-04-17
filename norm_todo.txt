@@ -850,6 +850,8 @@ Norme: ./srcs/graphics/img_modifiers.c
 Norme: ./srcs/graphics/win.c
 Norme: ./srcs/graphics/win_modifiers.c
 Norme: ./srcs/misc/color_filter.c
+
+
 Norme: ./srcs/parser/fill_datas_1.c
 Error: 7 functions in the file
 Error (line 45): bad indentation

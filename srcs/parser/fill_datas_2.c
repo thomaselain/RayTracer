@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/03 13:14:56 by svassal           #+#    #+#             */
-/*   Updated: 2017/04/02 18:39:56 by svassal          ###   ########.fr       */
+/*   Updated: 2017/04/17 19:50:24 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,6 @@
 #define SCENE			3
 #define LIST			4
 #define STRUCT			5
-
-// #include <core.h>
-// #include <libft.h>
-// #include <parse_major.h>
-// #include <fill_datas.h>
-// #include <parse_general_functions.h>
-// #include <parse_details.h>
-// #define SCENE			3
 
 /*
 ** Fill camera with 0 if init is equal to 1, or with the JSON datas elseway

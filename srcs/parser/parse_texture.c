@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 13:22:31 by cchicote          #+#    #+#             */
-/*   Updated: 2017/04/03 13:36:05 by svassal          ###   ########.fr       */
+/*   Updated: 2017/04/17 20:15:30 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,8 @@
 #define ERROR		(-1)
 
 /*
-** A specific function to get the texture file's name and to manage errors properly
+** A specific function to get the texture file's name and to manage
+** errors properly
 */
 
 void			get_texture(char **s, t_img *n)
@@ -81,19 +82,19 @@ void			fill_texture(char **s, t_img *n, int init)
 		n->rotation = 0.0;
 		return ;
 	}
-		if (ft_strnstr(*s, "\"path\"", 6) != 0)
-			data_i = 1;
-		else if (ft_strnstr(*s, "\"scale\"", 7) != 0)
-			data_i = 2;
-		else if (ft_strnstr(*s, "\"rotation\"", 12) != 0)
-			data_i = 3;
-		*s = ft_strchr(*s, ':') + 1;
-		if (data_i == 1)
-			get_texture(s, n);
-		else if (data_i == 2)
-			n->scale = parse_float(s);
-		else if (data_i == 3)
-			n->rotation = parse_float(s);
+	if (ft_strnstr(*s, "\"path\"", 6) != 0)
+		data_i = 1;
+	else if (ft_strnstr(*s, "\"scale\"", 7) != 0)
+		data_i = 2;
+	else if (ft_strnstr(*s, "\"rotation\"", 12) != 0)
+		data_i = 3;
+	*s = ft_strchr(*s, ':') + 1;
+	if (data_i == 1)
+		get_texture(s, n);
+	else if (data_i == 2)
+		n->scale = parse_float(s);
+	else if (data_i == 3)
+		n->rotation = parse_float(s);
 }
 
 /*

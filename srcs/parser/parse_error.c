@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/08 14:10:04 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/14 15:08:09 by svassal          ###   ########.fr       */
+/*   Updated: 2017/04/17 19:53:37 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,10 +42,10 @@ void			display_error(int errnum)
 	else if (errnum == 2)
 		ft_putendl("The file is empty.");
 	if (errnum != 0)
-		exit (0);
+		exit(0);
 }
 
-static char	*error_text(int error)
+static char		*error_text(int error)
 {
 	if (error == BBC)
 		return ("can't match braces or brackets");
@@ -64,7 +64,7 @@ static char	*error_text(int error)
 ** Return some text according to the type given as parameter
 */
 
-static char	*type_text(int type)
+static char		*type_text(int type)
 {
 	if (type == VECTOR)
 		return (" for a vector.");
@@ -87,7 +87,7 @@ static char	*type_text(int type)
 ** Print a message and clean allocated memory on error
 */
 
-void		error_close(int type, int error)
+void			error_close(int type, int error)
 {
 	ft_putstr_fd("Error parsing json file : ", 2);
 	ft_putstr_fd(error_text(error), 2);

@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 13:37:51 by svassal           #+#    #+#             */
-/*   Updated: 2017/04/03 11:18:14 by svassal          ###   ########.fr       */
+/*   Updated: 2017/04/17 20:23:53 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,5 +110,12 @@ float			get_brightness(char **s);
 */
 
 t_object			*fill_cap_cone(t_object *cone, float num);
+
+/*
+** Fill vector with 0 if init is equal to 1, or with the JSON
+** datas elseway for the apex
+*/
+
+void			fill_apex(char **s, t_vector4f *v, int init);
 
 #endif
