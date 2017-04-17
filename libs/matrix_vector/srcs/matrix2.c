@@ -34,7 +34,7 @@ t_matrix4f		matrix_perspective(float fov, float aspect_ratio,
 	z_range = z_near - z_far;
 	matrix_set_elem(&r_m, 0, 0, 1.0 / (tan_half_fov * aspect_ratio));
 	matrix_set_elem(&r_m, 1, 1, 1.0 / tan_half_fov);
-	matrix_set_elem(&r_m, 2, 2, (-z_near -z_far) / z_range);
+	matrix_set_elem(&r_m, 2, 2, (-z_near - z_far) / z_range);
 	matrix_set_elem(&r_m, 2, 3, 2 * z_far * z_near / z_range);
 	matrix_set_elem(&r_m, 3, 2, 1);
 	matrix_set_elem(&r_m, 3, 3, 0);

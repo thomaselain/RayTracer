@@ -23,11 +23,11 @@ t_vector4f		vector_cross(t_vector4f v1, t_vector4f v2)
 	float		f[4];
 	t_vector4f	r_v;
 
-	X =	vector_get_y(&v1) * vector_get_z(&v2) -
+	X = vector_get_y(&v1) * vector_get_z(&v2) -
 		vector_get_z(&v1) * vector_get_y(&v2);
-	Y =	vector_get_z(&v1) * vector_get_x(&v2) -
+	Y = vector_get_z(&v1) * vector_get_x(&v2) -
 		vector_get_x(&v1) * vector_get_z(&v2);
-	Z =	vector_get_x(&v1) * vector_get_y(&v2) -
+	Z = vector_get_x(&v1) * vector_get_y(&v2) -
 		vector_get_y(&v1) * vector_get_x(&v2);
 	W = 0;
 	define_vector(&r_v, f);
@@ -54,7 +54,7 @@ t_vector4f		vector_normalize(t_vector4f v)
 		define_vector(&r_v, f);
 	}
 	else
-		define_vector(&r_v, (float [4]){0, 0, 0, 0});
+		define_vector(&r_v, (float[4]){0, 0, 0, 0});
 	return (r_v);
 }
 
@@ -83,26 +83,6 @@ t_vector4f		vector_rotate(t_vector4f v, t_vector4f axis, float angle)
 	define_vector(&r_v, f);
 	return (r_v);
 }
-
-// t_vector4f		vector_rotate(t_vector4f v, t_vector4f axis, float angle)
-// {
-// 	float		cs_angle[2];
-// 	t_vector4f	v_t_1;
-// 	t_vector4f	v_t_2;
-// 	t_vector4f	v_t_3;
-// 	t_vector4f	r_v;
-
-// 	cs_angle[0] = (float)cos(angle);
-// 	cs_angle[1] = (float)sin(angle);
-// 	v_t_1 = vector_mul_flo(axis, (1 - cs_angle[0]));
-// 	v_t_3 = vector_mul_flo(axis, vector_dot(v, v_t_1));
-// 	v_t_2 = vector_mul_flo(axis, cs_angle[1]);
-// 	v_t_1 = vector_cross(v, v_t_1);
-// 	v_t_2 = vector_mul_flo(v, cs_angle[0]);
-// 	r_v = vector_add_vec(v_t_2, v_t_3);
-// 	r_v = vector_add_vec(v_t_1, r_v);
-// 	return (r_v);
-// }
 
 /*
 ** Linear interpolation
