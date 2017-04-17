@@ -33,10 +33,10 @@
 					"y":1,
 					"z":0
 				},
-				"material":
+				"texture":
 				{
-					"material_type":"GRID",
-					"zoom":10
+					"path":"images/meme1.bmp",
+					"scale":5
 				},
 				"brightness":0.8,
 				"width":10,
@@ -45,6 +45,11 @@
 			{
 				"type":"CYLINDER",
 				"color":0xa00000,
+				"texture":
+				{
+					"path":"images/Thomas.bmp",
+					"scale":10000000
+				},
 				"origin":
 				{
 					"x":0.3,
@@ -57,12 +62,12 @@
 					"y":-0.5,
 					"z":-1
 				},
-				"height":1.5,
+				"height":2,
 				"brightness":0.9,
-				"radius":0.01
+				"radius":0.05
 			},
 			{
-				"type":"SPHERE",
+				"type":"CYLINDER",
 				"color":0xa0a0a0,
 				"origin":
 				{
@@ -81,7 +86,7 @@
 				"radius":1.0,
 				"reflection":0.0,
 				"refraction":1.8,
-				"transparence":0.5
+				"transparence":0.8
 			}
 	],
 		"lights":

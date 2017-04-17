@@ -203,7 +203,8 @@ t_object		*fill_cap_cone(t_object *cone, float num)
 	cap->comment = num == 1 ? ft_strdup("1") : ft_strdup("2");
 	copy_structure(&(cone->noise), &(cap->noise));
 	cap->origin = ADD(cone->origin,
-			MUL(vector_normalize(cone->direction), cone->height * num * 0.99999));
+			MUL(vector_normalize(cone->direction), cone->height *
+			num * 0.99999));
 	cap->direction = MUL(vector_normalize(cone->direction), num);
 	cap->direction = vector_normalize(cap->direction);
 	cap->transparence = cone->transparence;

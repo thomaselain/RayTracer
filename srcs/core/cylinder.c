@@ -34,8 +34,9 @@ float		find_cylinder_inter(t_ray *r, t_object *o)
 	B = 2 * (vector_dot(r->dir, vector_sub_vec(r->pos, o->origin)) -
 			vector_dot(r->dir, o->direction) * vector_dot(vector_sub_vec(
 					r->pos, o->origin), o->direction));
-	C = vector_dot(vector_sub_vec(r->pos, o->origin), vector_sub_vec(r->pos,
-				o->origin)) - powf(vector_dot(vector_sub_vec(r->pos, o->origin),
+	C = vector_dot(vector_sub_vec(r->pos, o->origin),
+			vector_sub_vec(r->pos,o->origin)) - 
+			powf(vector_dot(vector_sub_vec(r->pos, o->origin),
 					o->direction), 2) - powf(o->radius, 2);
 	D = powf(B, 2) - 4 * A * C;
 	if (D < 0)

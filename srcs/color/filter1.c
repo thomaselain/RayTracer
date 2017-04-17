@@ -64,7 +64,8 @@ unsigned int		get_negative(unsigned int c, int argb[4])
 	return (c);
 }
 
-unsigned int		get_one_color(unsigned int c, int argb[4], t_filter_type filter)
+unsigned int		get_one_color(unsigned int c, int argb[4],
+	t_filter_type filter)
 {
 	int				r;
 	int				g;

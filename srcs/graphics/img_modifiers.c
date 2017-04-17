@@ -58,7 +58,6 @@ void				img_set_filter(t_img *img, unsigned int argb_filter)
 	int		y;
 
 	x = 0;
-	printf("w %d h %d pitch %d\n", img->w, img->h, img->srf->pitch);
 	while (img != 0 && img->srf != 0 && x < (img->w))
 	{
 		y = 0;

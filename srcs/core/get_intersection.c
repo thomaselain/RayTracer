@@ -149,9 +149,9 @@ t_object	*get_intersection(t_scene *s, t_ray *ray)
 		obj = obj->next;
 	}
 	ray->pos = ADD(ray->pos, MUL(ray->dir, closest - 0.001));
-	if (hit)
-		ray->state = hit->refraction;
-	else
-		ray->state = 1.0;
+	// if (hit)
+	// 	ray->state = hit->refraction;
+	// else
+	// 	ray->state = 1.0;
 	return (hit);
 }

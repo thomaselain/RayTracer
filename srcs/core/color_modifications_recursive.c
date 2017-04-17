@@ -84,7 +84,8 @@ t_object	*get_refract(t_scene *s, t_object *hit, t_ray *ray)
 	float		angle;
 	float		c2;
 
-	if (hit->refraction > 1.0)
+	ray->state++;
+	if (hit->refraction > 1.0 && hit->transparence > 0 && hit->transparence < 1)
 	{
 		normal = get_normal(hit, *ray);
 		angle = vector_dot(ray->dir, normal);
@@ -102,11 +103,6 @@ t_object	*get_refract(t_scene *s, t_object *hit, t_ray *ray)
 		}
 		c2 = 1 - powf(n1 / n2, 2) * (1 - powf(angle, 2));
 		c2 = sqrt(c2);
-		if (c2 < 0)
-		{
-			ray->pos = ADD(ray->pos, MUL(normal, 0.00001));
-			return (get_reflect(s, hit, ray));
-		}
 		ray->pos = SUB(ray->pos, MUL(normal, 0.00001));
 		// ray->dir = vector_normalize(ADD(MUL(ray->dir, n1 / n2),
 		// 			MUL(normal, n1 / n2 * angle -  sqrt(n1 -
@@ -115,7 +111,7 @@ t_object	*get_refract(t_scene *s, t_object *hit, t_ray *ray)
 		ray->dir = ADD(MUL(ray->dir, (n1 / n2)), MUL(normal, ((n1 / n2) * angle - c2)));
 	}
 	else
-		ray->pos = ADD(ray->pos, MUL(ray->dir, 0.001));
+		ray->pos = ADD(ray->pos, MUL(ray->dir, 0.1));
 	return (get_intersection(s, ray));
 }
 

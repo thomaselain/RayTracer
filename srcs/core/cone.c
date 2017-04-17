@@ -44,7 +44,8 @@ float		find_cone_inter(t_ray *r, t_object *o)
 		return (MAX_SIZE);
 	RES_0 = (-B - sqrtf(D)) / (A + A);
 	RES_1 = (-B + sqrtf(D)) / (A + A);
-	if (vector_dist(o->origin, vector_projection(o->origin, o->direction, ADD(r->pos, MUL(r->dir, RES_0)))) > o->height)
+	if (vector_dist(o->origin, vector_projection(o->origin,
+		o->direction, ADD(r->pos, MUL(r->dir, RES_0)))) > o->height)
 		return (MAX_SIZE);
 	return (RES_0);
 }
@@ -123,11 +124,18 @@ t_vector4f		cone_normal(t_object *o, t_ray ray)
 
 	if (o->top_cap->radius <= 0 && o->top_cap->radius <= 0) // On definit la taille des caps, j'ai mis ca la parce que je savais pas ou le mettre autrement :)
 	{
-		o->top_cap->radius = tanf(o->angle / 2) * (vector_dot(ray.dir, vector_mul_flo(o->direction, find_cone_inter(&ray, o))) + vector_dot(vector_sub_vec(ray.pos, o->origin), o->direction));
-		o->bot_cap->radius = tanf(o->angle / 2) * (vector_dot(ray.dir, vector_mul_flo(o->direction, find_cone_inter(&ray, o))) + vector_dot(vector_sub_vec(ray.pos, o->origin), o->direction));
+		o->top_cap->radius = tanf(o->angle / 2) *
+		(vector_dot(ray.dir, vector_mul_flo(o->direction,
+			find_cone_inter(&ray, o))) + vector_dot(vector_sub_vec(ray.pos,
+			 o->origin), o->direction));
+		o->bot_cap->radius = tanf(o->angle / 2) * 
+		(vector_dot(ray.dir, vector_mul_flo(o->direction,
+			find_cone_inter(&ray, o))) + vector_dot(vector_sub_vec(ray.pos,
+			o->origin), o->direction));
 	}
 	tan_alpha = powf(tanf(o->angle / 2), 2);
-	inter = vector_add_vec(ray.pos, vector_mul_flo(ray.dir, find_cone_inter(&ray, o)));
+	inter = vector_add_vec(ray.pos, vector_mul_flo(ray.dir,
+		find_cone_inter(&ray, o)));
 	// ret.x = 2 * inter.x;
 	ret.x = (inter.x - o->origin.x) * (o->height / o->angle);
 	// ret.y = -2 * tan_alpha * inter.y;

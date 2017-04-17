@@ -15,8 +15,10 @@
 
 void				get_camera_plane(t_scene *scene)
 { 
-	scene->camera.screen_h = 1.2 * tan((scene->camera.fov * M_PI / 180.0) / 2.0);
-	scene->camera.screen_w = (float)WIDTH / (float)HEIGHT * scene->camera.screen_h;
+	scene->camera.screen_h = 1.2 * tan((scene->camera.fov *
+		M_PI / 180.0) / 2.0);
+	scene->camera.screen_w = (float)WIDTH / (float)HEIGHT *
+	scene->camera.screen_h;
 	scene->xindent = scene->camera.screen_w / (float)WIDTH;
 	scene->yindent = scene->camera.screen_h / (float)HEIGHT;
 	scene->camera.up = new_vector(0, 0, 1);
@@ -52,10 +54,11 @@ unsigned int		ray_pixel(t_scene *scene, int x, int y)
 	unsigned int	c;
 
 	c = 0;
-	ray.state = 1.0;
+	ray.state = 0.0;
 	ray.pixel_x = x;
 	ray.pixel_y = y;
-	ray.dir = vector_normalize(SUB(get_ray(scene, x, y), scene->camera.origin));
+	ray.dir = vector_normalize(SUB(get_ray(scene, x, y),
+		scene->camera.origin));
 	ray.pos = scene->camera.origin;
 	hit = get_intersection(scene, &ray);
 	c = adjust_color(scene, hit, ray, 1);

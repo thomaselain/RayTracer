@@ -35,7 +35,12 @@ float		find_sphere_inter(t_ray *ray, t_object *obj)
 		return (MAX_SIZE);
 	X1 = (-B - sqrtf(D)) / (A + A);
 	X2 = (-B + sqrtf(D)) / (A + A);
-	return (X1 == 0 ? 0 : (X2 == 0 ? 0 :(X1 < X2 ? X1 : X2)));
+	if (ray->state > 0)
+	{
+		ray->state--;
+		return (-X2);
+	}
+	return (X1 < X2 ? X1 : X2);
 }
 
 t_vector4f	sphere_normal(t_object *o, t_ray ray)
