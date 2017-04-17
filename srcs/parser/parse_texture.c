@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/22 13:22:31 by cchicote          #+#    #+#             */
-/*   Updated: 2017/04/17 20:15:30 by svassal          ###   ########.fr       */
+/*   Updated: 2017/04/17 21:08:01 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@
 ** errors properly
 */
 
-void			get_texture(char **s, t_img *n)
+void				get_texture(char **s, t_img *n)
 {
 	char	*tmp;
 
@@ -52,7 +52,7 @@ void			get_texture(char **s, t_img *n)
 ** Allows an inheritance for a texture
 */
 
-void			copy_texture(t_img *src, t_img *dest)
+void				copy_texture(t_img *src, t_img *dest)
 {
 	if (src && dest)
 	{
@@ -68,7 +68,7 @@ void			copy_texture(t_img *src, t_img *dest)
 ** Fill texture with 0 if init is equal to 1, or with the JSON datas elseway
 */
 
-void			fill_texture(char **s, t_img *n, int init)
+void				fill_texture(char **s, t_img *n, int init)
 {
 	int		data_i;
 
