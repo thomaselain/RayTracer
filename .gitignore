@@ -33,7 +33,6 @@
 *.su
 
 *.DS_Store
-*.bmp
 *.swp
 
 # VSCode configs
