@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/06/06 18:46:15 by svassal           #+#    #+#             */
-/*   Updated: 2016/06/06 19:40:51 by svassal          ###   ########.fr       */
+/*   Updated: 2017/04/17 19:11:30 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@
 void	ft_putstr_color_fd(char const *s, char const *c, int fd)
 {
 	if (ft_strcmp(c, RED) == 0 || ft_strcmp(c, GRN) == 0 ||
-	ft_strcmp(c, YEL) == 0 || ft_strcmp(c, BLU) == 0 ||
-	ft_strcmp(c, MAG) == 0 || ft_strcmp(c, CYN) == 0 || ft_strcmp(c, WHT) == 0)
+			ft_strcmp(c, YEL) == 0 || ft_strcmp(c, BLU) == 0 ||
+			ft_strcmp(c, MAG) == 0 || ft_strcmp(c, CYN) == 0 ||
+			ft_strcmp(c, WHT) == 0)
 		ft_putstr_fd(c, fd);
 	ft_putstr_fd(s, fd);
 	ft_putstr_fd(RESET, fd);

@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/02 18:55:36 by svassal           #+#    #+#             */
-/*   Updated: 2017/04/02 18:59:44 by svassal          ###   ########.fr       */
+/*   Updated: 2017/04/17 19:52:33 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 ** Parses a substring from the parameter string
 */
 
-char		*parse_string(char **string)
+char			*parse_string(char **string)
 {
 	char	*ret;
 	int		index;
@@ -68,7 +68,7 @@ t_noise_type	parse_noise_type(char **string)
 t_filter_type	parse_filter_type(char **string)
 {
 	t_filter_type	ret;
-	int		index;
+	int				index;
 
 	ret = NO_FILTER;
 	character_skipper(string);

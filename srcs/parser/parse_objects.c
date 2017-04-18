@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/30 12:59:44 by svassal           #+#    #+#             */
-/*   Updated: 2017/02/25 18:25:47 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/17 20:13:23 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,13 @@
 #define ERROR		(-1)
 
 /*
-** Checks if the object is a cylinder, and calculates his caps coordinates based on the cylinder's coordinates
+** Checks if the object is a cylinder, and calculates his caps coordinates
+** based on the cylinder's coordinates
 */
 
 void			get_cap(t_object *o)
 {
-	if (o->type == CYLINDER) // On place l'initialisation des cap ici puisque si index == 11, c'est qu'on a deja initialise les autres valeurs (type, comment, etc...)
+	if (o->type == CYLINDER)
 	{
 		o->bot_cap = fill_cap(o, 1);
 		o->top_cap = fill_cap(o, -1);

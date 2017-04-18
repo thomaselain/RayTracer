@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/23 13:22:31 by svassal           #+#    #+#             */
-/*   Updated: 2017/04/02 19:22:37 by svassal          ###   ########.fr       */
+/*   Updated: 2017/04/17 19:51:12 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,8 @@ static void		parse(int fd)
 }
 
 /*
-** Returns 0 if the extension of the file is .json, otherwise the function will return -1
+** Returns 0 if the extension of the file is .json,
+** otherwise the function will return -1
 */
 
 int				check_extension(const char *filename)

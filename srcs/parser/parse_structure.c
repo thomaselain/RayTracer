@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/10 13:22:31 by cchicote          #+#    #+#             */
-/*   Updated: 2017/04/02 19:38:03 by svassal          ###   ########.fr       */
+/*   Updated: 2017/04/17 20:14:21 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,21 +80,21 @@ void			fill_structure(char **s, t_noise *n, int init)
 		return ;
 	}
 	if (ft_strnstr(*s, "\"material_type\"", 15) != 0)
-			data_i = 1;
-		else if (ft_strnstr(*s, "\"zoom\"", 6) != 0)
-			data_i = 2;
-		else if (ft_strnstr(*s, "\"intensity\"", 11) != 0)
-			data_i = 3;
-		else if (ft_strnstr(*s, "\"c\"", 3) != 0)
-			data_i = 4;
-		sub_fill_struct(s, n, data_i);
+		data_i = 1;
+	else if (ft_strnstr(*s, "\"zoom\"", 6) != 0)
+		data_i = 2;
+	else if (ft_strnstr(*s, "\"intensity\"", 11) != 0)
+		data_i = 3;
+	else if (ft_strnstr(*s, "\"c\"", 3) != 0)
+		data_i = 4;
+	sub_fill_struct(s, n, data_i);
 }
 
 /*
 ** Return a parsed structure (fill missing datas with 0)
 */
 
-t_noise				parse_structure(char **string)
+t_noise			parse_structure(char **string)
 {
 	t_noise			ret;
 	char			*tmp;

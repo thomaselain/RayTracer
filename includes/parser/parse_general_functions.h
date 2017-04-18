@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 12:42:48 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/14 15:21:31 by svassal          ###   ########.fr       */
+/*   Updated: 2017/04/17 20:21:59 by svassal          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,6 @@ int				valide_braces_brackets(char *s);
 */
 
 void			character_skipper(char **s);
-
-/*
-** Return ERROR if a parameter that doesn't exist is present
-** NO_ERROR elseway;
-*/
-
-char			*get_structure_param(int param_num);
 
 /*
 ** Return a parameter, or 0, if arguments are wrong
@@ -81,9 +74,15 @@ int				get_param_length(char *s);
 void			skip_brackets_braces(char **string);
 
 /*
-** Returns a texture parameter
+** Return a scene parameter
 */
 
-char		*get_texture_param(int param_num);
+char		*get_scene_param(int param_num);
+
+/*
+** Return an object parameter (might be a light)
+*/
+
+char		*get_object_param(int param_num);
 
 #endif

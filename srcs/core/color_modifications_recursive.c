@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/16 18:42:04 by telain            #+#    #+#             */
-/*   Updated: 2017/03/25 13:42:13 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/17 17:41:26 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,25 +57,6 @@ int		adjust_color(t_scene *s, t_object *hit, t_ray ray, int reflects)
 	return (c);
 }
 
-// t_object	*get_refract(t_scene *s, t_object *hit, t_ray *ray)
-// {
-// 	t_vector4f	normal;
-// 	float		angle;
-
-// 	if (hit->refraction > 1.0)
-// 	{
-// 		normal = get_normal(hit, *ray);
-// 		angle = vector_dot(ray->dir, normal);
-// 		ray->dir = vector_normalize(ADD(MUL(ray->dir, 1.0 / hit->refraction),
-// 					MUL(normal, 1.0 / hit->refraction * angle -  sqrt(1.0 -
-// 							pow(1.0 / hit->refraction, 2.0)	* (1.0 -
-// 								pow(angle, 2.0))))));
-// 	}
-// 	else
-// 		ray->pos = ADD(ray->pos, MUL(ray->dir, 0.001));
-// 	return (get_intersection(s, ray));
-// }
-
 t_object	*get_refract(t_scene *s, t_object *hit, t_ray *ray)
 {
 	t_vector4f	normal;
@@ -87,6 +68,7 @@ t_object	*get_refract(t_scene *s, t_object *hit, t_ray *ray)
 	ray->state++;
 	if (hit->refraction > 1.0 && hit->transparence > 0 && hit->transparence < 1)
 	{
+		ray->state++;
 		normal = get_normal(hit, *ray);
 		angle = vector_dot(ray->dir, normal);
 		if (angle > 0)
@@ -104,10 +86,6 @@ t_object	*get_refract(t_scene *s, t_object *hit, t_ray *ray)
 		c2 = 1 - powf(n1 / n2, 2) * (1 - powf(angle, 2));
 		c2 = sqrt(c2);
 		ray->pos = SUB(ray->pos, MUL(normal, 0.00001));
-		// ray->dir = vector_normalize(ADD(MUL(ray->dir, n1 / n2),
-		// 			MUL(normal, n1 / n2 * angle -  sqrt(n1 -
-		// 					pow(n1 / n2, 2.0)	* (n1 -
-		// 						pow(angle, 2.0))))));
 		ray->dir = ADD(MUL(ray->dir, (n1 / n2)), MUL(normal, ((n1 / n2) * angle - c2)));
 	}
 	else
@@ -131,7 +109,7 @@ unsigned int	compute_light(t_scene *s, t_object *o, t_ray ray, t_object *light)
 	t_ray			v_light;
 	t_ray			specular;
 
-	c = o->color; //peut etre a mettre en haut
+	c = o->color;
 	if (o && o->texture.srf != NULL)
 		c = get_texture_pixel(o, ray);
 	if (light == NULL)

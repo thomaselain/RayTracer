@@ -64,7 +64,9 @@
 				},
 				"height":2,
 				"brightness":0.9,
-				"radius":0.05
+				"transparence":0.3,
+				"refraction":1.3,
+				"radius":0.01
 			},
 			{
 				"type":"CYLINDER",

@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/19 16:23:02 by telain            #+#    #+#             */
-/*   Updated: 2017/04/05 19:17:27 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/17 17:37:46 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,13 +61,11 @@ unsigned int		find_plane_texture(t_object *o, t_ray ray)
 	d = vector_dist(ray.pos, o->origin);
 	alpha = acos(vector_dot(t, vector_rotate(vector_normalize(SUB(o->origin,
 		ray.pos)), o->direction, 0)));
-	/*remplacer scale par rotate*/
 	u = cos(alpha) * d / o->texture.scale;
 	if (ray.pos.z < 0)
 		v = sin(-alpha) * d / o->texture.scale;
 	else
 		v = sin(alpha) * d / o->texture.scale;
-	/* v = v < 0 ? v + 1 : v;*/
 	v += MAX_SIZE;
 	return (img_get_pixel(&o->texture,
 				(int)(u * o->texture.w + 1) % o->texture.w,

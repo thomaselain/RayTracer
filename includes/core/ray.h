@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/05 17:08:17 by telain            #+#    #+#             */
-/*   Updated: 2017/04/05 18:45:47 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/17 15:32:37 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,5 +136,11 @@ unsigned int	get_texture_pixel(t_object *hit, t_ray ray);
 unsigned int	find_plane_texture(t_object *o, t_ray ray);
 unsigned int	find_cylinder_texture(t_object *o, t_ray ray);
 unsigned int	find_sphere_texture(t_object *o, t_ray ray);
+
+/*
+**	Subfonctions for get_intersection (norme)
+*/
+
+void			get_sphere(t_object *o, float *closest, t_ray *ray, t_object **hit);
 
 #endif
