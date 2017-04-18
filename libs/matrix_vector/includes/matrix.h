@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/13 15:56:40 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/25 18:48:18 by svassal          ###   ########.fr       */
+/*   Updated: 2017/04/17 21:04:06 by cchicote         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 # include <stdlib.h>
 # include <math.h>
 
-typedef struct		s_matrix4f
+typedef struct	s_matrix4f
 {
-		float		data[4][4];
-}					t_matrix4f;
+	float		data[4][4];
+}				t_matrix4f;
 
 /*
 ** Init each element of the matrix according to a defined patern,
@@ -34,7 +34,7 @@ void			init_matrix_id(t_matrix4f *m);
 ** Create a matrix, allocating enough memory for it
 */
 
-t_matrix4f		*make_matrix();
+t_matrix4f		*make_matrix(void);
 
 /*
 ** Delete a matrix, freeing the memory alloacted for it
@@ -89,7 +89,7 @@ t_matrix4f		matrix_rotation_vec_two(t_vector4f forward, t_vector4f up);
 */
 
 t_matrix4f		matrix_rotation_vec_three(t_vector4f forward,
-	t_vector4f up, t_vector4f right);
+		t_vector4f up, t_vector4f right);
 
 /*
 ** Multiply two matrix
@@ -126,7 +126,7 @@ t_matrix4f		matrix_translation(float x, float y, float z);
 */
 
 t_matrix4f		matrix_perspective(float fov, float aspect_ratio,
-	float z_near, float z_far);
+		float z_near, float z_far);
 
 /*
 ** Init ortographic projection with given parameters

@@ -28,7 +28,7 @@ void			define_vector(t_vector4f *v, float f[4])
 ** Return an allocated vector, initialized at 0;
 */
 
-t_vector4f		*make_vector()
+t_vector4f		*make_vector(void)
 {
 	t_vector4f		*r;
 	float			f[4];

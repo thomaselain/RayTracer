@@ -40,7 +40,7 @@ void			init_matrix_id(t_matrix4f *m)
 ** Create a matrix, allocating enough memory for it
 */
 
-t_matrix4f		*make_matrix()
+t_matrix4f		*make_matrix(void)
 {
 	t_matrix4f		*r;
 

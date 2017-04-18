@@ -11,8 +11,8 @@
 /* ************************************************************************** */
 
 #include "vector.h"
-# define BH v[0]
-# define AXIS v[1]
+#define BH v[0]
+#define AXIS v[1]
 
 t_vector4f		vector_projection(t_vector4f s, t_vector4f axis, t_vector4f p)
 {
