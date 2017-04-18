@@ -22,7 +22,7 @@ void				*thread_run_core(void *param)
 	tcore->max = WHSIZE;
 	while (tcore->cur >= 0 && tcore->cur < tcore->max && tcore->alive >= 2)
 	{
-		img_set_pixel(tcore->img, tcore->cur % WIDTH, tcore->cur / WIDTH, 
+		img_set_pixel(tcore->img, tcore->cur % WIDTH, tcore->cur / WIDTH,
 			add_filter(ray_pixel(tcore->env, tcore->cur % WIDTH,
 				tcore->cur / WIDTH), tcore->env->camera.filter));
 		tcore->cur += tcore->step;
