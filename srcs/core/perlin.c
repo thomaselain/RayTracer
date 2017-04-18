@@ -101,6 +101,6 @@ float			perlin(float x, float y, float z)
 						grad(perlin[P_BB], x - 1, y - 1, z))),
 				LERP(P_V, LERP(P_U, grad(perlin[P_AA + 1], x, y, z - 1),
 						grad(perlin[P_BA + 1], x - 1, y, z - 1)),
-					LERP(P_U, grad(perlin[P_AB + 1], x, y - 1, z - 1 ),
-						grad(perlin[P_BB + 1], x - 1, y - 1, z - 1 )))));
+					LERP(P_U, grad(perlin[P_AB + 1], x, y - 1, z - 1),
+						grad(perlin[P_BB + 1], x - 1, y - 1, z - 1)))));
 }

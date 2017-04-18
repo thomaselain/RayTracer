@@ -99,7 +99,9 @@ float					specular_light(t_scene *s, t_object *hit, t_ray ray, t_vector4f light)
 */
 
 t_object*				get_reflect(t_scene *s, t_object *hit, t_ray *ray);
-t_object*				get_refract(t_scene *s, t_object *hit, t_ray *ray);
+t_object				*get_refract(t_scene *s, t_object *h, t_ray *r);
+void					get_refract2(t_object *h, float *n1, float *n2, t_vector4f *n);
+void					get_refract3(t_object *h, float *n1, float *n2, float *angle);
 
 /*
 **	Returns the good light vector, depending on the type of the light
