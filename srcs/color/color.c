@@ -47,14 +47,14 @@ unsigned int	color_mul(unsigned int c, float m)
 {
 	return (((int)((c & 0xff0000) * fabs(m)) & 0xff0000) +
 			(((int)((c & 0xff00) * fabs(m)) & 0xff00) +
-			 (((int)((c & 0xff) * fabs(m)) & 0xff))));
+			(((int)((c & 0xff) * fabs(m)) & 0xff))));
 }
 
 unsigned int	color_div(unsigned int c, float d)
 {
 	return (((int)((c & 0xff0000) / fabs(d)) & 0xff0000) +
 			(((int)((c & 0xff00) / fabs(d)) & 0xff00) +
-			 (((int)((c & 0xff) / fabs(d)) & 0xff))));
+			(((int)((c & 0xff) / fabs(d)) & 0xff))));
 }
 
 unsigned int	color_avg(unsigned int c1, unsigned int c2)
@@ -70,5 +70,4 @@ unsigned int	color_avg(unsigned int c1, unsigned int c2)
 	b = (c1 & 0xff) * (c2 & 0xff);
 	b = b > 0xff ? 0xff : b;
 	return (r + g + b);
-//	return (color_div(color_add(c1, c2), 2));
 }

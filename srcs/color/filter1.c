@@ -23,7 +23,7 @@ void				get_argb_comp(unsigned int c, int argb[4])
 
 unsigned int		get_sepia(unsigned int c, int argb[4])
 {
-	int 			tr;
+	int				tr;
 	int				tg;
 	int				tb;
 	int				avg;
@@ -64,7 +64,8 @@ unsigned int		get_negative(unsigned int c, int argb[4])
 	return (c);
 }
 
-unsigned int		get_one_color(unsigned int c, int argb[4], t_filter_type filter)
+unsigned int		get_one_color(unsigned int c, int argb[4],
+						t_filter_type filter)
 {
 	int				r;
 	int				g;
