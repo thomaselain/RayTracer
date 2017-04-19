@@ -68,7 +68,7 @@ unsigned int	compute_light(t_scene *s, t_object *o, t_ray ray,
 	if (o && o->texture.srf != NULL)
 		c = get_texture_pixel(o, ray);
 	if (light == NULL)
-		return (color_add(c, color_mul(c, 0.25)));
+		return (color_mul(color_add(c, color_mul(c, 0.2)), noise(o, ray.pos)));
 	backup = c;
 	v_light.pos = light->origin;
 	v_light.dir = get_light_vector(light, ray);
