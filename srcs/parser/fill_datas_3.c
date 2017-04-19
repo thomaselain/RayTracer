@@ -90,7 +90,7 @@ void			fill_apex(char **s, t_vector4f *v, int init)
 		init == 3 ? v->z = 1 : 0;
 		return ;
 	}
-	if (ft_strnstr(*s, "\"x\"", 3) != 0)
+	if ((xyz = 0) == 0 && ft_strnstr(*s, "\"x\"", 3) != 0)
 		xyz = 1;
 	else if (ft_strnstr(*s, "\"y\"", 3) != 0)
 		xyz = 2;

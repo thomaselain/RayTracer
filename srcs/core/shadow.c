@@ -33,23 +33,6 @@ float			find_shadow(t_scene *s, t_object *hit, t_ray ray, t_ray light)
 	return (1);
 }
 
-float			specular_light(t_scene *s, t_object *hit, t_ray ray,
-		t_vector4f light)
-{
-	float		specular;
-	t_vector4f	reflect;
-
-	if (vector_dot(get_normal(hit, ray), light) <= 0)
-		return (0);
-	else
-	{
-		reflect = SUB(ray.dir, MUL(get_normal(hit, ray), -2.0 *
-			vector_dot(get_normal(hit, ray), ray.dir)));
-		specular = vector_dot(light, reflect);
-	}
-	return (specular >= 1.0 ? 1.0 : specular);
-}
-
 t_vector4f		get_light_vector(t_object *light, t_ray ray)
 {
 	if (light->type == SPOT)

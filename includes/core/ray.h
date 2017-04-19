@@ -91,13 +91,6 @@ unsigned int			compute_light(t_scene *s, t_object *o, t_ray ray,
 		t_object *light);
 
 /*
-**	Calculates the specular light for the given object
-*/
-
-float					specular_light(t_scene *s, t_object *hit, t_ray ray,
-		t_vector4f light);
-
-/*
 **	Changes the ray coordinates to get the reflected or refracted object
 */
 
