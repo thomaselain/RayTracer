@@ -14,42 +14,36 @@
 #include <ray.h>
 #include <img.h>
 #include <color.h>
+#define C_ADD(c1, c2) color_add(c1, c2)
+#define C_MUL(c, m) color_mul(c, m)
+#define COMP_L(s, o, r, l) compute_light(s, o, r, l)
 
 int				adjust_color(t_scene *s, t_object *h, t_ray r, int ref)
 {
 	unsigned int	c;
-	float			n;
 	t_ray			r_cpy;
 	t_object		*tmp_h;
 	t_list			*l;
 
 	l = s->lights;
-	c = 0;
 	r_cpy = r;
-	if (l == 0 && h != 0)
-		c = color_add(c, compute_light(s, h, r, NULL));
-	else if (l == 0)
-		c = s->background;
+	c = (l == 0 ? s->background : 0);
+	c = ((l == 0 && h != 0) ? C_ADD(0, COMP_L(s, h, r, NULL)) : c);
 	while (l != 0)
 	{
-		c = (h != 0 ? color_add(c, compute_light(s, h, r,
+		c = (h != 0 ? C_ADD(c, COMP_L(s, h, r,
 			(t_object*)l->content)) : s->background);
 		l = l->next;
 	}
 	if (h != 0 && h->reflection > 0.0 && ref <= MAX_REFLECTION)
-	{
-		n = noise(h, MUL(r.pos, 0.1));
 		tmp_h = get_reflect(s, h, &r);
-		c = color_add(color_mul(adjust_color(s, tmp_h, r, ref + 1),
-					h->reflection), c);
-	}
+	if (h != 0 && h->reflection > 0.0 && ref <= MAX_REFLECTION)
+		c = C_ADD(C_MUL(adjust_color(s, tmp_h, r, ref + 1), h->reflection), c);
 	if (h != 0 && h->transparence > 0.0 && ref <= MAX_REFLECTION)
-	{
-		n = noise(h, MUL(r_cpy.pos, 0.1));
 		tmp_h = get_refract(s, h, &r_cpy);
-		c = color_add(color_mul(adjust_color(s, tmp_h, r_cpy, ref + 1),
-			h->transparence), color_mul(c, 1 - h->transparence));
-	}
+	if (h != 0 && h->transparence > 0.0 && ref <= MAX_REFLECTION)
+		c = C_ADD(C_MUL(adjust_color(s, tmp_h, r_cpy, ref + 1),
+			h->transparence), C_MUL(c, 1 - h->transparence));
 	return (c);
 }
 
