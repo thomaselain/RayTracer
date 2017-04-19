@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/06 18:08:32 by telain            #+#    #+#             */
-/*   Updated: 2017/02/06 21:13:07 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/19 17:06:39 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -192,7 +192,7 @@ t_vector4f		vector_lerp(t_vector4f v, t_vector4f dest, float lerp_fact);
 float			vector_dist(t_vector4f v1, t_vector4f v2);
 
 /*
-**	Returns the projection of the point "p" on the axis starting at "s", 
+**	Returns the projection of the point "p" on the axis starting at "s",
 **	belong the vector "axis"
 */
 

@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 14:13:54 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/14 15:28:44 by svassal          ###   ########.fr       */
+/*   Updated: 2017/04/19 17:10:45 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ t_vector4f		parse_vector(char **string);
 ** Fill structure with 0 if init is equal to 1, or with the JSON datas elseway
 */
 
-t_noise				parse_structure(char **string);
+t_noise			parse_structure(char **string);
 
 /*
 ** Return a parsed camera (fill missing datas with 0),

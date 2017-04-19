@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/28 13:37:51 by svassal           #+#    #+#             */
-/*   Updated: 2017/04/17 20:23:53 by svassal          ###   ########.fr       */
+/*   Updated: 2017/04/19 17:09:23 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,8 @@ void			fill_scene(char **s, t_scene *sc, int init);
 t_object		*fill_cap(t_object *cylinder, float num);
 
 /*
-** Checks if the object is a cylinder, and calculates his caps coordinates based on the cylinder's coordinates
+** Checks if the object is a cylinder, and calculates his caps coordinates
+** based on the cylinder's coordinates
 */
 
 void			get_cap(t_object *o);
@@ -69,7 +70,8 @@ void			get_cap(t_object *o);
 void			copy_structure(t_noise *src, t_noise *dest);
 
 /*
-** A specific function to get the texture file's name and to manage errors properly
+** A specific function to get the texture file's name and to manage
+** errors properly
 */
 
 void			get_texture(char **s, t_img *n);
@@ -109,7 +111,7 @@ float			get_brightness(char **s);
 ** Fill the cap of a finished cone
 */
 
-t_object			*fill_cap_cone(t_object *cone, float num);
+t_object		*fill_cap_cone(t_object *cone, float num);
 
 /*
 ** Fill vector with 0 if init is equal to 1, or with the JSON

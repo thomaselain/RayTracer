@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/26 12:42:48 by svassal           #+#    #+#             */
-/*   Updated: 2017/04/17 20:21:59 by svassal          ###   ########.fr       */
+/*   Updated: 2017/04/19 17:10:28 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,12 +77,12 @@ void			skip_brackets_braces(char **string);
 ** Return a scene parameter
 */
 
-char		*get_scene_param(int param_num);
+char			*get_scene_param(int param_num);
 
 /*
 ** Return an object parameter (might be a light)
 */
 
-char		*get_object_param(int param_num);
+char			*get_object_param(int param_num);
 
 #endif

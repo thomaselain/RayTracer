@@ -6,14 +6,14 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/27 17:05:53 by telain            #+#    #+#             */
-/*   Updated: 2017/02/28 22:46:05 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/19 17:04:31 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef COLOR_H
 # define COLOR_H
 
-#include <core.h>
+# include <core.h>
 
 /*
 **	Returns c1 + c2 in a new unsigned int as a color
@@ -45,13 +45,14 @@ unsigned int		color_div(unsigned int c, float d);
 unsigned int		color_avg(unsigned int c1, unsigned int c2);
 
 /*
-** Returns the color of the scene after the application of a sepia filter 
+** Returns the color of the scene after the application of a sepia filter
 */
 
 unsigned int		get_sepia(unsigned int c, int argb[4]);
 
 /*
-** Returns the color of the scene after the application of a black and white filter
+** Returns the color of the scene after the application of a black and white
+** filter
 */
 
 unsigned int		get_black_white(unsigned int c, int argb[4]);
@@ -63,10 +64,12 @@ unsigned int		get_black_white(unsigned int c, int argb[4]);
 unsigned int		get_negative(unsigned int c, int argb[4]);
 
 /*
-** Returns the color of the scene after the application of a red or green or blue filter depending on the parameter file
+** Returns the color of the scene after the application of a red
+** or green or blue filter depending on the parameter file
 */
 
-unsigned int		get_one_color(unsigned int c, int argb[4], t_filter_type filter);
+unsigned int		get_one_color(unsigned int c, int argb[4],
+		t_filter_type filter);
 
 /*
 ** Returns the filtered argb color at pixel (x, y);
@@ -79,6 +82,5 @@ unsigned int		add_filter(unsigned int c, t_filter_type filter);
 */
 
 void				get_argb_comp(unsigned int c, int argb[4]);
-
 
 #endif

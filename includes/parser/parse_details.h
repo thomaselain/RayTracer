@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/24 12:18:31 by svassal           #+#    #+#             */
-/*   Updated: 2017/01/14 14:48:26 by svassal          ###   ########.fr       */
+/*   Updated: 2017/04/19 17:09:45 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,5 @@ t_noise_type	parse_noise_type(char **string);
 */
 
 t_filter_type	parse_filter_type(char **string);
-
-
 
 #endif
