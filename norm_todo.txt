@@ -16,20 +16,6 @@ Error (line 73): line has 93 characters
 Norme: ./srcs/core/grid.c
 Norme: ./srcs/core/noise.c
 Norme: ./srcs/core/normal.c
-Norme: ./srcs/core/perlin.c
-Error (line 41): function init_perlin has 26 lines
-Error (line 43): spaces at the end of line
-Error (line 43, col 5): permutation is instanciated during declaration
-Error (line 46, col 8): bad character after ,
-Error (line 49, col 16): bad character after ,
-Error (line 49, col 45): bad spacing
-Error (line 49, col 63): bad spacing
-Error (line 52, col 32): bad character after ,
-Error (line 54, col 18): bad spacing
-Error (line 55, col 53): bad spacing
-Error (line 58, col 6): bad spacing
-Error (line 58, col 56): bad character after ,
-Error (line 76, col 1): Multi expression statements
 Norme: ./srcs/core/plane.c
 Norme: ./srcs/core/rectangle.c
 Norme: ./srcs/core/refraction.c
