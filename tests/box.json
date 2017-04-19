@@ -1,5 +1,5 @@
 {
-	"background":0xffffff,
+	"background":0x000000,
 	"camera":
 	{
 		"origin":
@@ -140,6 +140,21 @@
 				"z":5
 			},
 			"radius":5
+		}
+	],
+	"lights":
+	[
+		{
+			"type":"SPOT",
+			"color":0xffffff,
+			"origin":
+			{
+				"x":10,
+				"y":5,
+				"z":0
+			},
+			"radius":1,
+			"comment":"Premiere lumiere"
 		}
 	]
 }
