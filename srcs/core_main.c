@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/11/31 15:59:09 by aljourda          #+#    #+#             */
-/*   Updated: 2017/04/05 18:53:45 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/19 16:55:02 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,46 +16,6 @@
 #include <img.h>
 #include <thread.h>
 #include <ray.h>
-
-static void		print_content(t_scene *s)
-{
-	t_list	*obj;
-	t_list	*light;
-
-	obj = s->objects;
-	light = s->lights;
-	printf("SCENE :\n");
-	printf("\tCAMERA :\n");
-	printf("\t\tORIGIN\n\t\t\t[X = %f ; Y = %f ; Z = %f]\n", s->camera.origin.x, s->camera.origin.y, s->camera.origin.z);
-	printf("\t\tDIRECTION\n\t\t\t[X = %f ; Y = %f ; Z = %f]\n", s->camera.direction.x, s->camera.direction.y, s->camera.direction.z);
-	printf("\t\tFOV = %d\n", s->camera.fov);
-	printf("\tOBJECTS :\n");
-	while (obj != 0)
-	{
-		printf("\t\tTYPE = %d\n", ((t_object *)s->objects->content)->type);
-		printf("\t\t\tORIGIN\n\t\t\t\t[X = %f ; Y = %f ; Z = %f]\n", ((t_object *)s->objects->content)->origin.x, ((t_object *)s->objects->content)->origin.y, ((t_object *)s->objects->content)->origin.z);
-		printf("\t\t\tDIRECTION\n\t\t\t\t[X = %f ; Y = %f ; Z = %f]\n", ((t_object *)s->objects->content)->direction.x, ((t_object *)s->objects->content)->direction.y, ((t_object *)s->objects->content)->direction.z);
-		printf("\t\t\tCOLOR = %x\n", ((t_object *)s->objects->content)->color);
-		printf("\t\t\tRADIUS = %f\n", ((t_object *)s->objects->content)->intensity);
-		printf("\t\t\tREFLECTION = %f\n", ((t_object *)s->objects->content)->reflection);
-		printf("\t\t\tBRIGHTNESS = %f\n", ((t_object *)s->objects->content)->brightness);
-		printf("\t\t\tCOMMENT = %s\n", ((t_object *)s->objects->content)->comment);
-		obj = obj->next;
-	}
-	printf("\tLIGHTS :\n");
-	while (light != 0)
-	{
-		printf("\t\tTYPE = %d\n", ((t_object *)s->lights->content)->type);
-		printf("\t\t\tORIGIN\n\t\t\t\t[X = %f ; Y = %f ; Z = %f]\n", ((t_object *)s->lights->content)->origin.x, ((t_object *)s->lights->content)->origin.y, ((t_object *)s->lights->content)->origin.z);
-		printf("\t\t\tDIRECTION\n\t\t\t\t[X = %f ; Y = %f ; Z = %f]\n", ((t_object *)s->lights->content)->direction.x, ((t_object *)s->lights->content)->direction.y, ((t_object *)s->lights->content)->direction.z);
-		printf("\t\t\tCOLOR = %x\n", ((t_object *)s->lights->content)->color);
-		printf("\t\t\tINTENSITY = %f\n", ((t_object *)s->lights->content)->intensity);
-		printf("\t\t\tREFLECTION = %f\n", ((t_object *)s->lights->content)->reflection);
-		printf("\t\t\tBRIGHTNESS = %f\n", ((t_object *)s->lights->content)->brightness);
-		printf("\t\t\tCOMMENT = %s\n", ((t_object *)s->lights->content)->comment);
-		light = light->next;
-	}
-}
 
 __attribute__((weak))void	get_camera_plane(t_scene *scene){
 	

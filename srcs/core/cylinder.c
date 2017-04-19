@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/05 17:10:09 by telain            #+#    #+#             */
-/*   Updated: 2017/04/17 17:24:35 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/19 16:53:50 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ float		find_cylinder_inter(t_ray *r, t_object *o)
 					r->pos, o->origin), o->direction));
 	C = vector_dot(vector_sub_vec(r->pos, o->origin), vector_sub_vec(r->pos,
 				o->origin)) - powf(vector_dot(vector_sub_vec(r->pos, o->origin),
-					o->direction), 2) - powf(o->radius, 2);
+					o->direction), 2) - powf(o->rad_int.radius, 2);
 	D = powf(B, 2) - 4 * A * C;
 	if (D < 0)
 		return (MAX_SIZE);

@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/05 17:11:59 by telain            #+#    #+#             */
-/*   Updated: 2017/04/17 19:50:07 by svassal          ###   ########.fr       */
+/*   Updated: 2017/04/19 16:55:44 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ static void		fill_objects_sub1(char **s, t_object *o)
 	else if (index == 5)
 		o->brightness = get_brightness(s);
 	else if (index == 6)
-		o->intensity = parse_float(s);
+		o->rad_int.intensity = parse_float(s);
 	else if (index == 7)
 		o->direction = parse_vector(s);
 	else
@@ -136,7 +136,7 @@ static void		object_init(t_object *o)
 	o->color = 0xffffff;
 	o->brightness = 0.0;
 	o->reflection = 0.0;
-	o->intensity = 1.0;
+	o->rad_int.intensity = 1.0;
 	o->comment = 0;
 	o->width = MAX_SIZE;
 	o->height = MAX_SIZE;

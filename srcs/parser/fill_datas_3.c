@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/02 18:37:40 by svassal           #+#    #+#             */
-/*   Updated: 2017/04/17 19:49:12 by svassal          ###   ########.fr       */
+/*   Updated: 2017/04/19 16:56:44 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ t_object		*fill_cap_cone(t_object *cone, float num)
 
 	cap = ft_memalloc(sizeof(t_object));
 	cap->type = CIRCLE;
-	cap->radius = tan(cone->angle / 2) * cone->height;
+	cap->rad_int.radius = tan(cone->angle / 2) * cone->height;
 	cap->color = cone->color;
 	cap->brightness = cone->brightness;
 	cap->reflection = cone->reflection;

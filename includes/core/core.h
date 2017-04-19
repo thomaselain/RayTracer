@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/11 17:28:23 by aljourda          #+#    #+#             */
-/*   Updated: 2017/03/25 18:26:08 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/19 17:00:56 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,8 @@
 # include <libft.h>
 # include <img.h>
 # include <parse_error.h>
-#include <stdio.h>
-# define WIDTH	1000
-# define HEIGHT	800
+# define WIDTH	(1000)
+# define HEIGHT	(800)
 # define WHSIZE	(WIDTH * HEIGHT)
 
 /*
@@ -27,7 +26,8 @@
 
 typedef enum		e_type
 {
-	DIRECTIONAL, SPOT, PLANE, SPHERE, CONE, CYLINDER, CIRCLE, UNKNOWN, RECTANGLE, CUBOID, TRIANGLE
+	DIRECTIONAL, SPOT, PLANE, SPHERE, CONE, CYLINDER, CIRCLE, UNKNOWN,
+	RECTANGLE, CUBOID, TRIANGLE
 }					t_type;
 
 /*
@@ -45,7 +45,8 @@ typedef enum		e_noise_type
 
 typedef enum		e_filter_type
 {
-	SEPIA, NEGATIVE, RED_FILTER, GREEN_FILTER, BLUE_FILTER, NO_FILTER, BLACK_WHITE
+	SEPIA, NEGATIVE, RED_FILTER, GREEN_FILTER, BLUE_FILTER, NO_FILTER,
+	BLACK_WHITE
 }					t_filter_type;
 
 /*
@@ -92,6 +93,11 @@ typedef struct		s_camera
 /*
 ** Contains each information parsed from the JSON file
 */
+union				u_rad_int
+{
+	float			intensity;
+	float			radius;
+}					u_rad_int;
 
 typedef struct		s_object
 {
@@ -106,20 +112,16 @@ typedef struct		s_object
 	float			reflection;
 	float			refraction;
 	float			transparence;
-	union
-	{
-		float		intensity;
-		float		radius;
-	};
 	char			*comment;
 	float			width;
 	float			height;
 	t_noise			noise;
-	struct s_object	*top_cap;
-	struct s_object	*bot_cap;
 	t_img			texture;
+	union u_rad_int	rad_int;
 	float			rotation;
 	float			angle;
+	struct s_object	*top_cap;
+	struct s_object	*bot_cap;
 }					t_object;
 
 /*

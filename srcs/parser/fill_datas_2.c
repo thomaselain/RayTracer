@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/03 13:14:56 by svassal           #+#    #+#             */
-/*   Updated: 2017/04/17 19:50:24 by svassal          ###   ########.fr       */
+/*   Updated: 2017/04/19 16:56:29 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,11 +126,11 @@ t_object		*fill_cap(t_object *cylinder, float num)
 
 	cap = ft_memalloc(sizeof(t_object));
 	cap->type = CIRCLE;
-	cap->radius = cylinder->radius;
+	cap->rad_int.radius = cylinder->rad_int.radius;
 	cap->color = cylinder->color;
 	cap->brightness = cylinder->brightness;
 	cap->reflection = cylinder->reflection;
-	cap->intensity = cylinder->intensity;
+	cap->rad_int.intensity = cylinder->rad_int.intensity;
 	cap->comment = num == 1 ? ft_strdup("1") : ft_strdup("2");
 	copy_structure(&(cylinder->noise), &(cap->noise));
 	cap->origin = ADD(cylinder->origin,

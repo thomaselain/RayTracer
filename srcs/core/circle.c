@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/06 17:37:37 by telain            #+#    #+#             */
-/*   Updated: 2017/04/02 17:50:58 by svassal          ###   ########.fr       */
+/*   Updated: 2017/04/19 16:53:25 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@ float		find_circle_inter(t_ray *r, t_object *o)
 
 	d = find_plane_inter(r, o);
 	return (vector_dist(o->origin, ADD(r->pos, MUL(r->dir, d - 0.001))) <
-		o->radius ? d : MAX_SIZE);
+		o->rad_int.radius ? d : MAX_SIZE);
 }
