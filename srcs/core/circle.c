@@ -21,3 +21,17 @@ float		find_circle_inter(t_ray *r, t_object *o)
 	return (vector_dist(o->origin, ADD(r->pos, MUL(r->dir, d - 0.001))) <
 		o->rad_int.radius ? d : MAX_SIZE);
 }
+
+float		call_circle(t_ray *ray, t_list *obj, float closest, t_object **hit)
+{
+	float	ret;
+
+	ret = find_circle_inter(ray, (t_object*)obj->content);
+	if (ret < closest && ret >= 0.001)
+	{
+		*hit = (t_object*)obj->content;
+		return (ret);
+	}
+	else
+		return (closest);
+}

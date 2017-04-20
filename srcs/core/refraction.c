@@ -54,5 +54,5 @@ t_object		*get_refract(t_scene *s, t_object *h, t_ray *r)
 	}
 	else
 		r->pos = ADD(r->pos, MUL(r->dir, 0.001));
-	return (get_intersection(s, r));
+	return (get_intersection(s->objects, r));
 }

@@ -42,3 +42,17 @@ t_vector4f	sphere_normal(t_object *o, t_ray ray)
 {
 	return (vector_normalize(SUB(ray.pos, o->origin)));
 }
+
+float		call_sphere(t_ray *ray, t_list *obj, float closest, t_object **hit)
+{
+	float	ret;
+
+	ret = find_sphere_inter(ray, (t_object*)obj->content);
+	if (ret < closest && ret >= 0.001)
+	{
+		*hit = (t_object*)obj->content;
+		return (ret);
+	}
+	else
+		return (closest);
+}

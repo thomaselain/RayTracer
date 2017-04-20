@@ -22,7 +22,7 @@ float			find_shadow(t_scene *s, t_object *hit, t_ray ray, t_ray light)
 	before = ray.pos;
 	ray.pos = ADD(ray.pos, MUL(light.dir, 0.001));
 	ray.dir = light.dir;
-	if ((new_hit = get_intersection(s, &ray)) != NULL &&
+	if ((new_hit = get_intersection(s->objects, &ray)) != NULL &&
 		vector_dist(before, ray.pos) <= vector_dist(before, light.pos))
 	{
 		if (new_hit->transparence == 0)

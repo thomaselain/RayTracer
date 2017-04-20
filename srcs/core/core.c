@@ -60,7 +60,7 @@ unsigned int		ray_pixel(t_scene *scene, int x, int y)
 	ray.dir = vector_normalize(SUB(get_ray(scene, x, y),
 		scene->camera.origin));
 	ray.pos = scene->camera.origin;
-	hit = get_intersection(scene, &ray);
+	hit = get_intersection(scene->objects, &ray);
 	c = adjust_color(scene, hit, ray, 1);
 	return (c);
 }

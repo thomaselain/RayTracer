@@ -54,3 +54,29 @@ t_vector4f	cylinder_normal(t_object *o, t_ray ray)
 	return (vector_normalize(SUB(SUB(ray.pos, o->origin), MUL(o->direction,
 						vector_dot(SUB(ray.pos, o->origin), o->direction)))));
 }
+
+float		call_cyl(t_ray *ray, t_list *obj, float closest, t_object **hit)
+{
+	float	d;
+
+	d = 0;
+	if ((d = find_circle_inter(ray,
+		((t_object*)obj->content)->bot_cap)) < closest && d >= 0.001)
+	{
+		*hit = ((t_object*)obj->content)->bot_cap;
+		closest = d;
+	}
+	if ((d = find_circle_inter(ray,
+		((t_object*)obj->content)->top_cap)) < closest && d >= 0.001)
+	{
+		*hit = ((t_object*)obj->content)->top_cap;
+		closest = d;		
+	}
+	if ((d = find_cylinder_inter(ray,
+		(t_object*)obj->content)) < closest && d >= 0.001)
+	{
+		*hit = (t_object*)obj->content;
+		closest = d;
+	}
+	return (closest);
+}

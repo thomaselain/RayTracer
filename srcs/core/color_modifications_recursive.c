@@ -53,7 +53,7 @@ t_object		*get_reflect(t_scene *s, t_object *hit, t_ray *ray)
 
 	normal = get_normal(hit, *ray);
 	ray->dir = ADD(ray->dir, MUL(normal, -2.0 * vector_dot(normal, ray->dir)));
-	return (get_intersection(s, ray));
+	return (get_intersection(s->objects, ray));
 }
 
 unsigned int	compute_light(t_scene *s, t_object *o, t_ray ray,

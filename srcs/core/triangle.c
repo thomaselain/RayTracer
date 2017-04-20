@@ -46,3 +46,17 @@ float			find_triangle_inter(t_ray *r, t_object *o)
 		return (0);
 	return (find_plane_inter(r, o));
 }
+
+float		call_tri(t_ray *ray, t_list *obj, float closest, t_object **hit)
+{
+	float	ret;
+
+	ret = find_triangle_inter(ray, (t_object*)obj->content);
+	if (ret < closest && ret >= 0.001)
+	{
+		*hit = (t_object*)obj->content;
+		return (ret);
+	}
+	else
+		return (closest);
+}

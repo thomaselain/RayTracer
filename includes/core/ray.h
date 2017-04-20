@@ -48,7 +48,7 @@ int						adjust_color(t_scene *s, t_object *hit, t_ray ray,
 **	Calculates the intersection with all objects
 */
 
-t_object				*get_intersection(t_scene *s, t_ray *ray);
+t_object				*get_intersection(t_list *obj, t_ray *ray);
 
 /*
 **	Calculates the intersections for each different object
@@ -143,7 +143,19 @@ unsigned int			find_sphere_texture(t_object *o, t_ray ray);
 **	Subfonctions for get_intersection (norme)
 */
 
-void					get_sphere(t_object *o, float *closest, t_ray *ray,
-		t_object **hit);
+float					call_sphere(t_ray *ray, t_list *obj,
+		float closest, t_object **hit);
+float					call_plane(t_ray *ray, t_list *obj,
+		float closest, t_object **hit);
+float					call_rect(t_ray *ray, t_list *obj,
+		float closest, t_object **hit);
+float					call_circle(t_ray *ray, t_list *obj,
+		float closest, t_object **hit);
+float					call_tri(t_ray *ray, t_list *obj,
+		float closest, t_object **hit);
+float					call_cyl(t_ray *ray, t_list *obj,
+		float closest, t_object **hit);
+float					call_cone(t_ray *ray, t_list *obj,
+		float closest, t_object **hit);
 
 #endif
