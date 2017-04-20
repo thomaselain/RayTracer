@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include <core.h>
+#include <ray.h>
 
 float		find_plane_inter(t_ray *r, t_object *o)
 {
