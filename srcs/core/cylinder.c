@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/05 17:10:09 by telain            #+#    #+#             */
-/*   Updated: 2017/04/19 16:53:50 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/20 16:45:31 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ float		call_cyl(t_ray *ray, t_list *obj, float closest, t_object **hit)
 		((t_object*)obj->content)->top_cap)) < closest && d >= 0.001)
 	{
 		*hit = ((t_object*)obj->content)->top_cap;
-		closest = d;		
+		closest = d;
 	}
 	if ((d = find_cylinder_inter(ray,
 		(t_object*)obj->content)) < closest && d >= 0.001)

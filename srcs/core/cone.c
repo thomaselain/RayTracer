@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/01/26 19:32:35 by svassal           #+#    #+#             */
-/*   Updated: 2017/04/17 17:43:25 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/20 16:45:18 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ float		call_cone(t_ray *ray, t_list *obj, float closest, t_object **hit)
 		((t_object*)obj->content)->top_cap)) < closest && d >= 0.001)
 	{
 		*hit = ((t_object*)obj->content)->top_cap;
-		closest = d;		
+		closest = d;
 	}
 	if ((d = find_cone_inter(ray,
 		(t_object*)obj->content)) < closest && d >= 0.001)

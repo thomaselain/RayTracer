@@ -6,7 +6,7 @@
 /*   By: svassal <svassal@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/10 16:10:58 by telain            #+#    #+#             */
-/*   Updated: 2017/04/19 20:08:20 by svassal          ###   ########.fr       */
+/*   Updated: 2017/04/20 16:46:15 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,9 +82,9 @@ static void		sub_perlin(int p[512], int n[9], float f[3], float d[3])
 	P_A = p[X_FLOOR] + Y_FLOOR;
 	P_AA = p[P_A] + Z_FLOOR;
 	P_AB = p[P_A + 1] + Z_FLOOR;
-	P_B = p[X_FLOOR + 1] + Y_FLOOR,
-		P_BA = p[P_B] + Z_FLOOR,
-		P_BB = p[P_B + 1] + Z_FLOOR;
+	P_B = p[X_FLOOR + 1] + Y_FLOOR;
+	P_BA = p[P_B] + Z_FLOOR;
+	P_BB = p[P_B + 1] + Z_FLOOR;
 }
 
 float			perlin(float x, float y, float z)

@@ -6,7 +6,7 @@
 /*   By: telain <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/02/06 18:41:59 by telain            #+#    #+#             */
-/*   Updated: 2017/04/17 17:42:45 by telain           ###   ########.fr       */
+/*   Updated: 2017/04/20 16:46:34 by telain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ float			find_triangle_inter(t_ray *r, t_object *o)
 	return (find_plane_inter(r, o));
 }
 
-float		call_tri(t_ray *ray, t_list *obj, float closest, t_object **hit)
+float			call_tri(t_ray *ray, t_list *obj, float closest, t_object **hit)
 {
 	float	ret;
 
