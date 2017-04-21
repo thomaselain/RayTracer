@@ -17,20 +17,13 @@ int				key_status_progress(void)
 {
 	int					status;
 	SDL_Event			event;
-	SDL_KeyboardEvent	*key;
 
 	status = 0;
-	key = 0;
 	SDL_PollEvent(&event);
 	if (event.type == SDL_KEYDOWN)
-	{
-		key = &event.key;
 		status = 3;
-	}
 	else if (event.type == SDL_WINDOWEVENT_CLOSE || event.type == SDL_QUIT)
-	{
 		status = 1;
-	}
 	return (status);
 }
 
