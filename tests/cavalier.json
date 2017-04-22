@@ -1,0 +1,243 @@
+{
+	"background":0x303030,
+		"camera":
+		{
+			"origin":
+			{
+				"x":0,
+				"y":3,
+				"z":0
+			},
+			"direction":
+			{
+				"x":0,
+				"y":-1,
+				"z":0
+			},
+			"fov":60
+		},
+		"objects":
+			[
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+			{
+				"type":"PLANE",
+				"color":0x303030,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":1.5
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":-1
+				},
+				"reflection":0.0
+			},
+			{
+				"type":"CYLINDER",
+				"color":0xD2AB6F,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":0
+				},
+				"height":0.2,
+				"radius":1,
+				"brightness": 0.3,
+				"comment":"base#1 CHEVAL_BLANC"
+			},
+			{
+				"type":"CYLINDER",
+				"color":0xD2AB6F,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":-0.3
+				},
+				"height":0.05,
+				"radius":0.9,
+				"brightness": 0.3,
+				"comment":"base#2 CHEVAL_BLANC"
+			},
+			{
+				"type":"CYLINDER",
+				"color":0xD2AB6F,
+				"origin":
+				{
+					"x":-0.27,
+					"y":0,
+					"z":-1.2
+				},
+				"direction":
+				{
+					"x":-0.3,
+					"y":0,
+					"z":1.5
+				},
+				"height":1.3,
+				"radius":0.5,
+				"brightness": 0.3,
+				"comment":"corps#1 CHEVAL_BLANC"
+			},
+			{
+				"type":"CYLINDER",
+				"color":0xD2AB6F,
+				"origin":
+				{
+					"x":0.65,
+					"y":0,
+					"z":-2.3
+				},
+				"direction":
+				{
+					"x":0.8,
+					"y":0,
+					"z":1.5
+				},
+				"height":0.6,
+				"radius":0.3,
+				"brightness": 0.3,
+				"comment":"tete#1 CHEVAL_BLANC"
+			},
+			{
+				"type":"CYLINDER",
+				"color":0xD2AB6F,
+				"origin":
+				{
+					"x":0.65,
+					"y":0.1,
+					"z":-3
+				},
+				"direction":
+				{
+					"x":-0.8,
+					"y":0,
+					"z":1.5
+				},
+				"height":0.1,
+				"radius":0.05,
+				"brightness": 0.3,
+				"comment":"corne#1 CHEVAL_BLANC"
+			},
+			{
+				"type":"CYLINDER",
+				"color":0xD2AB6F,
+				"origin":
+				{
+					"x":0.65,
+					"y":-0.1,
+					"z":-3
+				},
+				"direction":
+				{
+					"x":-0.8,
+					"y":0,
+					"z":1.5
+				},
+				"height":0.1,
+				"radius":0.05,
+				"brightness": 0.3,
+				"comment":"corne#2 CHEVAL_BLANC"
+			},
+			{
+				"type":"SPHERE",
+				"color":0xD2AB6F,
+				"origin":
+				{
+					"x":0.1,
+					"y":0,
+					"z":-2.6
+				},
+				"radius":0.6,
+				"brightness": 0.3,
+				"comment":"tete#2"
+			}
+
+
+
+
+
+
+
+
+
+
+
+	],
+		"lights":
+			[
+			{
+				"type":"SPOT",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":0,
+					"y":5,
+					"z":0
+				},
+				"radius":1
+			}
+			{
+				"type":"SPOT",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":0,
+					"y":-5,
+					"z":0
+				},
+				"radius":1
+			}
+			{
+				"type":"SPOT",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":-5,
+					"y":0,
+					"z":0
+				},
+				"radius":1
+			}
+			{
+				"type":"SPOT",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":5,
+					"y":0,
+					"z":0
+				},
+				"radius":1
+			}
+			{
+				"type":"SPOT",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":-5
+				},
+				"radius":1
+			}
+	]
+}

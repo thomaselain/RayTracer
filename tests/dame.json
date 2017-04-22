@@ -1,0 +1,224 @@
+{
+	"background":0x303030,
+		"camera":
+		{
+			"origin":
+			{
+				"x":0,
+				"y":3,
+				"z":0
+			},
+			"direction":
+			{
+				"x":0,
+				"y":-1,
+				"z":0
+			},
+			"fov":60
+		},
+		"objects":
+			[
+			{
+				"type":"PLANE",
+				"color":0x303030,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":1.5
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":-1
+				},
+				"reflection":0.0
+			},
+
+
+
+			{
+				"type":"CYLINDER",
+				"color":0xD2AB6F,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":0
+				},
+				"height":0.2,
+				"radius":1,
+				"brightness": 0.3,
+				"comment":"base#1 DAME_BLANCHE"
+			},
+			{
+				"type":"CYLINDER",
+				"color":0xD2AB6F,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":-0.3
+				},
+				"height":0.1,
+				"radius":0.9,
+				"brightness": 0.3,
+				"comment":"base#2 DAME_BLANCHE"
+			},
+			{
+				"type":"CYLINDER",
+				"color":0xD2AB6F,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":-2
+				},
+				"height":1.6,
+				"radius":0.5,
+				"brightness": 0.3,
+				"comment":"tronc#1 DAME_BLANCHE"
+			},
+			{
+				"type":"CYLINDER",
+				"color":0xD2AB6F,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":-2.7
+				},
+				"height":0.01,
+				"radius":0.8,
+				"brightness": 0.3,
+				"comment":"collier#1 DAME_BLANCHE"
+			},
+			{
+				"type":"CYLINDER",
+				"color":0xD2AB6F,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":-2.85
+				},
+				"height":0.05,
+				"radius":0.9,
+				"brightness": 0.3,
+				"comment":"collier#2 DAME_BLANCHE"
+			},
+			{
+				"type":"CYLINDER",
+				"color":0xD2AB6F,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":-3
+				},
+				"height":0.01,
+				"radius":0.8,
+				"brightness": 0.3,
+				"comment":"collier#3 DAME_BLANCHE"
+			},
+			{
+				"type":"SPHERE",
+				"color":0xD2AB6F,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":-4
+				},
+				"radius":1,
+				"brightness": 0.3,
+				"comment":"tete#1 DAME_BLANCHE"
+			},
+			{
+				"type":"SPHERE",
+				"color":0xD2AB6F,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":-5.09
+				},
+				"radius":0.1,
+				"brightness": 0.3,
+				"comment":"ponpon#1 DAME_BLANCHE"
+			},
+			{
+				"type":"CYLINDER",
+				"color":0xD2AB6F,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":-4.5
+				},
+				"height":0.1,
+				"radius":1.05,
+				"brightness": 0.3,
+				"comment":"couronne#1 DAME_BLANCHE" 
+			}
+	],
+		"lights":
+			[
+			{
+				"type":"SPOT",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":0,
+					"y":5,
+					"z":0
+				},
+				"radius":1
+			}
+			{
+				"type":"SPOT",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":0,
+					"y":-5,
+					"z":0
+				},
+				"radius":1
+			}
+			{
+				"type":"SPOT",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":-5,
+					"y":0,
+					"z":0
+				},
+				"radius":1
+			}
+			{
+				"type":"SPOT",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":5,
+					"y":0,
+					"z":0
+				},
+				"radius":1
+			}
+			{
+				"type":"SPOT",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":-5
+				},
+				"radius":1
+			}
+	]
+}

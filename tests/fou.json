@@ -1,0 +1,183 @@
+{
+	"background":0x303030,
+		"camera":
+		{
+			"origin":
+			{
+				"x":0,
+				"y":3,
+				"z":0
+			},
+			"direction":
+			{
+				"x":0,
+				"y":-1,
+				"z":0
+			},
+			"fov":60
+		},
+		"objects":
+			[
+			{
+				"type":"PLANE",
+				"color":0x303030,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":1.5
+				},
+				"direction":
+				{
+					"x":0,
+					"y":0,
+					"z":-1
+				},
+				"reflection":0.0
+			},
+
+
+
+
+			{
+				"type":"CYLINDER",
+				"color":0xD2AB6F,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":0
+				},
+				"height":0.2,
+				"radius":1,
+				"brightness": 0.3,
+				"comment":"base#1 FOU_BLANC"
+			},
+			{
+				"type":"CYLINDER",
+				"color":0xD2AB6F,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":-0.3
+				},
+				"height":0.1,
+				"radius":0.9,
+				"brightness": 0.3,
+				"comment":"base#2 FOU_BLANC"
+			},
+			{
+				"type":"CYLINDER",
+				"color":0xD2AB6F,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":-1.4
+				},
+				"height":1.1,
+				"radius":0.6,
+				"brightness": 0.3,
+				"comment":"tronc#1 FOU_BLANC"
+			},
+			{
+				"type":"CYLINDER",
+				"color":0xD2AB6F,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":-2.3
+				},
+				"height":0.1,
+				"radius":1.2,
+				"brightness": 0.3,
+				"comment":"collier#1 FOU_BLANC"
+			},
+			{
+				"type":"SPHERE",
+				"color":0xD2AB6F,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":-3
+				},
+				"radius":0.9,
+				"brightness": 0.3,
+				"comment":"tete#1 FOU_BLANC"
+			},
+			{
+				"type":"SPHERE",
+				"color":0xD2AB6F,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":-4
+				},
+				"radius":0.2,
+				"brightness": 0.3,
+				"comment":"tete#2 FOU_BLANC"
+			}
+	],
+		"lights":
+			[
+			{
+				"type":"SPOT",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":0,
+					"y":5,
+					"z":0
+				},
+				"radius":1
+			}
+			{
+				"type":"SPOT",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":0,
+					"y":-5,
+					"z":0
+				},
+				"radius":1
+			}
+			{
+				"type":"SPOT",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":-5,
+					"y":0,
+					"z":0
+				},
+				"radius":1
+			}
+			{
+				"type":"SPOT",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":5,
+					"y":0,
+					"z":0
+				},
+				"radius":1
+			}
+			{
+				"type":"SPOT",
+				"color":0xffffff,
+				"origin":
+				{
+					"x":0,
+					"y":0,
+					"z":-5
+				},
+				"radius":1
+			}
+	]
+}
