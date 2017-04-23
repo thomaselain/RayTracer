@@ -19,8 +19,80 @@
 		"objects":
 			[
 			{
+				"type":"PLANE",
+				"color":0x030303,
+				"origin":
+				{
+					"x":0,
+					"y":24.5,
+					"z":0
+				},
+				"direction":
+				{
+					"x":0,
+					"y":1,
+					"z":0
+				},
+				"comment":"left wall",
+				"reflection":0.6
+			},
+			{
+				"type":"PLANE",
+				"color":0x030303,
+				"origin":
+				{
+					"x":0,
+					"y":-22.5,
+					"z":0
+				},
+				"direction":
+				{
+					"x":0,
+					"y":1,
+					"z":0
+				},
+				"comment":"right wall",
+				"reflection":0.6
+			},
+			{
+				"type":"PLANE",
+				"color":0x030303,
+				"origin":
+				{
+					"x":-24,
+					"y":0,
+					"z":0
+				},
+				"direction":
+				{
+					"x":-1,
+					"y":0,
+					"z":0
+				},
+				"comment":"back wall",
+				"reflection":0.6
+			},
+			{
+				"type":"PLANE",
+				"color":0x030303,
+				"origin":
+				{
+					"x":46,
+					"y":0,
+					"z":0
+				},
+				"direction":
+				{
+					"x":-1,
+					"y":0,
+					"z":0
+				},
+				"comment":"back wall",
+				"reflection":0.6
+			},
+			{
 				"type":"RECTANGLE",
-				"color":0x303030,
+				"color":0x7E5835,
 				"origin":
 				{
 					"x":0,
@@ -38,16 +110,16 @@
 					"material_type":"GRID",
 					"zoom":48
 				},
+				"reflection":0.8,
 				"height":40,
-				"width":40,
-				"reflection":0.8	
+				"width":40
 			}
 			{
 				"type":"RECTANGLE",
 				"color":0x443022,
 				"origin":
 				{
-					"x":0,
+					"x":-1.5,
 					"y":-20.13,
 					"z":0.24
 				},
@@ -58,8 +130,12 @@
 					"z":-1
 				},
 				"height":4,
-				"width":45,			
-				"reflection":0.8,	
+				"width":46,
+				"texture":
+				{
+					"path":"images/bois_fonce.bmp",
+					"scale":70
+				},	
 				"comment":"Bordure 1"
 			},
 			{
@@ -67,7 +143,7 @@
 				"color":0x443022,
 				"origin":
 				{
-					"x":0,
+					"x":-1.5,
 					"y":22,
 					"z":0.24
 				},
@@ -78,8 +154,12 @@
 					"z":-1
 				},
 				"height":4,
-				"width":45,			
-				"reflection":0.8,	
+				"width":46,
+				"texture":
+				{
+					"path":"images/bois_fonce.bmp",
+					"scale":70
+				},			
 				"comment":"Bordure 2"
 			},
 			{
@@ -88,7 +168,7 @@
 				"origin":
 				{
 					"x":19.8,
-					"y":0,
+					"y":1,
 					"z":0.24
 				},
 				"direction":
@@ -98,8 +178,12 @@
 					"z":-1
 				},
 				"height":4,
-				"width":45,			
-				"reflection":0.8,	
+				"width":46,	
+				"texture":
+				{
+					"path":"images/bois_fonce.bmp",
+					"scale":70
+				},			
 				"comment":"Bordure 3"
 			},
 			{
@@ -108,7 +192,7 @@
 				"origin":
 				{
 					"x":-22,
-					"y":0,
+					"y":1,
 					"z":0.24
 				},
 				"direction":
@@ -118,13 +202,18 @@
 					"z":-1
 				},
 				"height":4,
-				"width":45,			
-				"reflection":0.8,	
+				"width":46,	
+				"texture":
+				{
+					"path":"images/bois_fonce.bmp",
+					"scale":70
+				},				
 				"comment":"Bordure 4"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -133,12 +222,12 @@
 				},
 				"height":0.2,
 				"radius":1,
-				"reflection":0.8,
 				"comment":"Base PION1_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -147,12 +236,12 @@
 				},
 				"height":0.1,
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Base #2 PION1_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -161,12 +250,12 @@
 				},
 				"height":0.9,
 				"radius":0.8,
-				"reflection":0.8,
 				"comment":"Tronc PION1_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -175,12 +264,12 @@
 				},
 				"height":0.1,
 				"radius":0.85,
-				"reflection":0.8,
 				"comment":"Tronc #2 PION1_BLANC"
 			},
 			{
 				"type":"SPHERE",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -188,12 +277,12 @@
 					"z":-2.9
 				},
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Tete PION1_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -202,12 +291,12 @@
 				},
 				"height":0.2,
 				"radius":1,
-				"reflection":0.8,
 				"comment":"Base PION2_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -216,12 +305,12 @@
 				},
 				"height":0.1,
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Base #2 PION2_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -230,12 +319,12 @@
 				},
 				"height":0.9,
 				"radius":0.8,
-				"reflection":0.8,
 				"comment":"Tronc PION2_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -244,12 +333,12 @@
 				},
 				"height":0.1,
 				"radius":0.85,
-				"reflection":0.8,
 				"comment":"Tronc #2 PION2_BLANC"
 			},
 			{
 				"type":"SPHERE",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -257,12 +346,12 @@
 					"z":-2.9
 				},
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Tete PION2_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -271,12 +360,12 @@
 				},
 				"height":0.2,
 				"radius":1,
-				"reflection":0.8,
 				"comment":"Base PION3_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -285,12 +374,12 @@
 				},
 				"height":0.1,
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Base #2 PION3_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -299,12 +388,12 @@
 				},
 				"height":0.9,
 				"radius":0.8,
-				"reflection":0.8,
 				"comment":"Tronc PION3_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -313,12 +402,12 @@
 				},
 				"height":0.1,
 				"radius":0.85,
-				"reflection":0.8,
 				"comment":"Tronc #2 PION3_BLANC"
 			},
 			{
 				"type":"SPHERE",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -326,12 +415,12 @@
 					"z":-2.9
 				},
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Tete PION3_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -340,12 +429,12 @@
 				},
 				"height":0.2,
 				"radius":1,
-				"reflection":0.8,
 				"comment":"Base PION4_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -354,12 +443,12 @@
 				},
 				"height":0.1,
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Base #2 PION4_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -368,12 +457,12 @@
 				},
 				"height":0.9,
 				"radius":0.8,
-				"reflection":0.8,
 				"comment":"Tronc PION4_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -382,12 +471,12 @@
 				},
 				"height":0.1,
 				"radius":0.85,
-				"reflection":0.8,
 				"comment":"Tronc #2 PION4_BLANC"
 			},
 			{
 				"type":"SPHERE",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -395,12 +484,12 @@
 					"z":-2.9
 				},
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Tete PION4_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -409,12 +498,12 @@
 				},
 				"height":0.2,
 				"radius":1,
-				"reflection":0.8,
 				"comment":"Base PION5_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -423,12 +512,12 @@
 				},
 				"height":0.1,
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Base #2 PION5_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -437,12 +526,12 @@
 				},
 				"height":0.9,
 				"radius":0.8,
-				"reflection":0.8,
 				"comment":"Tronc PION5_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -451,12 +540,12 @@
 				},
 				"height":0.1,
 				"radius":0.85,
-				"reflection":0.8,
 				"comment":"Tronc #2 PION5_BLANC"
 			},
 			{
 				"type":"SPHERE",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -464,12 +553,12 @@
 					"z":-2.9
 				},
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Tete PION5_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -478,12 +567,12 @@
 				},
 				"height":0.2,
 				"radius":1,
-				"reflection":0.8,
 				"comment":"Base PION6_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -492,12 +581,12 @@
 				},
 				"height":0.1,
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Base #2 PION6_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -506,12 +595,12 @@
 				},
 				"height":0.9,
 				"radius":0.8,
-				"reflection":0.8,
 				"comment":"Tronc PION6_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -520,12 +609,12 @@
 				},
 				"height":0.1,
 				"radius":0.85,
-				"reflection":0.8,
 				"comment":"Tronc #2 PION6_BLANC"
 			},
 			{
 				"type":"SPHERE",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -533,12 +622,12 @@
 					"z":-2.9
 				},
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Tete PION6_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -547,12 +636,12 @@
 				},
 				"height":0.2,
 				"radius":1,
-				"reflection":0.8,
 				"comment":"Base PION7_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -561,12 +650,12 @@
 				},
 				"height":0.1,
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Base #2 PION7_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -575,12 +664,12 @@
 				},
 				"height":0.9,
 				"radius":0.8,
-				"reflection":0.8,
 				"comment":"Tronc PION7_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -589,12 +678,12 @@
 				},
 				"height":0.1,
 				"radius":0.85,
-				"reflection":0.8,
 				"comment":"Tronc #2 PION7_BLANC"
 			},
 			{
 				"type":"SPHERE",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
@@ -602,76 +691,75 @@
 					"z":-2.9
 				},
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Tete PION7_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
-					"y":-17,
+					"y":-15.5,
 					"z":0
 				},
 				"height":0.2,
 				"radius":1,
-				"reflection":0.8,
 				"comment":"Base PION8_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
-					"y":-17,
+					"y":-15.5,
 					"z":-0.3
 				},
 				"height":0.1,
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Base #2 PION8_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
-					"y":-17,
+					"y":-15.5,
 					"z":-1.2
 				},
 				"height":0.9,
 				"radius":0.8,
-				"reflection":0.8,
 				"comment":"Tronc PION8_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
-					"y":-17,
+					"y":-15.5,
 					"z":-2.1
 				},
 				"height":0.1,
 				"radius":0.85,
-				"reflection":0.8,
 				"comment":"Tronc #2 PION8_BLANC"
 			},
 			{
 				"type":"SPHERE",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":11,
-					"y":-17,
+					"y":-15.5,
 					"z":-2.9
 				},
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Tete PION8_BLANC"
 			},
 
@@ -681,6 +769,7 @@
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -689,12 +778,12 @@
 				},
 				"height":0.2,
 				"radius":1,
-				"reflection":0.8,
 				"comment":"Base PION1_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -703,12 +792,12 @@
 				},
 				"height":0.1,
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Base #2 PION1_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -717,12 +806,12 @@
 				},
 				"height":0.9,
 				"radius":0.8,
-				"reflection":0.8,
 				"comment":"Tronc PION1_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -731,12 +820,12 @@
 				},
 				"height":0.1,
 				"radius":0.85,
-				"reflection":0.8,
 				"comment":"Tronc #2 PION1_NOIR"
 			},
 			{
 				"type":"SPHERE",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -744,12 +833,12 @@
 					"z":-2.9
 				},
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Tete PION1_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -758,12 +847,12 @@
 				},
 				"height":0.2,
 				"radius":1,
-				"reflection":0.8,
 				"comment":"Base PION2_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -772,12 +861,12 @@
 				},
 				"height":0.1,
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Base #2 PION2_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -786,12 +875,12 @@
 				},
 				"height":0.9,
 				"radius":0.8,
-				"reflection":0.8,
 				"comment":"Tronc PION2_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -800,12 +889,12 @@
 				},
 				"height":0.1,
 				"radius":0.85,
-				"reflection":0.8,
 				"comment":"Tronc #2 PION2_NOIR"
 			},
 			{
 				"type":"SPHERE",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -813,12 +902,12 @@
 					"z":-2.9
 				},
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Tete PION2_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -827,12 +916,12 @@
 				},
 				"height":0.2,
 				"radius":1,
-				"reflection":0.8,
 				"comment":"Base PION3_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -841,12 +930,12 @@
 				},
 				"height":0.1,
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Base #2 PION3_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -855,12 +944,12 @@
 				},
 				"height":0.9,
 				"radius":0.8,
-				"reflection":0.8,
 				"comment":"Tronc PION3_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -869,12 +958,12 @@
 				},
 				"height":0.1,
 				"radius":0.85,
-				"reflection":0.8,
 				"comment":"Tronc #2 PION3_NOIR"
 			},
 			{
 				"type":"SPHERE",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -882,12 +971,12 @@
 					"z":-2.9
 				},
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Tete PION3_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -896,12 +985,12 @@
 				},
 				"height":0.2,
 				"radius":1,
-				"reflection":0.8,
 				"comment":"Base PION4_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -910,12 +999,12 @@
 				},
 				"height":0.1,
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Base #2 PION4_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -924,12 +1013,12 @@
 				},
 				"height":0.9,
 				"radius":0.8,
-				"reflection":0.8,
 				"comment":"Tronc PION4_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -938,12 +1027,12 @@
 				},
 				"height":0.1,
 				"radius":0.85,
-				"reflection":0.8,
 				"comment":"Tronc #2 PION4_NOIR"
 			},
 			{
 				"type":"SPHERE",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -951,12 +1040,12 @@
 					"z":-2.9
 				},
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Tete PION4_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -965,12 +1054,12 @@
 				},
 				"height":0.2,
 				"radius":1,
-				"reflection":0.8,
 				"comment":"Base PION5_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -979,12 +1068,12 @@
 				},
 				"height":0.1,
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Base #2 PION5_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -993,12 +1082,12 @@
 				},
 				"height":0.9,
 				"radius":0.8,
-				"reflection":0.8,
 				"comment":"Tronc PION5_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -1007,12 +1096,12 @@
 				},
 				"height":0.1,
 				"radius":0.85,
-				"reflection":0.8,
 				"comment":"Tronc #2 PION5_NOIR"
 			},
 			{
 				"type":"SPHERE",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -1020,12 +1109,12 @@
 					"z":-2.9
 				},
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Tete PION5_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -1034,12 +1123,12 @@
 				},
 				"height":0.2,
 				"radius":1,
-				"reflection":0.8,
 				"comment":"Base PION6_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -1048,12 +1137,12 @@
 				},
 				"height":0.1,
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Base #2 PION6_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -1062,12 +1151,12 @@
 				},
 				"height":0.9,
 				"radius":0.8,
-				"reflection":0.8,
 				"comment":"Tronc PION6_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -1076,12 +1165,12 @@
 				},
 				"height":0.1,
 				"radius":0.85,
-				"reflection":0.8,
 				"comment":"Tronc #2 PION6_NOIR"
 			},
 			{
 				"type":"SPHERE",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -1089,12 +1178,12 @@
 					"z":-2.9
 				},
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Tete PION6_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -1103,12 +1192,12 @@
 				},
 				"height":0.2,
 				"radius":1,
-				"reflection":0.8,
 				"comment":"Base PION7_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -1117,12 +1206,12 @@
 				},
 				"height":0.1,
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Base #2 PION7_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -1131,12 +1220,12 @@
 				},
 				"height":0.9,
 				"radius":0.8,
-				"reflection":0.8,
 				"comment":"Tronc PION7_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -1145,12 +1234,12 @@
 				},
 				"height":0.1,
 				"radius":0.85,
-				"reflection":0.8,
 				"comment":"Tronc #2 PION7_NOIR"
 			},
 			{
 				"type":"SPHERE",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
@@ -1158,76 +1247,75 @@
 					"z":-2.9
 				},
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Tete PION7_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
-					"y":-17,
+					"y":-15.5,
 					"z":0
 				},
 				"height":0.2,
 				"radius":1,
-				"reflection":0.8,
 				"comment":"Base PION8_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
-					"y":-17,
+					"y":-15.5,
 					"z":-0.3
 				},
 				"height":0.1,
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Base #2 PION8_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
-					"y":-17,
+					"y":-15.5,
 					"z":-1.2
 				},
 				"height":0.9,
 				"radius":0.8,
-				"reflection":0.8,
 				"comment":"Tronc PION8_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
-					"y":-17,
+					"y":-15.5,
 					"z":-2.1
 				},
 				"height":0.1,
 				"radius":0.85,
-				"reflection":0.8,
 				"comment":"Tronc #2 PION8_NOIR"
 			},
 			{
 				"type":"SPHERE",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-13,
-					"y":-17,
+					"y":-15.5,
 					"z":-2.9
 				},
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Tete PION8_NOIR"
 			},
 
@@ -1239,6 +1327,7 @@
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -1247,12 +1336,12 @@
 				},
 				"height":0.4,
 				"radius":1,
-				"reflection":0.8,
 				"comment":"Base TOUR_BLANCHE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -1261,12 +1350,12 @@
 				},
 				"height":0.1,
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Base#2 TOUR_BLANCHE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -1275,12 +1364,12 @@
 				},
 				"height":1.1,
 				"radius":0.8,
-				"reflection":0.8,
 				"comment":"Tronc TOUR_BLANCHE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -1289,12 +1378,12 @@
 				},
 				"height":0.1,
 				"radius":0.85,
-				"reflection":0.8,
 				"comment":"Sommet TOUR_BLANCHE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -1303,12 +1392,12 @@
 				},
 				"height":0.1,
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Sommet#2 TOUR_BLANCHE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -1317,7 +1406,6 @@
 				},
 				"height":0.2,
 				"radius":1,
-				"reflection":0.8,
 				"comment":"Sommet#3 TOUR_BLANCHE"
 			},
 
@@ -1325,6 +1413,7 @@
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -1333,12 +1422,12 @@
 				},
 				"height":0.4,
 				"radius":1,
-				"reflection":0.8,
 				"comment":"Base TOUR2_BLANCHE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -1347,12 +1436,12 @@
 				},
 				"height":0.1,
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Base#2 TOUR2_BLANCHE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -1361,12 +1450,12 @@
 				},
 				"height":1.1,
 				"radius":0.8,
-				"reflection":0.8,
 				"comment":"Tronc TOUR2_BLANCHE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -1375,12 +1464,12 @@
 				},
 				"height":0.1,
 				"radius":0.85,
-				"reflection":0.8,
 				"comment":"Sommet TOUR2_BLANCHE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -1389,12 +1478,12 @@
 				},
 				"height":0.1,
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Sommet#2 TOUR2_BLANCHE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -1403,7 +1492,6 @@
 				},
 				"height":0.2,
 				"radius":1,
-				"reflection":0.8,
 				"comment":"Sommet#3 TOUR2_BLANCHE"
 			},
 
@@ -1412,6 +1500,7 @@
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -1420,12 +1509,12 @@
 				},
 				"height":0.4,
 				"radius":1,
-				"reflection":0.8,
 				"comment":"Base TOUR_NOIRE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -1434,12 +1523,12 @@
 				},
 				"height":0.1,
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Base#2 TOUR_NOIRE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -1448,12 +1537,12 @@
 				},
 				"height":1.1,
 				"radius":0.8,
-				"reflection":0.8,
 				"comment":"Tronc TOUR_NOIRE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -1462,12 +1551,12 @@
 				},
 				"height":0.1,
 				"radius":0.85,
-				"reflection":0.8,
 				"comment":"Sommet TOUR_NOIRE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -1476,12 +1565,12 @@
 				},
 				"height":0.1,
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Sommet#2 TOUR_NOIRE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -1490,7 +1579,6 @@
 				},
 				"height":0.2,
 				"radius":1,
-				"reflection":0.8,
 				"comment":"Sommet#3 TOUR_NOIRE"
 			},
 
@@ -1498,6 +1586,7 @@
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -1506,12 +1595,12 @@
 				},
 				"height":0.4,
 				"radius":1,
-				"reflection":0.8,
 				"comment":"Base TOUR2_NOIRE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -1520,12 +1609,12 @@
 				},
 				"height":0.1,
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Base#2 TOUR2_NOIRE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -1534,12 +1623,12 @@
 				},
 				"height":1.1,
 				"radius":0.8,
-				"reflection":0.8,
 				"comment":"Tronc TOUR2_NOIRE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -1548,12 +1637,12 @@
 				},
 				"height":0.1,
 				"radius":0.85,
-				"reflection":0.8,
 				"comment":"Sommet TOUR2_NOIRE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -1562,12 +1651,12 @@
 				},
 				"height":0.1,
 				"radius":0.9,
-				"reflection":0.8,
 				"comment":"Sommet#2 TOUR2_NOIRE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -1576,7 +1665,6 @@
 				},
 				"height":0.2,
 				"radius":1,
-				"reflection":0.8,
 				"comment":"Sommet#3 TOUR2_NOIRE"
 			},
 
@@ -1588,6 +1676,7 @@
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -1597,12 +1686,12 @@
 				"height":0.2,
 				"radius":1,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"base#1 CHEVAL1_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -1612,12 +1701,12 @@
 				"height":0.05,
 				"radius":0.9,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"base#2 CHEVAL1_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16.27,
@@ -1633,12 +1722,12 @@
 				"height":1.3,
 				"radius":0.5,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"corps#1 CHEVAL1_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":15.35,
@@ -1654,12 +1743,12 @@
 				"height":0.6,
 				"radius":0.3,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tete#1 CHEVAL1_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":15.35,
@@ -1675,12 +1764,12 @@
 				"height":0.1,
 				"radius":0.05,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"corne#1 CHEVAL1_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":15.35,
@@ -1696,12 +1785,12 @@
 				"height":0.1,
 				"radius":0.05,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"corne#2 CHEVAL1_BLANC"
 			},
 			{
 				"type":"SPHERE",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":15.9,
@@ -1710,7 +1799,6 @@
 				},
 				"radius":0.6,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tete#2 CHEVAL1_BLANC"
 			},
 
@@ -1719,6 +1807,7 @@
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -1728,12 +1817,12 @@
 				"height":0.2,
 				"radius":1,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"base#1 CHEVAL2_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -1743,12 +1832,12 @@
 				"height":0.05,
 				"radius":0.9,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"base#2 CHEVAL2_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16.27,
@@ -1764,12 +1853,12 @@
 				"height":1.3,
 				"radius":0.5,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"corps#1 CHEVAL2_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":15.35,
@@ -1785,12 +1874,12 @@
 				"height":0.6,
 				"radius":0.3,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tete#1 CHEVAL2_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":15.35,
@@ -1806,12 +1895,12 @@
 				"height":0.1,
 				"radius":0.05,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"corne#1 CHEVAL2_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":15.35,
@@ -1827,12 +1916,12 @@
 				"height":0.1,
 				"radius":0.05,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"corne#2 CHEVAL2_BLANC"
 			},
 			{
 				"type":"SPHERE",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":15.9,
@@ -1841,7 +1930,6 @@
 				},
 				"radius":0.6,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tete#2 CHEVAL2_BLANC"
 			},
 
@@ -1850,6 +1938,7 @@
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -1859,12 +1948,12 @@
 				"height":0.2,
 				"radius":1,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"base#1 CHEVAL1_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -1874,12 +1963,12 @@
 				"height":0.05,
 				"radius":0.9,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"base#2 CHEVAL1_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18.27,
@@ -1895,12 +1984,12 @@
 				"height":1.3,
 				"radius":0.5,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"corps#1 CHEVAL1_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-17.35,
@@ -1916,12 +2005,12 @@
 				"height":0.6,
 				"radius":0.3,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tete#1 CHEVAL1_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-17.35,
@@ -1937,12 +2026,12 @@
 				"height":0.1,
 				"radius":0.05,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"corne#1 CHEVAL1_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-17.35,
@@ -1958,12 +2047,12 @@
 				"height":0.1,
 				"radius":0.05,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"corne#2 CHEVAL1_NOIR"
 			},
 			{
 				"type":"SPHERE",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-17.9,
@@ -1972,7 +2061,6 @@
 				},
 				"radius":0.6,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tete#2 CHEVAL1_NOIR"
 			},
 
@@ -1981,6 +2069,7 @@
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -1990,12 +2079,12 @@
 				"height":0.2,
 				"radius":1,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"base#1 CHEVAL2_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2005,12 +2094,12 @@
 				"height":0.05,
 				"radius":0.9,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"base#2 CHEVAL2_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18.27,
@@ -2026,12 +2115,12 @@
 				"height":1.3,
 				"radius":0.5,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"corps#1 CHEVAL2_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-17.35,
@@ -2047,12 +2136,12 @@
 				"height":0.6,
 				"radius":0.3,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tete#1 CHEVAL2_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-17.35,
@@ -2068,12 +2157,12 @@
 				"height":0.1,
 				"radius":0.05,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"corne#1 CHEVAL2_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-17.35,
@@ -2089,12 +2178,12 @@
 				"height":0.1,
 				"radius":0.05,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"corne#2 CHEVAL2_NOIR"
 			},
 			{
 				"type":"SPHERE",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-17.9,
@@ -2103,7 +2192,6 @@
 				},
 				"radius":0.6,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tete#2 CHEVAL2_NOIR"
 			},
 
@@ -2127,6 +2215,7 @@
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2136,12 +2225,12 @@
 				"height":0.2,
 				"radius":1,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"base#1 FOU1_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2151,12 +2240,12 @@
 				"height":0.1,
 				"radius":0.9,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"base#2 FOU1_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2166,12 +2255,12 @@
 				"height":1.1,
 				"radius":0.6,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tronc#1 FOU1_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2181,12 +2270,12 @@
 				"height":0.1,
 				"radius":1.2,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"collier#1 FOU1_BLANC"
 			},
 			{
 				"type":"SPHERE",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2195,12 +2284,12 @@
 				},
 				"radius":0.9,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tete#1 FOU1_BLANC"
 			},
 			{
 				"type":"SPHERE",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2209,7 +2298,6 @@
 				},
 				"radius":0.2,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tete#2 FOU1_BLANC"
 			},
 
@@ -2217,6 +2305,7 @@
 {
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2226,12 +2315,12 @@
 				"height":0.2,
 				"radius":1,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"base#1 FOU2_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2241,12 +2330,12 @@
 				"height":0.1,
 				"radius":0.9,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"base#2 FOU2_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2256,12 +2345,12 @@
 				"height":1.1,
 				"radius":0.6,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tronc#1 FOU2_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2271,12 +2360,12 @@
 				"height":0.1,
 				"radius":1.2,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"collier#1 FOU2_BLANC"
 			},
 			{
 				"type":"SPHERE",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2285,12 +2374,12 @@
 				},
 				"radius":0.9,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tete#1 FOU2_BLANC"
 			},
 			{
 				"type":"SPHERE",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2299,7 +2388,6 @@
 				},
 				"radius":0.2,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tete#2 FOU2_BLANC"
 			},
 
@@ -2307,6 +2395,7 @@
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2316,12 +2405,12 @@
 				"height":0.2,
 				"radius":1,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"base#1 FOU1_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2331,12 +2420,12 @@
 				"height":0.1,
 				"radius":0.9,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"base#2 FOU1_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2346,12 +2435,12 @@
 				"height":1.1,
 				"radius":0.6,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tronc#1 FOU1_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2361,12 +2450,12 @@
 				"height":0.1,
 				"radius":1.2,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"collier#1 FOU1_NOIR"
 			},
 			{
 				"type":"SPHERE",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2375,12 +2464,12 @@
 				},
 				"radius":0.9,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tete#1 FOU1_NOIR"
 			},
 			{
 				"type":"SPHERE",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2389,7 +2478,6 @@
 				},
 				"radius":0.2,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tete#2 FOU1_NOIR"
 			},
 
@@ -2397,6 +2485,7 @@
 {
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2406,12 +2495,12 @@
 				"height":0.2,
 				"radius":1,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"base#1 FOU2_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2421,12 +2510,12 @@
 				"height":0.1,
 				"radius":0.9,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"base#2 FOU2_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2436,12 +2525,12 @@
 				"height":1.1,
 				"radius":0.6,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tronc#1 FOU2_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2451,12 +2540,12 @@
 				"height":0.1,
 				"radius":1.2,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"collier#1 FOU2_NOIR"
 			},
 			{
 				"type":"SPHERE",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2465,12 +2554,12 @@
 				},
 				"radius":0.9,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tete#1 FOU2_NOIR"
 			},
 			{
 				"type":"SPHERE",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2479,7 +2568,6 @@
 				},
 				"radius":0.2,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tete#2 FOU2_NOIR"
 			},
 
@@ -2496,6 +2584,7 @@
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2505,12 +2594,12 @@
 				"height":0.2,
 				"radius":1,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"base#1 DAME_BLANCHE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2520,12 +2609,12 @@
 				"height":0.1,
 				"radius":0.9,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"base#2 DAME_BLANCHE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2535,12 +2624,12 @@
 				"height":1.6,
 				"radius":0.5,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tronc#1 DAME_BLANCHE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2550,12 +2639,12 @@
 				"height":0.01,
 				"radius":0.8,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"collier#1 DAME_BLANCHE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2565,12 +2654,12 @@
 				"height":0.05,
 				"radius":0.9,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"collier#2 DAME_BLANCHE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2580,12 +2669,12 @@
 				"height":0.01,
 				"radius":0.8,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"collier#3 DAME_BLANCHE"
 			},
 			{
 				"type":"SPHERE",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2594,12 +2683,12 @@
 				},
 				"radius":1,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tete#1 DAME_BLANCHE"
 			},
 			{
 				"type":"SPHERE",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2608,12 +2697,12 @@
 				},
 				"radius":0.1,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"ponpon#1 DAME_BLANCHE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2623,7 +2712,6 @@
 				"height":0.1,
 				"radius":1.05,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"couronne#1 DAME_BLANCHE"
 			},
 
@@ -2633,6 +2721,7 @@
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2642,12 +2731,12 @@
 				"height":0.2,
 				"radius":1,
 				"brightness": 0.3,
-				"reflection":0.8,
-				"comment":"base#1 ROI_BLANCHE"
+				"comment":"base#1 ROI_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2657,12 +2746,12 @@
 				"height":0.1,
 				"radius":0.9,
 				"brightness": 0.3,
-				"reflection":0.8,
-				"comment":"base#2 ROI_BLANCHE"
+				"comment":"base#2 ROI_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2672,12 +2761,12 @@
 				"height":1.6,
 				"radius":0.5,
 				"brightness": 0.3,
-				"reflection":0.8,
-				"comment":"tronc#1 ROI_BLANCHE"
+				"comment":"tronc#1 ROI_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2687,12 +2776,12 @@
 				"height":0.01,
 				"radius":0.8,
 				"brightness": 0.3,
-				"reflection":0.8,
-				"comment":"collier#1 ROI_BLANCHE"
+				"comment":"collier#1 ROI_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2702,12 +2791,12 @@
 				"height":0.05,
 				"radius":0.9,
 				"brightness": 0.3,
-				"reflection":0.8,
-				"comment":"collier#2 ROI_BLANCHE"
+				"comment":"collier#2 ROI_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2717,12 +2806,12 @@
 				"height":0.01,
 				"radius":0.8,
 				"brightness": 0.3,
-				"reflection":0.8,
-				"comment":"collier#3 ROI_BLANCHE"
+				"comment":"collier#3 ROI_BLANC"
 			},
 			{
 				"type":"SPHERE",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2731,12 +2820,12 @@
 				},
 				"radius":1,
 				"brightness": 0.3,
-				"reflection":0.8,
-				"comment":"tete#1 ROI_BLANCHE"
+				"comment":"tete#1 ROI_BLANC"
 			},
 			{
 				"type":"SPHERE",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2745,12 +2834,12 @@
 				},
 				"radius":0.1,
 				"brightness": 0.3,
-				"reflection":0.8,
-				"comment":"ponpon#1 ROI_BLANCHE"
+				"comment":"ponpon#1 ROI_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2760,12 +2849,12 @@
 				"height":0.1,
 				"radius":1.05,
 				"brightness": 0.3,
-				"reflection":0.8,
-				"comment":"couronne#1 ROI_BLANCHE" 
+				"comment":"couronne#1 ROI_BLANC" 
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2775,12 +2864,12 @@
 				"height":0.25,
 				"radius":0.1,
 				"brightness": 0.3,
-				"reflection":0.8,
-				"comment":"croix#1 ROI_BLANCHE"
+				"comment":"croix#1 ROI_BLANC"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0xD2AB6F,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":16,
@@ -2796,8 +2885,7 @@
 				"height":0.25,
 				"radius":0.1,
 				"brightness": 0.3,
-				"reflection":0.8,
-				"comment":"croix#2 ROI_BLANCHE"
+				"comment":"croix#2 ROI_BLANC"
 			},
 
 
@@ -2813,6 +2901,7 @@
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2822,12 +2911,12 @@
 				"height":0.2,
 				"radius":1,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"base#1 DAME_NOIRE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2837,12 +2926,12 @@
 				"height":0.1,
 				"radius":0.9,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"base#2 DAME_NOIRE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2852,12 +2941,12 @@
 				"height":1.6,
 				"radius":0.5,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tronc#1 DAME_NOIRE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2867,12 +2956,12 @@
 				"height":0.01,
 				"radius":0.8,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"collier#1 DAME_NOIRE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2882,12 +2971,12 @@
 				"height":0.05,
 				"radius":0.9,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"collier#2 DAME_NOIRE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2897,12 +2986,12 @@
 				"height":0.01,
 				"radius":0.8,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"collier#3 DAME_NOIRE"
 			},
 			{
 				"type":"SPHERE",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2911,12 +3000,12 @@
 				},
 				"radius":1,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tete#1 DAME_NOIRE"
 			},
 			{
 				"type":"SPHERE",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2925,12 +3014,12 @@
 				},
 				"radius":0.1,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"ponpon#1 DAME_NOIRE"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2940,7 +3029,6 @@
 				"height":0.1,
 				"radius":1.05,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"couronne#1 DAME_NOIRE"
 			},
 
@@ -2950,6 +3038,7 @@
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2959,12 +3048,12 @@
 				"height":0.2,
 				"radius":1,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"base#1 ROI_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2974,12 +3063,12 @@
 				"height":0.1,
 				"radius":0.9,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"base#2 ROI_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -2989,12 +3078,12 @@
 				"height":1.6,
 				"radius":0.5,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tronc#1 ROI_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -3004,12 +3093,12 @@
 				"height":0.01,
 				"radius":0.8,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"collier#1 ROI_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -3019,12 +3108,12 @@
 				"height":0.05,
 				"radius":0.9,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"collier#2 ROI_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -3034,12 +3123,12 @@
 				"height":0.01,
 				"radius":0.8,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"collier#3 ROI_NOIR"
 			},
 			{
 				"type":"SPHERE",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -3048,12 +3137,12 @@
 				},
 				"radius":1,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"tete#1 ROI_NOIR"
 			},
 			{
 				"type":"SPHERE",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -3062,12 +3151,12 @@
 				},
 				"radius":0.1,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"ponpon#1 ROI_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -3077,12 +3166,12 @@
 				"height":0.1,
 				"radius":1.05,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"couronne#1 ROI_NOIR" 
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -3092,12 +3181,12 @@
 				"height":0.25,
 				"radius":0.1,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"croix#1 ROI_NOIR"
 			},
 			{
 				"type":"CYLINDER",
 				"color":0x221812,
+				"reflection":0.3,
 				"origin":
 				{
 					"x":-18,
@@ -3113,22 +3202,8 @@
 				"height":0.25,
 				"radius":0.1,
 				"brightness": 0.3,
-				"reflection":0.8,
 				"comment":"croix#2 ROI_NOIR"
 			}
-
-
-
-
-
-
-
-
-
-
-
-
-
 	],
 		"lights":
 			[
@@ -3137,9 +3212,9 @@
 				"color":0xffffff,
 				"origin":
 				{
-					"x":16,
-					"y":-1.5,
-					"z":0
+					"x":18,
+					"y":1.5,
+					"z":-20
 				},
 				"radius":1
 			}
@@ -3148,42 +3223,9 @@
 				"color":0xffffff,
 				"origin":
 				{
-					"x":0,
-					"y":-5,
-					"z":0
-				},
-				"radius":1
-			}
-			{
-				"type":"SPOT",
-				"color":0xffffff,
-				"origin":
-				{
-					"x":-5,
-					"y":0,
-					"z":0
-				},
-				"radius":1
-			}
-			{
-				"type":"SPOT",
-				"color":0xffffff,
-				"origin":
-				{
-					"x":5,
-					"y":0,
-					"z":0
-				},
-				"radius":1
-			}
-			{
-				"type":"SPOT",
-				"color":0xffffff,
-				"origin":
-				{
-					"x":0,
-					"y":0,
-					"z":-5
+					"x":-18,
+					"y":1.5,
+					"z":-20
 				},
 				"radius":1
 			}
