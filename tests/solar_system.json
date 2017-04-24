@@ -342,7 +342,7 @@
 			"brightness":0.4,
 			"reflection":0.0,
 			"radius":0.9
-		}
+		},
 		{
 			"type":"SPHERE",
 			"color":0xa0a0a0,

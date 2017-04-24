@@ -6,7 +6,7 @@
 #    By: aljourda <aljourda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/10 11:28:20 by aljourda          #+#    #+#              #
-#    Updated: 2017/02/02 16:29:59 by telain           ###   ########.fr        #
+#    Updated: 2017/04/24 14:43:10 by telain           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #	Install Debian
@@ -15,6 +15,10 @@
 
 NAME = RT
 
+GREEN = \e[32m
+RED = \e[31m
+WHITE = \e[0m
+YELLOW = \e[33m
 OS := $(shell uname -o)
 SRC_FOLDER := srcs/
 SRC := core_main.c \
@@ -67,7 +71,7 @@ SRC := $(addprefix $(SRC_FOLDER),$(SRC))
 INC := -I includes/libft -I includes/graphics -I includes/core -I includes/matrix_vector -I includes/parser -I includes/threads -I includes/color
 OBJ := $(SRC:.c=.o)
 
-CFLAGS := $(INC) -g -F libs/ -Wall -Wextra
+CFLAGS := $(INC) -g -F libs/ -Wall -Wextra -Werror
 LDFLAGS := -L libs/libft/ -L libs/matrix_vector/ -lft -lpthread -lm -lmv
 
 ifeq ($(OS),GNU/Linux)
@@ -76,7 +80,7 @@ ifeq ($(OS),GNU/Linux)
 	CFLAGS += -D'OS=linux'
 	LDFLAGS += $(SDL)
 else
-	CC=clang
+	CC := gcc
 	SDL := -lSDL2 -lSDL2_ttf
 	SDL := -F libs/ -framework SDL2 -framework SDL2_ttf
 	LDFLAGS += $(SDL) $(MLX)
@@ -91,17 +95,18 @@ $(NAME) : $(OBJ)
 	@$(CC) -o $(NAME) $(OBJ) $(LDFLAGS) $(LIBS) -fsanitize=address
 
 clean:
-	make clean -C libs/libft/
+	@make clean -C libs/libft/
 	@make clean -C libs/matrix_vector
 	@rm -Rf $(OBJ)
 	@rm -Rf capture.bmp
 
 fclean: clean
-	make fclean -C libs/libft/
+	@make fclean -C libs/libft/
 	@make fclean -C libs/matrix_vector
 	@rm -Rf $(NAME)
 
 re: fclean all
 
 %.o: %.c
-	$(CC) $(CFLAGS) -c $^ -o $@
+	@$(CC) $(CFLAGS) -c $^ -o $@
+	@printf "$(GREEN)  RT$(WHITE)  : Built $(YELLOW) $@\n"

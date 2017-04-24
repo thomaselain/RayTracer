@@ -6,7 +6,7 @@
 #    By: svassal <svassal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/30 17:22:12 by svassal           #+#    #+#              #
-#    Updated: 2017/02/06 21:11:05 by telain           ###   ########.fr        #
+#    Updated: 2017/04/24 13:35:33 by telain           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,17 +43,17 @@ RESET =			\033[0m
 
 $(NAME) :
 		@$(MAKE) -j $(OBJ)
-		@ar -rcs $(NAME) $(OBJ) && printf "$(CYAN)Libmv$(RESET) : Built $(YELLOW)library$(RESET)\n" 
+		@ar -rcs $(NAME) $(OBJ) && printf "$(CYAN)Libmv$(RESET) : Built $(YELLOW)library$(RESET)\n\n" 
 
 all :				$(NAME)
 
 clean :
 		@rm -rf $(OBJ_DIR)
-		printf "$(RED)Libmv$(RESET) : Removed $(YELLOW)objs/$(RESET)\n"
+		@printf "$(RED)Libmv$(RESET) : Removed $(YELLOW)objs/$(RESET)\n\n"
 
 fclean :			clean
 		@rm -f $(NAME)
-		printf "$(PURPLE)Libmv$(RESET) : Removed $(YELLOW)library$(RESET)\n"
+		@printf "$(PURPLE)Libmv$(RESET) : Removed $(YELLOW)library$(RESET)\n\n"
 
 re :				fclean all
 

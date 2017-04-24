@@ -6,7 +6,7 @@
 #    By: svassal <svassal@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/11/30 17:22:12 by svassal           #+#    #+#              #
-#    Updated: 2016/11/28 10:54:15 by svassal          ###   ########.fr        #
+#    Updated: 2017/04/24 13:35:56 by telain           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -112,11 +112,11 @@ all :				$(NAME)
 
 clean :
 	@rm -rf $(OBJ_DIR)
-	printf "$(RED)Libft$(RESET) : Removed $(YELLOW)objs/$(RESET)\n"
+	@printf "$(RED)Libft$(RESET) : Removed $(YELLOW)objs/$(RESET)\n\n"
 
 fclean :			clean
 	@rm -f $(NAME)
-	printf "$(PURPLE)Libft$(RESET) : Removed $(YELLOW)library$(RESET)\n"
+	@printf "$(PURPLE)Libft$(RESET) : Removed $(YELLOW)library$(RESET)\n\n"
 
 re :				fclean all
 
