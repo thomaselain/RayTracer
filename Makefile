@@ -6,7 +6,7 @@
 #    By: aljourda <aljourda@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2017/01/10 11:28:20 by aljourda          #+#    #+#              #
-#    Updated: 2017/04/24 14:43:10 by telain           ###   ########.fr        #
+#    Updated: 2017/04/24 15:29:14 by telain           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #	Install Debian
@@ -19,7 +19,7 @@ GREEN = \e[32m
 RED = \e[31m
 WHITE = \e[0m
 YELLOW = \e[33m
-OS := $(shell uname -o)
+OS := $(@shell uname -o)
 SRC_FOLDER := srcs/
 SRC := core_main.c \
 			color/color.c \
